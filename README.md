@@ -14,7 +14,9 @@ In order to use `compile.sh` to compile the protocol buffer `.proto` message def
 
 ## Usage
 
-See `example.py` how to fetch, parse, and display the SetApp protobuf files exposed by the SetApp API. Basic usage involves:
+See `example.py` how to fetch, parse, and display the SetApp protobuf files exposed by the SetApp API.
+
+Basic usage of the *status* API endpoint:
 
 ```
 import solaredge_setapp
@@ -31,6 +33,16 @@ print("Inverter {serial} is {status} at {power_ac:.2f}W".format(
     power_ac=status_data["power_ac"]
 ))
 ```
+
+See the `endpoint.proto` file for all *potential* data, and `solaredge_setapp/endpoint.py` files for all fields that are parsed per endpoint.
+
+## Limitations
+
+The SetApp API does not (yet) provide real-time power optimizer data. Initial results suggest the data is 5-15 minutes old. Inverter production and voltage information is near real-time, however. Basically the entire information set visible on the inverter's SetApp web interface is available through this library, in addition to per  optimizer voltages and temperatures.
+
+Rate limiting will kick in if you have the SetApp web interface open while also polling using this library.
+
+The SetApp API is new, and therefore likely to change.
 
 ## Contributing
 
