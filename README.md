@@ -2,15 +2,21 @@
 
 solaredge_setapp is a python library that parses inverter and power optimizer data from a compatible SolarEdge PV inverter. Only those models which support SetApp commissioning are supported.
 
-This project is built on the efforts of others: for Home Assistant users, see drobstravels' <a href="https://github.com/drobstravels/solaredge_local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters.
+This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge_local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters.
 
 ## Installation
 
-The library is not yet available on PyPi. Until then, clone the repository and import the library `solaredge_setapp` locally.
+The library is not yet available on PyPi. Until then, clone the repository and install the package using `distutils`:
 
-`solaredge_setapp` uses Python3's standard library, and Google's `protobuf`. The example script further depends on `argparse` and `requests`. 
+```python3 setup.py install```
 
-In order to use `compile.sh` to compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. Re-compiling the messages is only necessary if you have made changes to them.
+`solaredge_setapp` uses Python3's standard library, and Google's `protobuf`. The example script further depends on `requests`. 
+
+See `requirements.txt`, or use `pip3` to install any dependencies:
+
+```pip3 install -r requirements.txt```
+
+In order to use `compile.sh` to compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. *Re-compiling the messages is only necessary if you have made changes to them.*
 
 ## Usage
 
@@ -34,7 +40,7 @@ print("Inverter {serial} is {status} at {power_ac:.2f}W".format(
 ))
 ```
 
-See the `status.proto` file for all *potential* data, and `solaredge_setapp/status.py` files for all fields that are parsed for this endpoint.
+See the `status.proto` file for all possible fields, and `solaredge_setapp/status.py`  for all fields that are parsed for this endpoint.
 
 The following API endpoints are available:
 
@@ -48,7 +54,7 @@ The following API endpoints are available:
 
 ## Limitations
 
-The SetApp API does not (yet) provide real-time power optimizer data. Initial results suggest the data is 5-15 minutes old. Inverter production and voltage information is near real-time, however. Basically the entire information set visible on the inverter's SetApp web interface is available through this library, in addition to per  optimizer voltages and temperatures.
+The SetApp API does not (yet) provide real-time power optimizer data. Initial results suggest the data is 5-15 minutes old. Inverter production and voltage information is near real-time, however. Basically, the entire information set visible on the inverter's SetApp web interface is available through this library, in addition to per  optimizer voltages and temperatures.
 
 Rate limiting will kick in if you have the SetApp web interface open while also polling using this library.
 
