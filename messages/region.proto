@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Region {
+    message Country {
+        int32 country = 1;
+        repeated int32 options = 2;
+    }
+
+    message Language {
+        int32 language = 1;
+        repeated int32 options = 2;
+    }
+
+    Country country = 1;
+    Language language = 2;
+}

@@ -1,0 +1,153 @@
+syntax = "proto3";
+
+message Status {
+    message Site {
+        message InverterStatus {
+            string enabled = 1;
+            string connected = 2;
+        }
+
+        float production_ac = 1;
+        float size_limit_ac = 2;
+        InverterStatus inverterStatus = 3;
+    }
+
+    message OptimizersStatus {
+        int32 total = 1;
+        int32 online = 2;
+    }
+
+    message Inverters {
+        message Inverter {
+            string serial = 1;
+            float voltage_dc = 2;
+            OptimizersStatus optimizers = 3;
+            Temperature temperature = 4;
+            int32 fan = 5;
+            string error = 6;
+            int32 subsystem_id = 7;
+            string bad_position = 8;
+        }
+
+        message Temperature {
+            message Units {
+                bool celsius = 1;
+                bool fahrenheit = 2;
+            }
+
+            int32 value = 1;
+            Units units = 2;
+        }
+
+        Inverter left = 1;
+        Inverter primary = 2;
+        Inverter right = 3;
+    }
+
+    message Communication {
+        message RS4851 {
+            message Connected {}
+            message Enabled {}
+
+            message Protocol {
+                bool seslave = 1;
+                bool semaster = 2;
+                bool modbusmultidevices = 3;
+                bool sunspec = 4;
+                bool unset = 5;
+            }
+
+            Protocol protocol = 3;
+        }
+
+        message RS4852 {
+            message Connected {}
+            message Enabled {}
+
+            message Protocol {
+                bool seslave = 1;
+                bool semaster = 2;
+                bool modbusmultidevices = 3;
+                bool sunspec = 4;
+                bool unset = 5;
+            }
+
+            Protocol protocol = 3;
+        }
+
+        RS4851 rs4851 = 1;
+        RS4852 rs4852 = 2;
+        int32 lan = 3;
+    }
+
+    message EnergyStatistics {
+        float day = 1;
+        float month = 2;
+        float year = 3;
+        float total = 4;
+    }
+
+    message Evese {}
+
+    message Meter {
+        string connection = 1;
+        string status = 3;
+        string id = 4;
+        float power_ac = 5;
+        float total_ac = 6;
+        string s0_pulse = 7;
+    }
+
+    message Battery {}
+
+    message Notification {}
+
+    message ServerCommunication {
+        message CommunicationStatus {
+            bool physical = 1;
+            bool ipaddress = 2;
+            bool gateway = 3;
+            bool internet = 4;
+            bool monitoring = 5;
+            bool server = 6;
+        }
+
+        CommunicationStatus status = 1;
+    }
+
+    enum ManagerStatus {
+        SHUTTING_DOWN = 0;
+        ERROR = 1;
+        STANDBY = 2;
+        PAIRING = 3;
+        POWER_PRODUCTION = 4;
+        AC_CHARGING = 5;
+        NOT_PAIRED = 6;
+        NIGHT_MODE = 7;
+        GRID_MONITORING = 8;
+        IDLE = 9;
+    }
+
+    string serial = 1;
+    Site site = 2;
+    float power_ac = 3;
+    float voltage_ac = 4;
+    float frequency = 5;
+    OptimizersStatus optimizers = 6;
+    bool monitoring = 7;
+    ManagerStatus status = 8;
+    bool switch = 9;
+    float cosphi = 10;
+    float power_ac_limit = 11;
+    int32 country = 12;
+    Inverters inverters = 13;
+    Communication communication = 14;
+    EnergyStatistics energy = 15;
+    int32 portia_error = 16;
+    int32 portia_subsystem = 17;
+    Evese evese = 18;
+    repeated Meter meters = 19;
+    repeated Battery batteries = 20;
+    Notification notification = 21;
+    ServerCommunication server_communication = 22;
+}

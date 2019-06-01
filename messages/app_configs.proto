@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message WebAppConfigs {
+    message MainMenu {
+        bool country_and_language = 1;
+        bool pairing = 2;
+        bool communication = 3;
+        bool power_control = 4;
+        bool device_manager = 5;
+        bool maintenance = 6;
+        bool information = 7;
+        bool site_configuration = 8;
+        bool status = 9;
+    }
+
+    MainMenu mainmenu = 1;
+    int32 language = 2;
+}
