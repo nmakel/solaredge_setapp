@@ -6,15 +6,17 @@ This project is built on the efforts of others: for Home Assistant users, see dr
 
 ## Installation
 
-The library is not yet available on PyPi. Until then, clone the repository and install the package using `distutils`:
+To install, either clone this project and install using `distutils`:
 
 ```python3 setup.py install```
 
-`solaredge_setapp` uses Python3's standard library, and Google's `protobuf`. The example script further depends on `requests`. 
+or install the package from PyPi:
 
-See `requirements.txt`, or use `pip3` to install any dependencies:
+```pip3 install solaredge_setapp```
 
-```pip3 install -r requirements.txt```
+### Working on protobuf messages
+
+Clone the project if you want to modify the protocol buffer messages.
 
 In order to use `compile.sh` to compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. *Re-compiling the messages is only necessary if you have made changes to them.*
 
