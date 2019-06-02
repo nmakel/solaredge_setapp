@@ -4,14 +4,13 @@ import solaredge_setapp
 
 import argparse
 import datetime
-import json
 import requests
 
 
 if __name__ == "__main__":
 
     argparser = argparse.ArgumentParser()
-    argparser.add_argument("address", type=str, help="hostname or ip address")
+    argparser.add_argument("address", type=str, help="hostname or ip address of solaredge inverter")
     parserargs = argparser.parse_args()
 
     address = parserargs.address
@@ -55,12 +54,12 @@ if __name__ == "__main__":
             production_today=(data["status"]["energy"]["day"]/1000),
             production_total=(data["status"]["energy"]["total"]/1000)
         ))
-        print("\n\t⏦ {voltage_ac:.2f}V @ {frequency:.2f}Hz".format(
+        print("\n\t⏦ {voltage_ac:.2f}Vac @ {frequency:.2f}Hz".format(
             voltage_ac=data["status"]["voltage_ac"],
             frequency=data["status"]["frequency"],
         ))
 
-        print("\t⎓ {voltage_dc:.2f}V".format(
+        print("\t⎓ {voltage_dc:.2f}Vdc".format(
             voltage_dc=data["status"]["inverters"][0]["voltage_dc"],
         ))
 
