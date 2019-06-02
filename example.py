@@ -20,7 +20,7 @@ if __name__ == "__main__":
         # name, endpoint_url, module_class, enabled, data_name
         ("WebAppConfigs", "web/v1/app_configs", solaredge_setapp.app_configs.WebAppConfigs(), False, "appconfigs"),
         ("Communication", "web/v1/communication", solaredge_setapp.communication.Communication(), False, "communication"),
-        ("Information", "web/v1/information", solaredge_setapp.information.Information(), False, "information"),
+        ("Information", "web/v1/information", solaredge_setapp.information.Information(), True, "information"),
         ("Maintenance", "web/v1/maintenance", solaredge_setapp.maintenance.Maintenance(), True, "maintenance"),
         ("Power Control", "web/v1/power_control", solaredge_setapp.power_control.PowerControl(), False, "power_control"),
         ("Language & Region", "web/v1/region", solaredge_setapp.region.Region(), False, "region"),
@@ -42,13 +42,21 @@ if __name__ == "__main__":
 
             data[data_name] = module_class.parse_protobuf(endpoint_request.content)
 
-    if "status" in data:
-
-        print("\n\t{serial}\t{status}\t{temperature}°C".format(
-            serial=data["status"]["serial"],
-            status=data["status"]["status"],
-            temperature=data["status"]["inverters"][0]["temperature"]["value"]
+    if "information" in data:
+        print("\n\tCPU {cpu} | DSP1: {dsp1} | DSP2: {dsp2}".format(
+            cpu=data["information"]["cpu"],
+            dsp1=data["information"]["dsp1"],
+            dsp2=data["information"]["dsp2"]
         ))
+
+    if "status" in data:
+        for inverter in data["status"]["inverters"]:
+            print("\n\t{serial}\t{status}\t{temperature}°C".format(
+                serial=inverter["serial"],
+                status=data["status"]["status"],
+                temperature=inverter["temperature"]["value"]
+            ))
+
         print("\n\t{power_ac:7.2f}W\t{production_today:.2f}kWh ∑ {production_total:.2f}kWh".format(
             power_ac=data["status"]["power_ac"],
             production_today=(data["status"]["energy"]["day"]/1000),
@@ -71,9 +79,10 @@ if __name__ == "__main__":
             if not inverter["serial"]:
                 continue
 
-            print("\n\tPower optimizers ({online}/{total})".format(
+            print("\n\tPower optimizers ({online}/{total}) connected to {serial}:".format(
                     online=inverter["optimizers_status"]["online"],
-                    total=inverter["optimizers_status"]["total"]
+                    total=inverter["optimizers_status"]["total"],
+                    serial=inverter["serial"]
                 ))
             
             for po in inverter["optimizers"]:
