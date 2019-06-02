@@ -24,6 +24,8 @@ In order to use `compile.sh` to compile the protocol buffer `.proto` message def
 
 See `example.py` how to fetch, parse, and display the SetApp protobuf files exposed by the SetApp API.
 
+```python3 example.py your-inverter-ip```
+
 Basic usage of the **status** API endpoint:
 
 ```
@@ -60,7 +62,7 @@ The SetApp API does not (yet) provide real-time power optimizer data. Initial re
 
 Rate limiting will kick in if you have the SetApp web interface open while also polling using this library.
 
-The SetApp API is new, and therefore likely to change.
+The SetApp API is new, and therefore likely to change. Variable naming and distribution is likely to change.
 
 ## Contributing
 
