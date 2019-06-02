@@ -18,9 +18,9 @@ setup(
     author_email="",
     url="https://github.com/nmakel/solaredge_setapp",
     packages=["solaredge_setapp"],
-    requires=[
-        "protobuf",
-        "requests"
+    install_requires=[
+        "protobuf>=3.6.1",
+        "requests>=2.21.0"
     ],
     classifiers = [
         "Development Status :: 4 - Beta",
