@@ -26,7 +26,7 @@ if __name__ == "__main__":
         ("Language & Region", "web/v1/region", solaredge_setapp.region.Region(), False, "region"),
         ("Status", "web/v1/status", solaredge_setapp.status.Status(), True, "status")
     ]
-    
+
     for name, endpoint_url, module_class, enabled, data_name in web_services:
         if enabled:
             endpoint_request = requests.get("http://{address}/{endpoint_url}".format(
