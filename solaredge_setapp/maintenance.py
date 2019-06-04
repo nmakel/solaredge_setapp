@@ -52,7 +52,7 @@ class Maintenance:
                 parsed["inverters"].append({
                     "serial": str(inverter.serial),
                     "isolation": {
-                        "fault": int(inverter.isolation.fault_location),
+                        "fault_location": int(inverter.isolation.fault_location),
                         "isolation": int(inverter.isolation.r_iso.isolation)
                     },
                     "optimizers_status": {
