@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cstatus.proto\"\xcb\x13\n\x06Status\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x10\n\x08power_ac\x18\x03 \x01(\x02\x12\x12\n\nvoltage_ac\x18\x04 \x01(\x02\x12\x11\n\tfrequency\x18\x05 \x01(\x02\x12,\n\noptimizers\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x12\n\nmonitoring\x18\x07 \x01(\x08\x12%\n\x06status\x18\x08 \x01(\x0e\x32\x15.Status.ManagerStatus\x12\x0e\n\x06switch\x18\t \x01(\x08\x12\x0e\n\x06\x63osphi\x18\n \x01(\x02\x12\x16\n\x0epower_ac_limit\x18\x0b \x01(\x02\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\x05\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x14\n\x0cportia_error\x18\x10 \x01(\x05\x12\x18\n\x10portia_subsystem\x18\x11 \x01(\x05\x12\x1c\n\x05\x65vese\x18\x12 \x01(\x0b\x32\r.Status.Evese\x12\x1d\n\x06meters\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12\"\n\tbatteries\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12\x39\n\x14server_communication\x18\x16 \x01(\x0b\x32\x1b.Status.ServerCommunication\x1a\x9f\x01\n\x04Site\x12\x15\n\rproduction_ac\x18\x01 \x01(\x02\x12\x15\n\rsize_limit_ac\x18\x02 \x01(\x02\x12\x33\n\x0einverterStatus\x18\x03 \x01(\x0b\x32\x1b.Status.Site.InverterStatus\x1a\x34\n\x0eInverterStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\t\x12\x11\n\tconnected\x18\x02 \x01(\t\x1a\x31\n\x10OptimizersStatus\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0e\n\x06online\x18\x02 \x01(\x05\x1a\xe8\x03\n\tInverters\x12(\n\x04left\x18\x01 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12+\n\x07primary\x18\x02 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12)\n\x05right\x18\x03 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x1a\xd8\x01\n\x08Inverter\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x12\n\nvoltage_dc\x18\x02 \x01(\x02\x12,\n\noptimizers\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x32\n\x0btemperature\x18\x04 \x01(\x0b\x32\x1d.Status.Inverters.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x05\x12\r\n\x05\x65rror\x18\x06 \x01(\t\x12\x14\n\x0csubsystem_id\x18\x07 \x01(\x05\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\t\x1a~\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x32\n\x05units\x18\x02 \x01(\x0b\x32#.Status.Inverters.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\x86\x04\n\rCommunication\x12,\n\x06rs4851\x18\x01 \x01(\x0b\x32\x1c.Status.Communication.RS4851\x12,\n\x06rs4852\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.RS4852\x12\x0b\n\x03lan\x18\x03 \x01(\x05\x1a\xc4\x01\n\x06RS4851\x12\x37\n\x08protocol\x18\x03 \x01(\x0b\x32%.Status.Communication.RS4851.Protocol\x1a\x0b\n\tConnected\x1a\t\n\x07\x45nabled\x1ai\n\x08Protocol\x12\x0f\n\x07seslave\x18\x01 \x01(\x08\x12\x10\n\x08semaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusmultidevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\r\n\x05unset\x18\x05 \x01(\x08\x1a\xc4\x01\n\x06RS4852\x12\x37\n\x08protocol\x18\x03 \x01(\x0b\x32%.Status.Communication.RS4852.Protocol\x1a\x0b\n\tConnected\x1a\t\n\x07\x45nabled\x1ai\n\x08Protocol\x12\x0f\n\x07seslave\x18\x01 \x01(\x08\x12\x10\n\x08semaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusmultidevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\r\n\x05unset\x18\x05 \x01(\x08\x1aK\n\x10\x45nergyStatistics\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x02\x12\r\n\x05month\x18\x02 \x01(\x02\x12\x0c\n\x04year\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x1a\x07\n\x05\x45vese\x1am\n\x05Meter\x12\x12\n\nconnection\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\n\n\x02id\x18\x04 \x01(\t\x12\x10\n\x08power_ac\x18\x05 \x01(\x02\x12\x10\n\x08total_ac\x18\x06 \x01(\x02\x12\x10\n\x08s0_pulse\x18\x07 \x01(\t\x1a\t\n\x07\x42\x61ttery\x1a\x0e\n\x0cNotification\x1a\xda\x01\n\x13ServerCommunication\x12?\n\x06status\x18\x01 \x01(\x0b\x32/.Status.ServerCommunication.CommunicationStatus\x1a\x81\x01\n\x13\x43ommunicationStatus\x12\x10\n\x08physical\x18\x01 \x01(\x08\x12\x11\n\tipaddress\x18\x02 \x01(\x08\x12\x0f\n\x07gateway\x18\x03 \x01(\x08\x12\x10\n\x08internet\x18\x04 \x01(\x08\x12\x12\n\nmonitoring\x18\x05 \x01(\x08\x12\x0e\n\x06server\x18\x06 \x01(\x08\"\xad\x01\n\rManagerStatus\x12\x11\n\rSHUTTING_DOWN\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07STANDBY\x10\x02\x12\x0b\n\x07PAIRING\x10\x03\x12\x14\n\x10POWER_PRODUCTION\x10\x04\x12\x0f\n\x0b\x41\x43_CHARGING\x10\x05\x12\x0e\n\nNOT_PAIRED\x10\x06\x12\x0e\n\nNIGHT_MODE\x10\x07\x12\x13\n\x0fGRID_MONITORING\x10\x08\x12\x08\n\x04IDLE\x10\tb\x06proto3')
+  serialized_pb=_b('\n\x0cstatus.proto\"\xaa\x15\n\x06Status\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x10\n\x08power_ac\x18\x03 \x01(\x02\x12\x12\n\nvoltage_ac\x18\x04 \x01(\x02\x12\x11\n\tfrequency\x18\x05 \x01(\x02\x12,\n\noptimizers\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x12\n\nmonitoring\x18\x07 \x01(\x08\x12%\n\x06status\x18\x08 \x01(\x0e\x32\x15.Status.ManagerStatus\x12\x0e\n\x06switch\x18\t \x01(\x08\x12\x0e\n\x06\x63osphi\x18\n \x01(\x02\x12\x16\n\x0epower_ac_limit\x18\x0b \x01(\x02\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\x05\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x14\n\x0cportia_error\x18\x10 \x01(\x05\x12\x18\n\x10portia_subsystem\x18\x11 \x01(\x05\x12\x1c\n\x05\x65vese\x18\x12 \x01(\x0b\x32\r.Status.Evese\x12\x1d\n\x06meters\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12\"\n\tbatteries\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12\x39\n\x14server_communication\x18\x16 \x01(\x0b\x32\x1b.Status.ServerCommunication\x1a\x9f\x01\n\x04Site\x12\x15\n\rproduction_ac\x18\x01 \x01(\x02\x12\x15\n\rsize_limit_ac\x18\x02 \x01(\x02\x12\x33\n\x0einverterStatus\x18\x03 \x01(\x0b\x32\x1b.Status.Site.InverterStatus\x1a\x34\n\x0eInverterStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\t\x12\x11\n\tconnected\x18\x02 \x01(\t\x1a\x31\n\x10OptimizersStatus\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0e\n\x06online\x18\x02 \x01(\x05\x1a\xc7\x05\n\tInverters\x12(\n\x04left\x18\x01 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12+\n\x07primary\x18\x02 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12)\n\x05right\x18\x03 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x1a\x88\x02\n\x08Inverter\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x12\n\nvoltage_dc\x18\x02 \x01(\x02\x12,\n\noptimizers\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x32\n\x0btemperature\x18\x04 \x01(\x0b\x32\x1d.Status.Inverters.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x05\x12\r\n\x05\x65rror\x18\x06 \x01(\t\x12\x14\n\x0csubsystem_id\x18\x07 \x01(\x05\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\t\x12.\n\tisolation\x18\t \x01(\x0b\x32\x1b.Status.Inverters.Isolation\x1a~\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x32\n\x05units\x18\x02 \x01(\x0b\x32#.Status.Inverters.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xac\x01\n\tIsolation\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x12.\n\x05r_iso\x18\x02 \x01(\x0b\x32\x1f.Status.Inverters.Isolation.Iso\x12.\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x1f.Status.Inverters.Isolation.Iso\x1a\'\n\x03Iso\x12\x11\n\tisolation\x18\x01 \x01(\x05\x12\r\n\x05scale\x18\x02 \x01(\x05\x1a\x86\x04\n\rCommunication\x12,\n\x06rs4851\x18\x01 \x01(\x0b\x32\x1c.Status.Communication.RS4851\x12,\n\x06rs4852\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.RS4852\x12\x0b\n\x03lan\x18\x03 \x01(\x05\x1a\xc4\x01\n\x06RS4851\x12\x37\n\x08protocol\x18\x03 \x01(\x0b\x32%.Status.Communication.RS4851.Protocol\x1a\x0b\n\tConnected\x1a\t\n\x07\x45nabled\x1ai\n\x08Protocol\x12\x0f\n\x07seslave\x18\x01 \x01(\x08\x12\x10\n\x08semaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusmultidevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\r\n\x05unset\x18\x05 \x01(\x08\x1a\xc4\x01\n\x06RS4852\x12\x37\n\x08protocol\x18\x03 \x01(\x0b\x32%.Status.Communication.RS4852.Protocol\x1a\x0b\n\tConnected\x1a\t\n\x07\x45nabled\x1ai\n\x08Protocol\x12\x0f\n\x07seslave\x18\x01 \x01(\x08\x12\x10\n\x08semaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusmultidevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\r\n\x05unset\x18\x05 \x01(\x08\x1aK\n\x10\x45nergyStatistics\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x02\x12\r\n\x05month\x18\x02 \x01(\x02\x12\x0c\n\x04year\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x1a\x07\n\x05\x45vese\x1am\n\x05Meter\x12\x12\n\nconnection\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\n\n\x02id\x18\x04 \x01(\t\x12\x10\n\x08power_ac\x18\x05 \x01(\x02\x12\x10\n\x08total_ac\x18\x06 \x01(\x02\x12\x10\n\x08s0_pulse\x18\x07 \x01(\t\x1a\t\n\x07\x42\x61ttery\x1a\x0e\n\x0cNotification\x1a\xda\x01\n\x13ServerCommunication\x12?\n\x06status\x18\x01 \x01(\x0b\x32/.Status.ServerCommunication.CommunicationStatus\x1a\x81\x01\n\x13\x43ommunicationStatus\x12\x10\n\x08physical\x18\x01 \x01(\x08\x12\x11\n\tipaddress\x18\x02 \x01(\x08\x12\x0f\n\x07gateway\x18\x03 \x01(\x08\x12\x10\n\x08internet\x18\x04 \x01(\x08\x12\x12\n\nmonitoring\x18\x05 \x01(\x08\x12\x0e\n\x06server\x18\x06 \x01(\x08\"\xad\x01\n\rManagerStatus\x12\x11\n\rSHUTTING_DOWN\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07STANDBY\x10\x02\x12\x0b\n\x07PAIRING\x10\x03\x12\x14\n\x10POWER_PRODUCTION\x10\x04\x12\x0f\n\x0b\x41\x43_CHARGING\x10\x05\x12\x0e\n\nNOT_PAIRED\x10\x06\x12\x0e\n\nNIGHT_MODE\x10\x07\x12\x13\n\x0fGRID_MONITORING\x10\x08\x12\x08\n\x04IDLE\x10\tb\x06proto3')
 )
 
 
@@ -73,8 +73,8 @@ _STATUS_MANAGERSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2351,
-  serialized_end=2524,
+  serialized_start=2574,
+  serialized_end=2747,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_MANAGERSTATUS)
 
@@ -260,6 +260,13 @@ _STATUS_INVERTERS_INVERTER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='isolation', full_name='Status.Inverters.Inverter.isolation', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -273,7 +280,7 @@ _STATUS_INVERTERS_INVERTER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1038,
-  serialized_end=1254,
+  serialized_end=1302,
 )
 
 _STATUS_INVERTERS_TEMPERATURE_UNITS = _descriptor.Descriptor(
@@ -309,8 +316,8 @@ _STATUS_INVERTERS_TEMPERATURE_UNITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1338,
-  serialized_end=1382,
+  serialized_start=1386,
+  serialized_end=1430,
 )
 
 _STATUS_INVERTERS_TEMPERATURE = _descriptor.Descriptor(
@@ -346,8 +353,89 @@ _STATUS_INVERTERS_TEMPERATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1382,
+  serialized_start=1304,
+  serialized_end=1430,
+)
+
+_STATUS_INVERTERS_ISOLATION_ISO = _descriptor.Descriptor(
+  name='Iso',
+  full_name='Status.Inverters.Isolation.Iso',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='isolation', full_name='Status.Inverters.Isolation.Iso.isolation', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scale', full_name='Status.Inverters.Isolation.Iso.scale', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1566,
+  serialized_end=1605,
+)
+
+_STATUS_INVERTERS_ISOLATION = _descriptor.Descriptor(
+  name='Isolation',
+  full_name='Status.Inverters.Isolation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='fault_location', full_name='Status.Inverters.Isolation.fault_location', index=0,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='r_iso', full_name='Status.Inverters.Isolation.r_iso', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='alpha', full_name='Status.Inverters.Isolation.alpha', index=2,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_INVERTERS_ISOLATION_ISO, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1433,
+  serialized_end=1605,
 )
 
 _STATUS_INVERTERS = _descriptor.Descriptor(
@@ -381,7 +469,7 @@ _STATUS_INVERTERS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_INVERTERS_INVERTER, _STATUS_INVERTERS_TEMPERATURE, ],
+  nested_types=[_STATUS_INVERTERS_INVERTER, _STATUS_INVERTERS_TEMPERATURE, _STATUS_INVERTERS_ISOLATION, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -391,7 +479,7 @@ _STATUS_INVERTERS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=894,
-  serialized_end=1382,
+  serialized_end=1605,
 )
 
 _STATUS_COMMUNICATION_RS4851_CONNECTED = _descriptor.Descriptor(
@@ -413,8 +501,8 @@ _STATUS_COMMUNICATION_RS4851_CONNECTED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1575,
-  serialized_end=1586,
+  serialized_start=1798,
+  serialized_end=1809,
 )
 
 _STATUS_COMMUNICATION_RS4851_ENABLED = _descriptor.Descriptor(
@@ -436,8 +524,8 @@ _STATUS_COMMUNICATION_RS4851_ENABLED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1588,
-  serialized_end=1597,
+  serialized_start=1811,
+  serialized_end=1820,
 )
 
 _STATUS_COMMUNICATION_RS4851_PROTOCOL = _descriptor.Descriptor(
@@ -494,8 +582,8 @@ _STATUS_COMMUNICATION_RS4851_PROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1599,
-  serialized_end=1704,
+  serialized_start=1822,
+  serialized_end=1927,
 )
 
 _STATUS_COMMUNICATION_RS4851 = _descriptor.Descriptor(
@@ -524,8 +612,8 @@ _STATUS_COMMUNICATION_RS4851 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1508,
-  serialized_end=1704,
+  serialized_start=1731,
+  serialized_end=1927,
 )
 
 _STATUS_COMMUNICATION_RS4852_CONNECTED = _descriptor.Descriptor(
@@ -547,8 +635,8 @@ _STATUS_COMMUNICATION_RS4852_CONNECTED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1575,
-  serialized_end=1586,
+  serialized_start=1798,
+  serialized_end=1809,
 )
 
 _STATUS_COMMUNICATION_RS4852_ENABLED = _descriptor.Descriptor(
@@ -570,8 +658,8 @@ _STATUS_COMMUNICATION_RS4852_ENABLED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1588,
-  serialized_end=1597,
+  serialized_start=1811,
+  serialized_end=1820,
 )
 
 _STATUS_COMMUNICATION_RS4852_PROTOCOL = _descriptor.Descriptor(
@@ -628,8 +716,8 @@ _STATUS_COMMUNICATION_RS4852_PROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1599,
-  serialized_end=1704,
+  serialized_start=1822,
+  serialized_end=1927,
 )
 
 _STATUS_COMMUNICATION_RS4852 = _descriptor.Descriptor(
@@ -658,8 +746,8 @@ _STATUS_COMMUNICATION_RS4852 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1707,
-  serialized_end=1903,
+  serialized_start=1930,
+  serialized_end=2126,
 )
 
 _STATUS_COMMUNICATION = _descriptor.Descriptor(
@@ -702,8 +790,8 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1385,
-  serialized_end=1903,
+  serialized_start=1608,
+  serialized_end=2126,
 )
 
 _STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
@@ -753,8 +841,8 @@ _STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1905,
-  serialized_end=1980,
+  serialized_start=2128,
+  serialized_end=2203,
 )
 
 _STATUS_EVESE = _descriptor.Descriptor(
@@ -776,8 +864,8 @@ _STATUS_EVESE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1982,
-  serialized_end=1989,
+  serialized_start=2205,
+  serialized_end=2212,
 )
 
 _STATUS_METER = _descriptor.Descriptor(
@@ -841,8 +929,8 @@ _STATUS_METER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1991,
-  serialized_end=2100,
+  serialized_start=2214,
+  serialized_end=2323,
 )
 
 _STATUS_BATTERY = _descriptor.Descriptor(
@@ -864,8 +952,8 @@ _STATUS_BATTERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2102,
-  serialized_end=2111,
+  serialized_start=2325,
+  serialized_end=2334,
 )
 
 _STATUS_NOTIFICATION = _descriptor.Descriptor(
@@ -887,8 +975,8 @@ _STATUS_NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2113,
-  serialized_end=2127,
+  serialized_start=2336,
+  serialized_end=2350,
 )
 
 _STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS = _descriptor.Descriptor(
@@ -952,8 +1040,8 @@ _STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2219,
-  serialized_end=2348,
+  serialized_start=2442,
+  serialized_end=2571,
 )
 
 _STATUS_SERVERCOMMUNICATION = _descriptor.Descriptor(
@@ -982,8 +1070,8 @@ _STATUS_SERVERCOMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2130,
-  serialized_end=2348,
+  serialized_start=2353,
+  serialized_end=2571,
 )
 
 _STATUS = _descriptor.Descriptor(
@@ -1161,7 +1249,7 @@ _STATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=2524,
+  serialized_end=2747,
 )
 
 _STATUS_SITE_INVERTERSTATUS.containing_type = _STATUS_SITE
@@ -1170,10 +1258,15 @@ _STATUS_SITE.containing_type = _STATUS
 _STATUS_OPTIMIZERSSTATUS.containing_type = _STATUS
 _STATUS_INVERTERS_INVERTER.fields_by_name['optimizers'].message_type = _STATUS_OPTIMIZERSSTATUS
 _STATUS_INVERTERS_INVERTER.fields_by_name['temperature'].message_type = _STATUS_INVERTERS_TEMPERATURE
+_STATUS_INVERTERS_INVERTER.fields_by_name['isolation'].message_type = _STATUS_INVERTERS_ISOLATION
 _STATUS_INVERTERS_INVERTER.containing_type = _STATUS_INVERTERS
 _STATUS_INVERTERS_TEMPERATURE_UNITS.containing_type = _STATUS_INVERTERS_TEMPERATURE
 _STATUS_INVERTERS_TEMPERATURE.fields_by_name['units'].message_type = _STATUS_INVERTERS_TEMPERATURE_UNITS
 _STATUS_INVERTERS_TEMPERATURE.containing_type = _STATUS_INVERTERS
+_STATUS_INVERTERS_ISOLATION_ISO.containing_type = _STATUS_INVERTERS_ISOLATION
+_STATUS_INVERTERS_ISOLATION.fields_by_name['r_iso'].message_type = _STATUS_INVERTERS_ISOLATION_ISO
+_STATUS_INVERTERS_ISOLATION.fields_by_name['alpha'].message_type = _STATUS_INVERTERS_ISOLATION_ISO
+_STATUS_INVERTERS_ISOLATION.containing_type = _STATUS_INVERTERS
 _STATUS_INVERTERS.fields_by_name['left'].message_type = _STATUS_INVERTERS_INVERTER
 _STATUS_INVERTERS.fields_by_name['primary'].message_type = _STATUS_INVERTERS_INVERTER
 _STATUS_INVERTERS.fields_by_name['right'].message_type = _STATUS_INVERTERS_INVERTER
@@ -1257,6 +1350,20 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
       DESCRIPTOR = _STATUS_INVERTERS_TEMPERATURE,
       __module__ = 'status_pb2'
       # @@protoc_insertion_point(class_scope:Status.Inverters.Temperature)
+      ))
+    ,
+
+    Isolation = _reflection.GeneratedProtocolMessageType('Isolation', (_message.Message,), dict(
+
+      Iso = _reflection.GeneratedProtocolMessageType('Iso', (_message.Message,), dict(
+        DESCRIPTOR = _STATUS_INVERTERS_ISOLATION_ISO,
+        __module__ = 'status_pb2'
+        # @@protoc_insertion_point(class_scope:Status.Inverters.Isolation.Iso)
+        ))
+      ,
+      DESCRIPTOR = _STATUS_INVERTERS_ISOLATION,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Inverters.Isolation)
       ))
     ,
     DESCRIPTOR = _STATUS_INVERTERS,
@@ -1388,6 +1495,8 @@ _sym_db.RegisterMessage(Status.Inverters)
 _sym_db.RegisterMessage(Status.Inverters.Inverter)
 _sym_db.RegisterMessage(Status.Inverters.Temperature)
 _sym_db.RegisterMessage(Status.Inverters.Temperature.Units)
+_sym_db.RegisterMessage(Status.Inverters.Isolation)
+_sym_db.RegisterMessage(Status.Inverters.Isolation.Iso)
 _sym_db.RegisterMessage(Status.Communication)
 _sym_db.RegisterMessage(Status.Communication.RS4851)
 _sym_db.RegisterMessage(Status.Communication.RS4851.Connected)

@@ -24,6 +24,7 @@ class Status:
         # list inverters [
             # str serial": inverter.serial,
             # float voltage_dc": inverter.voltage_dc,
+            # dict isolation {int fault_location, int isolation, int alpha}
             # dict optimizers {int total, int online}
             # dict temperature {int value, {bool celsius, bool fahrenheit}}
             # int fan
@@ -92,6 +93,11 @@ class Status:
                             "celsius": bool(inverter.temperature.units.celsius),
                             "fahrenheit": bool(inverter.temperature.units.fahrenheit)
                         }
+                    },
+                    "isolation": {
+                        "fault_location": int(inverter.isolation.fault_location),
+                        "isolation": int(inverter.isolation.r_iso.isolation),
+                        "alpha": int(inverter.isolation.alpha.isolation)
                     },
                     "fan": int(inverter.fan),
                     "error": str(inverter.error),
