@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11\x61pp_configs.proto\"\xa4\x02\n\rWebAppConfigs\x12)\n\x08mainmenu\x18\x01 \x01(\x0b\x32\x17.WebAppConfigs.MainMenu\x12\x10\n\x08language\x18\x02 \x01(\x05\x1a\xd5\x01\n\x08MainMenu\x12\x1c\n\x14\x63ountry_and_language\x18\x01 \x01(\x08\x12\x0f\n\x07pairing\x18\x02 \x01(\x08\x12\x15\n\rcommunication\x18\x03 \x01(\x08\x12\x15\n\rpower_control\x18\x04 \x01(\x08\x12\x16\n\x0e\x64\x65vice_manager\x18\x05 \x01(\x08\x12\x13\n\x0bmaintenance\x18\x06 \x01(\x08\x12\x13\n\x0binformation\x18\x07 \x01(\x08\x12\x1a\n\x12site_configuration\x18\x08 \x01(\x08\x12\x0e\n\x06status\x18\t \x01(\x08\x62\x06proto3')
+  serialized_pb=_b('\n\x11\x61pp_configs.proto\"\xbd\x02\n\rWebAppConfigs\x12)\n\x08mainmenu\x18\x01 \x01(\x0b\x32\x17.WebAppConfigs.MainMenu\x12\x10\n\x08language\x18\x02 \x01(\x05\x1a\xee\x01\n\x08MainMenu\x12\x1c\n\x14\x63ountry_and_language\x18\x01 \x01(\x08\x12\x0f\n\x07pairing\x18\x02 \x01(\x08\x12\x15\n\rcommunication\x18\x03 \x01(\x08\x12\x15\n\rpower_control\x18\x04 \x01(\x08\x12\x16\n\x0e\x64\x65vice_manager\x18\x05 \x01(\x08\x12\x13\n\x0bmaintenance\x18\x06 \x01(\x08\x12\x13\n\x0binformation\x18\x07 \x01(\x08\x12\x1a\n\x12site_configuration\x18\x08 \x01(\x08\x12\x0e\n\x06status\x18\t \x01(\x08\x12\x17\n\x0fgrid_protection\x18\n \x01(\x08\x62\x06proto3')
 )
 
 
@@ -95,6 +95,13 @@ _WEBAPPCONFIGS_MAINMENU = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='grid_protection', full_name='WebAppConfigs.MainMenu.grid_protection', index=9,
+      number=10, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -108,7 +115,7 @@ _WEBAPPCONFIGS_MAINMENU = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=101,
-  serialized_end=314,
+  serialized_end=339,
 )
 
 _WEBAPPCONFIGS = _descriptor.Descriptor(
@@ -145,7 +152,7 @@ _WEBAPPCONFIGS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=314,
+  serialized_end=339,
 )
 
 _WEBAPPCONFIGS_MAINMENU.containing_type = _WEBAPPCONFIGS

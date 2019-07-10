@@ -20,7 +20,7 @@ or install the package from PyPi:
 
 Clone the project if you want to modify the protocol buffer messages.
 
-In order to use `compile.sh` to compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. *Re-compiling the messages is only necessary if you have made changes to them.*
+In order to use `compile-proto.sh` to (re)compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. *Re-compiling the messages is only necessary if you have made changes to them.*
 
 ## Usage
 
