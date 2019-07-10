@@ -14,7 +14,7 @@ class Maintenance:
         # int timestamp
         # list inverters {
             # str serial
-            # dict isolation {int fault, int isolation}
+            # dict isolation {int fault_location, int isolation}
             # dict optimizers_status {int total, int online}
             # list optimizers {
                 # str serial

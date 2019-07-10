@@ -11,6 +11,7 @@ message WebAppConfigs {
         bool information = 7;
         bool site_configuration = 8;
         bool status = 9;
+        bool grid_protection = 10;
     }
 
     MainMenu mainmenu = 1;

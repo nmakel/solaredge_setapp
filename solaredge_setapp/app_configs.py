@@ -31,6 +31,7 @@ class WebAppConfigs:
             if proto.mainmenu.information: parsed["functionality"].append("information")
             if proto.mainmenu.site_configuration: parsed["functionality"].append("site_configuration")
             if proto.mainmenu.status: parsed["functionality"].append("status")
+            if proto.mainmenu.grid_protection: parsed["functionality"].append("grid_protection")
         except AttributeError as e:
             print("AttributeError: {e}".format(e=e))
 
