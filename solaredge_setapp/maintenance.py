@@ -14,7 +14,7 @@ class Maintenance:
         # int timestamp
         # list inverters {
             # str serial
-            # dict isolation {int fault_location, int isolation}
+            # dict isolation {int fault_location, int isolation, int alpha}
             # dict optimizers_status {int total, int online}
             # list optimizers {
                 # str serial
@@ -53,7 +53,8 @@ class Maintenance:
                     "serial": str(inverter.serial),
                     "isolation": {
                         "fault_location": int(inverter.isolation.fault_location),
-                        "isolation": int(inverter.isolation.r_iso.isolation)
+                        "isolation": int(inverter.isolation.r_iso.isolation),
+                        "alpha": int(inverter.isolation.alpha.isolation)
                     },
                     "optimizers_status": {
                         "total": int(inverter.optimizers_status.total),

@@ -33,10 +33,12 @@ message Maintenance {
                 message Isolation {
                     message Iso {
                         int32 isolation = 1;
+                        int32 scale = 2;
                     }
                 
                     int32 fault_location = 3;
                     Iso r_iso = 2;
+                    Iso alpha = 1;
                 }
 
                 message OptimizersStatus {

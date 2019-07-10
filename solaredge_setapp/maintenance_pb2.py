@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11maintenance.proto\"\xda\r\n\x0bMaintenance\x12\x1f\n\x04time\x18\x01 \x01(\x0b\x32\x11.Maintenance.Time\x12-\n\x0btemperature\x18\x02 \x01(\x0b\x32\x18.Maintenance.Temperature\x12\x1f\n\x04\x61\x66\x63i\x18\x03 \x01(\x0b\x32\x11.Maintenance.AFCI\x12-\n\x0b\x64iagnostics\x18\x06 \x01(\x0b\x32\x18.Maintenance.Diagnostics\x12%\n\x07standby\x18\x07 \x01(\x0b\x32\x14.Maintenance.Standby\x12#\n\x06system\x18\r \x01(\x0b\x32\x13.Maintenance.System\x1a\xcc\x01\n\x04Time\x12\x33\n\x0c\x63urrent_time\x18\x01 \x01(\x0b\x32\x1d.Maintenance.Time.CurrentTime\x12\x12\n\nntp_server\x18\x02 \x01(\t\x12\x12\n\nutc_offset\x18\x03 \x01(\x05\x1ag\n\x0b\x43urrentTime\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1ay\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12-\n\x05units\x18\x02 \x01(\x0b\x32\x1e.Maintenance.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xb4\x08\n\x0b\x44iagnostics\x12\x35\n\tinverters\x18\x01 \x01(\x0b\x32\".Maintenance.Diagnostics.Inverters\x1a\xed\x07\n\tInverters\x12\x39\n\x04left\x18\x01 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12<\n\x07primary\x18\x02 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12:\n\x05right\x18\x03 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x1a\xaa\x06\n\x08Inverter\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12H\n\toptimizer\x18\x02 \x03(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Optimizer\x12H\n\tisolation\x18\x03 \x01(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Isolation\x12W\n\x11optimizers_status\x18\x04 \x01(\x0b\x32<.Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus\x1a\x87\x01\n\tIsolation\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x12H\n\x05r_iso\x18\x02 \x01(\x0b\x32\x39.Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso\x1a\x18\n\x03Iso\x12\x11\n\tisolation\x18\x01 \x01(\x05\x1a\x31\n\x10OptimizersStatus\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0e\n\x06online\x18\x02 \x01(\x05\x1a\xe3\x02\n\tOptimizer\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x0e\n\x06online\x18\x02 \x01(\x08\x12O\n\x0blast_report\x18\x03 \x01(\x0b\x32:.Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date\x12\x10\n\x08po_power\x18\x04 \x01(\x02\x12\x12\n\npo_voltage\x18\x05 \x01(\x05\x12\x16\n\x0emodule_voltage\x18\x06 \x01(\x05\x12\x16\n\x0emodule_current\x18\x07 \x01(\x05\x12-\n\x0btemperature\x18\x08 \x01(\x0b\x32\x18.Maintenance.Temperature\x1a`\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1a)\n\x06System\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x1a\x17\n\x04\x41\x46\x43I\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x1a\x1a\n\x07Standby\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x62\x06proto3')
+  serialized_pb=_b('\n\x11maintenance.proto\"\xb3\x0e\n\x0bMaintenance\x12\x1f\n\x04time\x18\x01 \x01(\x0b\x32\x11.Maintenance.Time\x12-\n\x0btemperature\x18\x02 \x01(\x0b\x32\x18.Maintenance.Temperature\x12\x1f\n\x04\x61\x66\x63i\x18\x03 \x01(\x0b\x32\x11.Maintenance.AFCI\x12-\n\x0b\x64iagnostics\x18\x06 \x01(\x0b\x32\x18.Maintenance.Diagnostics\x12%\n\x07standby\x18\x07 \x01(\x0b\x32\x14.Maintenance.Standby\x12#\n\x06system\x18\r \x01(\x0b\x32\x13.Maintenance.System\x1a\xcc\x01\n\x04Time\x12\x33\n\x0c\x63urrent_time\x18\x01 \x01(\x0b\x32\x1d.Maintenance.Time.CurrentTime\x12\x12\n\nntp_server\x18\x02 \x01(\t\x12\x12\n\nutc_offset\x18\x03 \x01(\x05\x1ag\n\x0b\x43urrentTime\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1ay\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12-\n\x05units\x18\x02 \x01(\x0b\x32\x1e.Maintenance.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\x8d\t\n\x0b\x44iagnostics\x12\x35\n\tinverters\x18\x01 \x01(\x0b\x32\".Maintenance.Diagnostics.Inverters\x1a\xc6\x08\n\tInverters\x12\x39\n\x04left\x18\x01 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12<\n\x07primary\x18\x02 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12:\n\x05right\x18\x03 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x1a\x83\x07\n\x08Inverter\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12H\n\toptimizer\x18\x02 \x03(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Optimizer\x12H\n\tisolation\x18\x03 \x01(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Isolation\x12W\n\x11optimizers_status\x18\x04 \x01(\x0b\x32<.Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus\x1a\xe0\x01\n\tIsolation\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x12H\n\x05r_iso\x18\x02 \x01(\x0b\x32\x39.Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso\x12H\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x39.Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso\x1a\'\n\x03Iso\x12\x11\n\tisolation\x18\x01 \x01(\x05\x12\r\n\x05scale\x18\x02 \x01(\x05\x1a\x31\n\x10OptimizersStatus\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0e\n\x06online\x18\x02 \x01(\x05\x1a\xe3\x02\n\tOptimizer\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x0e\n\x06online\x18\x02 \x01(\x08\x12O\n\x0blast_report\x18\x03 \x01(\x0b\x32:.Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date\x12\x10\n\x08po_power\x18\x04 \x01(\x02\x12\x12\n\npo_voltage\x18\x05 \x01(\x05\x12\x16\n\x0emodule_voltage\x18\x06 \x01(\x05\x12\x16\n\x0emodule_current\x18\x07 \x01(\x05\x12-\n\x0btemperature\x18\x08 \x01(\x0b\x32\x18.Maintenance.Temperature\x1a`\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1a)\n\x06System\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x1a\x17\n\x04\x41\x46\x43I\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x1a\x1a\n\x07Standby\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x62\x06proto3')
 )
 
 
@@ -222,6 +222,13 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO = _descriptor.Descript
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scale', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso.scale', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -234,8 +241,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO = _descriptor.Descript
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1247,
-  serialized_end=1271,
+  serialized_start=1321,
+  serialized_end=1360,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION = _descriptor.Descriptor(
@@ -259,6 +266,13 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='alpha', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.alpha', index=2,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -272,7 +286,7 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1136,
-  serialized_end=1271,
+  serialized_end=1360,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS = _descriptor.Descriptor(
@@ -308,8 +322,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS = _descriptor.Descr
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1273,
-  serialized_end=1322,
+  serialized_start=1362,
+  serialized_end=1411,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE = _descriptor.Descriptor(
@@ -373,8 +387,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE = _descriptor.Descrip
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1584,
-  serialized_end=1680,
+  serialized_start=1673,
+  serialized_end=1769,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER = _descriptor.Descriptor(
@@ -452,8 +466,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1325,
-  serialized_end=1680,
+  serialized_start=1414,
+  serialized_end=1769,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER = _descriptor.Descriptor(
@@ -504,7 +518,7 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=870,
-  serialized_end=1680,
+  serialized_end=1769,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS = _descriptor.Descriptor(
@@ -548,7 +562,7 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=675,
-  serialized_end=1680,
+  serialized_end=1769,
 )
 
 _MAINTENANCE_DIAGNOSTICS = _descriptor.Descriptor(
@@ -578,7 +592,7 @@ _MAINTENANCE_DIAGNOSTICS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=604,
-  serialized_end=1680,
+  serialized_end=1769,
 )
 
 _MAINTENANCE_SYSTEM = _descriptor.Descriptor(
@@ -614,8 +628,8 @@ _MAINTENANCE_SYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1682,
-  serialized_end=1723,
+  serialized_start=1771,
+  serialized_end=1812,
 )
 
 _MAINTENANCE_AFCI = _descriptor.Descriptor(
@@ -644,8 +658,8 @@ _MAINTENANCE_AFCI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1725,
-  serialized_end=1748,
+  serialized_start=1814,
+  serialized_end=1837,
 )
 
 _MAINTENANCE_STANDBY = _descriptor.Descriptor(
@@ -674,8 +688,8 @@ _MAINTENANCE_STANDBY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1750,
-  serialized_end=1776,
+  serialized_start=1839,
+  serialized_end=1865,
 )
 
 _MAINTENANCE = _descriptor.Descriptor(
@@ -740,7 +754,7 @@ _MAINTENANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=1776,
+  serialized_end=1865,
 )
 
 _MAINTENANCE_TIME_CURRENTTIME.containing_type = _MAINTENANCE_TIME
@@ -751,6 +765,7 @@ _MAINTENANCE_TEMPERATURE.fields_by_name['units'].message_type = _MAINTENANCE_TEM
 _MAINTENANCE_TEMPERATURE.containing_type = _MAINTENANCE
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.fields_by_name['r_iso'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.fields_by_name['alpha'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER
