@@ -55,6 +55,7 @@ The following API endpoints are available:
 * **information** - CPU and DSP versions, error logging
 * **maintenance** - power optimizer telemetry
 * **power_control** - grid power settings, **not yet implemented**
+* **grid_protection** - grid protection settings, **not yet implemented**
 * **region** - language and country settings
 * **status** - inverter and energy statistics
 
