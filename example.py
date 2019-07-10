@@ -23,6 +23,7 @@ if __name__ == "__main__":
         ("Information", "web/v1/information", solaredge_setapp.information.Information(), True, "information"),
         ("Maintenance", "web/v1/maintenance", solaredge_setapp.maintenance.Maintenance(), True, "maintenance"),
         ("Power Control", "web/v1/power_control", solaredge_setapp.power_control.PowerControl(), False, "power_control"),
+        ("Grid Protection", "web/v1/grid_protection", solaredge_setapp.grid_protection.GridProtection(), False, "grid_protection"),
         ("Language & Region", "web/v1/region", solaredge_setapp.region.Region(), False, "region"),
         ("Status", "web/v1/status", solaredge_setapp.status.Status(), True, "status")
     ]
