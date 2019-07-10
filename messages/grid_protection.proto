@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message GridProtection {
+    
+    message GRMTime {
+        int32 value = 1;
+    }
+
+    message Header {
+        string serial = 1;
+        int32 timestamp = 2;
+    }
+
+    GRMTime grm_time = 5;
+    Header header = 9;
+}
