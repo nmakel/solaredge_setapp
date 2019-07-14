@@ -189,6 +189,9 @@ _COUNTRIES = {
     172: ["Ecuador", "COUNTRY_ECUADOR"],
     173: ["Qatar", "COUNTRY_QATAR"],
     174: ["Australia 480V", "COUNTRY_AUSTRALIA_480V"],
+    175: ["Hong Kong", "COUNTRY_HONG_KONG"],
+    176: ["Uruguay", "COUNTRY_URUGUAY"],
+    177: ["Italy A68", "COUNTRY_ITALIY_A68"]
 }
 Countries = enum.Enum(
     value="Countries",
@@ -205,7 +208,9 @@ _LANGUAGES = {
     3: ["French", "FRENCH"],
     4: ["Italian", "ITALIAN"],
     5: ["Dutch", "DUTCH"],
-    6: ["Japanese", "JAPANESE"]
+    6: ["Japanese", "JAPANESE"],
+    7: ["Korean", "KOREAN"],
+    8: ["Chinese (Traditional)", "CHINESE_TRADITIONAL"]
 }
 Languages = enum.Enum(
     value="Languages",
