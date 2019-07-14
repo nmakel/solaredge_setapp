@@ -4,7 +4,7 @@ solaredge_setapp is a python library that parses inverter and power optimizer da
 
 This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge-local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters.
 
-This library has been tested on a European SE3500H SolarEdge Inverter, CPU 4.5.41 and WSA 1.1.12.
+Developed and tested on a European SE3500H-RW000BNN4 SolarEdge Inverter, CPU version 4.5.41 and WSA 1.1.12.
 
 ## Installation
 
@@ -20,7 +20,7 @@ or install the package from PyPi:
 
 Clone the project if you want to modify the protocol buffer messages.
 
-In order to use `compile-proto.sh` to (re)compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. *Re-compiling the messages is only necessary if you have made changes to them.*
+In order to use `compile-proto.sh` to (re)compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. *(Re-)compiling the protobuf messages is only necessary if you have made changes to them.*
 
 ## Usage
 
@@ -52,6 +52,7 @@ The following API endpoints are available:
 
 * **app_configs** - language and functionality
 * **communication** - ethernet, wifi and RS485 settings, **not yet implemented**
+* **device_manager** - unknown, **not yet implemented**
 * **information** - CPU and DSP versions, error logging
 * **maintenance** - power optimizer telemetry
 * **power_control** - grid power settings, **not yet implemented**

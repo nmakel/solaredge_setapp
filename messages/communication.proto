@@ -1,3 +1,29 @@
 syntax = "proto3";
 
-message Communication {}
+message Communication {
+    
+    message BoolKeyValue { bool value = 1; }
+    message Int32KeyValue { int32 value = 1; }
+    message StringKeyValue { string value = 1; }
+
+    message Lan {
+        message IP {
+            StringKeyValue ip = 1;
+            StringKeyValue subnetmask = 2;
+            StringKeyValue gateway = 3;
+            StringKeyValue dns = 4;
+        }
+
+        BoolKeyValue dhcp = 1;
+        IP ip = 2;
+        StringKeyValue mac = 3;
+    }
+
+    message ModbusTCP {
+        BoolKeyValue enabled = 1;
+        Int32KeyValue port = 2;
+    }
+
+    Lan lan = 2;
+    ModbusTCP modbus_tcp = 9;
+}
