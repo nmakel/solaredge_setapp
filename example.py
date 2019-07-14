@@ -20,6 +20,7 @@ if __name__ == "__main__":
         # name, endpoint_url, module_class, enabled, data_name
         ("WebAppConfigs", "web/v1/app_configs", solaredge_setapp.app_configs.WebAppConfigs(), False, "appconfigs"),
         ("Communication", "web/v1/communication", solaredge_setapp.communication.Communication(), False, "communication"),
+        ("Device Manager", "web/v1/device_manager", solaredge_setapp.device_manager.DeviceManager(), False, "device_manager"),
         ("Information", "web/v1/information", solaredge_setapp.information.Information(), True, "information"),
         ("Maintenance", "web/v1/maintenance", solaredge_setapp.maintenance.Maintenance(), True, "maintenance"),
         ("Power Control", "web/v1/power_control", solaredge_setapp.power_control.PowerControl(), False, "power_control"),
