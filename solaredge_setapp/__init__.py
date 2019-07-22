@@ -1,6 +1,6 @@
 from solaredge_setapp import app_configs
 from solaredge_setapp import communication
-from solaredge_Setapp import device_manager
+from solaredge_setapp import device_manager
 from solaredge_setapp import information
 from solaredge_setapp import maintenance
 from solaredge_setapp import power_control
