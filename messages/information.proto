@@ -8,9 +8,24 @@ message Information {
     }
 
     message Loggers {
+        message Error {
+            message Date {
+                int32 year = 1;
+                int32 month = 2;
+                int32 day = 3;
+                int32 hour = 4;
+                int32 minutes = 5;
+                int32 seconds = 6;
+            }
+
+            int32 code = 1;
+            Date time = 2;
+        }
+
         message Logger {
             int32 controller_id = 1;
             int32 subsystem_id = 2;
+            repeated Error errors = 3;
         }
         
         repeated Logger logger = 1;

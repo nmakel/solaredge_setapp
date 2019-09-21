@@ -28,6 +28,7 @@ message Status {
             int32 subsystem_id = 7;
             string bad_position = 8;
             Isolation isolation = 9;
+            Power power = 10;
         }
 
         message Temperature {
@@ -49,6 +50,11 @@ message Status {
             int32 fault_location = 3;
             Iso r_iso = 2;
             Iso alpha = 1;
+        }
+
+        message Power {
+            int32 value = 1;
+            int32 scale = 2;
         }
 
         Inverter left = 1;
