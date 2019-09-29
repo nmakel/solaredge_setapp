@@ -2,7 +2,7 @@ syntax = "proto3";
 
 message GridProtection {
     
-    message GRMTime {
+    message GridMonitorTime {
         int32 value = 1;
     }
 
@@ -11,6 +11,6 @@ message GridProtection {
         int32 timestamp = 2;
     }
 
-    GRMTime grm_time = 5;
+    GridMonitorTime grid_monitor_time = 5;
     Header header = 9;
 }
