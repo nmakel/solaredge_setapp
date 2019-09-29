@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="solaredge_setapp",
-    version="0.0.3",
+    version="0.0.4",
     description="SolarEdge SetApp protocol buffers parser library",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -20,7 +20,7 @@ setup(
     packages=["solaredge_setapp"],
     install_requires=[
         "protobuf>=3.6.1",
-        "requests>=2.21.0"
+        "requests>=2.12.4"
     ],
     classifiers = [
         "Development Status :: 4 - Beta",
