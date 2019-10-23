@@ -19,21 +19,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x15grid_protection.proto\"\xaa\x01\n\x0eGridProtection\x12)\n\x08grm_time\x18\x05 \x01(\x0b\x32\x17.GridProtection.GRMTime\x12&\n\x06header\x18\t \x01(\x0b\x32\x16.GridProtection.Header\x1a\x18\n\x07GRMTime\x12\r\n\x05value\x18\x01 \x01(\x05\x1a+\n\x06Header\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\x15grid_protection.proto\"\xc3\x01\n\x0eGridProtection\x12:\n\x11grid_monitor_time\x18\x05 \x01(\x0b\x32\x1f.GridProtection.GridMonitorTime\x12&\n\x06header\x18\t \x01(\x0b\x32\x16.GridProtection.Header\x1a \n\x0fGridMonitorTime\x12\r\n\x05value\x18\x01 \x01(\x05\x1a+\n\x06Header\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x62\x06proto3')
 )
 
 
 
 
-_GRIDPROTECTION_GRMTIME = _descriptor.Descriptor(
-  name='GRMTime',
-  full_name='GridProtection.GRMTime',
+_GRIDPROTECTION_GRIDMONITORTIME = _descriptor.Descriptor(
+  name='GridMonitorTime',
+  full_name='GridProtection.GridMonitorTime',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='GridProtection.GRMTime.value', index=0,
+      name='value', full_name='GridProtection.GridMonitorTime.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -51,8 +51,8 @@ _GRIDPROTECTION_GRMTIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=127,
-  serialized_end=151,
+  serialized_start=144,
+  serialized_end=176,
 )
 
 _GRIDPROTECTION_HEADER = _descriptor.Descriptor(
@@ -88,8 +88,8 @@ _GRIDPROTECTION_HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=153,
-  serialized_end=196,
+  serialized_start=178,
+  serialized_end=221,
 )
 
 _GRIDPROTECTION = _descriptor.Descriptor(
@@ -100,7 +100,7 @@ _GRIDPROTECTION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='grm_time', full_name='GridProtection.grm_time', index=0,
+      name='grid_monitor_time', full_name='GridProtection.grid_monitor_time', index=0,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -116,7 +116,7 @@ _GRIDPROTECTION = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_GRIDPROTECTION_GRMTIME, _GRIDPROTECTION_HEADER, ],
+  nested_types=[_GRIDPROTECTION_GRIDMONITORTIME, _GRIDPROTECTION_HEADER, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -126,22 +126,22 @@ _GRIDPROTECTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=26,
-  serialized_end=196,
+  serialized_end=221,
 )
 
-_GRIDPROTECTION_GRMTIME.containing_type = _GRIDPROTECTION
+_GRIDPROTECTION_GRIDMONITORTIME.containing_type = _GRIDPROTECTION
 _GRIDPROTECTION_HEADER.containing_type = _GRIDPROTECTION
-_GRIDPROTECTION.fields_by_name['grm_time'].message_type = _GRIDPROTECTION_GRMTIME
+_GRIDPROTECTION.fields_by_name['grid_monitor_time'].message_type = _GRIDPROTECTION_GRIDMONITORTIME
 _GRIDPROTECTION.fields_by_name['header'].message_type = _GRIDPROTECTION_HEADER
 DESCRIPTOR.message_types_by_name['GridProtection'] = _GRIDPROTECTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GridProtection = _reflection.GeneratedProtocolMessageType('GridProtection', (_message.Message,), dict(
 
-  GRMTime = _reflection.GeneratedProtocolMessageType('GRMTime', (_message.Message,), dict(
-    DESCRIPTOR = _GRIDPROTECTION_GRMTIME,
+  GridMonitorTime = _reflection.GeneratedProtocolMessageType('GridMonitorTime', (_message.Message,), dict(
+    DESCRIPTOR = _GRIDPROTECTION_GRIDMONITORTIME,
     __module__ = 'grid_protection_pb2'
-    # @@protoc_insertion_point(class_scope:GridProtection.GRMTime)
+    # @@protoc_insertion_point(class_scope:GridProtection.GridMonitorTime)
     ))
   ,
 
@@ -156,7 +156,7 @@ GridProtection = _reflection.GeneratedProtocolMessageType('GridProtection', (_me
   # @@protoc_insertion_point(class_scope:GridProtection)
   ))
 _sym_db.RegisterMessage(GridProtection)
-_sym_db.RegisterMessage(GridProtection.GRMTime)
+_sym_db.RegisterMessage(GridProtection.GridMonitorTime)
 _sym_db.RegisterMessage(GridProtection.Header)
 
 

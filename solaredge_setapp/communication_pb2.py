@@ -19,19 +19,26 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x63ommunication.proto\"\x0f\n\rCommunicationb\x06proto3')
+  serialized_pb=_b('\n\x13\x63ommunication.proto\"\xe8\x04\n\rCommunication\x12\x1f\n\x03lan\x18\x02 \x01(\x0b\x32\x12.Communication.Lan\x12,\n\nmodbus_tcp\x18\t \x01(\x0b\x32\x18.Communication.ModbusTCP\x1a\x1d\n\x0c\x42oolKeyValue\x12\r\n\x05value\x18\x01 \x01(\x08\x1a\x1e\n\rInt32KeyValue\x12\r\n\x05value\x18\x01 \x01(\x05\x1a\x1f\n\x0eStringKeyValue\x12\r\n\x05value\x18\x01 \x01(\t\x1a\xc0\x02\n\x03Lan\x12)\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12!\n\x02ip\x18\x02 \x01(\x0b\x32\x15.Communication.Lan.IP\x12*\n\x03mac\x18\x03 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x1a\xbe\x01\n\x02IP\x12)\n\x02ip\x18\x01 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x12\x31\n\nsubnetmask\x18\x02 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x12.\n\x07gateway\x18\x03 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x12*\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x1a\x65\n\tModbusTCP\x12,\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12*\n\x04port\x18\x02 \x01(\x0b\x32\x1c.Communication.Int32KeyValueb\x06proto3')
 )
 
 
 
 
-_COMMUNICATION = _descriptor.Descriptor(
-  name='Communication',
-  full_name='Communication',
+_COMMUNICATION_BOOLKEYVALUE = _descriptor.Descriptor(
+  name='BoolKeyValue',
+  full_name='Communication.BoolKeyValue',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Communication.BoolKeyValue.value', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -44,19 +51,313 @@ _COMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23,
-  serialized_end=38,
+  serialized_start=120,
+  serialized_end=149,
 )
 
+_COMMUNICATION_INT32KEYVALUE = _descriptor.Descriptor(
+  name='Int32KeyValue',
+  full_name='Communication.Int32KeyValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Communication.Int32KeyValue.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=151,
+  serialized_end=181,
+)
+
+_COMMUNICATION_STRINGKEYVALUE = _descriptor.Descriptor(
+  name='StringKeyValue',
+  full_name='Communication.StringKeyValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Communication.StringKeyValue.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=183,
+  serialized_end=214,
+)
+
+_COMMUNICATION_LAN_IP = _descriptor.Descriptor(
+  name='IP',
+  full_name='Communication.Lan.IP',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ip', full_name='Communication.Lan.IP.ip', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subnetmask', full_name='Communication.Lan.IP.subnetmask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gateway', full_name='Communication.Lan.IP.gateway', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dns', full_name='Communication.Lan.IP.dns', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=347,
+  serialized_end=537,
+)
+
+_COMMUNICATION_LAN = _descriptor.Descriptor(
+  name='Lan',
+  full_name='Communication.Lan',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dhcp', full_name='Communication.Lan.dhcp', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ip', full_name='Communication.Lan.ip', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='mac', full_name='Communication.Lan.mac', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_COMMUNICATION_LAN_IP, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=217,
+  serialized_end=537,
+)
+
+_COMMUNICATION_MODBUSTCP = _descriptor.Descriptor(
+  name='ModbusTCP',
+  full_name='Communication.ModbusTCP',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='enabled', full_name='Communication.ModbusTCP.enabled', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='Communication.ModbusTCP.port', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=539,
+  serialized_end=640,
+)
+
+_COMMUNICATION = _descriptor.Descriptor(
+  name='Communication',
+  full_name='Communication',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='lan', full_name='Communication.lan', index=0,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='modbus_tcp', full_name='Communication.modbus_tcp', index=1,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_COMMUNICATION_BOOLKEYVALUE, _COMMUNICATION_INT32KEYVALUE, _COMMUNICATION_STRINGKEYVALUE, _COMMUNICATION_LAN, _COMMUNICATION_MODBUSTCP, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=24,
+  serialized_end=640,
+)
+
+_COMMUNICATION_BOOLKEYVALUE.containing_type = _COMMUNICATION
+_COMMUNICATION_INT32KEYVALUE.containing_type = _COMMUNICATION
+_COMMUNICATION_STRINGKEYVALUE.containing_type = _COMMUNICATION
+_COMMUNICATION_LAN_IP.fields_by_name['ip'].message_type = _COMMUNICATION_STRINGKEYVALUE
+_COMMUNICATION_LAN_IP.fields_by_name['subnetmask'].message_type = _COMMUNICATION_STRINGKEYVALUE
+_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _COMMUNICATION_STRINGKEYVALUE
+_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _COMMUNICATION_STRINGKEYVALUE
+_COMMUNICATION_LAN_IP.containing_type = _COMMUNICATION_LAN
+_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_LAN.fields_by_name['ip'].message_type = _COMMUNICATION_LAN_IP
+_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _COMMUNICATION_STRINGKEYVALUE
+_COMMUNICATION_LAN.containing_type = _COMMUNICATION
+_COMMUNICATION_MODBUSTCP.fields_by_name['enabled'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_MODBUSTCP.fields_by_name['port'].message_type = _COMMUNICATION_INT32KEYVALUE
+_COMMUNICATION_MODBUSTCP.containing_type = _COMMUNICATION
+_COMMUNICATION.fields_by_name['lan'].message_type = _COMMUNICATION_LAN
+_COMMUNICATION.fields_by_name['modbus_tcp'].message_type = _COMMUNICATION_MODBUSTCP
 DESCRIPTOR.message_types_by_name['Communication'] = _COMMUNICATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Communication = _reflection.GeneratedProtocolMessageType('Communication', (_message.Message,), dict(
+
+  BoolKeyValue = _reflection.GeneratedProtocolMessageType('BoolKeyValue', (_message.Message,), dict(
+    DESCRIPTOR = _COMMUNICATION_BOOLKEYVALUE,
+    __module__ = 'communication_pb2'
+    # @@protoc_insertion_point(class_scope:Communication.BoolKeyValue)
+    ))
+  ,
+
+  Int32KeyValue = _reflection.GeneratedProtocolMessageType('Int32KeyValue', (_message.Message,), dict(
+    DESCRIPTOR = _COMMUNICATION_INT32KEYVALUE,
+    __module__ = 'communication_pb2'
+    # @@protoc_insertion_point(class_scope:Communication.Int32KeyValue)
+    ))
+  ,
+
+  StringKeyValue = _reflection.GeneratedProtocolMessageType('StringKeyValue', (_message.Message,), dict(
+    DESCRIPTOR = _COMMUNICATION_STRINGKEYVALUE,
+    __module__ = 'communication_pb2'
+    # @@protoc_insertion_point(class_scope:Communication.StringKeyValue)
+    ))
+  ,
+
+  Lan = _reflection.GeneratedProtocolMessageType('Lan', (_message.Message,), dict(
+
+    IP = _reflection.GeneratedProtocolMessageType('IP', (_message.Message,), dict(
+      DESCRIPTOR = _COMMUNICATION_LAN_IP,
+      __module__ = 'communication_pb2'
+      # @@protoc_insertion_point(class_scope:Communication.Lan.IP)
+      ))
+    ,
+    DESCRIPTOR = _COMMUNICATION_LAN,
+    __module__ = 'communication_pb2'
+    # @@protoc_insertion_point(class_scope:Communication.Lan)
+    ))
+  ,
+
+  ModbusTCP = _reflection.GeneratedProtocolMessageType('ModbusTCP', (_message.Message,), dict(
+    DESCRIPTOR = _COMMUNICATION_MODBUSTCP,
+    __module__ = 'communication_pb2'
+    # @@protoc_insertion_point(class_scope:Communication.ModbusTCP)
+    ))
+  ,
   DESCRIPTOR = _COMMUNICATION,
   __module__ = 'communication_pb2'
   # @@protoc_insertion_point(class_scope:Communication)
   ))
 _sym_db.RegisterMessage(Communication)
+_sym_db.RegisterMessage(Communication.BoolKeyValue)
+_sym_db.RegisterMessage(Communication.Int32KeyValue)
+_sym_db.RegisterMessage(Communication.StringKeyValue)
+_sym_db.RegisterMessage(Communication.Lan)
+_sym_db.RegisterMessage(Communication.Lan.IP)
+_sym_db.RegisterMessage(Communication.ModbusTCP)
 
 
 # @@protoc_insertion_point(module_scope)

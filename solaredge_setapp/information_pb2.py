@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11information.proto\"\xd6\x02\n\x0bInformation\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12%\n\x07loggers\x18\x08 \x01(\x0b\x32\x14.Information.Loggers\x1a\x36\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\x05\x12\r\n\x05minor\x18\x02 \x01(\x05\x12\r\n\x05\x62uild\x18\x03 \x01(\x05\x1am\n\x07Loggers\x12+\n\x06logger\x18\x01 \x03(\x0b\x32\x1b.Information.Loggers.Logger\x1a\x35\n\x06Logger\x12\x15\n\rcontroller_id\x18\x01 \x01(\x05\x12\x14\n\x0csubsystem_id\x18\x02 \x01(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\x11information.proto\"\xac\x04\n\x0bInformation\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12%\n\x07loggers\x18\x08 \x01(\x0b\x32\x14.Information.Loggers\x1a\x36\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\x05\x12\r\n\x05minor\x18\x02 \x01(\x05\x12\r\n\x05\x62uild\x18\x03 \x01(\x05\x1a\xc2\x02\n\x07Loggers\x12+\n\x06logger\x18\x01 \x03(\x0b\x32\x1b.Information.Loggers.Logger\x1a\xa6\x01\n\x05\x45rror\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12-\n\x04time\x18\x02 \x01(\x0b\x32\x1f.Information.Loggers.Error.Date\x1a`\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1a\x61\n\x06Logger\x12\x15\n\rcontroller_id\x18\x01 \x01(\x05\x12\x14\n\x0csubsystem_id\x18\x02 \x01(\x05\x12*\n\x06\x65rrors\x18\x03 \x03(\x0b\x32\x1a.Information.Loggers.Errorb\x06proto3')
 )
 
 
@@ -69,6 +69,108 @@ _INFORMATION_VERSION = _descriptor.Descriptor(
   serialized_end=253,
 )
 
+_INFORMATION_LOGGERS_ERROR_DATE = _descriptor.Descriptor(
+  name='Date',
+  full_name='Information.Loggers.Error.Date',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='year', full_name='Information.Loggers.Error.Date.year', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='month', full_name='Information.Loggers.Error.Date.month', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='day', full_name='Information.Loggers.Error.Date.day', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hour', full_name='Information.Loggers.Error.Date.hour', index=3,
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='minutes', full_name='Information.Loggers.Error.Date.minutes', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='seconds', full_name='Information.Loggers.Error.Date.seconds', index=5,
+      number=6, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=383,
+  serialized_end=479,
+)
+
+_INFORMATION_LOGGERS_ERROR = _descriptor.Descriptor(
+  name='Error',
+  full_name='Information.Loggers.Error',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='code', full_name='Information.Loggers.Error.code', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='time', full_name='Information.Loggers.Error.time', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_INFORMATION_LOGGERS_ERROR_DATE, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=313,
+  serialized_end=479,
+)
+
 _INFORMATION_LOGGERS_LOGGER = _descriptor.Descriptor(
   name='Logger',
   full_name='Information.Loggers.Logger',
@@ -90,6 +192,13 @@ _INFORMATION_LOGGERS_LOGGER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='errors', full_name='Information.Loggers.Logger.errors', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -102,8 +211,8 @@ _INFORMATION_LOGGERS_LOGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=311,
-  serialized_end=364,
+  serialized_start=481,
+  serialized_end=578,
 )
 
 _INFORMATION_LOGGERS = _descriptor.Descriptor(
@@ -123,7 +232,7 @@ _INFORMATION_LOGGERS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_INFORMATION_LOGGERS_LOGGER, ],
+  nested_types=[_INFORMATION_LOGGERS_ERROR, _INFORMATION_LOGGERS_LOGGER, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -132,8 +241,8 @@ _INFORMATION_LOGGERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=255,
-  serialized_end=364,
+  serialized_start=256,
+  serialized_end=578,
 )
 
 _INFORMATION = _descriptor.Descriptor(
@@ -191,10 +300,14 @@ _INFORMATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=364,
+  serialized_end=578,
 )
 
 _INFORMATION_VERSION.containing_type = _INFORMATION
+_INFORMATION_LOGGERS_ERROR_DATE.containing_type = _INFORMATION_LOGGERS_ERROR
+_INFORMATION_LOGGERS_ERROR.fields_by_name['time'].message_type = _INFORMATION_LOGGERS_ERROR_DATE
+_INFORMATION_LOGGERS_ERROR.containing_type = _INFORMATION_LOGGERS
+_INFORMATION_LOGGERS_LOGGER.fields_by_name['errors'].message_type = _INFORMATION_LOGGERS_ERROR
 _INFORMATION_LOGGERS_LOGGER.containing_type = _INFORMATION_LOGGERS
 _INFORMATION_LOGGERS.fields_by_name['logger'].message_type = _INFORMATION_LOGGERS_LOGGER
 _INFORMATION_LOGGERS.containing_type = _INFORMATION
@@ -216,6 +329,20 @@ Information = _reflection.GeneratedProtocolMessageType('Information', (_message.
 
   Loggers = _reflection.GeneratedProtocolMessageType('Loggers', (_message.Message,), dict(
 
+    Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
+
+      Date = _reflection.GeneratedProtocolMessageType('Date', (_message.Message,), dict(
+        DESCRIPTOR = _INFORMATION_LOGGERS_ERROR_DATE,
+        __module__ = 'information_pb2'
+        # @@protoc_insertion_point(class_scope:Information.Loggers.Error.Date)
+        ))
+      ,
+      DESCRIPTOR = _INFORMATION_LOGGERS_ERROR,
+      __module__ = 'information_pb2'
+      # @@protoc_insertion_point(class_scope:Information.Loggers.Error)
+      ))
+    ,
+
     Logger = _reflection.GeneratedProtocolMessageType('Logger', (_message.Message,), dict(
       DESCRIPTOR = _INFORMATION_LOGGERS_LOGGER,
       __module__ = 'information_pb2'
@@ -234,6 +361,8 @@ Information = _reflection.GeneratedProtocolMessageType('Information', (_message.
 _sym_db.RegisterMessage(Information)
 _sym_db.RegisterMessage(Information.Version)
 _sym_db.RegisterMessage(Information.Loggers)
+_sym_db.RegisterMessage(Information.Loggers.Error)
+_sym_db.RegisterMessage(Information.Loggers.Error.Date)
 _sym_db.RegisterMessage(Information.Loggers.Logger)
 
 

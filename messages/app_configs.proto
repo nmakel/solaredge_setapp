@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 message WebAppConfigs {
+
     message MainMenu {
         bool country_and_language = 1;
         bool pairing = 2;

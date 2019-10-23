@@ -239,3 +239,36 @@ Status = enum.Enum(
         itertools.product(v, [k]) for k, v in _STATUS.items()
     )
 )
+
+_WIFI_STATUS = {
+    0: ["None", "NONE"],
+    1: ["Connected", "CONNECTED"],
+    2: ["In Progress", "IN_PROGRESS"],
+    3: ["Disconnected", "DISCONNECTED"],
+    4: ["WPS Discovery", "WPS_DISCOVERY"],
+    5: ["Invalid Password", "ERROR_PASSWORD"],
+    6: ["DHCP Error", "ERROR_DHCP"],
+    7: ["Connection Error", "ERROR_COMMUNICATION"],
+    8: ["Unknown Error", "ERROR_OTHER"],
+    9: ["Server Unreachable", "ERROR_UNREACHABLE"]
+}
+WifiStatus = enum.Enum(
+    value="WifiStatus",
+    names=itertools.chain.from_iterable(
+        itertools.product(v, [k]) for k, v in _WIFI_STATUS.items()
+    )
+)
+
+_WIFI_SIGNAL = {
+    0: ["None", "NONE"],
+    1: ["Poor", "LOW"],
+    2: ["Medium", "MID"],
+    3: ["Good", "HIGH"],
+    4: ["Excellent", "EXCELLENT"]
+}
+WifiSignal = enum.Enum(
+    value="WifiSignal",
+    names=itertools.chain.from_iterable(
+        itertools.product(v, [k]) for k, v in _WIFI_SIGNAL.items()
+    )
+)

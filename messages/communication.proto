@@ -2,14 +2,32 @@ syntax = "proto3";
 
 message Communication {
     
-    message BoolKeyValue { bool value = 1; }
-    message Int32KeyValue { int32 value = 1; }
-    message StringKeyValue { string value = 1; }
+    message BoolKeyValue {
+        bool value = 1;
+        bool ro = 2;
+    }
+    message Int32KeyValue {
+        int32 value = 1;
+        bool ro = 2;
+    }
+    message StringKeyValue {
+        string value = 1;
+        bool ro = 2;
+    }
+
+    message ServerChannel {
+        BoolKeyValue lan = 1;
+        BoolKeyValue cellular = 2;
+        BoolKeyValue rs485_1 = 3;
+        BoolKeyValue rs485_2 = 4;
+        BoolKeyValue zigbee = 5;
+        BoolKeyValue wifi = 6;
+    }
 
     message Lan {
         message IP {
             StringKeyValue ip = 1;
-            StringKeyValue subnetmask = 2;
+            StringKeyValue netmask = 2;
             StringKeyValue gateway = 3;
             StringKeyValue dns = 4;
         }
@@ -19,11 +37,56 @@ message Communication {
         StringKeyValue mac = 3;
     }
 
+    message RS485 {
+        message Protocol {
+            BoolKeyValue se_slave = 1;
+            BoolKeyValue se_master = 2;
+            BoolKeyValue multi_devices = 3;
+            BoolKeyValue sunspec = 4;
+            BoolKeyValue none = 5;
+        }
+
+        Protocol protocol = 1;
+        Int32KeyValue device_id = 7;
+    }
+
     message ModbusTCP {
         BoolKeyValue enabled = 1;
         Int32KeyValue port = 2;
     }
 
+    message Wifi {
+        message Configuration {
+            BoolKeyValue hg = 1;
+            BoolKeyValue station = 2;
+            BoolKeyValue wps = 3;
+        }
+
+        string ssid = 2;
+        int32 status = 3;
+        Int32KeyValue wps_duration = 4;
+        Configuration configuration = 5;
+        BoolKeyValue external_antenna = 7;
+    }
+
+    message GPIO {
+        message Primary {
+            BoolKeyValue disable = 1;
+            BoolKeyValue rrcr = 2;
+            BoolKeyValue ac_relay = 3;
+            BoolKeyValue rrcr_ac_relay = 4;
+            BoolKeyValue drm = 5;
+            BoolKeyValue external_generator = 6;
+        }
+
+        Primary primary = 1;
+    }
+
+    ServerChannel server_channel = 1;
     Lan lan = 2;
+    RS485 rs485_1 = 3;
+    RS485 rs485_2 = 4;
     ModbusTCP modbus_tcp = 9;
+    Wifi wifi = 6;
+    GPIO gpio = 8;
 }
