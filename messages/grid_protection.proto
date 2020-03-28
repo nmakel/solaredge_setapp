@@ -11,6 +11,38 @@ message GridProtection {
         int32 timestamp = 2;
     }
 
+    message VoltsMSValue {
+        message Volts {
+            int32 value = 1;
+            int32 units = 2;
+        }
+
+        message Milliseconds {
+            int32 value = 1;
+        }
+
+        Volts volts = 1;
+        Milliseconds ms = 2;
+    }
+
+    message HertzMSValue {
+        message Hertz {
+            int32 value = 1;
+            int32 units = 2;
+        }
+
+        message Milliseconds {
+            int32 value = 1;
+        }
+
+        Hertz hertz = 1;
+        Milliseconds ms = 2;
+    }
+
+    repeated VoltsMSValue vgrid_max_value = 1;
+    repeated VoltsMSValue vgrid_min_value = 2;
+    repeated HertzMSValue fgrid_max_value = 3;
+    repeated HertzMSValue fgrid_min_value = 4;
     GridMonitorTime grid_monitor_time = 5;
     Header header = 9;
 }
