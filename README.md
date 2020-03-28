@@ -4,7 +4,7 @@ solaredge_setapp is a python library that parses inverter and power optimizer da
 
 This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge-local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters.
 
-Developed and tested on a European SE3500H-RW000BNN4 SolarEdge Inverter -- CPU version 4.6.24 (previous 4.5.41) and WSA 1.2.9 (previous 1.1.12).
+Developed and tested on a European SE3500H-RW000BNN4 SolarEdge Inverter -- CPU versions 4.7.26, 4.6.24 and 4.5.41, and WSA 1.3.9, 1.2.9 and 1.1.12. It may work on older, or newer, versions of SetApp.
 
 ## Installation
 
@@ -28,6 +28,12 @@ See `example.py` how to fetch, parse, and display the SetApp protobuf files expo
 
 ```python3 example.py your-inverter-ip```
 
+For a complete dump of all parsed values, try `dump_all.py`:
+
+```python3 dump_all.py your-inverter-ip```
+
+**Note:** more recent firmware versions have firewalled access to the SetApp interface over *ethernet*. It should still be possible to access your inverter on port 80 via *wifi*.
+
 Basic usage of the **status** API endpoint:
 
 ```
@@ -35,34 +41,30 @@ import solaredge_setapp
 import requests
 
 inverter_ip = "10.0.0.1"
-status_bytes = requests.get("http://{0}/web/v1/status".format(inverter_ip)).content
-status = solaredge_setapp.status.Status()
-status_data = status.parse_protobuf(status_bytes) 
 
-print("Inverter {serial} is {status} at {power_ac:.2f}W".format(
-    serial=status_data["serial"],
-    status=status_data["status"],
-    power_ac=status_data["power_ac"]
-))
+status_request = requests.get(f"http://{inverter_ip}/web/v1/status").content
+status = solaredge_setapp.status.Status(status_request)
+
+print(f"Inverter {status['serial']} is {status['status']} at {status['power_ac']:.2f}W")
 ```
 
 See the `status.proto` file for all possible fields, and `solaredge_setapp/status.py`  for all fields that are parsed for this endpoint.
 
 The following API endpoints are available:
 
-* **app_configs** - language and functionality
-* **communication** - ethernet, wifi and RS485 settings, **not yet implemented**
-* **device_manager** - unknown, **not yet implemented**
-* **information** - CPU and DSP versions, error logging
-* **maintenance** - power optimizer telemetry
-* **power_control** - grid power settings, **not yet implemented**
-* **grid_protection** - grid protection settings, **not yet implemented**
-* **region** - language and country settings
-* **status** - inverter and energy statistics
+* **app_configs** - web/v1/app_configs - language and functionality
+* **communication** - web/v1/communication - ethernet, wifi and RS485 settings
+* **device_manager** - web/v1/device_manager - unknown
+* **grid_protection** - web/v1/grid_protection - grid protection settings
+* **information** - web/v1/information - CPU and DSP versions, error logging
+* **maintenance** - web/v1/maintenance - power optimizer telemetry
+* **power_control** - web/v1/power_control - grid power settings
+* **region** - web/v1/region - language and country settings
+* **status** - web/v1/status - inverter and energy statistics
 
 ## Limitations
 
-The SetApp API does not (yet) provide real-time power optimizer data. Initial results suggest the data is 5-15 minutes old. Inverter production and voltage information is near real-time, however. Basically, the entire information set visible on the inverter's SetApp web interface is available through this library, in addition to per  optimizer voltages and temperatures.
+The SetApp API does not (yet) provide real-time power optimizer data. Initial results suggest the data is 5-15 minutes old. Inverter production and voltage information is near real-time, however. Basically, the entire information set visible on the inverter's SetApp web interface is available through this library, in addition to per optimizer voltages and temperatures.
 
 Rate limiting will kick in if you have the SetApp web interface open while also polling using this library.
 
