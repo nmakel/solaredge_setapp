@@ -191,7 +191,8 @@ _COUNTRIES = {
     174: ["Australia 480V", "COUNTRY_AUSTRALIA_480V"],
     175: ["Hong Kong", "COUNTRY_HONG_KONG"],
     176: ["Uruguay", "COUNTRY_URUGUAY"],
-    177: ["Italy A68", "COUNTRY_ITALIY_A68"]
+    177: ["Italy A68", "COUNTRY_ITALIY_A68"],
+    178: ["Estonia", "COUNTRY_ESTONIA"]
 }
 Countries = enum.Enum(
     value="Countries",
@@ -210,7 +211,10 @@ _LANGUAGES = {
     5: ["Dutch", "DUTCH"],
     6: ["Japanese", "JAPANESE"],
     7: ["Korean", "KOREAN"],
-    8: ["Chinese (Traditional)", "CHINESE_TRADITIONAL"]
+    8: ["Chinese (Traditional)", "CHINESE_TRADITIONAL"],
+    9: ["Portuguese (Brazilian)", "PORTUGUESE_BRAZILIAN"],
+    10: ["Polish", "POLISH"],
+    11: ["Hungarian", "HUNGARIAN"]
 }
 Languages = enum.Enum(
     value="Languages",
@@ -226,12 +230,13 @@ _STATUS = {
     1: ["Error", "ERROR"],
     2: ["Standby", "STANDBY"],
     3: ["Pairing", "PAIRING"],
-    4: ["Producing", "PRODUCTION"],
+    4: ["Producing", "POWER_PRODUCTION"],
     5: ["AC Charging", "AC_CHARGING"],
     6: ["Not Paired", "NOT_PAIRED"],
     7: ["Night Mode", "NIGHT_MODE"],
-    8: ["Monitoring", "MONITORING"],
-    9: ["Idle", "IDLE"]
+    8: ["Grid Monitoring", "GRID_MONITORING"],
+    9: ["Idle", "IDLE"],
+    10: ["Grid Pairing", "GRM_PAIRING"]
 }
 Status = enum.Enum(
     value="Status",
