@@ -4,6 +4,10 @@ import solaredge_setapp.status_pb2
 
 class Status:
     
+    def __init__(self, bytes=False):
+        if bytes:
+            return self.parse_protobuf(bytes)
+
     def parse_protobuf(self, bytes):
         
         # str serial
@@ -33,17 +37,24 @@ class Status:
             # str bad_position
         # ]
     
+        parsed = {}
+
         try:
             proto = solaredge_setapp.status_pb2.Status()
             proto.ParseFromString(bytes)
-            parsed = {}
-
-            parsed["serial"] = str(proto.serial)
-            parsed["power_ac"] = float(proto.power_ac)
-            parsed["voltage_ac"] = float(proto.voltage_ac)
-            parsed["frequency"] = float(proto.frequency)
-            parsed["monitoring"] = bool(proto.monitoring)
             
+            parsed = {
+                "serial": str(proto.serial),
+                "power_ac": float(proto.power_ac),
+                "voltage_ac": float(proto.voltage_ac),
+                "frequency": float(proto.frequency),
+                "monitoring": bool(proto.monitoring),
+                "afci": {
+                    "enabled": proto.afci.enabled,
+                    "manual_reconnect": proto.afci.manual_reconnect
+                }
+            }
+
             try:
                 parsed["status"] = solaredge_setapp.Status(int(proto.status)).name
             except ValueError as e:
@@ -65,6 +76,27 @@ class Status:
             parsed["optimizers"] = {
                 "total": int(proto.optimizers.total),
                 "online": int(proto.optimizers.online)
+            }
+
+            parsed["server_communication"] = {
+                "physical": bool(proto.server_communication.status.physical),
+                "ip": bool(proto.server_communication.status.ipaddress),
+                "gateway": bool(proto.server_communication.status.gateway),
+                "internet": bool(proto.server_communication.status.internet),
+                "monitoring": bool(proto.server_communication.status.monitoring),
+                "server": bool(proto.server_communication.status.server)
+            }
+
+            parsed["communication"] = {
+                "lan": {
+                    "mac": proto.communication.lan.mac.value,
+                    "dhcp": bool(proto.communication.lan.dhcp.value),
+                    "ip": proto.communication.lan.ip.ip.value,
+                    "netmask": proto.communication.lan.ip.netmask.value,
+                    "gateway": proto.communication.lan.ip.gateway.value,
+                    "dns": proto.communication.lan.ip.dns.value,
+                    "connected": bool(proto.communication.lan.connected.value)
+                }
             }
 
             parsed["energy"] = {
@@ -105,6 +137,6 @@ class Status:
                     "bad_position": str(inverter.bad_position)
                 })
         except AttributeError as e:
-            print("AttributeError: {e}".format(e=e))
+            print(f"AttributeError: {e}")
 
         return parsed

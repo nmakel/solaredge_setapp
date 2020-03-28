@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cstatus.proto\"\xf9\x15\n\x06Status\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x10\n\x08power_ac\x18\x03 \x01(\x02\x12\x12\n\nvoltage_ac\x18\x04 \x01(\x02\x12\x11\n\tfrequency\x18\x05 \x01(\x02\x12,\n\noptimizers\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x12\n\nmonitoring\x18\x07 \x01(\x08\x12%\n\x06status\x18\x08 \x01(\x0e\x32\x15.Status.ManagerStatus\x12\x0e\n\x06switch\x18\t \x01(\x08\x12\x0e\n\x06\x63osphi\x18\n \x01(\x02\x12\x16\n\x0epower_ac_limit\x18\x0b \x01(\x02\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\x05\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x14\n\x0cportia_error\x18\x10 \x01(\x05\x12\x18\n\x10portia_subsystem\x18\x11 \x01(\x05\x12\x1c\n\x05\x65vese\x18\x12 \x01(\x0b\x32\r.Status.Evese\x12\x1d\n\x06meters\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12\"\n\tbatteries\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12\x39\n\x14server_communication\x18\x16 \x01(\x0b\x32\x1b.Status.ServerCommunication\x1a\x9f\x01\n\x04Site\x12\x15\n\rproduction_ac\x18\x01 \x01(\x02\x12\x15\n\rsize_limit_ac\x18\x02 \x01(\x02\x12\x33\n\x0einverterStatus\x18\x03 \x01(\x0b\x32\x1b.Status.Site.InverterStatus\x1a\x34\n\x0eInverterStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\t\x12\x11\n\tconnected\x18\x02 \x01(\t\x1a\x31\n\x10OptimizersStatus\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0e\n\x06online\x18\x02 \x01(\x05\x1a\x96\x06\n\tInverters\x12(\n\x04left\x18\x01 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12+\n\x07primary\x18\x02 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12)\n\x05right\x18\x03 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x1a\xb0\x02\n\x08Inverter\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x12\n\nvoltage_dc\x18\x02 \x01(\x02\x12,\n\noptimizers\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x32\n\x0btemperature\x18\x04 \x01(\x0b\x32\x1d.Status.Inverters.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x05\x12\r\n\x05\x65rror\x18\x06 \x01(\t\x12\x14\n\x0csubsystem_id\x18\x07 \x01(\x05\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\t\x12.\n\tisolation\x18\t \x01(\x0b\x32\x1b.Status.Inverters.Isolation\x12&\n\x05power\x18\n \x01(\x0b\x32\x17.Status.Inverters.Power\x1a~\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x32\n\x05units\x18\x02 \x01(\x0b\x32#.Status.Inverters.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xac\x01\n\tIsolation\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x12.\n\x05r_iso\x18\x02 \x01(\x0b\x32\x1f.Status.Inverters.Isolation.Iso\x12.\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x1f.Status.Inverters.Isolation.Iso\x1a\'\n\x03Iso\x12\x11\n\tisolation\x18\x01 \x01(\x05\x12\r\n\x05scale\x18\x02 \x01(\x05\x1a%\n\x05Power\x12\r\n\x05value\x18\x01 \x01(\x05\x12\r\n\x05scale\x18\x02 \x01(\x05\x1a\x86\x04\n\rCommunication\x12,\n\x06rs4851\x18\x01 \x01(\x0b\x32\x1c.Status.Communication.RS4851\x12,\n\x06rs4852\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.RS4852\x12\x0b\n\x03lan\x18\x03 \x01(\x05\x1a\xc4\x01\n\x06RS4851\x12\x37\n\x08protocol\x18\x03 \x01(\x0b\x32%.Status.Communication.RS4851.Protocol\x1a\x0b\n\tConnected\x1a\t\n\x07\x45nabled\x1ai\n\x08Protocol\x12\x0f\n\x07seslave\x18\x01 \x01(\x08\x12\x10\n\x08semaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusmultidevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\r\n\x05unset\x18\x05 \x01(\x08\x1a\xc4\x01\n\x06RS4852\x12\x37\n\x08protocol\x18\x03 \x01(\x0b\x32%.Status.Communication.RS4852.Protocol\x1a\x0b\n\tConnected\x1a\t\n\x07\x45nabled\x1ai\n\x08Protocol\x12\x0f\n\x07seslave\x18\x01 \x01(\x08\x12\x10\n\x08semaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusmultidevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\r\n\x05unset\x18\x05 \x01(\x08\x1aK\n\x10\x45nergyStatistics\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x02\x12\r\n\x05month\x18\x02 \x01(\x02\x12\x0c\n\x04year\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x1a\x07\n\x05\x45vese\x1am\n\x05Meter\x12\x12\n\nconnection\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\n\n\x02id\x18\x04 \x01(\t\x12\x10\n\x08power_ac\x18\x05 \x01(\x02\x12\x10\n\x08total_ac\x18\x06 \x01(\x02\x12\x10\n\x08s0_pulse\x18\x07 \x01(\t\x1a\t\n\x07\x42\x61ttery\x1a\x0e\n\x0cNotification\x1a\xda\x01\n\x13ServerCommunication\x12?\n\x06status\x18\x01 \x01(\x0b\x32/.Status.ServerCommunication.CommunicationStatus\x1a\x81\x01\n\x13\x43ommunicationStatus\x12\x10\n\x08physical\x18\x01 \x01(\x08\x12\x11\n\tipaddress\x18\x02 \x01(\x08\x12\x0f\n\x07gateway\x18\x03 \x01(\x08\x12\x10\n\x08internet\x18\x04 \x01(\x08\x12\x12\n\nmonitoring\x18\x05 \x01(\x08\x12\x0e\n\x06server\x18\x06 \x01(\x08\"\xad\x01\n\rManagerStatus\x12\x11\n\rSHUTTING_DOWN\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07STANDBY\x10\x02\x12\x0b\n\x07PAIRING\x10\x03\x12\x14\n\x10POWER_PRODUCTION\x10\x04\x12\x0f\n\x0b\x41\x43_CHARGING\x10\x05\x12\x0e\n\nNOT_PAIRED\x10\x06\x12\x0e\n\nNIGHT_MODE\x10\x07\x12\x13\n\x0fGRID_MONITORING\x10\x08\x12\x08\n\x04IDLE\x10\tb\x06proto3')
+  serialized_pb=_b('\n\x0cstatus.proto\"\xe2\x18\n\x06Status\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x10\n\x08power_ac\x18\x03 \x01(\x02\x12\x12\n\nvoltage_ac\x18\x04 \x01(\x02\x12\x11\n\tfrequency\x18\x05 \x01(\x02\x12,\n\noptimizers\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x12\n\nmonitoring\x18\x07 \x01(\x08\x12%\n\x06status\x18\x08 \x01(\x0e\x32\x15.Status.ManagerStatus\x12\x0e\n\x06switch\x18\t \x01(\x08\x12\x0e\n\x06\x63osphi\x18\n \x01(\x02\x12\x16\n\x0epower_ac_limit\x18\x0b \x01(\x02\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\x05\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x14\n\x0cportia_error\x18\x10 \x01(\x05\x12\x18\n\x10portia_subsystem\x18\x11 \x01(\x05\x12\x1c\n\x05\x65vese\x18\x12 \x01(\x0b\x32\r.Status.Evese\x12\x1d\n\x06meters\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12\"\n\tbatteries\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12\x39\n\x14server_communication\x18\x16 \x01(\x0b\x32\x1b.Status.ServerCommunication\x12\x1a\n\x04\x61\x66\x63i\x18\x17 \x01(\x0b\x32\x0c.Status.AFCI\x1a)\n\x0c\x42oolKeyValue\x12\r\n\x05value\x18\x01 \x01(\x08\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a*\n\rInt32KeyValue\x12\r\n\x05value\x18\x01 \x01(\x05\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a+\n\x0eStringKeyValue\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a\x9f\x01\n\x04Site\x12\x15\n\rproduction_ac\x18\x01 \x01(\x02\x12\x15\n\rsize_limit_ac\x18\x02 \x01(\x02\x12\x33\n\x0einverterStatus\x18\x03 \x01(\x0b\x32\x1b.Status.Site.InverterStatus\x1a\x34\n\x0eInverterStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\t\x12\x11\n\tconnected\x18\x02 \x01(\t\x1a\x31\n\x10OptimizersStatus\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0e\n\x06online\x18\x02 \x01(\x05\x1a\x31\n\x04\x41\x46\x43I\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x18\n\x10manual_reconnect\x18\x02 \x01(\x08\x1a\x96\x06\n\tInverters\x12(\n\x04left\x18\x01 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12+\n\x07primary\x18\x02 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12)\n\x05right\x18\x03 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x1a\xb0\x02\n\x08Inverter\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x12\n\nvoltage_dc\x18\x02 \x01(\x02\x12,\n\noptimizers\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x32\n\x0btemperature\x18\x04 \x01(\x0b\x32\x1d.Status.Inverters.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x05\x12\r\n\x05\x65rror\x18\x06 \x01(\t\x12\x14\n\x0csubsystem_id\x18\x07 \x01(\x05\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\t\x12.\n\tisolation\x18\t \x01(\x0b\x32\x1b.Status.Inverters.Isolation\x12&\n\x05power\x18\n \x01(\x0b\x32\x17.Status.Inverters.Power\x1a~\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x32\n\x05units\x18\x02 \x01(\x0b\x32#.Status.Inverters.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xac\x01\n\tIsolation\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x12.\n\x05r_iso\x18\x02 \x01(\x0b\x32\x1f.Status.Inverters.Isolation.Iso\x12.\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x1f.Status.Inverters.Isolation.Iso\x1a\'\n\x03Iso\x12\x11\n\tisolation\x18\x01 \x01(\x05\x12\r\n\x05scale\x18\x02 \x01(\x05\x1a%\n\x05Power\x12\r\n\x05value\x18\x01 \x01(\x05\x12\r\n\x05scale\x18\x02 \x01(\x05\x1a\x9c\x05\n\rCommunication\x12+\n\x06rs4851\x18\x01 \x01(\x0b\x32\x1b.Status.Communication.RS485\x12+\n\x06rs4852\x18\x02 \x01(\x0b\x32\x1b.Status.Communication.RS485\x12&\n\x03lan\x18\x07 \x01(\x0b\x32\x19.Status.Communication.LAN\x1a\xc3\x02\n\x03LAN\x12\"\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x14.Status.BoolKeyValue\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.LAN.IP\x12#\n\x03mac\x18\x03 \x01(\x0b\x32\x16.Status.StringKeyValue\x12\'\n\tconnected\x18\x04 \x01(\x0b\x32\x14.Status.BoolKeyValue\x1a\x9f\x01\n\x02IP\x12\"\n\x02ip\x18\x01 \x01(\x0b\x32\x16.Status.StringKeyValue\x12\'\n\x07netmask\x18\x02 \x01(\x0b\x32\x16.Status.StringKeyValue\x12\'\n\x07gateway\x18\x03 \x01(\x0b\x32\x16.Status.StringKeyValue\x12#\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x16.Status.StringKeyValue\x1a\xc2\x01\n\x05RS485\x12\x36\n\x08protocol\x18\x03 \x01(\x0b\x32$.Status.Communication.RS485.Protocol\x1a\x0b\n\tConnected\x1a\t\n\x07\x45nabled\x1ai\n\x08Protocol\x12\x0f\n\x07seslave\x18\x01 \x01(\x08\x12\x10\n\x08semaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusmultidevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\r\n\x05unset\x18\x05 \x01(\x08\x1aK\n\x10\x45nergyStatistics\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x02\x12\r\n\x05month\x18\x02 \x01(\x02\x12\x0c\n\x04year\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x1a\x07\n\x05\x45vese\x1am\n\x05Meter\x12\x12\n\nconnection\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\n\n\x02id\x18\x04 \x01(\t\x12\x10\n\x08power_ac\x18\x05 \x01(\x02\x12\x10\n\x08total_ac\x18\x06 \x01(\x02\x12\x10\n\x08s0_pulse\x18\x07 \x01(\t\x1a\t\n\x07\x42\x61ttery\x1a\x0e\n\x0cNotification\x1a\xda\x01\n\x13ServerCommunication\x12?\n\x06status\x18\x01 \x01(\x0b\x32/.Status.ServerCommunication.CommunicationStatus\x1a\x81\x01\n\x13\x43ommunicationStatus\x12\x10\n\x08physical\x18\x01 \x01(\x08\x12\x11\n\tipaddress\x18\x02 \x01(\x08\x12\x0f\n\x07gateway\x18\x03 \x01(\x08\x12\x10\n\x08internet\x18\x04 \x01(\x08\x12\x12\n\nmonitoring\x18\x05 \x01(\x08\x12\x0e\n\x06server\x18\x06 \x01(\x08\"\xad\x01\n\rManagerStatus\x12\x11\n\rSHUTTING_DOWN\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07STANDBY\x10\x02\x12\x0b\n\x07PAIRING\x10\x03\x12\x14\n\x10POWER_PRODUCTION\x10\x04\x12\x0f\n\x0b\x41\x43_CHARGING\x10\x05\x12\x0e\n\nNOT_PAIRED\x10\x06\x12\x0e\n\nNIGHT_MODE\x10\x07\x12\x13\n\x0fGRID_MONITORING\x10\x08\x12\x08\n\x04IDLE\x10\tb\x06proto3')
 )
 
 
@@ -73,11 +73,122 @@ _STATUS_MANAGERSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2653,
-  serialized_end=2826,
+  serialized_start=3014,
+  serialized_end=3187,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_MANAGERSTATUS)
 
+
+_STATUS_BOOLKEYVALUE = _descriptor.Descriptor(
+  name='BoolKeyValue',
+  full_name='Status.BoolKeyValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.BoolKeyValue.value', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.BoolKeyValue.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=708,
+  serialized_end=749,
+)
+
+_STATUS_INT32KEYVALUE = _descriptor.Descriptor(
+  name='Int32KeyValue',
+  full_name='Status.Int32KeyValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.Int32KeyValue.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.Int32KeyValue.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=751,
+  serialized_end=793,
+)
+
+_STATUS_STRINGKEYVALUE = _descriptor.Descriptor(
+  name='StringKeyValue',
+  full_name='Status.StringKeyValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.StringKeyValue.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.StringKeyValue.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=795,
+  serialized_end=838,
+)
 
 _STATUS_SITE_INVERTERSTATUS = _descriptor.Descriptor(
   name='InverterStatus',
@@ -112,8 +223,8 @@ _STATUS_SITE_INVERTERSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=788,
-  serialized_end=840,
+  serialized_start=948,
+  serialized_end=1000,
 )
 
 _STATUS_SITE = _descriptor.Descriptor(
@@ -156,8 +267,8 @@ _STATUS_SITE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=681,
-  serialized_end=840,
+  serialized_start=841,
+  serialized_end=1000,
 )
 
 _STATUS_OPTIMIZERSSTATUS = _descriptor.Descriptor(
@@ -193,8 +304,45 @@ _STATUS_OPTIMIZERSSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=842,
-  serialized_end=891,
+  serialized_start=1002,
+  serialized_end=1051,
+)
+
+_STATUS_AFCI = _descriptor.Descriptor(
+  name='AFCI',
+  full_name='Status.AFCI',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='enabled', full_name='Status.AFCI.enabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='manual_reconnect', full_name='Status.AFCI.manual_reconnect', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1053,
+  serialized_end=1102,
 )
 
 _STATUS_INVERTERS_INVERTER = _descriptor.Descriptor(
@@ -286,8 +434,8 @@ _STATUS_INVERTERS_INVERTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1038,
-  serialized_end=1342,
+  serialized_start=1249,
+  serialized_end=1553,
 )
 
 _STATUS_INVERTERS_TEMPERATURE_UNITS = _descriptor.Descriptor(
@@ -323,8 +471,8 @@ _STATUS_INVERTERS_TEMPERATURE_UNITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1426,
-  serialized_end=1470,
+  serialized_start=1637,
+  serialized_end=1681,
 )
 
 _STATUS_INVERTERS_TEMPERATURE = _descriptor.Descriptor(
@@ -360,8 +508,8 @@ _STATUS_INVERTERS_TEMPERATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1344,
-  serialized_end=1470,
+  serialized_start=1555,
+  serialized_end=1681,
 )
 
 _STATUS_INVERTERS_ISOLATION_ISO = _descriptor.Descriptor(
@@ -397,8 +545,8 @@ _STATUS_INVERTERS_ISOLATION_ISO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1606,
-  serialized_end=1645,
+  serialized_start=1817,
+  serialized_end=1856,
 )
 
 _STATUS_INVERTERS_ISOLATION = _descriptor.Descriptor(
@@ -441,8 +589,8 @@ _STATUS_INVERTERS_ISOLATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1473,
-  serialized_end=1645,
+  serialized_start=1684,
+  serialized_end=1856,
 )
 
 _STATUS_INVERTERS_POWER = _descriptor.Descriptor(
@@ -478,8 +626,8 @@ _STATUS_INVERTERS_POWER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1647,
-  serialized_end=1684,
+  serialized_start=1858,
+  serialized_end=1895,
 )
 
 _STATUS_INVERTERS = _descriptor.Descriptor(
@@ -522,93 +670,195 @@ _STATUS_INVERTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=894,
-  serialized_end=1684,
+  serialized_start=1105,
+  serialized_end=1895,
 )
 
-_STATUS_COMMUNICATION_RS4851_CONNECTED = _descriptor.Descriptor(
-  name='Connected',
-  full_name='Status.Communication.RS4851.Connected',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1877,
-  serialized_end=1888,
-)
-
-_STATUS_COMMUNICATION_RS4851_ENABLED = _descriptor.Descriptor(
-  name='Enabled',
-  full_name='Status.Communication.RS4851.Enabled',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1890,
-  serialized_end=1899,
-)
-
-_STATUS_COMMUNICATION_RS4851_PROTOCOL = _descriptor.Descriptor(
-  name='Protocol',
-  full_name='Status.Communication.RS4851.Protocol',
+_STATUS_COMMUNICATION_LAN_IP = _descriptor.Descriptor(
+  name='IP',
+  full_name='Status.Communication.LAN.IP',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='seslave', full_name='Status.Communication.RS4851.Protocol.seslave', index=0,
+      name='ip', full_name='Status.Communication.LAN.IP.ip', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='netmask', full_name='Status.Communication.LAN.IP.netmask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gateway', full_name='Status.Communication.LAN.IP.gateway', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dns', full_name='Status.Communication.LAN.IP.dns', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2210,
+  serialized_end=2369,
+)
+
+_STATUS_COMMUNICATION_LAN = _descriptor.Descriptor(
+  name='LAN',
+  full_name='Status.Communication.LAN',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dhcp', full_name='Status.Communication.LAN.dhcp', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ip', full_name='Status.Communication.LAN.ip', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='mac', full_name='Status.Communication.LAN.mac', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connected', full_name='Status.Communication.LAN.connected', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_COMMUNICATION_LAN_IP, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2046,
+  serialized_end=2369,
+)
+
+_STATUS_COMMUNICATION_RS485_CONNECTED = _descriptor.Descriptor(
+  name='Connected',
+  full_name='Status.Communication.RS485.Connected',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2437,
+  serialized_end=2448,
+)
+
+_STATUS_COMMUNICATION_RS485_ENABLED = _descriptor.Descriptor(
+  name='Enabled',
+  full_name='Status.Communication.RS485.Enabled',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2450,
+  serialized_end=2459,
+)
+
+_STATUS_COMMUNICATION_RS485_PROTOCOL = _descriptor.Descriptor(
+  name='Protocol',
+  full_name='Status.Communication.RS485.Protocol',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='seslave', full_name='Status.Communication.RS485.Protocol.seslave', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='semaster', full_name='Status.Communication.RS4851.Protocol.semaster', index=1,
+      name='semaster', full_name='Status.Communication.RS485.Protocol.semaster', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='modbusmultidevices', full_name='Status.Communication.RS4851.Protocol.modbusmultidevices', index=2,
+      name='modbusmultidevices', full_name='Status.Communication.RS485.Protocol.modbusmultidevices', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sunspec', full_name='Status.Communication.RS4851.Protocol.sunspec', index=3,
+      name='sunspec', full_name='Status.Communication.RS485.Protocol.sunspec', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unset', full_name='Status.Communication.RS4851.Protocol.unset', index=4,
+      name='unset', full_name='Status.Communication.RS485.Protocol.unset', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -626,19 +876,19 @@ _STATUS_COMMUNICATION_RS4851_PROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1901,
-  serialized_end=2006,
+  serialized_start=2461,
+  serialized_end=2566,
 )
 
-_STATUS_COMMUNICATION_RS4851 = _descriptor.Descriptor(
-  name='RS4851',
-  full_name='Status.Communication.RS4851',
+_STATUS_COMMUNICATION_RS485 = _descriptor.Descriptor(
+  name='RS485',
+  full_name='Status.Communication.RS485',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='protocol', full_name='Status.Communication.RS4851.protocol', index=0,
+      name='protocol', full_name='Status.Communication.RS485.protocol', index=0,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -647,7 +897,7 @@ _STATUS_COMMUNICATION_RS4851 = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_COMMUNICATION_RS4851_CONNECTED, _STATUS_COMMUNICATION_RS4851_ENABLED, _STATUS_COMMUNICATION_RS4851_PROTOCOL, ],
+  nested_types=[_STATUS_COMMUNICATION_RS485_CONNECTED, _STATUS_COMMUNICATION_RS485_ENABLED, _STATUS_COMMUNICATION_RS485_PROTOCOL, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -656,142 +906,8 @@ _STATUS_COMMUNICATION_RS4851 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1810,
-  serialized_end=2006,
-)
-
-_STATUS_COMMUNICATION_RS4852_CONNECTED = _descriptor.Descriptor(
-  name='Connected',
-  full_name='Status.Communication.RS4852.Connected',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1877,
-  serialized_end=1888,
-)
-
-_STATUS_COMMUNICATION_RS4852_ENABLED = _descriptor.Descriptor(
-  name='Enabled',
-  full_name='Status.Communication.RS4852.Enabled',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1890,
-  serialized_end=1899,
-)
-
-_STATUS_COMMUNICATION_RS4852_PROTOCOL = _descriptor.Descriptor(
-  name='Protocol',
-  full_name='Status.Communication.RS4852.Protocol',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='seslave', full_name='Status.Communication.RS4852.Protocol.seslave', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='semaster', full_name='Status.Communication.RS4852.Protocol.semaster', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='modbusmultidevices', full_name='Status.Communication.RS4852.Protocol.modbusmultidevices', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='sunspec', full_name='Status.Communication.RS4852.Protocol.sunspec', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='unset', full_name='Status.Communication.RS4852.Protocol.unset', index=4,
-      number=5, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1901,
-  serialized_end=2006,
-)
-
-_STATUS_COMMUNICATION_RS4852 = _descriptor.Descriptor(
-  name='RS4852',
-  full_name='Status.Communication.RS4852',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='protocol', full_name='Status.Communication.RS4852.protocol', index=0,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STATUS_COMMUNICATION_RS4852_CONNECTED, _STATUS_COMMUNICATION_RS4852_ENABLED, _STATUS_COMMUNICATION_RS4852_PROTOCOL, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2009,
-  serialized_end=2205,
+  serialized_start=2372,
+  serialized_end=2566,
 )
 
 _STATUS_COMMUNICATION = _descriptor.Descriptor(
@@ -817,15 +933,15 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lan', full_name='Status.Communication.lan', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_COMMUNICATION_RS4851, _STATUS_COMMUNICATION_RS4852, ],
+  nested_types=[_STATUS_COMMUNICATION_LAN, _STATUS_COMMUNICATION_RS485, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -834,8 +950,8 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1687,
-  serialized_end=2205,
+  serialized_start=1898,
+  serialized_end=2566,
 )
 
 _STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
@@ -885,8 +1001,8 @@ _STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2207,
-  serialized_end=2282,
+  serialized_start=2568,
+  serialized_end=2643,
 )
 
 _STATUS_EVESE = _descriptor.Descriptor(
@@ -908,8 +1024,8 @@ _STATUS_EVESE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2284,
-  serialized_end=2291,
+  serialized_start=2645,
+  serialized_end=2652,
 )
 
 _STATUS_METER = _descriptor.Descriptor(
@@ -973,8 +1089,8 @@ _STATUS_METER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2293,
-  serialized_end=2402,
+  serialized_start=2654,
+  serialized_end=2763,
 )
 
 _STATUS_BATTERY = _descriptor.Descriptor(
@@ -996,8 +1112,8 @@ _STATUS_BATTERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2404,
-  serialized_end=2413,
+  serialized_start=2765,
+  serialized_end=2774,
 )
 
 _STATUS_NOTIFICATION = _descriptor.Descriptor(
@@ -1019,8 +1135,8 @@ _STATUS_NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2415,
-  serialized_end=2429,
+  serialized_start=2776,
+  serialized_end=2790,
 )
 
 _STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS = _descriptor.Descriptor(
@@ -1084,8 +1200,8 @@ _STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2521,
-  serialized_end=2650,
+  serialized_start=2882,
+  serialized_end=3011,
 )
 
 _STATUS_SERVERCOMMUNICATION = _descriptor.Descriptor(
@@ -1114,8 +1230,8 @@ _STATUS_SERVERCOMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2432,
-  serialized_end=2650,
+  serialized_start=2793,
+  serialized_end=3011,
 )
 
 _STATUS = _descriptor.Descriptor(
@@ -1279,10 +1395,17 @@ _STATUS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='afci', full_name='Status.afci', index=22,
+      number=23, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_SITE, _STATUS_OPTIMIZERSSTATUS, _STATUS_INVERTERS, _STATUS_COMMUNICATION, _STATUS_ENERGYSTATISTICS, _STATUS_EVESE, _STATUS_METER, _STATUS_BATTERY, _STATUS_NOTIFICATION, _STATUS_SERVERCOMMUNICATION, ],
+  nested_types=[_STATUS_BOOLKEYVALUE, _STATUS_INT32KEYVALUE, _STATUS_STRINGKEYVALUE, _STATUS_SITE, _STATUS_OPTIMIZERSSTATUS, _STATUS_AFCI, _STATUS_INVERTERS, _STATUS_COMMUNICATION, _STATUS_ENERGYSTATISTICS, _STATUS_EVESE, _STATUS_METER, _STATUS_BATTERY, _STATUS_NOTIFICATION, _STATUS_SERVERCOMMUNICATION, ],
   enum_types=[
     _STATUS_MANAGERSTATUS,
   ],
@@ -1293,13 +1416,17 @@ _STATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=2826,
+  serialized_end=3187,
 )
 
+_STATUS_BOOLKEYVALUE.containing_type = _STATUS
+_STATUS_INT32KEYVALUE.containing_type = _STATUS
+_STATUS_STRINGKEYVALUE.containing_type = _STATUS
 _STATUS_SITE_INVERTERSTATUS.containing_type = _STATUS_SITE
 _STATUS_SITE.fields_by_name['inverterStatus'].message_type = _STATUS_SITE_INVERTERSTATUS
 _STATUS_SITE.containing_type = _STATUS
 _STATUS_OPTIMIZERSSTATUS.containing_type = _STATUS
+_STATUS_AFCI.containing_type = _STATUS
 _STATUS_INVERTERS_INVERTER.fields_by_name['optimizers'].message_type = _STATUS_OPTIMIZERSSTATUS
 _STATUS_INVERTERS_INVERTER.fields_by_name['temperature'].message_type = _STATUS_INVERTERS_TEMPERATURE
 _STATUS_INVERTERS_INVERTER.fields_by_name['isolation'].message_type = _STATUS_INVERTERS_ISOLATION
@@ -1317,18 +1444,24 @@ _STATUS_INVERTERS.fields_by_name['left'].message_type = _STATUS_INVERTERS_INVERT
 _STATUS_INVERTERS.fields_by_name['primary'].message_type = _STATUS_INVERTERS_INVERTER
 _STATUS_INVERTERS.fields_by_name['right'].message_type = _STATUS_INVERTERS_INVERTER
 _STATUS_INVERTERS.containing_type = _STATUS
-_STATUS_COMMUNICATION_RS4851_CONNECTED.containing_type = _STATUS_COMMUNICATION_RS4851
-_STATUS_COMMUNICATION_RS4851_ENABLED.containing_type = _STATUS_COMMUNICATION_RS4851
-_STATUS_COMMUNICATION_RS4851_PROTOCOL.containing_type = _STATUS_COMMUNICATION_RS4851
-_STATUS_COMMUNICATION_RS4851.fields_by_name['protocol'].message_type = _STATUS_COMMUNICATION_RS4851_PROTOCOL
-_STATUS_COMMUNICATION_RS4851.containing_type = _STATUS_COMMUNICATION
-_STATUS_COMMUNICATION_RS4852_CONNECTED.containing_type = _STATUS_COMMUNICATION_RS4852
-_STATUS_COMMUNICATION_RS4852_ENABLED.containing_type = _STATUS_COMMUNICATION_RS4852
-_STATUS_COMMUNICATION_RS4852_PROTOCOL.containing_type = _STATUS_COMMUNICATION_RS4852
-_STATUS_COMMUNICATION_RS4852.fields_by_name['protocol'].message_type = _STATUS_COMMUNICATION_RS4852_PROTOCOL
-_STATUS_COMMUNICATION_RS4852.containing_type = _STATUS_COMMUNICATION
-_STATUS_COMMUNICATION.fields_by_name['rs4851'].message_type = _STATUS_COMMUNICATION_RS4851
-_STATUS_COMMUNICATION.fields_by_name['rs4852'].message_type = _STATUS_COMMUNICATION_RS4852
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['ip'].message_type = _STATUS_STRINGKEYVALUE
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['netmask'].message_type = _STATUS_STRINGKEYVALUE
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _STATUS_STRINGKEYVALUE
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _STATUS_STRINGKEYVALUE
+_STATUS_COMMUNICATION_LAN_IP.containing_type = _STATUS_COMMUNICATION_LAN
+_STATUS_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _STATUS_BOOLKEYVALUE
+_STATUS_COMMUNICATION_LAN.fields_by_name['ip'].message_type = _STATUS_COMMUNICATION_LAN_IP
+_STATUS_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _STATUS_STRINGKEYVALUE
+_STATUS_COMMUNICATION_LAN.fields_by_name['connected'].message_type = _STATUS_BOOLKEYVALUE
+_STATUS_COMMUNICATION_LAN.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION_RS485_CONNECTED.containing_type = _STATUS_COMMUNICATION_RS485
+_STATUS_COMMUNICATION_RS485_ENABLED.containing_type = _STATUS_COMMUNICATION_RS485
+_STATUS_COMMUNICATION_RS485_PROTOCOL.containing_type = _STATUS_COMMUNICATION_RS485
+_STATUS_COMMUNICATION_RS485.fields_by_name['protocol'].message_type = _STATUS_COMMUNICATION_RS485_PROTOCOL
+_STATUS_COMMUNICATION_RS485.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION.fields_by_name['rs4851'].message_type = _STATUS_COMMUNICATION_RS485
+_STATUS_COMMUNICATION.fields_by_name['rs4852'].message_type = _STATUS_COMMUNICATION_RS485
+_STATUS_COMMUNICATION.fields_by_name['lan'].message_type = _STATUS_COMMUNICATION_LAN
 _STATUS_COMMUNICATION.containing_type = _STATUS
 _STATUS_ENERGYSTATISTICS.containing_type = _STATUS
 _STATUS_EVESE.containing_type = _STATUS
@@ -1349,11 +1482,33 @@ _STATUS.fields_by_name['meters'].message_type = _STATUS_METER
 _STATUS.fields_by_name['batteries'].message_type = _STATUS_BATTERY
 _STATUS.fields_by_name['notification'].message_type = _STATUS_NOTIFICATION
 _STATUS.fields_by_name['server_communication'].message_type = _STATUS_SERVERCOMMUNICATION
+_STATUS.fields_by_name['afci'].message_type = _STATUS_AFCI
 _STATUS_MANAGERSTATUS.containing_type = _STATUS
 DESCRIPTOR.message_types_by_name['Status'] = _STATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), dict(
+
+  BoolKeyValue = _reflection.GeneratedProtocolMessageType('BoolKeyValue', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_BOOLKEYVALUE,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.BoolKeyValue)
+    ))
+  ,
+
+  Int32KeyValue = _reflection.GeneratedProtocolMessageType('Int32KeyValue', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_INT32KEYVALUE,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.Int32KeyValue)
+    ))
+  ,
+
+  StringKeyValue = _reflection.GeneratedProtocolMessageType('StringKeyValue', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_STRINGKEYVALUE,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.StringKeyValue)
+    ))
+  ,
 
   Site = _reflection.GeneratedProtocolMessageType('Site', (_message.Message,), dict(
 
@@ -1373,6 +1528,13 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
     DESCRIPTOR = _STATUS_OPTIMIZERSSTATUS,
     __module__ = 'status_pb2'
     # @@protoc_insertion_point(class_scope:Status.OptimizersStatus)
+    ))
+  ,
+
+  AFCI = _reflection.GeneratedProtocolMessageType('AFCI', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_AFCI,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.AFCI)
     ))
   ,
 
@@ -1427,59 +1589,45 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
 
   Communication = _reflection.GeneratedProtocolMessageType('Communication', (_message.Message,), dict(
 
-    RS4851 = _reflection.GeneratedProtocolMessageType('RS4851', (_message.Message,), dict(
+    LAN = _reflection.GeneratedProtocolMessageType('LAN', (_message.Message,), dict(
 
-      Connected = _reflection.GeneratedProtocolMessageType('Connected', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_RS4851_CONNECTED,
+      IP = _reflection.GeneratedProtocolMessageType('IP', (_message.Message,), dict(
+        DESCRIPTOR = _STATUS_COMMUNICATION_LAN_IP,
         __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.RS4851.Connected)
+        # @@protoc_insertion_point(class_scope:Status.Communication.LAN.IP)
         ))
       ,
-
-      Enabled = _reflection.GeneratedProtocolMessageType('Enabled', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_RS4851_ENABLED,
-        __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.RS4851.Enabled)
-        ))
-      ,
-
-      Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_RS4851_PROTOCOL,
-        __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.RS4851.Protocol)
-        ))
-      ,
-      DESCRIPTOR = _STATUS_COMMUNICATION_RS4851,
+      DESCRIPTOR = _STATUS_COMMUNICATION_LAN,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Communication.RS4851)
+      # @@protoc_insertion_point(class_scope:Status.Communication.LAN)
       ))
     ,
 
-    RS4852 = _reflection.GeneratedProtocolMessageType('RS4852', (_message.Message,), dict(
+    RS485 = _reflection.GeneratedProtocolMessageType('RS485', (_message.Message,), dict(
 
       Connected = _reflection.GeneratedProtocolMessageType('Connected', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_RS4852_CONNECTED,
+        DESCRIPTOR = _STATUS_COMMUNICATION_RS485_CONNECTED,
         __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.RS4852.Connected)
+        # @@protoc_insertion_point(class_scope:Status.Communication.RS485.Connected)
         ))
       ,
 
       Enabled = _reflection.GeneratedProtocolMessageType('Enabled', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_RS4852_ENABLED,
+        DESCRIPTOR = _STATUS_COMMUNICATION_RS485_ENABLED,
         __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.RS4852.Enabled)
+        # @@protoc_insertion_point(class_scope:Status.Communication.RS485.Enabled)
         ))
       ,
 
       Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_RS4852_PROTOCOL,
+        DESCRIPTOR = _STATUS_COMMUNICATION_RS485_PROTOCOL,
         __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.RS4852.Protocol)
+        # @@protoc_insertion_point(class_scope:Status.Communication.RS485.Protocol)
         ))
       ,
-      DESCRIPTOR = _STATUS_COMMUNICATION_RS4852,
+      DESCRIPTOR = _STATUS_COMMUNICATION_RS485,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Communication.RS4852)
+      # @@protoc_insertion_point(class_scope:Status.Communication.RS485)
       ))
     ,
     DESCRIPTOR = _STATUS_COMMUNICATION,
@@ -1541,9 +1689,13 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
   # @@protoc_insertion_point(class_scope:Status)
   ))
 _sym_db.RegisterMessage(Status)
+_sym_db.RegisterMessage(Status.BoolKeyValue)
+_sym_db.RegisterMessage(Status.Int32KeyValue)
+_sym_db.RegisterMessage(Status.StringKeyValue)
 _sym_db.RegisterMessage(Status.Site)
 _sym_db.RegisterMessage(Status.Site.InverterStatus)
 _sym_db.RegisterMessage(Status.OptimizersStatus)
+_sym_db.RegisterMessage(Status.AFCI)
 _sym_db.RegisterMessage(Status.Inverters)
 _sym_db.RegisterMessage(Status.Inverters.Inverter)
 _sym_db.RegisterMessage(Status.Inverters.Temperature)
@@ -1552,14 +1704,12 @@ _sym_db.RegisterMessage(Status.Inverters.Isolation)
 _sym_db.RegisterMessage(Status.Inverters.Isolation.Iso)
 _sym_db.RegisterMessage(Status.Inverters.Power)
 _sym_db.RegisterMessage(Status.Communication)
-_sym_db.RegisterMessage(Status.Communication.RS4851)
-_sym_db.RegisterMessage(Status.Communication.RS4851.Connected)
-_sym_db.RegisterMessage(Status.Communication.RS4851.Enabled)
-_sym_db.RegisterMessage(Status.Communication.RS4851.Protocol)
-_sym_db.RegisterMessage(Status.Communication.RS4852)
-_sym_db.RegisterMessage(Status.Communication.RS4852.Connected)
-_sym_db.RegisterMessage(Status.Communication.RS4852.Enabled)
-_sym_db.RegisterMessage(Status.Communication.RS4852.Protocol)
+_sym_db.RegisterMessage(Status.Communication.LAN)
+_sym_db.RegisterMessage(Status.Communication.LAN.IP)
+_sym_db.RegisterMessage(Status.Communication.RS485)
+_sym_db.RegisterMessage(Status.Communication.RS485.Connected)
+_sym_db.RegisterMessage(Status.Communication.RS485.Enabled)
+_sym_db.RegisterMessage(Status.Communication.RS485.Protocol)
 _sym_db.RegisterMessage(Status.EnergyStatistics)
 _sym_db.RegisterMessage(Status.Evese)
 _sym_db.RegisterMessage(Status.Meter)
