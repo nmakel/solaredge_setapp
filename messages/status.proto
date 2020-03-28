@@ -1,6 +1,19 @@
 syntax = "proto3";
 
 message Status {
+    message BoolKeyValue {
+        bool value = 1;
+        bool ro = 2;
+    }
+    message Int32KeyValue {
+        int32 value = 1;
+        bool ro = 2;
+    }
+    message StringKeyValue {
+        string value = 1;
+        bool ro = 2;
+    }
+
     message Site {
         message InverterStatus {
             string enabled = 1;
@@ -15,6 +28,11 @@ message Status {
     message OptimizersStatus {
         int32 total = 1;
         int32 online = 2;
+    }
+
+    message AFCI {
+        bool enabled = 1;
+        bool manual_reconnect = 2;
     }
 
     message Inverters {
@@ -63,7 +81,21 @@ message Status {
     }
 
     message Communication {
-        message RS4851 {
+        message LAN {
+            message IP {
+                StringKeyValue ip = 1;
+                StringKeyValue netmask = 2;
+                StringKeyValue gateway = 3;
+                StringKeyValue dns = 4;
+            }
+
+            BoolKeyValue dhcp = 1;
+            IP ip = 2;
+            StringKeyValue mac = 3;
+            BoolKeyValue connected = 4;
+        }
+
+        message RS485 {
             message Connected {}
             message Enabled {}
 
@@ -78,24 +110,9 @@ message Status {
             Protocol protocol = 3;
         }
 
-        message RS4852 {
-            message Connected {}
-            message Enabled {}
-
-            message Protocol {
-                bool seslave = 1;
-                bool semaster = 2;
-                bool modbusmultidevices = 3;
-                bool sunspec = 4;
-                bool unset = 5;
-            }
-
-            Protocol protocol = 3;
-        }
-
-        RS4851 rs4851 = 1;
-        RS4852 rs4852 = 2;
-        int32 lan = 3;
+        RS485 rs4851 = 1;
+        RS485 rs4852 = 2;
+        LAN lan = 7;
     }
 
     message EnergyStatistics {
@@ -168,4 +185,5 @@ message Status {
     repeated Battery batteries = 20;
     Notification notification = 21;
     ServerCommunication server_communication = 22;
+    AFCI afci = 23;
 }
