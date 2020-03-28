@@ -4,17 +4,22 @@ import solaredge_setapp.app_configs_pb2
 
 class WebAppConfigs:
     
+    def __init__(self, bytes=False):
+        if bytes:
+            return self.parse_protobuf(bytes)
+
     def parse_protobuf(self, bytes):
         
         # int language_id
         # str language from enum solaredge_setapp.Languages
         # list functionality [str, ...]
 
+        parsed = {}
+
         try:
             proto = solaredge_setapp.app_configs_pb2.WebAppConfigs()
             proto.ParseFromString(bytes)
-            parsed = {}
-
+  
             try:
                 parsed["language_id"] = int(proto.language)
                 parsed["language"] = solaredge_setapp.Languages(parsed["language_id"]).name
@@ -33,6 +38,6 @@ class WebAppConfigs:
             if proto.mainmenu.status: parsed["functionality"].append("status")
             if proto.mainmenu.grid_protection: parsed["functionality"].append("grid_protection")
         except AttributeError as e:
-            print("AttributeError: {e}".format(e=e))
+            print(f"AttributeError: {e}")
 
         return parsed
