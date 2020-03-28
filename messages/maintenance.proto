@@ -87,6 +87,7 @@ message Maintenance {
 
     message AFCI {
         bool enabled = 1;
+        bool manual_reconnect = 2;
     }
 
     message Standby {
