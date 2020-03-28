@@ -35,6 +35,7 @@ message Communication {
         BoolKeyValue dhcp = 1;
         IP ip = 2;
         StringKeyValue mac = 3;
+        BoolKeyValue connected = 4;
     }
 
     message RS485 {
@@ -89,4 +90,5 @@ message Communication {
     ModbusTCP modbus_tcp = 9;
     Wifi wifi = 6;
     GPIO gpio = 8;
+    BoolKeyValue server_connection = 11;
 }
