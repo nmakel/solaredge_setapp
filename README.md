@@ -52,15 +52,14 @@ See the `status.proto` file for all possible fields, and `solaredge_setapp/statu
 
 The following API endpoints are available:
 
-* **app_configs** - web/v1/app_configs - language and functionality
-* **communication** - web/v1/communication - ethernet, wifi and RS485 settings
-* **device_manager** - web/v1/device_manager - unknown
-* **grid_protection** - web/v1/grid_protection - grid protection settings
-* **information** - web/v1/information - CPU and DSP versions, error logging
-* **maintenance** - web/v1/maintenance - power optimizer telemetry
-* **power_control** - web/v1/power_control - grid power settings
-* **region** - web/v1/region - language and country settings
-* **status** - web/v1/status - inverter and energy statistics
+* **app_configs** - web/v1/app_configs - language and functionality, **fully implemented**
+* **communication** - web/v1/communication - ethernet, wifi and RS485 settings, **work in progress**
+* **grid_protection** - web/v1/grid_protection - grid protection settings, **work in progress**
+* **information** - web/v1/information - CPU and DSP versions, error logging, **fully implemented**
+* **maintenance** - web/v1/maintenance - power optimizer telemetry, **work in progress**
+* **power_control** - web/v1/power_control - grid power settings, **not implemented**
+* **region** - web/v1/region - language and country settings, **fully implemented**
+* **status** - web/v1/status - inverter and energy statistics, **work in progress**
 
 ## Limitations
 
