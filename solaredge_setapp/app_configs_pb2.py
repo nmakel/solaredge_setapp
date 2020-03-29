@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11\x61pp_configs.proto\"\xbd\x02\n\rWebAppConfigs\x12)\n\x08mainmenu\x18\x01 \x01(\x0b\x32\x17.WebAppConfigs.MainMenu\x12\x10\n\x08language\x18\x02 \x01(\x05\x1a\xee\x01\n\x08MainMenu\x12\x1c\n\x14\x63ountry_and_language\x18\x01 \x01(\x08\x12\x0f\n\x07pairing\x18\x02 \x01(\x08\x12\x15\n\rcommunication\x18\x03 \x01(\x08\x12\x15\n\rpower_control\x18\x04 \x01(\x08\x12\x16\n\x0e\x64\x65vice_manager\x18\x05 \x01(\x08\x12\x13\n\x0bmaintenance\x18\x06 \x01(\x08\x12\x13\n\x0binformation\x18\x07 \x01(\x08\x12\x1a\n\x12site_configuration\x18\x08 \x01(\x08\x12\x0e\n\x06status\x18\t \x01(\x08\x12\x17\n\x0fgrid_protection\x18\n \x01(\x08\x62\x06proto3')
+  serialized_pb=_b('\n\x11\x61pp_configs.proto\"\xb7\x02\n\rWebAppConfigs\x12)\n\x08mainMenu\x18\x01 \x01(\x0b\x32\x17.WebAppConfigs.MainMenu\x12\x10\n\x08language\x18\x02 \x01(\x05\x1a\xe8\x01\n\x08MainMenu\x12\x1a\n\x12\x63ountryAndLanguage\x18\x01 \x01(\x08\x12\x0f\n\x07pairing\x18\x02 \x01(\x08\x12\x15\n\rcommunication\x18\x03 \x01(\x08\x12\x14\n\x0cpowerControl\x18\x04 \x01(\x08\x12\x15\n\rdeviceManager\x18\x05 \x01(\x08\x12\x13\n\x0bmaintenance\x18\x06 \x01(\x08\x12\x13\n\x0binformation\x18\x07 \x01(\x08\x12\x19\n\x11siteConfiguration\x18\x08 \x01(\x08\x12\x0e\n\x06status\x18\t \x01(\x08\x12\x16\n\x0egridProtection\x18\n \x01(\x08\x62\x06proto3')
 )
 
 
@@ -33,7 +33,7 @@ _WEBAPPCONFIGS_MAINMENU = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='country_and_language', full_name='WebAppConfigs.MainMenu.country_and_language', index=0,
+      name='countryAndLanguage', full_name='WebAppConfigs.MainMenu.countryAndLanguage', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -54,14 +54,14 @@ _WEBAPPCONFIGS_MAINMENU = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='power_control', full_name='WebAppConfigs.MainMenu.power_control', index=3,
+      name='powerControl', full_name='WebAppConfigs.MainMenu.powerControl', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='device_manager', full_name='WebAppConfigs.MainMenu.device_manager', index=4,
+      name='deviceManager', full_name='WebAppConfigs.MainMenu.deviceManager', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -82,7 +82,7 @@ _WEBAPPCONFIGS_MAINMENU = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='site_configuration', full_name='WebAppConfigs.MainMenu.site_configuration', index=7,
+      name='siteConfiguration', full_name='WebAppConfigs.MainMenu.siteConfiguration', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -96,7 +96,7 @@ _WEBAPPCONFIGS_MAINMENU = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='grid_protection', full_name='WebAppConfigs.MainMenu.grid_protection', index=9,
+      name='gridProtection', full_name='WebAppConfigs.MainMenu.gridProtection', index=9,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -115,7 +115,7 @@ _WEBAPPCONFIGS_MAINMENU = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=101,
-  serialized_end=339,
+  serialized_end=333,
 )
 
 _WEBAPPCONFIGS = _descriptor.Descriptor(
@@ -126,7 +126,7 @@ _WEBAPPCONFIGS = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='mainmenu', full_name='WebAppConfigs.mainmenu', index=0,
+      name='mainMenu', full_name='WebAppConfigs.mainMenu', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -152,11 +152,11 @@ _WEBAPPCONFIGS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=339,
+  serialized_end=333,
 )
 
 _WEBAPPCONFIGS_MAINMENU.containing_type = _WEBAPPCONFIGS
-_WEBAPPCONFIGS.fields_by_name['mainmenu'].message_type = _WEBAPPCONFIGS_MAINMENU
+_WEBAPPCONFIGS.fields_by_name['mainMenu'].message_type = _WEBAPPCONFIGS_MAINMENU
 DESCRIPTOR.message_types_by_name['WebAppConfigs'] = _WEBAPPCONFIGS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

@@ -14,7 +14,11 @@ class WebAppConfigs:
         # str language from enum solaredge_setapp.Languages
         # list functionality [str, ...]
 
-        parsed = {}
+        parsed = {
+            "language_id": 0,
+            "language": False,
+            "functionality": []
+        }
 
         try:
             proto = solaredge_setapp.app_configs_pb2.WebAppConfigs()
@@ -26,17 +30,16 @@ class WebAppConfigs:
             except ValueError as e:
                 parsed["language"] = solaredge_setapp.Languages(0).name
 
-            parsed["functionality"] = []
-            if proto.mainmenu.country_and_language: parsed["functionality"].append("country_and_language")
-            if proto.mainmenu.pairing: parsed["functionality"].append("pairing")
-            if proto.mainmenu.communication: parsed["functionality"].append("communication")
-            if proto.mainmenu.power_control: parsed["functionality"].append("power_control")
-            if proto.mainmenu.device_manager: parsed["functionality"].append("device_manager")
-            if proto.mainmenu.maintenance: parsed["functionality"].append("maintenance")
-            if proto.mainmenu.information: parsed["functionality"].append("information")
-            if proto.mainmenu.site_configuration: parsed["functionality"].append("site_configuration")
-            if proto.mainmenu.status: parsed["functionality"].append("status")
-            if proto.mainmenu.grid_protection: parsed["functionality"].append("grid_protection")
+            if proto.mainMenu.countryAndLanguage: parsed["functionality"].append("country_and_language")
+            if proto.mainMenu.pairing: parsed["functionality"].append("pairing")
+            if proto.mainMenu.communication: parsed["functionality"].append("communication")
+            if proto.mainMenu.powerControl: parsed["functionality"].append("power_control")
+            if proto.mainMenu.deviceManager: parsed["functionality"].append("device_manager")
+            if proto.mainMenu.maintenance: parsed["functionality"].append("maintenance")
+            if proto.mainMenu.information: parsed["functionality"].append("information")
+            if proto.mainMenu.siteConfiguration: parsed["functionality"].append("site_configuration")
+            if proto.mainMenu.status: parsed["functionality"].append("status")
+            if proto.mainMenu.gridProtection: parsed["functionality"].append("grid_protection")
         except AttributeError as e:
             print(f"AttributeError: {e}")
 
