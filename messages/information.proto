@@ -1,13 +1,14 @@
 syntax = "proto3";
 
 message Information {
+
     message Version {
         int32 major = 1;
         int32 minor = 2;
         int32 build = 3;
     }
 
-    message Loggers {
+    message Errors {
         message Error {
             message Date {
                 int32 year = 1;
@@ -18,22 +19,22 @@ message Information {
                 int32 seconds = 6;
             }
 
-            int32 code = 1;
-            Date time = 2;
+            int32 errorCode = 1;
+            Date startTime = 2;
         }
 
         message Logger {
-            int32 controller_id = 1;
-            int32 subsystem_id = 2;
-            repeated Error errors = 3;
+            int32 controllerid = 1;
+            int32 subsystem = 2;
+            repeated Error errorsList = 3;
         }
         
-        repeated Logger logger = 1;
+        repeated Logger loggers = 1;
     }
 
     string serial = 1;
     Version cpu = 2;
     Version dsp1 = 3;
     Version dsp2 = 4;
-    Loggers loggers = 8;
+    Errors errors = 8;
 }

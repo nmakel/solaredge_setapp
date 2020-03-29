@@ -15,16 +15,19 @@ class Region:
         # int language_id
         # str language from enum solaredge_setapp.Languages
 
-        parsed = {}
+        parsed = {
+            "country_id": -1,
+            "language_id": 0,
+            "country": False,
+            "language": False
+        }
 
         try:
             proto = solaredge_setapp.region_pb2.Region()
             proto.ParseFromString(bytes)
 
-            parsed = {
-                "country_id": int(proto.country.country),
-                "language_id": int(proto.language.language)
-            }
+            parsed["country_id"] = int(proto.country.country)
+            parsed["language_id"] = int(proto.language.language)
             
             try: 
                 parsed["country"] = solaredge_setapp.Countries(parsed["country_id"]).name
