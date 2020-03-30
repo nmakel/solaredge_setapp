@@ -4,7 +4,9 @@ solaredge_setapp is a python library that parses inverter and power optimizer da
 
 This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge-local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters.
 
-Developed and tested on a European SE3500H-RW000BNN4 SolarEdge Inverter -- CPU versions 4.7.26, 4.6.24 and 4.5.41, and WSA 1.3.9, 1.2.9 and 1.1.12. It may work on older, or newer, versions of SetApp.
+Developed and tested on a European SE3500H-RW000BNN4 SolarEdge single-phase inverter -- CPU versions 4.7.26, 4.6.24 and 4.5.41, and WSA 1.3.9, 1.2.9 and 1.1.12. It may work on older, or newer, versions of SetApp.
+
+Release 0.0.6 and earlier are compatible with WSA <= 1.3.9.
 
 ## Installation
 
@@ -16,23 +18,15 @@ or install the package from PyPi:
 
 ```pip3 install solaredge_setapp```
 
-### Working on protobuf messages
-
-Clone the project if you want to modify the protocol buffer messages.
-
-In order to use `compile-proto.sh` to (re)compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's package `protobuf-compiler`. *(Re-)compiling the protobuf messages is only necessary if you have made changes to them.*
-
 ## Usage
 
 See `example.py` how to fetch, parse, and display the SetApp protobuf files exposed by the SetApp API.
 
 ```python3 example.py your-inverter-ip```
 
-For a complete dump of all parsed values, try `dump_all.py`:
+For a complete json dump of all parsed values from all endpoints, try `dump_all.py`:
 
 ```python3 dump_all.py your-inverter-ip```
-
-**Note:** more recent firmware versions have firewalled access to the SetApp interface over *ethernet*. It should still be possible to access your inverter on port 80 via *wifi*.
 
 Basic usage of the **status** API endpoint:
 
@@ -48,7 +42,7 @@ status = solaredge_setapp.status.Status(status_request)
 print(f"Inverter {status['serial']} is {status['status']} at {status['power_ac']:.2f}W")
 ```
 
-See the `status.proto` file for all possible fields, and `solaredge_setapp/status.py`  for all fields that are parsed for this endpoint.
+See the relevant `.proto` file in `solaredge_setapp/messages/` for all possible fields, and `solaredge_setapp/%endpoint%.py` for all fields that are parsed for that particular endpoint.
 
 The following API endpoints are available:
 
@@ -61,13 +55,19 @@ The following API endpoints are available:
 * **region** - web/v1/region - language and country settings, **fully implemented**
 * **status** - web/v1/status - inverter and energy statistics, **work in progress**
 
+## Working on protobuf messages
+
+Clone the project if you want to modify the protocol buffer messages.
+
+In order to use `compile_proto.sh` to (re)compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's `protobuf-compiler` package. *(Re-)compiling the protobuf messages is only necessary if you have made local changes to them.*
+
 ## Limitations
 
-The SetApp API does not (yet) provide real-time power optimizer data. Initial results suggest the data is 5-15 minutes old. Inverter production and voltage information is near real-time, however. Basically, the entire information set visible on the inverter's SetApp web interface is available through this library, in addition to per optimizer voltages and temperatures.
+The SetApp API does not (yet) provide real-time power optimizer data. Initial results suggest the data is 5-15 minutes old. Inverter production and voltage information is near real-time, however. Basically, the entire information set visible on the inverter's SetApp web interface is available through this library, in addition to per optimizer voltages and temperatures. Power optimizer voltages and current are expressed as integers, and are therefore not entirely accurate.
 
-Rate limiting will kick in if you have the SetApp web interface open while also polling using this library.
+Rate limiting will kick in if you have the SetApp web interface open while using this library.
 
-The SetApp API is new, and therefore likely to change. Variable naming and distribution is likely to change.
+The SetApp API is new, and therefore likely to change. Variable naming, distribution, and parsing is likely to change.
 
 ## Contributing
 
