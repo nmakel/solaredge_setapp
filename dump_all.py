@@ -8,23 +8,20 @@ import requests
 
 
 if __name__ == "__main__":
-
     argparser = argparse.ArgumentParser()
     argparser.add_argument("address", type=str, help="hostname or ip address of solaredge inverter")
     parserargs = argparser.parse_args()
 
-    address = parserargs.address
-
     data = {}
     web_services = [
-        ("WebAppConfigs", "web/v1/app_configs", solaredge_setapp.app_configs.WebAppConfigs(), "app_configs"),
-        ("Communication", "web/v1/communication", solaredge_setapp.communication.Communication(), "communication"),
-        ("Device Manager", "web/v1/device_manager", solaredge_setapp.device_manager.DeviceManager(), "device_manager"),
-        ("Grid Protection", "web/v1/grid_protection", solaredge_setapp.grid_protection.GridProtection(), "grid_protection"),
-        ("Information", "web/v1/information", solaredge_setapp.information.Information(), "information"),
-        ("Maintenance", "web/v1/maintenance", solaredge_setapp.maintenance.Maintenance(), "maintenance"),
         ("Region", "web/v1/region", solaredge_setapp.region.Region(), "region"),
+        ("Communication", "web/v1/communication", solaredge_setapp.communication.Communication(), "communication"),
+        ("Power Control", "web/v1/power_control", solaredge_setapp.power_control.PowerControl(), "power_control"),
+        ("Maintenance", "web/v1/maintenance", solaredge_setapp.maintenance.Maintenance(), "maintenance"),
+        ("Information", "web/v1/information", solaredge_setapp.information.Information(), "information"),
+        ("WebAppConfigs", "web/v1/app_configs", solaredge_setapp.app_configs.WebAppConfigs(), "app_configs"),
         ("Status", "web/v1/status", solaredge_setapp.status.Status(), "status"),
+        ("Grid Protection", "web/v1/grid_protection", solaredge_setapp.grid_protection.GridProtection(), "grid_protection"),
     ]
 
     try:
