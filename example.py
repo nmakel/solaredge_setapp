@@ -7,7 +7,6 @@ import requests
 
 
 if __name__ == "__main__":
-
     argparser = argparse.ArgumentParser()
     argparser.add_argument("address", type=str, help="hostname or ip address of solaredge inverter")
     parserargs = argparser.parse_args()
