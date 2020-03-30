@@ -1,15 +1,16 @@
 syntax = "proto3";
 
 message Status {
-    message BoolKeyValue {
+    
+    message Int32ValueScaling {
+        int32 value = 1;
+        int32 scaling = 2;
+    }
+    message BoolValueRo {
         bool value = 1;
         bool ro = 2;
     }
-    message Int32KeyValue {
-        int32 value = 1;
-        bool ro = 2;
-    }
-    message StringKeyValue {
+    message StringValueRo {
         string value = 1;
         bool ro = 2;
     }
@@ -26,27 +27,32 @@ message Status {
     }
 
     message OptimizersStatus {
-        int32 total = 1;
-        int32 online = 2;
+        int32 enabled = 1;
+        int32 connected = 2;
     }
 
     message AFCI {
-        bool enabled = 1;
-        bool manual_reconnect = 2;
+        message Test {
+            int32 result = 1;
+        }
+
+        bool enable = 1;
+        bool manualReconnect = 2;
+        Test test = 3;
     }
 
     message Inverters {
         message Inverter {
-            string serial = 1;
-            float voltage_dc = 2;
+            string dspSn = 1;
+            float voltage = 2;
             OptimizersStatus optimizers = 3;
             Temperature temperature = 4;
             int32 fan = 5;
             string error = 6;
-            int32 subsystem_id = 7;
+            int32 subsystem = 7;
             string bad_position = 8;
             Isolation isolation = 9;
-            Power power = 10;
+            Int32ValueScaling power = 10;
         }
 
         message Temperature {
@@ -60,19 +66,9 @@ message Status {
         }
 
         message Isolation {
-            message Iso {
-                int32 isolation = 1;
-                int32 scale = 2;
-            }
-        
-            int32 fault_location = 3;
-            Iso r_iso = 2;
-            Iso alpha = 1;
-        }
-
-        message Power {
-            int32 value = 1;
-            int32 scale = 2;
+            Int32ValueScaling alpha = 1;
+            Int32ValueScaling rIso = 2;
+            int32 faultLocation = 3;
         }
 
         Inverter left = 1;
@@ -83,28 +79,25 @@ message Status {
     message Communication {
         message LAN {
             message IP {
-                StringKeyValue ip = 1;
-                StringKeyValue netmask = 2;
-                StringKeyValue gateway = 3;
-                StringKeyValue dns = 4;
+                StringValueRo ipAddress = 1;
+                StringValueRo subnetMask = 2;
+                StringValueRo gateway = 3;
+                StringValueRo dns = 4;
             }
 
-            BoolKeyValue dhcp = 1;
+            BoolValueRo dhcp = 1;
             IP ip = 2;
-            StringKeyValue mac = 3;
-            BoolKeyValue connected = 4;
+            StringValueRo mac = 3;
+            BoolValueRo cableConnected = 4;
         }
 
         message RS485 {
-            message Connected {}
-            message Enabled {}
-
             message Protocol {
-                bool seslave = 1;
-                bool semaster = 2;
-                bool modbusmultidevices = 3;
+                bool seSlave = 1;
+                bool seMaster = 2;
+                bool modbusMultiDevices = 3;
                 bool sunspec = 4;
-                bool unset = 5;
+                bool none = 5;
             }
 
             Protocol protocol = 3;
@@ -112,26 +105,28 @@ message Status {
 
         RS485 rs4851 = 1;
         RS485 rs4852 = 2;
-        LAN lan = 7;
+        LAN lanInfo = 7;
+    }
+
+    message ServerChannel {
+        BoolValueRo lan = 1;
+        BoolValueRo cellular = 2;
+        BoolValueRo rs4851SeSlave = 3;
+        BoolValueRo rs4852SeSlave = 4;
+        BoolValueRo zigbee = 5;
+        BoolValueRo wifi = 6;
     }
 
     message EnergyStatistics {
-        float day = 1;
-        float month = 2;
-        float year = 3;
+        float today = 1;
+        float thisMonth = 2;
+        float thisYear = 3;
         float total = 4;
     }
 
-    message Evese {}
+    message Meter {}
 
-    message Meter {
-        string connection = 1;
-        string status = 3;
-        string id = 4;
-        float power_ac = 5;
-        float total_ac = 6;
-        string s0_pulse = 7;
-    }
+    message Evese {}
 
     message Battery {}
 
@@ -139,15 +134,15 @@ message Status {
 
     message ServerCommunication {
         message CommunicationStatus {
-            bool physical = 1;
-            bool ipaddress = 2;
-            bool gateway = 3;
-            bool internet = 4;
-            bool monitoring = 5;
-            bool server = 6;
+            bool physicalConnection = 1;
+            bool ipAddress = 2;
+            bool gatewayLink = 3;
+            bool internetLink = 4;
+            bool monitoringLink = 5;
+            bool sOk = 6;
         }
 
-        CommunicationStatus status = 1;
+        CommunicationStatus lanTest = 1;
     }
 
     enum ManagerStatus {
@@ -163,27 +158,27 @@ message Status {
         IDLE = 9;
     }
 
-    string serial = 1;
+    string sn = 1;
     Site site = 2;
-    float power_ac = 3;
-    float voltage_ac = 4;
-    float frequency = 5;
-    OptimizersStatus optimizers = 6;
-    bool monitoring = 7;
+    float powerWatt = 3;
+    float voltage = 4;
+    float frequencyHz = 5;
+    OptimizersStatus optimizersStatus = 6;
+    bool sOk = 7;
     ManagerStatus status = 8;
-    bool switch = 9;
-    float cosphi = 10;
-    float power_ac_limit = 11;
+    bool switchStatus = 9;
+    float cosPhi = 10;
+    float limit = 11;
     int32 country = 12;
     Inverters inverters = 13;
     Communication communication = 14;
     EnergyStatistics energy = 15;
-    int32 portia_error = 16;
-    int32 portia_subsystem = 17;
+    int32 portiaSubsystem = 17;
     Evese evese = 18;
-    repeated Meter meters = 19;
-    repeated Battery batteries = 20;
+    repeated Meter metersList = 19;
+    repeated Battery batteriesList = 20;
     Notification notification = 21;
-    ServerCommunication server_communication = 22;
+    ServerCommunication serverComm = 22;
     AFCI afci = 23;
+    ServerChannel serverChannel = 24;
 }

@@ -10,17 +10,7 @@ class Region:
     
     def parse_protobuf(self, bytes):
         
-        # int country_id
-        # str country from enum solaredge_setapp.Countries
-        # int language_id
-        # str language from enum solaredge_setapp.Languages
-
-        parsed = {
-            "country_id": -1,
-            "language_id": 0,
-            "country": False,
-            "language": False
-        }
+        parsed = {}
 
         try:
             proto = solaredge_setapp.region_pb2.Region()

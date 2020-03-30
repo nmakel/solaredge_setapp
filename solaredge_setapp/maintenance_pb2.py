@@ -19,11 +19,48 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11maintenance.proto\"\xcd\x0e\n\x0bMaintenance\x12\x1f\n\x04time\x18\x01 \x01(\x0b\x32\x11.Maintenance.Time\x12-\n\x0btemperature\x18\x02 \x01(\x0b\x32\x18.Maintenance.Temperature\x12\x1f\n\x04\x61\x66\x63i\x18\x03 \x01(\x0b\x32\x11.Maintenance.AFCI\x12-\n\x0b\x64iagnostics\x18\x06 \x01(\x0b\x32\x18.Maintenance.Diagnostics\x12%\n\x07standby\x18\x07 \x01(\x0b\x32\x14.Maintenance.Standby\x12#\n\x06system\x18\r \x01(\x0b\x32\x13.Maintenance.System\x1a\xcc\x01\n\x04Time\x12\x33\n\x0c\x63urrent_time\x18\x01 \x01(\x0b\x32\x1d.Maintenance.Time.CurrentTime\x12\x12\n\nntp_server\x18\x02 \x01(\t\x12\x12\n\nutc_offset\x18\x03 \x01(\x05\x1ag\n\x0b\x43urrentTime\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1ay\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12-\n\x05units\x18\x02 \x01(\x0b\x32\x1e.Maintenance.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\x8d\t\n\x0b\x44iagnostics\x12\x35\n\tinverters\x18\x01 \x01(\x0b\x32\".Maintenance.Diagnostics.Inverters\x1a\xc6\x08\n\tInverters\x12\x39\n\x04left\x18\x01 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12<\n\x07primary\x18\x02 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12:\n\x05right\x18\x03 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x1a\x83\x07\n\x08Inverter\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12H\n\toptimizer\x18\x02 \x03(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Optimizer\x12H\n\tisolation\x18\x03 \x01(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Isolation\x12W\n\x11optimizers_status\x18\x04 \x01(\x0b\x32<.Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus\x1a\xe0\x01\n\tIsolation\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x12H\n\x05r_iso\x18\x02 \x01(\x0b\x32\x39.Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso\x12H\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x39.Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso\x1a\'\n\x03Iso\x12\x11\n\tisolation\x18\x01 \x01(\x05\x12\r\n\x05scale\x18\x02 \x01(\x05\x1a\x31\n\x10OptimizersStatus\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0e\n\x06online\x18\x02 \x01(\x05\x1a\xe3\x02\n\tOptimizer\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x0e\n\x06online\x18\x02 \x01(\x08\x12O\n\x0blast_report\x18\x03 \x01(\x0b\x32:.Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date\x12\x10\n\x08po_power\x18\x04 \x01(\x02\x12\x12\n\npo_voltage\x18\x05 \x01(\x05\x12\x16\n\x0emodule_voltage\x18\x06 \x01(\x05\x12\x16\n\x0emodule_current\x18\x07 \x01(\x05\x12-\n\x0btemperature\x18\x08 \x01(\x0b\x32\x18.Maintenance.Temperature\x1a`\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1a)\n\x06System\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x1a\x31\n\x04\x41\x46\x43I\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x18\n\x10manual_reconnect\x18\x02 \x01(\x08\x1a\x1a\n\x07Standby\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x62\x06proto3')
+  serialized_pb=_b('\n\x11maintenance.proto\"\xba\r\n\x0bMaintenance\x12&\n\x0b\x64\x61teAndTime\x18\x01 \x01(\x0b\x32\x11.Maintenance.Time\x12\x1f\n\x04\x61\x66\x63i\x18\x03 \x01(\x0b\x32\x11.Maintenance.AFCI\x12-\n\x0b\x64iagnostics\x18\x06 \x01(\x0b\x32\x18.Maintenance.Diagnostics\x12%\n\x07standby\x18\x07 \x01(\x0b\x32\x14.Maintenance.Standby\x12#\n\x06header\x18\r \x01(\x0b\x32\x13.Maintenance.Header\x1a\x33\n\x11Int32ValueScaling\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x1a\xba\x01\n\x04Time\x12+\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1d.Maintenance.Time.CurrentTime\x12\x0b\n\x03ntp\x18\x02 \x01(\t\x12\x11\n\tgmtOffset\x18\x03 \x01(\x05\x1a\x65\n\x0b\x43urrentTime\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0e\n\x06minute\x18\x05 \x01(\x05\x12\x0e\n\x06second\x18\x06 \x01(\x05\x1am\n\x04\x41\x46\x43I\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12\x17\n\x0fmanualReconnect\x18\x02 \x01(\x08\x12$\n\x04test\x18\x03 \x01(\x0b\x32\x16.Maintenance.AFCI.Test\x1a\x16\n\x04Test\x12\x0e\n\x06result\x18\x01 \x01(\x05\x1a\'\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x1a\x1c\n\x07Standby\x12\x11\n\tactivated\x18\x01 \x01(\x08\x1a\xbe\x08\n\x0b\x44iagnostics\x12\x35\n\tinverters\x18\x01 \x01(\x0b\x32\".Maintenance.Diagnostics.Inverters\x1a\xf7\x07\n\tInverters\x12\x39\n\x04left\x18\x01 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12<\n\x07primary\x18\x02 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x12:\n\x05right\x18\x03 \x01(\x0b\x32+.Maintenance.Diagnostics.Inverters.Inverter\x1a\xb4\x06\n\x08Inverter\x12\r\n\x05invSn\x18\x01 \x01(\t\x12L\n\roptimizerList\x18\x02 \x03(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Optimizer\x12H\n\tisolation\x18\x03 \x01(\x0b\x32\x35.Maintenance.Diagnostics.Inverters.Inverter.Isolation\x12V\n\x10optimizersStatus\x18\x04 \x01(\x0b\x32<.Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus\x1a\x7f\n\tIsolation\x12-\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x1e.Maintenance.Int32ValueScaling\x12,\n\x04rIso\x18\x02 \x01(\x0b\x32\x1e.Maintenance.Int32ValueScaling\x12\x15\n\rfaultLocation\x18\x03 \x01(\x05\x1a\x36\n\x10OptimizersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x05\x12\x11\n\tconnected\x18\x02 \x01(\x05\x1a\x98\x01\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12L\n\x05units\x18\x02 \x01(\x0b\x32=.Maintenance.Diagnostics.Inverters.Inverter.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xd4\x01\n\tOptimizer\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x0f\n\x07reports\x18\x02 \x01(\x08\x12+\n\x04\x64\x61te\x18\x03 \x01(\x0b\x32\x1d.Maintenance.Time.CurrentTime\x12\x0f\n\x07outputV\x18\x05 \x01(\x05\x12\x0e\n\x06inputV\x18\x06 \x01(\x05\x12\x0e\n\x06inputC\x18\x07 \x01(\x05\x12L\n\x0btemperature\x18\x08 \x01(\x0b\x32\x37.Maintenance.Diagnostics.Inverters.Inverter.Temperatureb\x06proto3')
 )
 
 
 
+
+_MAINTENANCE_INT32VALUESCALING = _descriptor.Descriptor(
+  name='Int32ValueScaling',
+  full_name='Maintenance.Int32ValueScaling',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Maintenance.Int32ValueScaling.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scaling', full_name='Maintenance.Int32ValueScaling.scaling', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=233,
+  serialized_end=284,
+)
 
 _MAINTENANCE_TIME_CURRENTTIME = _descriptor.Descriptor(
   name='CurrentTime',
@@ -61,14 +98,14 @@ _MAINTENANCE_TIME_CURRENTTIME = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='minutes', full_name='Maintenance.Time.CurrentTime.minutes', index=4,
+      name='minute', full_name='Maintenance.Time.CurrentTime.minute', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='seconds', full_name='Maintenance.Time.CurrentTime.seconds', index=5,
+      name='second', full_name='Maintenance.Time.CurrentTime.second', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -86,8 +123,8 @@ _MAINTENANCE_TIME_CURRENTTIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=375,
-  serialized_end=478,
+  serialized_start=372,
+  serialized_end=473,
 )
 
 _MAINTENANCE_TIME = _descriptor.Descriptor(
@@ -98,21 +135,21 @@ _MAINTENANCE_TIME = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='current_time', full_name='Maintenance.Time.current_time', index=0,
+      name='date', full_name='Maintenance.Time.date', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ntp_server', full_name='Maintenance.Time.ntp_server', index=1,
+      name='ntp', full_name='Maintenance.Time.ntp', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='utc_offset', full_name='Maintenance.Time.utc_offset', index=2,
+      name='gmtOffset', full_name='Maintenance.Time.gmtOffset', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -130,28 +167,21 @@ _MAINTENANCE_TIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=274,
-  serialized_end=478,
+  serialized_start=287,
+  serialized_end=473,
 )
 
-_MAINTENANCE_TEMPERATURE_UNITS = _descriptor.Descriptor(
-  name='Units',
-  full_name='Maintenance.Temperature.Units',
+_MAINTENANCE_AFCI_TEST = _descriptor.Descriptor(
+  name='Test',
+  full_name='Maintenance.AFCI.Test',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='celsius', full_name='Maintenance.Temperature.Units.celsius', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='fahrenheit', full_name='Maintenance.Temperature.Units.fahrenheit', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='result', full_name='Maintenance.AFCI.Test.result', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -167,27 +197,34 @@ _MAINTENANCE_TEMPERATURE_UNITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=557,
-  serialized_end=601,
+  serialized_start=562,
+  serialized_end=584,
 )
 
-_MAINTENANCE_TEMPERATURE = _descriptor.Descriptor(
-  name='Temperature',
-  full_name='Maintenance.Temperature',
+_MAINTENANCE_AFCI = _descriptor.Descriptor(
+  name='AFCI',
+  full_name='Maintenance.AFCI',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Maintenance.Temperature.value', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='enable', full_name='Maintenance.AFCI.enable', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='units', full_name='Maintenance.Temperature.units', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='manualReconnect', full_name='Maintenance.AFCI.manualReconnect', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='test', full_name='Maintenance.AFCI.test', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -195,7 +232,7 @@ _MAINTENANCE_TEMPERATURE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_MAINTENANCE_TEMPERATURE_UNITS, ],
+  nested_types=[_MAINTENANCE_AFCI_TEST, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -204,26 +241,26 @@ _MAINTENANCE_TEMPERATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=480,
-  serialized_end=601,
+  serialized_start=475,
+  serialized_end=584,
 )
 
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO = _descriptor.Descriptor(
-  name='Iso',
-  full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso',
+_MAINTENANCE_HEADER = _descriptor.Descriptor(
+  name='Header',
+  full_name='Maintenance.Header',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='isolation', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso.isolation', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='id', full_name='Maintenance.Header.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='scale', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso.scale', index=1,
+      name='timestamp', full_name='Maintenance.Header.timestamp', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -241,8 +278,38 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO = _descriptor.Descript
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1321,
-  serialized_end=1360,
+  serialized_start=586,
+  serialized_end=625,
+)
+
+_MAINTENANCE_STANDBY = _descriptor.Descriptor(
+  name='Standby',
+  full_name='Maintenance.Standby',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='activated', full_name='Maintenance.Standby.activated', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=627,
+  serialized_end=655,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION = _descriptor.Descriptor(
@@ -253,30 +320,30 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='fault_location', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.fault_location', index=0,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='alpha', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.alpha', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='r_iso', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.r_iso', index=1,
+      name='rIso', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.rIso', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='alpha', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.alpha', index=2,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='faultLocation', full_name='Maintenance.Diagnostics.Inverters.Inverter.Isolation.faultLocation', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -285,8 +352,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1136,
-  serialized_end=1360,
+  serialized_start=1191,
+  serialized_end=1318,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS = _descriptor.Descriptor(
@@ -297,14 +364,14 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS = _descriptor.Descr
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='total', full_name='Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus.total', index=0,
+      name='enabled', full_name='Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus.enabled', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='online', full_name='Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus.online', index=1,
+      name='connected', full_name='Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus.connected', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -322,56 +389,28 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS = _descriptor.Descr
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1362,
-  serialized_end=1411,
+  serialized_start=1320,
+  serialized_end=1374,
 )
 
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE = _descriptor.Descriptor(
-  name='Date',
-  full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date',
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE_UNITS = _descriptor.Descriptor(
+  name='Units',
+  full_name='Maintenance.Diagnostics.Inverters.Inverter.Temperature.Units',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='year', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date.year', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='celsius', full_name='Maintenance.Diagnostics.Inverters.Inverter.Temperature.Units.celsius', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='month', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date.month', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='day', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date.day', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='hour', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date.hour', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='minutes', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date.minutes', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='seconds', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date.seconds', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      name='fahrenheit', full_name='Maintenance.Diagnostics.Inverters.Inverter.Temperature.Units.fahrenheit', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -387,8 +426,45 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE = _descriptor.Descrip
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1673,
-  serialized_end=1769,
+  serialized_start=1485,
+  serialized_end=1529,
+)
+
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE = _descriptor.Descriptor(
+  name='Temperature',
+  full_name='Maintenance.Diagnostics.Inverters.Inverter.Temperature',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Maintenance.Diagnostics.Inverters.Inverter.Temperature.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='units', full_name='Maintenance.Diagnostics.Inverters.Inverter.Temperature.units', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE_UNITS, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1377,
+  serialized_end=1529,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER = _descriptor.Descriptor(
@@ -399,56 +475,49 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='serial', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.serial', index=0,
+      name='sn', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.sn', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='online', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.online', index=1,
+      name='reports', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.reports', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='last_report', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.last_report', index=2,
+      name='date', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.date', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='po_power', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.po_power', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='po_voltage', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.po_voltage', index=4,
+      name='outputV', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.outputV', index=3,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='module_voltage', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.module_voltage', index=5,
+      name='inputV', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.inputV', index=4,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='module_current', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.module_current', index=6,
+      name='inputC', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.inputC', index=5,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='temperature', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.temperature', index=7,
+      name='temperature', full_name='Maintenance.Diagnostics.Inverters.Inverter.Optimizer.temperature', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -457,7 +526,7 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -466,8 +535,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1414,
-  serialized_end=1769,
+  serialized_start=1532,
+  serialized_end=1744,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER = _descriptor.Descriptor(
@@ -478,14 +547,14 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='serial', full_name='Maintenance.Diagnostics.Inverters.Inverter.serial', index=0,
+      name='invSn', full_name='Maintenance.Diagnostics.Inverters.Inverter.invSn', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='optimizer', full_name='Maintenance.Diagnostics.Inverters.Inverter.optimizer', index=1,
+      name='optimizerList', full_name='Maintenance.Diagnostics.Inverters.Inverter.optimizerList', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -499,7 +568,7 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='optimizers_status', full_name='Maintenance.Diagnostics.Inverters.Inverter.optimizers_status', index=3,
+      name='optimizersStatus', full_name='Maintenance.Diagnostics.Inverters.Inverter.optimizersStatus', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -508,7 +577,7 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION, _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS, _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER, ],
+  nested_types=[_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION, _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS, _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE, _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -517,8 +586,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=870,
-  serialized_end=1769,
+  serialized_start=924,
+  serialized_end=1744,
 )
 
 _MAINTENANCE_DIAGNOSTICS_INVERTERS = _descriptor.Descriptor(
@@ -561,8 +630,8 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=675,
-  serialized_end=1769,
+  serialized_start=729,
+  serialized_end=1744,
 )
 
 _MAINTENANCE_DIAGNOSTICS = _descriptor.Descriptor(
@@ -591,112 +660,8 @@ _MAINTENANCE_DIAGNOSTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=604,
-  serialized_end=1769,
-)
-
-_MAINTENANCE_SYSTEM = _descriptor.Descriptor(
-  name='System',
-  full_name='Maintenance.System',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='Maintenance.System.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='timestamp', full_name='Maintenance.System.timestamp', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1771,
-  serialized_end=1812,
-)
-
-_MAINTENANCE_AFCI = _descriptor.Descriptor(
-  name='AFCI',
-  full_name='Maintenance.AFCI',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='enabled', full_name='Maintenance.AFCI.enabled', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='manual_reconnect', full_name='Maintenance.AFCI.manual_reconnect', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1814,
-  serialized_end=1863,
-)
-
-_MAINTENANCE_STANDBY = _descriptor.Descriptor(
-  name='Standby',
-  full_name='Maintenance.Standby',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='enabled', full_name='Maintenance.Standby.enabled', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1865,
-  serialized_end=1891,
+  serialized_start=658,
+  serialized_end=1744,
 )
 
 _MAINTENANCE = _descriptor.Descriptor(
@@ -707,42 +672,35 @@ _MAINTENANCE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='time', full_name='Maintenance.time', index=0,
+      name='dateAndTime', full_name='Maintenance.dateAndTime', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='temperature', full_name='Maintenance.temperature', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='afci', full_name='Maintenance.afci', index=2,
+      name='afci', full_name='Maintenance.afci', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='diagnostics', full_name='Maintenance.diagnostics', index=3,
+      name='diagnostics', full_name='Maintenance.diagnostics', index=2,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='standby', full_name='Maintenance.standby', index=4,
+      name='standby', full_name='Maintenance.standby', index=3,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='system', full_name='Maintenance.system', index=5,
+      name='header', full_name='Maintenance.header', index=4,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -751,7 +709,7 @@ _MAINTENANCE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_MAINTENANCE_TIME, _MAINTENANCE_TEMPERATURE, _MAINTENANCE_DIAGNOSTICS, _MAINTENANCE_SYSTEM, _MAINTENANCE_AFCI, _MAINTENANCE_STANDBY, ],
+  nested_types=[_MAINTENANCE_INT32VALUESCALING, _MAINTENANCE_TIME, _MAINTENANCE_AFCI, _MAINTENANCE_HEADER, _MAINTENANCE_STANDBY, _MAINTENANCE_DIAGNOSTICS, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -761,27 +719,31 @@ _MAINTENANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=1891,
+  serialized_end=1744,
 )
 
+_MAINTENANCE_INT32VALUESCALING.containing_type = _MAINTENANCE
 _MAINTENANCE_TIME_CURRENTTIME.containing_type = _MAINTENANCE_TIME
-_MAINTENANCE_TIME.fields_by_name['current_time'].message_type = _MAINTENANCE_TIME_CURRENTTIME
+_MAINTENANCE_TIME.fields_by_name['date'].message_type = _MAINTENANCE_TIME_CURRENTTIME
 _MAINTENANCE_TIME.containing_type = _MAINTENANCE
-_MAINTENANCE_TEMPERATURE_UNITS.containing_type = _MAINTENANCE_TEMPERATURE
-_MAINTENANCE_TEMPERATURE.fields_by_name['units'].message_type = _MAINTENANCE_TEMPERATURE_UNITS
-_MAINTENANCE_TEMPERATURE.containing_type = _MAINTENANCE
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.fields_by_name['r_iso'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.fields_by_name['alpha'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO
+_MAINTENANCE_AFCI_TEST.containing_type = _MAINTENANCE_AFCI
+_MAINTENANCE_AFCI.fields_by_name['test'].message_type = _MAINTENANCE_AFCI_TEST
+_MAINTENANCE_AFCI.containing_type = _MAINTENANCE
+_MAINTENANCE_HEADER.containing_type = _MAINTENANCE
+_MAINTENANCE_STANDBY.containing_type = _MAINTENANCE
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.fields_by_name['alpha'].message_type = _MAINTENANCE_INT32VALUESCALING
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.fields_by_name['rIso'].message_type = _MAINTENANCE_INT32VALUESCALING
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER.fields_by_name['last_report'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER.fields_by_name['temperature'].message_type = _MAINTENANCE_TEMPERATURE
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE_UNITS.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE.fields_by_name['units'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE_UNITS
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER.fields_by_name['date'].message_type = _MAINTENANCE_TIME_CURRENTTIME
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER.fields_by_name['temperature'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER.fields_by_name['optimizer'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER.fields_by_name['optimizerList'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER.fields_by_name['isolation'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION
-_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER.fields_by_name['optimizers_status'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS
+_MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER.fields_by_name['optimizersStatus'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZERSSTATUS
 _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER.containing_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS
 _MAINTENANCE_DIAGNOSTICS_INVERTERS.fields_by_name['left'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
 _MAINTENANCE_DIAGNOSTICS_INVERTERS.fields_by_name['primary'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER
@@ -789,19 +751,22 @@ _MAINTENANCE_DIAGNOSTICS_INVERTERS.fields_by_name['right'].message_type = _MAINT
 _MAINTENANCE_DIAGNOSTICS_INVERTERS.containing_type = _MAINTENANCE_DIAGNOSTICS
 _MAINTENANCE_DIAGNOSTICS.fields_by_name['inverters'].message_type = _MAINTENANCE_DIAGNOSTICS_INVERTERS
 _MAINTENANCE_DIAGNOSTICS.containing_type = _MAINTENANCE
-_MAINTENANCE_SYSTEM.containing_type = _MAINTENANCE
-_MAINTENANCE_AFCI.containing_type = _MAINTENANCE
-_MAINTENANCE_STANDBY.containing_type = _MAINTENANCE
-_MAINTENANCE.fields_by_name['time'].message_type = _MAINTENANCE_TIME
-_MAINTENANCE.fields_by_name['temperature'].message_type = _MAINTENANCE_TEMPERATURE
+_MAINTENANCE.fields_by_name['dateAndTime'].message_type = _MAINTENANCE_TIME
 _MAINTENANCE.fields_by_name['afci'].message_type = _MAINTENANCE_AFCI
 _MAINTENANCE.fields_by_name['diagnostics'].message_type = _MAINTENANCE_DIAGNOSTICS
 _MAINTENANCE.fields_by_name['standby'].message_type = _MAINTENANCE_STANDBY
-_MAINTENANCE.fields_by_name['system'].message_type = _MAINTENANCE_SYSTEM
+_MAINTENANCE.fields_by_name['header'].message_type = _MAINTENANCE_HEADER
 DESCRIPTOR.message_types_by_name['Maintenance'] = _MAINTENANCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Maintenance = _reflection.GeneratedProtocolMessageType('Maintenance', (_message.Message,), dict(
+
+  Int32ValueScaling = _reflection.GeneratedProtocolMessageType('Int32ValueScaling', (_message.Message,), dict(
+    DESCRIPTOR = _MAINTENANCE_INT32VALUESCALING,
+    __module__ = 'maintenance_pb2'
+    # @@protoc_insertion_point(class_scope:Maintenance.Int32ValueScaling)
+    ))
+  ,
 
   Time = _reflection.GeneratedProtocolMessageType('Time', (_message.Message,), dict(
 
@@ -817,17 +782,31 @@ Maintenance = _reflection.GeneratedProtocolMessageType('Maintenance', (_message.
     ))
   ,
 
-  Temperature = _reflection.GeneratedProtocolMessageType('Temperature', (_message.Message,), dict(
+  AFCI = _reflection.GeneratedProtocolMessageType('AFCI', (_message.Message,), dict(
 
-    Units = _reflection.GeneratedProtocolMessageType('Units', (_message.Message,), dict(
-      DESCRIPTOR = _MAINTENANCE_TEMPERATURE_UNITS,
+    Test = _reflection.GeneratedProtocolMessageType('Test', (_message.Message,), dict(
+      DESCRIPTOR = _MAINTENANCE_AFCI_TEST,
       __module__ = 'maintenance_pb2'
-      # @@protoc_insertion_point(class_scope:Maintenance.Temperature.Units)
+      # @@protoc_insertion_point(class_scope:Maintenance.AFCI.Test)
       ))
     ,
-    DESCRIPTOR = _MAINTENANCE_TEMPERATURE,
+    DESCRIPTOR = _MAINTENANCE_AFCI,
     __module__ = 'maintenance_pb2'
-    # @@protoc_insertion_point(class_scope:Maintenance.Temperature)
+    # @@protoc_insertion_point(class_scope:Maintenance.AFCI)
+    ))
+  ,
+
+  Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), dict(
+    DESCRIPTOR = _MAINTENANCE_HEADER,
+    __module__ = 'maintenance_pb2'
+    # @@protoc_insertion_point(class_scope:Maintenance.Header)
+    ))
+  ,
+
+  Standby = _reflection.GeneratedProtocolMessageType('Standby', (_message.Message,), dict(
+    DESCRIPTOR = _MAINTENANCE_STANDBY,
+    __module__ = 'maintenance_pb2'
+    # @@protoc_insertion_point(class_scope:Maintenance.Standby)
     ))
   ,
 
@@ -838,13 +817,6 @@ Maintenance = _reflection.GeneratedProtocolMessageType('Maintenance', (_message.
       Inverter = _reflection.GeneratedProtocolMessageType('Inverter', (_message.Message,), dict(
 
         Isolation = _reflection.GeneratedProtocolMessageType('Isolation', (_message.Message,), dict(
-
-          Iso = _reflection.GeneratedProtocolMessageType('Iso', (_message.Message,), dict(
-            DESCRIPTOR = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION_ISO,
-            __module__ = 'maintenance_pb2'
-            # @@protoc_insertion_point(class_scope:Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso)
-            ))
-          ,
           DESCRIPTOR = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_ISOLATION,
           __module__ = 'maintenance_pb2'
           # @@protoc_insertion_point(class_scope:Maintenance.Diagnostics.Inverters.Inverter.Isolation)
@@ -858,14 +830,21 @@ Maintenance = _reflection.GeneratedProtocolMessageType('Maintenance', (_message.
           ))
         ,
 
-        Optimizer = _reflection.GeneratedProtocolMessageType('Optimizer', (_message.Message,), dict(
+        Temperature = _reflection.GeneratedProtocolMessageType('Temperature', (_message.Message,), dict(
 
-          Date = _reflection.GeneratedProtocolMessageType('Date', (_message.Message,), dict(
-            DESCRIPTOR = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER_DATE,
+          Units = _reflection.GeneratedProtocolMessageType('Units', (_message.Message,), dict(
+            DESCRIPTOR = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE_UNITS,
             __module__ = 'maintenance_pb2'
-            # @@protoc_insertion_point(class_scope:Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date)
+            # @@protoc_insertion_point(class_scope:Maintenance.Diagnostics.Inverters.Inverter.Temperature.Units)
             ))
           ,
+          DESCRIPTOR = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_TEMPERATURE,
+          __module__ = 'maintenance_pb2'
+          # @@protoc_insertion_point(class_scope:Maintenance.Diagnostics.Inverters.Inverter.Temperature)
+          ))
+        ,
+
+        Optimizer = _reflection.GeneratedProtocolMessageType('Optimizer', (_message.Message,), dict(
           DESCRIPTOR = _MAINTENANCE_DIAGNOSTICS_INVERTERS_INVERTER_OPTIMIZER,
           __module__ = 'maintenance_pb2'
           # @@protoc_insertion_point(class_scope:Maintenance.Diagnostics.Inverters.Inverter.Optimizer)
@@ -886,47 +865,26 @@ Maintenance = _reflection.GeneratedProtocolMessageType('Maintenance', (_message.
     # @@protoc_insertion_point(class_scope:Maintenance.Diagnostics)
     ))
   ,
-
-  System = _reflection.GeneratedProtocolMessageType('System', (_message.Message,), dict(
-    DESCRIPTOR = _MAINTENANCE_SYSTEM,
-    __module__ = 'maintenance_pb2'
-    # @@protoc_insertion_point(class_scope:Maintenance.System)
-    ))
-  ,
-
-  AFCI = _reflection.GeneratedProtocolMessageType('AFCI', (_message.Message,), dict(
-    DESCRIPTOR = _MAINTENANCE_AFCI,
-    __module__ = 'maintenance_pb2'
-    # @@protoc_insertion_point(class_scope:Maintenance.AFCI)
-    ))
-  ,
-
-  Standby = _reflection.GeneratedProtocolMessageType('Standby', (_message.Message,), dict(
-    DESCRIPTOR = _MAINTENANCE_STANDBY,
-    __module__ = 'maintenance_pb2'
-    # @@protoc_insertion_point(class_scope:Maintenance.Standby)
-    ))
-  ,
   DESCRIPTOR = _MAINTENANCE,
   __module__ = 'maintenance_pb2'
   # @@protoc_insertion_point(class_scope:Maintenance)
   ))
 _sym_db.RegisterMessage(Maintenance)
+_sym_db.RegisterMessage(Maintenance.Int32ValueScaling)
 _sym_db.RegisterMessage(Maintenance.Time)
 _sym_db.RegisterMessage(Maintenance.Time.CurrentTime)
-_sym_db.RegisterMessage(Maintenance.Temperature)
-_sym_db.RegisterMessage(Maintenance.Temperature.Units)
+_sym_db.RegisterMessage(Maintenance.AFCI)
+_sym_db.RegisterMessage(Maintenance.AFCI.Test)
+_sym_db.RegisterMessage(Maintenance.Header)
+_sym_db.RegisterMessage(Maintenance.Standby)
 _sym_db.RegisterMessage(Maintenance.Diagnostics)
 _sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters)
 _sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter)
 _sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter.Isolation)
-_sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter.Isolation.Iso)
 _sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter.OptimizersStatus)
+_sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter.Temperature)
+_sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter.Temperature.Units)
 _sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter.Optimizer)
-_sym_db.RegisterMessage(Maintenance.Diagnostics.Inverters.Inverter.Optimizer.Date)
-_sym_db.RegisterMessage(Maintenance.System)
-_sym_db.RegisterMessage(Maintenance.AFCI)
-_sym_db.RegisterMessage(Maintenance.Standby)
 
 
 # @@protoc_insertion_point(module_scope)

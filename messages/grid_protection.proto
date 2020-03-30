@@ -1,48 +1,36 @@
 syntax = "proto3";
 
 message GridProtection {
-    
-    message GridMonitorTime {
+
+    message Int32ValueRo {
         int32 value = 1;
+        bool ro = 2;
+    }
+    message Int32ValueScalingRo {
+        int32 value = 1;
+        int32 scaling = 2;
+        bool ro = 3;
     }
 
     message Header {
-        string serial = 1;
+        string id = 1;
         int32 timestamp = 2;
     }
 
-    message VoltsMSValue {
-        message Volts {
-            int32 value = 1;
-            int32 units = 2;
-        }
-
-        message Milliseconds {
-            int32 value = 1;
-        }
-
-        Volts volts = 1;
-        Milliseconds ms = 2;
+    message VoltsMsValue {
+        Int32ValueScalingRo value = 1;
+        Int32ValueRo holdtime = 2;
     }
 
-    message HertzMSValue {
-        message Hertz {
-            int32 value = 1;
-            int32 units = 2;
-        }
-
-        message Milliseconds {
-            int32 value = 1;
-        }
-
-        Hertz hertz = 1;
-        Milliseconds ms = 2;
+    message HertzMsValue {
+        Int32ValueScalingRo value = 1;
+        Int32ValueRo holdtime = 2;
     }
 
-    repeated VoltsMSValue vgrid_max_value = 1;
-    repeated VoltsMSValue vgrid_min_value = 2;
-    repeated HertzMSValue fgrid_max_value = 3;
-    repeated HertzMSValue fgrid_min_value = 4;
-    GridMonitorTime grid_monitor_time = 5;
+    repeated VoltsMsValue vgMaxList = 1;
+    repeated VoltsMsValue vgMinList = 2;
+    repeated HertzMsValue fgMaxList = 3;
+    repeated HertzMsValue fgMinList = 4;
+    Int32ValueRo grmTime = 5;
     Header header = 9;
 }

@@ -2,74 +2,83 @@ syntax = "proto3";
 
 message Maintenance {
 
+    message Int32ValueScaling {
+        int32 value = 1;
+        int32 scaling = 2;
+    }
+
     message Time {
         message CurrentTime {
             int32 year = 1;
             int32 month = 2;
             int32 day = 3;
             int32 hour = 4;
-            int32 minutes = 5;
-            int32 seconds = 6;
+            int32 minute = 5;
+            int32 second = 6;
         }
         
-        CurrentTime current_time = 1;
-        string ntp_server = 2;
-        int32 utc_offset = 3;
+        CurrentTime date = 1;
+        string ntp = 2;
+        int32 gmtOffset = 3;
     }
 
-    message Temperature {
-        message Units {
-            bool celsius = 1;
-            bool fahrenheit = 2;
+    message AFCI {
+        message Test {
+            int32 result = 1;
         }
 
-        int32 value = 1;
-        Units units = 2;
+        bool enable = 1;
+        bool manualReconnect = 2;
+        Test test = 3;
+    }
+
+    message Header {
+        string id = 1;
+        int32 timestamp = 2;
+    }
+
+    message Standby {
+        bool activated = 1;
     }
 
     message Diagnostics {
         message Inverters {
             message Inverter {
                 message Isolation {
-                    message Iso {
-                        int32 isolation = 1;
-                        int32 scale = 2;
-                    }
-                
-                    int32 fault_location = 3;
-                    Iso r_iso = 2;
-                    Iso alpha = 1;
+                    Int32ValueScaling alpha = 1;
+                    Int32ValueScaling rIso = 2;
+                    int32 faultLocation = 3;
                 }
 
                 message OptimizersStatus {
-                    int32 total = 1;
-                    int32 online = 2;
+                    int32 enabled = 1;
+                    int32 connected = 2;
+                }
+
+                message Temperature {
+                    message Units {
+                        bool celsius = 1;
+                        bool fahrenheit = 2;
+                    }
+
+                    int32 value = 1;
+                    Units units = 2;
                 }
 
                 message Optimizer {
-                    message Date {
-                        int32 year = 1;
-                        int32 month = 2;
-                        int32 day = 3;
-                        int32 hour = 4;
-                        int32 minutes = 5;
-                        int32 seconds = 6;
-                    }
-
-                    string serial = 1;
-                    bool online = 2;
-                    Date last_report = 3;
-                    float po_power = 4;
-                    int32 po_voltage = 5;
-                    int32 module_voltage = 6;
-                    int32 module_current = 7;
-                    Maintenance.Temperature temperature = 8;
+                    string sn = 1;
+                    bool reports = 2;
+                    Time.CurrentTime date = 3;
+                    int32 outputV = 5;
+                    int32 inputV = 6;
+                    int32 inputC = 7;
+                    Temperature temperature = 8;
                 }
 
-                string serial = 1;
-                repeated Optimizer optimizer = 2;
+                string invSn = 1;
+                repeated Optimizer optimizerList = 2;
                 Isolation isolation = 3;
-                OptimizersStatus optimizers_status = 4;
+                OptimizersStatus optimizersStatus = 4;
             }
 
             Inverter left = 1;
@@ -80,24 +89,9 @@ message Maintenance {
         Inverters inverters = 1;
     }
 
-    message System {
-        string name = 1;
-        int32 timestamp = 2;
-    }
-
-    message AFCI {
-        bool enabled = 1;
-        bool manual_reconnect = 2;
-    }
-
-    message Standby {
-        bool enabled = 1;
-    }
-
-    Time time = 1;
-    Temperature temperature = 2;
+    Time dateAndTime = 1;
     AFCI afci = 3;
     Diagnostics diagnostics = 6;
     Standby standby = 7;
-    System system = 13;
+    Header header = 13;
 }

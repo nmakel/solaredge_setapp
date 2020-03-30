@@ -18,27 +18,72 @@ class Communication:
             
             parsed = {
                 "lan": {
-                    "mac": proto.lan.mac.value,
+                    "mac": str(proto.lan.mac.value),
                     "dhcp": bool(proto.lan.dhcp.value),
-                    "ip": proto.lan.ip.ip.value,
-                    "netmask": proto.lan.ip.netmask.value,
-                    "gateway": proto.lan.ip.gateway.value,
-                    "dns": proto.lan.ip.dns.value,
+                    "ip": str(proto.lan.ip.ipAddress.value),
+                    "netmask": str(proto.lan.ip.subnetMask.value),
+                    "gateway": str(proto.lan.ip.gateway.value),
+                    "dns": str(proto.lan.ip.dns.value),
                     "connected": bool(proto.lan.connected.value)
                 },
-                "modbus_tcp": {
-                   "enabled": bool(proto.modbus_tcp.enabled.value)
+                "wifi": {
+                    "status": int(proto.wifi.status),
+                    "wps_duration": int(proto.wifi.wpsDuration.value),
+                    "configurations": {
+                        "station": bool(proto.wifi.wifiConfigurations.station.value),
+                        "wps": bool(proto.wifi.wifiConfigurations.wps.value),
+                        "hg": bool(proto.wifi.wifiConfigurations.hg.value)
+                    },
+                    "external_antenna": bool(proto.wifi.extAntenna.value)
                 },
-                "server_connection": bool(proto.server_connection.value),
+                "modbus_tcp": {
+                   "enabled": bool(proto.modbusTcpPort.enabled.value)
+                },
+                "server_connection": bool(proto.sOk.value),
                 "server_channel": {
-                      "lan": bool(proto.server_channel.lan.value),
-                      "cellular": bool(proto.server_channel.cellular.value),
-                      "rs4851": bool(proto.server_channel.rs485_1.value),
-                      "rs4852": bool(proto.server_channel.rs485_2.value),
-                      "wifi": bool(proto.server_channel.wifi.value),
-                      "zigbee": bool(proto.server_channel.zigbee.value) 
+                    "lan": bool(proto.serverChannel.lan.value),
+                    "cellular": bool(proto.serverChannel.cellular.value),
+                    "rs485_1": bool(proto.serverChannel.rs4851SeSlave.value),
+                    "rs485_2": bool(proto.serverChannel.rs4852SeSlave.value),
+                    "wifi": bool(proto.serverChannel.wifi.value),
+                    "zigbee": bool(proto.serverChannel.zigbee.value) 
+                },
+                "rs485_1": {
+                    "device_id": int(proto.rs4851.deviceId.value),
+                    "protocol": {
+                        "se_slave": bool(proto.rs4851.protocol.seSlave.value),
+                        "se_master": bool(proto.rs4851.protocol.seMaster.value),
+                        "modbus_multi_devices": bool(proto.rs4851.protocol.modbusMultiDevices.value),
+                        "sunspec": bool(proto.rs4851.protocol.sunspec.value),
+                        "none": bool(proto.rs4851.protocol.none.value)
+                    }
+                },
+                "rs485_2": {
+                    "device_id": int(proto.rs4852.deviceId.value),
+                    "protocol": {
+                        "se_slave": bool(proto.rs4852.protocol.seSlave.value),
+                        "se_master": bool(proto.rs4852.protocol.seMaster.value),
+                        "modbus_multi_devices": bool(proto.rs4852.protocol.modbusMultiDevices.value),
+                        "sunspec": bool(proto.rs4852.protocol.sunspec.value),
+                        "none": bool(proto.rs4852.protocol.none.value)
+                    }
+                },
+                "gpio": {
+                    "primary": {
+                        "disable": bool(proto.gpio.pri.disable.value),
+                        "rrcr": bool(proto.gpio.pri.rrcr.value),
+                        "ac_relay": bool(proto.gpio.pri.acRelay.value),
+                        "rrcr_ac_relay": bool(proto.gpio.pri.rrcrAcRelay.value),
+                        "drm": bool(proto.gpio.pri.drm.value),
+                        "external_generator": bool(proto.gpio.pri.externalGenerator.value),
+                    }
                 }
             }
+
+            try: 
+                parsed["wifi"]["status"] = solaredge_setapp.WifiStatus(parsed["wifi"]["status"]).name
+            except ValueError as e:
+                parsed["wifi"]["status"] = solaredge_setapp.WifiStatus(0).name
         except AttributeError as e:
             print(f"AttributeError: {e}")
 

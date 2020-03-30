@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cregion.proto\"\xaa\x01\n\x06Region\x12 \n\x07\x63ountry\x18\x01 \x01(\x0b\x32\x0f.Region.Country\x12\"\n\x08language\x18\x02 \x01(\x0b\x32\x10.Region.Language\x1a+\n\x07\x43ountry\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\x05\x12\x0f\n\x07options\x18\x02 \x03(\x05\x1a-\n\x08Language\x12\x10\n\x08language\x18\x01 \x01(\x05\x12\x0f\n\x07options\x18\x02 \x03(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\x0cregion.proto\"\xc1\x01\n\x06Region\x12 \n\x07\x63ountry\x18\x01 \x01(\x0b\x32\x0f.Region.Country\x12\"\n\x08language\x18\x02 \x01(\x0b\x32\x10.Region.Language\x1a\x36\n\x07\x43ountry\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\x05\x12\x1a\n\x12\x63ountryOptionsList\x18\x02 \x03(\x05\x1a\x39\n\x08Language\x12\x10\n\x08language\x18\x01 \x01(\x05\x12\x1b\n\x13languageOptionsList\x18\x02 \x03(\x05\x62\x06proto3')
 )
 
 
@@ -40,7 +40,7 @@ _REGION_COUNTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='options', full_name='Region.Country.options', index=1,
+      name='countryOptionsList', full_name='Region.Country.countryOptionsList', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -59,7 +59,7 @@ _REGION_COUNTRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=97,
-  serialized_end=140,
+  serialized_end=151,
 )
 
 _REGION_LANGUAGE = _descriptor.Descriptor(
@@ -77,7 +77,7 @@ _REGION_LANGUAGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='options', full_name='Region.Language.options', index=1,
+      name='languageOptionsList', full_name='Region.Language.languageOptionsList', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -95,8 +95,8 @@ _REGION_LANGUAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=142,
-  serialized_end=187,
+  serialized_start=153,
+  serialized_end=210,
 )
 
 _REGION = _descriptor.Descriptor(
@@ -133,7 +133,7 @@ _REGION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=187,
+  serialized_end=210,
 )
 
 _REGION_COUNTRY.containing_type = _REGION

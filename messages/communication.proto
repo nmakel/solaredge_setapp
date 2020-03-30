@@ -2,93 +2,93 @@ syntax = "proto3";
 
 message Communication {
     
-    message BoolKeyValue {
+    message BoolValueRo {
         bool value = 1;
         bool ro = 2;
     }
-    message Int32KeyValue {
+    message Int32ValueRo {
         int32 value = 1;
         bool ro = 2;
     }
-    message StringKeyValue {
+    message StringValueRo {
         string value = 1;
         bool ro = 2;
     }
 
     message ServerChannel {
-        BoolKeyValue lan = 1;
-        BoolKeyValue cellular = 2;
-        BoolKeyValue rs485_1 = 3;
-        BoolKeyValue rs485_2 = 4;
-        BoolKeyValue zigbee = 5;
-        BoolKeyValue wifi = 6;
+        BoolValueRo lan = 1;
+        BoolValueRo cellular = 2;
+        BoolValueRo rs4851SeSlave = 3;
+        BoolValueRo rs4852SeSlave = 4;
+        BoolValueRo zigbee = 5;
+        BoolValueRo wifi = 6;
     }
 
     message Lan {
         message IP {
-            StringKeyValue ip = 1;
-            StringKeyValue netmask = 2;
-            StringKeyValue gateway = 3;
-            StringKeyValue dns = 4;
+            StringValueRo ipAddress = 1;
+            StringValueRo subnetMask = 2;
+            StringValueRo gateway = 3;
+            StringValueRo dns = 4;
         }
 
-        BoolKeyValue dhcp = 1;
+        BoolValueRo dhcp = 1;
         IP ip = 2;
-        StringKeyValue mac = 3;
-        BoolKeyValue connected = 4;
+        StringValueRo mac = 3;
+        BoolValueRo connected = 4;
     }
 
     message RS485 {
         message Protocol {
-            BoolKeyValue se_slave = 1;
-            BoolKeyValue se_master = 2;
-            BoolKeyValue multi_devices = 3;
-            BoolKeyValue sunspec = 4;
-            BoolKeyValue none = 5;
+            BoolValueRo seSlave = 1;
+            BoolValueRo seMaster = 2;
+            BoolValueRo modbusMultiDevices = 3;
+            BoolValueRo sunspec = 4;
+            BoolValueRo none = 5;
         }
 
         Protocol protocol = 1;
-        Int32KeyValue device_id = 7;
+        Int32ValueRo deviceId = 7;
     }
 
     message ModbusTCP {
-        BoolKeyValue enabled = 1;
-        Int32KeyValue port = 2;
+        BoolValueRo enabled = 1;
+        Int32ValueRo port = 2;
     }
 
     message Wifi {
         message Configuration {
-            BoolKeyValue hg = 1;
-            BoolKeyValue station = 2;
-            BoolKeyValue wps = 3;
+            BoolValueRo hg = 1;
+            BoolValueRo station = 2;
+            BoolValueRo wps = 3;
         }
 
         string ssid = 2;
         int32 status = 3;
-        Int32KeyValue wps_duration = 4;
-        Configuration configuration = 5;
-        BoolKeyValue external_antenna = 7;
+        Int32ValueRo wpsDuration = 4;
+        Configuration wifiConfigurations = 5;
+        BoolValueRo extAntenna = 7;
     }
 
     message GPIO {
         message Primary {
-            BoolKeyValue disable = 1;
-            BoolKeyValue rrcr = 2;
-            BoolKeyValue ac_relay = 3;
-            BoolKeyValue rrcr_ac_relay = 4;
-            BoolKeyValue drm = 5;
-            BoolKeyValue external_generator = 6;
+            BoolValueRo disable = 1;
+            BoolValueRo rrcr = 2;
+            BoolValueRo acRelay = 3;
+            BoolValueRo rrcrAcRelay = 4;
+            BoolValueRo drm = 5;
+            BoolValueRo externalGenerator = 6;
         }
 
-        Primary primary = 1;
+        Primary pri = 1;
     }
 
-    ServerChannel server_channel = 1;
+    ServerChannel serverChannel = 1;
     Lan lan = 2;
-    RS485 rs485_1 = 3;
-    RS485 rs485_2 = 4;
-    ModbusTCP modbus_tcp = 9;
+    RS485 rs4851 = 3;
+    RS485 rs4852 = 4;
+    ModbusTCP modbusTcpPort = 9;
     Wifi wifi = 6;
     GPIO gpio = 8;
-    BoolKeyValue server_connection = 11;
+    BoolValueRo sOk = 11;
 }

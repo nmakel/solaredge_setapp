@@ -19,28 +19,28 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x63ommunication.proto\"\x80\x12\n\rCommunication\x12\x34\n\x0eserver_channel\x18\x01 \x01(\x0b\x32\x1c.Communication.ServerChannel\x12\x1f\n\x03lan\x18\x02 \x01(\x0b\x32\x12.Communication.Lan\x12%\n\x07rs485_1\x18\x03 \x01(\x0b\x32\x14.Communication.RS485\x12%\n\x07rs485_2\x18\x04 \x01(\x0b\x32\x14.Communication.RS485\x12,\n\nmodbus_tcp\x18\t \x01(\x0b\x32\x18.Communication.ModbusTCP\x12!\n\x04wifi\x18\x06 \x01(\x0b\x32\x13.Communication.Wifi\x12!\n\x04gpio\x18\x08 \x01(\x0b\x32\x13.Communication.GPIO\x12\x36\n\x11server_connection\x18\x0b \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x1a)\n\x0c\x42oolKeyValue\x12\r\n\x05value\x18\x01 \x01(\x08\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a*\n\rInt32KeyValue\x12\r\n\x05value\x18\x01 \x01(\x05\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a+\n\x0eStringKeyValue\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a\x9c\x02\n\rServerChannel\x12(\n\x03lan\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12-\n\x08\x63\x65llular\x18\x02 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12,\n\x07rs485_1\x18\x03 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12,\n\x07rs485_2\x18\x04 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12+\n\x06zigbee\x18\x05 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12)\n\x04wifi\x18\x06 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x1a\xed\x02\n\x03Lan\x12)\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12!\n\x02ip\x18\x02 \x01(\x0b\x32\x15.Communication.Lan.IP\x12*\n\x03mac\x18\x03 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x12.\n\tconnected\x18\x04 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x1a\xbb\x01\n\x02IP\x12)\n\x02ip\x18\x01 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x12.\n\x07netmask\x18\x02 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x12.\n\x07gateway\x18\x03 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x12*\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x1d.Communication.StringKeyValue\x1a\xe2\x02\n\x05RS485\x12/\n\x08protocol\x18\x01 \x01(\x0b\x32\x1d.Communication.RS485.Protocol\x12/\n\tdevice_id\x18\x07 \x01(\x0b\x32\x1c.Communication.Int32KeyValue\x1a\xf6\x01\n\x08Protocol\x12-\n\x08se_slave\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12.\n\tse_master\x18\x02 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12\x32\n\rmulti_devices\x18\x03 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12,\n\x07sunspec\x18\x04 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12)\n\x04none\x18\x05 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x1a\x65\n\tModbusTCP\x12,\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12*\n\x04port\x18\x02 \x01(\x0b\x32\x1c.Communication.Int32KeyValue\x1a\xdc\x02\n\x04Wifi\x12\x0c\n\x04ssid\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x32\n\x0cwps_duration\x18\x04 \x01(\x0b\x32\x1c.Communication.Int32KeyValue\x12\x38\n\rconfiguration\x18\x05 \x01(\x0b\x32!.Communication.Wifi.Configuration\x12\x35\n\x10\x65xternal_antenna\x18\x07 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x1a\x90\x01\n\rConfiguration\x12\'\n\x02hg\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12,\n\x07station\x18\x02 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12(\n\x03wps\x18\x03 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x1a\xdf\x02\n\x04GPIO\x12,\n\x07primary\x18\x01 \x01(\x0b\x32\x1b.Communication.GPIO.Primary\x1a\xa8\x02\n\x07Primary\x12,\n\x07\x64isable\x18\x01 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12)\n\x04rrcr\x18\x02 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12-\n\x08\x61\x63_relay\x18\x03 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12\x32\n\rrrcr_ac_relay\x18\x04 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12(\n\x03\x64rm\x18\x05 \x01(\x0b\x32\x1b.Communication.BoolKeyValue\x12\x37\n\x12\x65xternal_generator\x18\x06 \x01(\x0b\x32\x1b.Communication.BoolKeyValueb\x06proto3')
+  serialized_pb=_b('\n\x13\x63ommunication.proto\"\xdc\x11\n\rCommunication\x12\x33\n\rserverChannel\x18\x01 \x01(\x0b\x32\x1c.Communication.ServerChannel\x12\x1f\n\x03lan\x18\x02 \x01(\x0b\x32\x12.Communication.Lan\x12$\n\x06rs4851\x18\x03 \x01(\x0b\x32\x14.Communication.RS485\x12$\n\x06rs4852\x18\x04 \x01(\x0b\x32\x14.Communication.RS485\x12/\n\rmodbusTcpPort\x18\t \x01(\x0b\x32\x18.Communication.ModbusTCP\x12!\n\x04wifi\x18\x06 \x01(\x0b\x32\x13.Communication.Wifi\x12!\n\x04gpio\x18\x08 \x01(\x0b\x32\x13.Communication.GPIO\x12\'\n\x03sOk\x18\x0b \x01(\x0b\x32\x1a.Communication.BoolValueRo\x1a(\n\x0b\x42oolValueRo\x12\r\n\x05value\x18\x01 \x01(\x08\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a)\n\x0cInt32ValueRo\x12\r\n\x05value\x18\x01 \x01(\x05\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a*\n\rStringValueRo\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a\xa2\x02\n\rServerChannel\x12\'\n\x03lan\x18\x01 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12,\n\x08\x63\x65llular\x18\x02 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12\x31\n\rrs4851SeSlave\x18\x03 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12\x31\n\rrs4852SeSlave\x18\x04 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12*\n\x06zigbee\x18\x05 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12(\n\x04wifi\x18\x06 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x1a\xf0\x02\n\x03Lan\x12(\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12!\n\x02ip\x18\x02 \x01(\x0b\x32\x15.Communication.Lan.IP\x12)\n\x03mac\x18\x03 \x01(\x0b\x32\x1c.Communication.StringValueRo\x12-\n\tconnected\x18\x04 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x1a\xc1\x01\n\x02IP\x12/\n\tipAddress\x18\x01 \x01(\x0b\x32\x1c.Communication.StringValueRo\x12\x30\n\nsubnetMask\x18\x02 \x01(\x0b\x32\x1c.Communication.StringValueRo\x12-\n\x07gateway\x18\x03 \x01(\x0b\x32\x1c.Communication.StringValueRo\x12)\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x1c.Communication.StringValueRo\x1a\xde\x02\n\x05RS485\x12/\n\x08protocol\x18\x01 \x01(\x0b\x32\x1d.Communication.RS485.Protocol\x12-\n\x08\x64\x65viceId\x18\x07 \x01(\x0b\x32\x1b.Communication.Int32ValueRo\x1a\xf4\x01\n\x08Protocol\x12+\n\x07seSlave\x18\x01 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12,\n\x08seMaster\x18\x02 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12\x36\n\x12modbusMultiDevices\x18\x03 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12+\n\x07sunspec\x18\x04 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12(\n\x04none\x18\x05 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x1a\x63\n\tModbusTCP\x12+\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12)\n\x04port\x18\x02 \x01(\x0b\x32\x1b.Communication.Int32ValueRo\x1a\xd5\x02\n\x04Wifi\x12\x0c\n\x04ssid\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\x05\x12\x30\n\x0bwpsDuration\x18\x04 \x01(\x0b\x32\x1b.Communication.Int32ValueRo\x12=\n\x12wifiConfigurations\x18\x05 \x01(\x0b\x32!.Communication.Wifi.Configuration\x12.\n\nextAntenna\x18\x07 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x1a\x8d\x01\n\rConfiguration\x12&\n\x02hg\x18\x01 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12+\n\x07station\x18\x02 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12\'\n\x03wps\x18\x03 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x1a\xd1\x02\n\x04GPIO\x12(\n\x03pri\x18\x01 \x01(\x0b\x32\x1b.Communication.GPIO.Primary\x1a\x9e\x02\n\x07Primary\x12+\n\x07\x64isable\x18\x01 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12(\n\x04rrcr\x18\x02 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12+\n\x07\x61\x63Relay\x18\x03 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12/\n\x0brrcrAcRelay\x18\x04 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12\'\n\x03\x64rm\x18\x05 \x01(\x0b\x32\x1a.Communication.BoolValueRo\x12\x35\n\x11\x65xternalGenerator\x18\x06 \x01(\x0b\x32\x1a.Communication.BoolValueRob\x06proto3')
 )
 
 
 
 
-_COMMUNICATION_BOOLKEYVALUE = _descriptor.Descriptor(
-  name='BoolKeyValue',
-  full_name='Communication.BoolKeyValue',
+_COMMUNICATION_BOOLVALUERO = _descriptor.Descriptor(
+  name='BoolValueRo',
+  full_name='Communication.BoolValueRo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Communication.BoolKeyValue.value', index=0,
+      name='value', full_name='Communication.BoolValueRo.value', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ro', full_name='Communication.BoolKeyValue.ro', index=1,
+      name='ro', full_name='Communication.BoolValueRo.ro', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -58,26 +58,26 @@ _COMMUNICATION_BOOLKEYVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=378,
-  serialized_end=419,
+  serialized_start=363,
+  serialized_end=403,
 )
 
-_COMMUNICATION_INT32KEYVALUE = _descriptor.Descriptor(
-  name='Int32KeyValue',
-  full_name='Communication.Int32KeyValue',
+_COMMUNICATION_INT32VALUERO = _descriptor.Descriptor(
+  name='Int32ValueRo',
+  full_name='Communication.Int32ValueRo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Communication.Int32KeyValue.value', index=0,
+      name='value', full_name='Communication.Int32ValueRo.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ro', full_name='Communication.Int32KeyValue.ro', index=1,
+      name='ro', full_name='Communication.Int32ValueRo.ro', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -95,26 +95,26 @@ _COMMUNICATION_INT32KEYVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=421,
-  serialized_end=463,
+  serialized_start=405,
+  serialized_end=446,
 )
 
-_COMMUNICATION_STRINGKEYVALUE = _descriptor.Descriptor(
-  name='StringKeyValue',
-  full_name='Communication.StringKeyValue',
+_COMMUNICATION_STRINGVALUERO = _descriptor.Descriptor(
+  name='StringValueRo',
+  full_name='Communication.StringValueRo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Communication.StringKeyValue.value', index=0,
+      name='value', full_name='Communication.StringValueRo.value', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ro', full_name='Communication.StringKeyValue.ro', index=1,
+      name='ro', full_name='Communication.StringValueRo.ro', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,8 +132,8 @@ _COMMUNICATION_STRINGKEYVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=508,
+  serialized_start=448,
+  serialized_end=490,
 )
 
 _COMMUNICATION_SERVERCHANNEL = _descriptor.Descriptor(
@@ -158,14 +158,14 @@ _COMMUNICATION_SERVERCHANNEL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rs485_1', full_name='Communication.ServerChannel.rs485_1', index=2,
+      name='rs4851SeSlave', full_name='Communication.ServerChannel.rs4851SeSlave', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rs485_2', full_name='Communication.ServerChannel.rs485_2', index=3,
+      name='rs4852SeSlave', full_name='Communication.ServerChannel.rs4852SeSlave', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -197,8 +197,8 @@ _COMMUNICATION_SERVERCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=511,
-  serialized_end=795,
+  serialized_start=493,
+  serialized_end=783,
 )
 
 _COMMUNICATION_LAN_IP = _descriptor.Descriptor(
@@ -209,14 +209,14 @@ _COMMUNICATION_LAN_IP = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ip', full_name='Communication.Lan.IP.ip', index=0,
+      name='ipAddress', full_name='Communication.Lan.IP.ipAddress', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='netmask', full_name='Communication.Lan.IP.netmask', index=1,
+      name='subnetMask', full_name='Communication.Lan.IP.subnetMask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -248,8 +248,8 @@ _COMMUNICATION_LAN_IP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=976,
-  serialized_end=1163,
+  serialized_start=961,
+  serialized_end=1154,
 )
 
 _COMMUNICATION_LAN = _descriptor.Descriptor(
@@ -299,8 +299,8 @@ _COMMUNICATION_LAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=798,
-  serialized_end=1163,
+  serialized_start=786,
+  serialized_end=1154,
 )
 
 _COMMUNICATION_RS485_PROTOCOL = _descriptor.Descriptor(
@@ -311,21 +311,21 @@ _COMMUNICATION_RS485_PROTOCOL = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='se_slave', full_name='Communication.RS485.Protocol.se_slave', index=0,
+      name='seSlave', full_name='Communication.RS485.Protocol.seSlave', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='se_master', full_name='Communication.RS485.Protocol.se_master', index=1,
+      name='seMaster', full_name='Communication.RS485.Protocol.seMaster', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='multi_devices', full_name='Communication.RS485.Protocol.multi_devices', index=2,
+      name='modbusMultiDevices', full_name='Communication.RS485.Protocol.modbusMultiDevices', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -357,8 +357,8 @@ _COMMUNICATION_RS485_PROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1274,
-  serialized_end=1520,
+  serialized_start=1263,
+  serialized_end=1507,
 )
 
 _COMMUNICATION_RS485 = _descriptor.Descriptor(
@@ -376,7 +376,7 @@ _COMMUNICATION_RS485 = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='device_id', full_name='Communication.RS485.device_id', index=1,
+      name='deviceId', full_name='Communication.RS485.deviceId', index=1,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -394,8 +394,8 @@ _COMMUNICATION_RS485 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1166,
-  serialized_end=1520,
+  serialized_start=1157,
+  serialized_end=1507,
 )
 
 _COMMUNICATION_MODBUSTCP = _descriptor.Descriptor(
@@ -431,8 +431,8 @@ _COMMUNICATION_MODBUSTCP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1522,
-  serialized_end=1623,
+  serialized_start=1509,
+  serialized_end=1608,
 )
 
 _COMMUNICATION_WIFI_CONFIGURATION = _descriptor.Descriptor(
@@ -475,8 +475,8 @@ _COMMUNICATION_WIFI_CONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1830,
-  serialized_end=1974,
+  serialized_start=1811,
+  serialized_end=1952,
 )
 
 _COMMUNICATION_WIFI = _descriptor.Descriptor(
@@ -501,21 +501,21 @@ _COMMUNICATION_WIFI = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='wps_duration', full_name='Communication.Wifi.wps_duration', index=2,
+      name='wpsDuration', full_name='Communication.Wifi.wpsDuration', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='configuration', full_name='Communication.Wifi.configuration', index=3,
+      name='wifiConfigurations', full_name='Communication.Wifi.wifiConfigurations', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='external_antenna', full_name='Communication.Wifi.external_antenna', index=4,
+      name='extAntenna', full_name='Communication.Wifi.extAntenna', index=4,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -533,8 +533,8 @@ _COMMUNICATION_WIFI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1626,
-  serialized_end=1974,
+  serialized_start=1611,
+  serialized_end=1952,
 )
 
 _COMMUNICATION_GPIO_PRIMARY = _descriptor.Descriptor(
@@ -559,14 +559,14 @@ _COMMUNICATION_GPIO_PRIMARY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ac_relay', full_name='Communication.GPIO.Primary.ac_relay', index=2,
+      name='acRelay', full_name='Communication.GPIO.Primary.acRelay', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rrcr_ac_relay', full_name='Communication.GPIO.Primary.rrcr_ac_relay', index=3,
+      name='rrcrAcRelay', full_name='Communication.GPIO.Primary.rrcrAcRelay', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -580,7 +580,7 @@ _COMMUNICATION_GPIO_PRIMARY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='external_generator', full_name='Communication.GPIO.Primary.external_generator', index=5,
+      name='externalGenerator', full_name='Communication.GPIO.Primary.externalGenerator', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -598,8 +598,8 @@ _COMMUNICATION_GPIO_PRIMARY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2032,
-  serialized_end=2328,
+  serialized_start=2006,
+  serialized_end=2292,
 )
 
 _COMMUNICATION_GPIO = _descriptor.Descriptor(
@@ -610,7 +610,7 @@ _COMMUNICATION_GPIO = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='primary', full_name='Communication.GPIO.primary', index=0,
+      name='pri', full_name='Communication.GPIO.pri', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -628,8 +628,8 @@ _COMMUNICATION_GPIO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1977,
-  serialized_end=2328,
+  serialized_start=1955,
+  serialized_end=2292,
 )
 
 _COMMUNICATION = _descriptor.Descriptor(
@@ -640,7 +640,7 @@ _COMMUNICATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='server_channel', full_name='Communication.server_channel', index=0,
+      name='serverChannel', full_name='Communication.serverChannel', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -654,21 +654,21 @@ _COMMUNICATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rs485_1', full_name='Communication.rs485_1', index=2,
+      name='rs4851', full_name='Communication.rs4851', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rs485_2', full_name='Communication.rs485_2', index=3,
+      name='rs4852', full_name='Communication.rs4852', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='modbus_tcp', full_name='Communication.modbus_tcp', index=4,
+      name='modbusTcpPort', full_name='Communication.modbusTcpPort', index=4,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -689,7 +689,7 @@ _COMMUNICATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='server_connection', full_name='Communication.server_connection', index=7,
+      name='sOk', full_name='Communication.sOk', index=7,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -698,7 +698,7 @@ _COMMUNICATION = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_COMMUNICATION_BOOLKEYVALUE, _COMMUNICATION_INT32KEYVALUE, _COMMUNICATION_STRINGKEYVALUE, _COMMUNICATION_SERVERCHANNEL, _COMMUNICATION_LAN, _COMMUNICATION_RS485, _COMMUNICATION_MODBUSTCP, _COMMUNICATION_WIFI, _COMMUNICATION_GPIO, ],
+  nested_types=[_COMMUNICATION_BOOLVALUERO, _COMMUNICATION_INT32VALUERO, _COMMUNICATION_STRINGVALUERO, _COMMUNICATION_SERVERCHANNEL, _COMMUNICATION_LAN, _COMMUNICATION_RS485, _COMMUNICATION_MODBUSTCP, _COMMUNICATION_WIFI, _COMMUNICATION_GPIO, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -708,89 +708,89 @@ _COMMUNICATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=24,
-  serialized_end=2328,
+  serialized_end=2292,
 )
 
-_COMMUNICATION_BOOLKEYVALUE.containing_type = _COMMUNICATION
-_COMMUNICATION_INT32KEYVALUE.containing_type = _COMMUNICATION
-_COMMUNICATION_STRINGKEYVALUE.containing_type = _COMMUNICATION
-_COMMUNICATION_SERVERCHANNEL.fields_by_name['lan'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_SERVERCHANNEL.fields_by_name['cellular'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_SERVERCHANNEL.fields_by_name['rs485_1'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_SERVERCHANNEL.fields_by_name['rs485_2'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_SERVERCHANNEL.fields_by_name['zigbee'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_SERVERCHANNEL.fields_by_name['wifi'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_BOOLVALUERO.containing_type = _COMMUNICATION
+_COMMUNICATION_INT32VALUERO.containing_type = _COMMUNICATION
+_COMMUNICATION_STRINGVALUERO.containing_type = _COMMUNICATION
+_COMMUNICATION_SERVERCHANNEL.fields_by_name['lan'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_SERVERCHANNEL.fields_by_name['cellular'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_SERVERCHANNEL.fields_by_name['rs4851SeSlave'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_SERVERCHANNEL.fields_by_name['rs4852SeSlave'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_SERVERCHANNEL.fields_by_name['zigbee'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_SERVERCHANNEL.fields_by_name['wifi'].message_type = _COMMUNICATION_BOOLVALUERO
 _COMMUNICATION_SERVERCHANNEL.containing_type = _COMMUNICATION
-_COMMUNICATION_LAN_IP.fields_by_name['ip'].message_type = _COMMUNICATION_STRINGKEYVALUE
-_COMMUNICATION_LAN_IP.fields_by_name['netmask'].message_type = _COMMUNICATION_STRINGKEYVALUE
-_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _COMMUNICATION_STRINGKEYVALUE
-_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _COMMUNICATION_STRINGKEYVALUE
+_COMMUNICATION_LAN_IP.fields_by_name['ipAddress'].message_type = _COMMUNICATION_STRINGVALUERO
+_COMMUNICATION_LAN_IP.fields_by_name['subnetMask'].message_type = _COMMUNICATION_STRINGVALUERO
+_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _COMMUNICATION_STRINGVALUERO
+_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _COMMUNICATION_STRINGVALUERO
 _COMMUNICATION_LAN_IP.containing_type = _COMMUNICATION_LAN
-_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _COMMUNICATION_BOOLVALUERO
 _COMMUNICATION_LAN.fields_by_name['ip'].message_type = _COMMUNICATION_LAN_IP
-_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _COMMUNICATION_STRINGKEYVALUE
-_COMMUNICATION_LAN.fields_by_name['connected'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _COMMUNICATION_STRINGVALUERO
+_COMMUNICATION_LAN.fields_by_name['connected'].message_type = _COMMUNICATION_BOOLVALUERO
 _COMMUNICATION_LAN.containing_type = _COMMUNICATION
-_COMMUNICATION_RS485_PROTOCOL.fields_by_name['se_slave'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_RS485_PROTOCOL.fields_by_name['se_master'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_RS485_PROTOCOL.fields_by_name['multi_devices'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_RS485_PROTOCOL.fields_by_name['sunspec'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_RS485_PROTOCOL.fields_by_name['none'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_RS485_PROTOCOL.fields_by_name['seSlave'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_RS485_PROTOCOL.fields_by_name['seMaster'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_RS485_PROTOCOL.fields_by_name['modbusMultiDevices'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_RS485_PROTOCOL.fields_by_name['sunspec'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_RS485_PROTOCOL.fields_by_name['none'].message_type = _COMMUNICATION_BOOLVALUERO
 _COMMUNICATION_RS485_PROTOCOL.containing_type = _COMMUNICATION_RS485
 _COMMUNICATION_RS485.fields_by_name['protocol'].message_type = _COMMUNICATION_RS485_PROTOCOL
-_COMMUNICATION_RS485.fields_by_name['device_id'].message_type = _COMMUNICATION_INT32KEYVALUE
+_COMMUNICATION_RS485.fields_by_name['deviceId'].message_type = _COMMUNICATION_INT32VALUERO
 _COMMUNICATION_RS485.containing_type = _COMMUNICATION
-_COMMUNICATION_MODBUSTCP.fields_by_name['enabled'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_MODBUSTCP.fields_by_name['port'].message_type = _COMMUNICATION_INT32KEYVALUE
+_COMMUNICATION_MODBUSTCP.fields_by_name['enabled'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_MODBUSTCP.fields_by_name['port'].message_type = _COMMUNICATION_INT32VALUERO
 _COMMUNICATION_MODBUSTCP.containing_type = _COMMUNICATION
-_COMMUNICATION_WIFI_CONFIGURATION.fields_by_name['hg'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_WIFI_CONFIGURATION.fields_by_name['station'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_WIFI_CONFIGURATION.fields_by_name['wps'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_WIFI_CONFIGURATION.fields_by_name['hg'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_WIFI_CONFIGURATION.fields_by_name['station'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_WIFI_CONFIGURATION.fields_by_name['wps'].message_type = _COMMUNICATION_BOOLVALUERO
 _COMMUNICATION_WIFI_CONFIGURATION.containing_type = _COMMUNICATION_WIFI
-_COMMUNICATION_WIFI.fields_by_name['wps_duration'].message_type = _COMMUNICATION_INT32KEYVALUE
-_COMMUNICATION_WIFI.fields_by_name['configuration'].message_type = _COMMUNICATION_WIFI_CONFIGURATION
-_COMMUNICATION_WIFI.fields_by_name['external_antenna'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_WIFI.fields_by_name['wpsDuration'].message_type = _COMMUNICATION_INT32VALUERO
+_COMMUNICATION_WIFI.fields_by_name['wifiConfigurations'].message_type = _COMMUNICATION_WIFI_CONFIGURATION
+_COMMUNICATION_WIFI.fields_by_name['extAntenna'].message_type = _COMMUNICATION_BOOLVALUERO
 _COMMUNICATION_WIFI.containing_type = _COMMUNICATION
-_COMMUNICATION_GPIO_PRIMARY.fields_by_name['disable'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_GPIO_PRIMARY.fields_by_name['rrcr'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_GPIO_PRIMARY.fields_by_name['ac_relay'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_GPIO_PRIMARY.fields_by_name['rrcr_ac_relay'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_GPIO_PRIMARY.fields_by_name['drm'].message_type = _COMMUNICATION_BOOLKEYVALUE
-_COMMUNICATION_GPIO_PRIMARY.fields_by_name['external_generator'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION_GPIO_PRIMARY.fields_by_name['disable'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_GPIO_PRIMARY.fields_by_name['rrcr'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_GPIO_PRIMARY.fields_by_name['acRelay'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_GPIO_PRIMARY.fields_by_name['rrcrAcRelay'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_GPIO_PRIMARY.fields_by_name['drm'].message_type = _COMMUNICATION_BOOLVALUERO
+_COMMUNICATION_GPIO_PRIMARY.fields_by_name['externalGenerator'].message_type = _COMMUNICATION_BOOLVALUERO
 _COMMUNICATION_GPIO_PRIMARY.containing_type = _COMMUNICATION_GPIO
-_COMMUNICATION_GPIO.fields_by_name['primary'].message_type = _COMMUNICATION_GPIO_PRIMARY
+_COMMUNICATION_GPIO.fields_by_name['pri'].message_type = _COMMUNICATION_GPIO_PRIMARY
 _COMMUNICATION_GPIO.containing_type = _COMMUNICATION
-_COMMUNICATION.fields_by_name['server_channel'].message_type = _COMMUNICATION_SERVERCHANNEL
+_COMMUNICATION.fields_by_name['serverChannel'].message_type = _COMMUNICATION_SERVERCHANNEL
 _COMMUNICATION.fields_by_name['lan'].message_type = _COMMUNICATION_LAN
-_COMMUNICATION.fields_by_name['rs485_1'].message_type = _COMMUNICATION_RS485
-_COMMUNICATION.fields_by_name['rs485_2'].message_type = _COMMUNICATION_RS485
-_COMMUNICATION.fields_by_name['modbus_tcp'].message_type = _COMMUNICATION_MODBUSTCP
+_COMMUNICATION.fields_by_name['rs4851'].message_type = _COMMUNICATION_RS485
+_COMMUNICATION.fields_by_name['rs4852'].message_type = _COMMUNICATION_RS485
+_COMMUNICATION.fields_by_name['modbusTcpPort'].message_type = _COMMUNICATION_MODBUSTCP
 _COMMUNICATION.fields_by_name['wifi'].message_type = _COMMUNICATION_WIFI
 _COMMUNICATION.fields_by_name['gpio'].message_type = _COMMUNICATION_GPIO
-_COMMUNICATION.fields_by_name['server_connection'].message_type = _COMMUNICATION_BOOLKEYVALUE
+_COMMUNICATION.fields_by_name['sOk'].message_type = _COMMUNICATION_BOOLVALUERO
 DESCRIPTOR.message_types_by_name['Communication'] = _COMMUNICATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Communication = _reflection.GeneratedProtocolMessageType('Communication', (_message.Message,), dict(
 
-  BoolKeyValue = _reflection.GeneratedProtocolMessageType('BoolKeyValue', (_message.Message,), dict(
-    DESCRIPTOR = _COMMUNICATION_BOOLKEYVALUE,
+  BoolValueRo = _reflection.GeneratedProtocolMessageType('BoolValueRo', (_message.Message,), dict(
+    DESCRIPTOR = _COMMUNICATION_BOOLVALUERO,
     __module__ = 'communication_pb2'
-    # @@protoc_insertion_point(class_scope:Communication.BoolKeyValue)
+    # @@protoc_insertion_point(class_scope:Communication.BoolValueRo)
     ))
   ,
 
-  Int32KeyValue = _reflection.GeneratedProtocolMessageType('Int32KeyValue', (_message.Message,), dict(
-    DESCRIPTOR = _COMMUNICATION_INT32KEYVALUE,
+  Int32ValueRo = _reflection.GeneratedProtocolMessageType('Int32ValueRo', (_message.Message,), dict(
+    DESCRIPTOR = _COMMUNICATION_INT32VALUERO,
     __module__ = 'communication_pb2'
-    # @@protoc_insertion_point(class_scope:Communication.Int32KeyValue)
+    # @@protoc_insertion_point(class_scope:Communication.Int32ValueRo)
     ))
   ,
 
-  StringKeyValue = _reflection.GeneratedProtocolMessageType('StringKeyValue', (_message.Message,), dict(
-    DESCRIPTOR = _COMMUNICATION_STRINGKEYVALUE,
+  StringValueRo = _reflection.GeneratedProtocolMessageType('StringValueRo', (_message.Message,), dict(
+    DESCRIPTOR = _COMMUNICATION_STRINGVALUERO,
     __module__ = 'communication_pb2'
-    # @@protoc_insertion_point(class_scope:Communication.StringKeyValue)
+    # @@protoc_insertion_point(class_scope:Communication.StringValueRo)
     ))
   ,
 
@@ -868,9 +868,9 @@ Communication = _reflection.GeneratedProtocolMessageType('Communication', (_mess
   # @@protoc_insertion_point(class_scope:Communication)
   ))
 _sym_db.RegisterMessage(Communication)
-_sym_db.RegisterMessage(Communication.BoolKeyValue)
-_sym_db.RegisterMessage(Communication.Int32KeyValue)
-_sym_db.RegisterMessage(Communication.StringKeyValue)
+_sym_db.RegisterMessage(Communication.BoolValueRo)
+_sym_db.RegisterMessage(Communication.Int32ValueRo)
+_sym_db.RegisterMessage(Communication.StringValueRo)
 _sym_db.RegisterMessage(Communication.ServerChannel)
 _sym_db.RegisterMessage(Communication.Lan)
 _sym_db.RegisterMessage(Communication.Lan.IP)

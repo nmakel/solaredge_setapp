@@ -4,12 +4,12 @@ message Region {
 
     message Country {
         int32 country = 1;
-        repeated int32 options = 2;
+        repeated int32 countryOptionsList = 2;
     }
 
     message Language {
         int32 language = 1;
-        repeated int32 options = 2;
+        repeated int32 languageOptionsList = 2;
     }
 
     Country country = 1;

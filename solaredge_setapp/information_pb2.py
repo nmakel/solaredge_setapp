@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11information.proto\"\xb1\x04\n\x0bInformation\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12#\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x13.Information.Errors\x1a\x36\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\x05\x12\r\n\x05minor\x18\x02 \x01(\x05\x12\r\n\x05\x62uild\x18\x03 \x01(\x05\x1a\xc9\x02\n\x06\x45rrors\x12+\n\x07loggers\x18\x01 \x03(\x0b\x32\x1a.Information.Errors.Logger\x1a\xaf\x01\n\x05\x45rror\x12\x11\n\terrorCode\x18\x01 \x01(\x05\x12\x31\n\tstartTime\x18\x02 \x01(\x0b\x32\x1e.Information.Errors.Error.Date\x1a`\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0f\n\x07minutes\x18\x05 \x01(\x05\x12\x0f\n\x07seconds\x18\x06 \x01(\x05\x1a`\n\x06Logger\x12\x14\n\x0c\x63ontrollerid\x18\x01 \x01(\x05\x12\x11\n\tsubsystem\x18\x02 \x01(\x05\x12-\n\nerrorsList\x18\x03 \x03(\x0b\x32\x19.Information.Errors.Errorb\x06proto3')
+  serialized_pb=_b('\n\x11information.proto\"\xae\x04\n\x0bInformation\x12\n\n\x02sn\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12#\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x13.Information.Errors\x1a\x36\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\x05\x12\r\n\x05minor\x18\x02 \x01(\x05\x12\r\n\x05\x62uild\x18\x03 \x01(\x05\x1a\xca\x02\n\x06\x45rrors\x12.\n\nloggerList\x18\x01 \x03(\x0b\x32\x1a.Information.Errors.Logger\x1a\xad\x01\n\x05\x45rror\x12\x11\n\terrorCode\x18\x01 \x01(\x05\x12\x31\n\tstartTime\x18\x02 \x01(\x0b\x32\x1e.Information.Errors.Error.Date\x1a^\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0e\n\x06minute\x18\x05 \x01(\x05\x12\x0e\n\x06second\x18\x06 \x01(\x05\x1a`\n\x06Logger\x12\x14\n\x0c\x63ontrollerid\x18\x01 \x01(\x05\x12\x11\n\tsubsystem\x18\x02 \x01(\x05\x12-\n\nerrorsList\x18\x03 \x03(\x0b\x32\x19.Information.Errors.Errorb\x06proto3')
 )
 
 
@@ -65,8 +65,8 @@ _INFORMATION_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=197,
-  serialized_end=251,
+  serialized_start=193,
+  serialized_end=247,
 )
 
 _INFORMATION_ERRORS_ERROR_DATE = _descriptor.Descriptor(
@@ -105,14 +105,14 @@ _INFORMATION_ERRORS_ERROR_DATE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='minutes', full_name='Information.Errors.Error.Date.minutes', index=4,
+      name='minute', full_name='Information.Errors.Error.Date.minute', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='seconds', full_name='Information.Errors.Error.Date.seconds', index=5,
+      name='second', full_name='Information.Errors.Error.Date.second', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -130,8 +130,8 @@ _INFORMATION_ERRORS_ERROR_DATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=389,
-  serialized_end=485,
+  serialized_start=388,
+  serialized_end=482,
 )
 
 _INFORMATION_ERRORS_ERROR = _descriptor.Descriptor(
@@ -167,8 +167,8 @@ _INFORMATION_ERRORS_ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=310,
-  serialized_end=485,
+  serialized_start=309,
+  serialized_end=482,
 )
 
 _INFORMATION_ERRORS_LOGGER = _descriptor.Descriptor(
@@ -211,8 +211,8 @@ _INFORMATION_ERRORS_LOGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=487,
-  serialized_end=583,
+  serialized_start=484,
+  serialized_end=580,
 )
 
 _INFORMATION_ERRORS = _descriptor.Descriptor(
@@ -223,7 +223,7 @@ _INFORMATION_ERRORS = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='loggers', full_name='Information.Errors.loggers', index=0,
+      name='loggerList', full_name='Information.Errors.loggerList', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -241,8 +241,8 @@ _INFORMATION_ERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=254,
-  serialized_end=583,
+  serialized_start=250,
+  serialized_end=580,
 )
 
 _INFORMATION = _descriptor.Descriptor(
@@ -253,7 +253,7 @@ _INFORMATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='serial', full_name='Information.serial', index=0,
+      name='sn', full_name='Information.sn', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -300,7 +300,7 @@ _INFORMATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=583,
+  serialized_end=580,
 )
 
 _INFORMATION_VERSION.containing_type = _INFORMATION
@@ -309,7 +309,7 @@ _INFORMATION_ERRORS_ERROR.fields_by_name['startTime'].message_type = _INFORMATIO
 _INFORMATION_ERRORS_ERROR.containing_type = _INFORMATION_ERRORS
 _INFORMATION_ERRORS_LOGGER.fields_by_name['errorsList'].message_type = _INFORMATION_ERRORS_ERROR
 _INFORMATION_ERRORS_LOGGER.containing_type = _INFORMATION_ERRORS
-_INFORMATION_ERRORS.fields_by_name['loggers'].message_type = _INFORMATION_ERRORS_LOGGER
+_INFORMATION_ERRORS.fields_by_name['loggerList'].message_type = _INFORMATION_ERRORS_LOGGER
 _INFORMATION_ERRORS.containing_type = _INFORMATION
 _INFORMATION.fields_by_name['cpu'].message_type = _INFORMATION_VERSION
 _INFORMATION.fields_by_name['dsp1'].message_type = _INFORMATION_VERSION

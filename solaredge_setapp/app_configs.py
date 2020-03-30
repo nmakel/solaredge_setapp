@@ -9,26 +9,20 @@ class WebAppConfigs:
             return self.parse_protobuf(bytes)
 
     def parse_protobuf(self, bytes):
-        
-        # int language_id
-        # str language from enum solaredge_setapp.Languages
-        # list functionality [str, ...]
 
-        parsed = {
-            "language_id": 0,
-            "language": False,
-            "functionality": []
-        }
+        parsed = {}
 
         try:
             proto = solaredge_setapp.app_configs_pb2.WebAppConfigs()
             proto.ParseFromString(bytes)
-  
+
             try:
                 parsed["language_id"] = int(proto.language)
                 parsed["language"] = solaredge_setapp.Languages(parsed["language_id"]).name
             except ValueError as e:
                 parsed["language"] = solaredge_setapp.Languages(0).name
+
+            parsed["functionality"] = []
 
             if proto.mainMenu.countryAndLanguage: parsed["functionality"].append("country_and_language")
             if proto.mainMenu.pairing: parsed["functionality"].append("pairing")

@@ -19,23 +19,30 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x15grid_protection.proto\"\xa1\x06\n\x0eGridProtection\x12\x35\n\x0fvgrid_max_value\x18\x01 \x03(\x0b\x32\x1c.GridProtection.VoltsMSValue\x12\x35\n\x0fvgrid_min_value\x18\x02 \x03(\x0b\x32\x1c.GridProtection.VoltsMSValue\x12\x35\n\x0f\x66grid_max_value\x18\x03 \x03(\x0b\x32\x1c.GridProtection.HertzMSValue\x12\x35\n\x0f\x66grid_min_value\x18\x04 \x03(\x0b\x32\x1c.GridProtection.HertzMSValue\x12:\n\x11grid_monitor_time\x18\x05 \x01(\x0b\x32\x1f.GridProtection.GridMonitorTime\x12&\n\x06header\x18\t \x01(\x0b\x32\x16.GridProtection.Header\x1a \n\x0fGridMonitorTime\x12\r\n\x05value\x18\x01 \x01(\x05\x1a+\n\x06Header\x12\x0e\n\x06serial\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x1a\xbe\x01\n\x0cVoltsMSValue\x12\x31\n\x05volts\x18\x01 \x01(\x0b\x32\".GridProtection.VoltsMSValue.Volts\x12\x35\n\x02ms\x18\x02 \x01(\x0b\x32).GridProtection.VoltsMSValue.Milliseconds\x1a%\n\x05Volts\x12\r\n\x05value\x18\x01 \x01(\x05\x12\r\n\x05units\x18\x02 \x01(\x05\x1a\x1d\n\x0cMilliseconds\x12\r\n\x05value\x18\x01 \x01(\x05\x1a\xbe\x01\n\x0cHertzMSValue\x12\x31\n\x05hertz\x18\x01 \x01(\x0b\x32\".GridProtection.HertzMSValue.Hertz\x12\x35\n\x02ms\x18\x02 \x01(\x0b\x32).GridProtection.HertzMSValue.Milliseconds\x1a%\n\x05Hertz\x12\r\n\x05value\x18\x01 \x01(\x05\x12\r\n\x05units\x18\x02 \x01(\x05\x1a\x1d\n\x0cMilliseconds\x12\r\n\x05value\x18\x01 \x01(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\x15grid_protection.proto\"\xaa\x05\n\x0eGridProtection\x12/\n\tvgMaxList\x18\x01 \x03(\x0b\x32\x1c.GridProtection.VoltsMsValue\x12/\n\tvgMinList\x18\x02 \x03(\x0b\x32\x1c.GridProtection.VoltsMsValue\x12/\n\tfgMaxList\x18\x03 \x03(\x0b\x32\x1c.GridProtection.HertzMsValue\x12/\n\tfgMinList\x18\x04 \x03(\x0b\x32\x1c.GridProtection.HertzMsValue\x12-\n\x07grmTime\x18\x05 \x01(\x0b\x32\x1c.GridProtection.Int32ValueRo\x12&\n\x06header\x18\t \x01(\x0b\x32\x16.GridProtection.Header\x1a)\n\x0cInt32ValueRo\x12\r\n\x05value\x18\x01 \x01(\x05\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a\x41\n\x13Int32ValueScalingRo\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x12\n\n\x02ro\x18\x03 \x01(\x08\x1a\'\n\x06Header\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x05\x1ar\n\x0cVoltsMsValue\x12\x32\n\x05value\x18\x01 \x01(\x0b\x32#.GridProtection.Int32ValueScalingRo\x12.\n\x08holdtime\x18\x02 \x01(\x0b\x32\x1c.GridProtection.Int32ValueRo\x1ar\n\x0cHertzMsValue\x12\x32\n\x05value\x18\x01 \x01(\x0b\x32#.GridProtection.Int32ValueScalingRo\x12.\n\x08holdtime\x18\x02 \x01(\x0b\x32\x1c.GridProtection.Int32ValueRob\x06proto3')
 )
 
 
 
 
-_GRIDPROTECTION_GRIDMONITORTIME = _descriptor.Descriptor(
-  name='GridMonitorTime',
-  full_name='GridProtection.GridMonitorTime',
+_GRIDPROTECTION_INT32VALUERO = _descriptor.Descriptor(
+  name='Int32ValueRo',
+  full_name='GridProtection.Int32ValueRo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='GridProtection.GridMonitorTime.value', index=0,
+      name='value', full_name='GridProtection.Int32ValueRo.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='GridProtection.Int32ValueRo.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -51,8 +58,52 @@ _GRIDPROTECTION_GRIDMONITORTIME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=364,
-  serialized_end=396,
+  serialized_start=327,
+  serialized_end=368,
+)
+
+_GRIDPROTECTION_INT32VALUESCALINGRO = _descriptor.Descriptor(
+  name='Int32ValueScalingRo',
+  full_name='GridProtection.Int32ValueScalingRo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='GridProtection.Int32ValueScalingRo.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scaling', full_name='GridProtection.Int32ValueScalingRo.scaling', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='GridProtection.Int32ValueScalingRo.ro', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=370,
+  serialized_end=435,
 )
 
 _GRIDPROTECTION_HEADER = _descriptor.Descriptor(
@@ -63,7 +114,7 @@ _GRIDPROTECTION_HEADER = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='serial', full_name='GridProtection.Header.serial', index=0,
+      name='id', full_name='GridProtection.Header.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -88,93 +139,26 @@ _GRIDPROTECTION_HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=398,
-  serialized_end=441,
-)
-
-_GRIDPROTECTION_VOLTSMSVALUE_VOLTS = _descriptor.Descriptor(
-  name='Volts',
-  full_name='GridProtection.VoltsMSValue.Volts',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='GridProtection.VoltsMSValue.Volts.value', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='units', full_name='GridProtection.VoltsMSValue.Volts.units', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=566,
-  serialized_end=603,
-)
-
-_GRIDPROTECTION_VOLTSMSVALUE_MILLISECONDS = _descriptor.Descriptor(
-  name='Milliseconds',
-  full_name='GridProtection.VoltsMSValue.Milliseconds',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='GridProtection.VoltsMSValue.Milliseconds.value', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=605,
-  serialized_end=634,
+  serialized_start=437,
+  serialized_end=476,
 )
 
 _GRIDPROTECTION_VOLTSMSVALUE = _descriptor.Descriptor(
-  name='VoltsMSValue',
-  full_name='GridProtection.VoltsMSValue',
+  name='VoltsMsValue',
+  full_name='GridProtection.VoltsMsValue',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='volts', full_name='GridProtection.VoltsMSValue.volts', index=0,
+      name='value', full_name='GridProtection.VoltsMsValue.value', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ms', full_name='GridProtection.VoltsMSValue.ms', index=1,
+      name='holdtime', full_name='GridProtection.VoltsMsValue.holdtime', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -183,43 +167,6 @@ _GRIDPROTECTION_VOLTSMSVALUE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_GRIDPROTECTION_VOLTSMSVALUE_VOLTS, _GRIDPROTECTION_VOLTSMSVALUE_MILLISECONDS, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=444,
-  serialized_end=634,
-)
-
-_GRIDPROTECTION_HERTZMSVALUE_HERTZ = _descriptor.Descriptor(
-  name='Hertz',
-  full_name='GridProtection.HertzMSValue.Hertz',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='GridProtection.HertzMSValue.Hertz.value', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='units', full_name='GridProtection.HertzMSValue.Hertz.units', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
   nested_types=[],
   enum_types=[
   ],
@@ -229,56 +176,26 @@ _GRIDPROTECTION_HERTZMSVALUE_HERTZ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=759,
-  serialized_end=796,
-)
-
-_GRIDPROTECTION_HERTZMSVALUE_MILLISECONDS = _descriptor.Descriptor(
-  name='Milliseconds',
-  full_name='GridProtection.HertzMSValue.Milliseconds',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='GridProtection.HertzMSValue.Milliseconds.value', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=605,
-  serialized_end=634,
+  serialized_start=478,
+  serialized_end=592,
 )
 
 _GRIDPROTECTION_HERTZMSVALUE = _descriptor.Descriptor(
-  name='HertzMSValue',
-  full_name='GridProtection.HertzMSValue',
+  name='HertzMsValue',
+  full_name='GridProtection.HertzMsValue',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='hertz', full_name='GridProtection.HertzMSValue.hertz', index=0,
+      name='value', full_name='GridProtection.HertzMsValue.value', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ms', full_name='GridProtection.HertzMSValue.ms', index=1,
+      name='holdtime', full_name='GridProtection.HertzMsValue.holdtime', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -287,7 +204,7 @@ _GRIDPROTECTION_HERTZMSVALUE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_GRIDPROTECTION_HERTZMSVALUE_HERTZ, _GRIDPROTECTION_HERTZMSVALUE_MILLISECONDS, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -296,8 +213,8 @@ _GRIDPROTECTION_HERTZMSVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=637,
-  serialized_end=827,
+  serialized_start=594,
+  serialized_end=708,
 )
 
 _GRIDPROTECTION = _descriptor.Descriptor(
@@ -308,35 +225,35 @@ _GRIDPROTECTION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='vgrid_max_value', full_name='GridProtection.vgrid_max_value', index=0,
+      name='vgMaxList', full_name='GridProtection.vgMaxList', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='vgrid_min_value', full_name='GridProtection.vgrid_min_value', index=1,
+      name='vgMinList', full_name='GridProtection.vgMinList', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='fgrid_max_value', full_name='GridProtection.fgrid_max_value', index=2,
+      name='fgMaxList', full_name='GridProtection.fgMaxList', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='fgrid_min_value', full_name='GridProtection.fgrid_min_value', index=3,
+      name='fgMinList', full_name='GridProtection.fgMinList', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='grid_monitor_time', full_name='GridProtection.grid_monitor_time', index=4,
+      name='grmTime', full_name='GridProtection.grmTime', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -352,7 +269,7 @@ _GRIDPROTECTION = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_GRIDPROTECTION_GRIDMONITORTIME, _GRIDPROTECTION_HEADER, _GRIDPROTECTION_VOLTSMSVALUE, _GRIDPROTECTION_HERTZMSVALUE, ],
+  nested_types=[_GRIDPROTECTION_INT32VALUERO, _GRIDPROTECTION_INT32VALUESCALINGRO, _GRIDPROTECTION_HEADER, _GRIDPROTECTION_VOLTSMSVALUE, _GRIDPROTECTION_HERTZMSVALUE, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -362,36 +279,40 @@ _GRIDPROTECTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=26,
-  serialized_end=827,
+  serialized_end=708,
 )
 
-_GRIDPROTECTION_GRIDMONITORTIME.containing_type = _GRIDPROTECTION
+_GRIDPROTECTION_INT32VALUERO.containing_type = _GRIDPROTECTION
+_GRIDPROTECTION_INT32VALUESCALINGRO.containing_type = _GRIDPROTECTION
 _GRIDPROTECTION_HEADER.containing_type = _GRIDPROTECTION
-_GRIDPROTECTION_VOLTSMSVALUE_VOLTS.containing_type = _GRIDPROTECTION_VOLTSMSVALUE
-_GRIDPROTECTION_VOLTSMSVALUE_MILLISECONDS.containing_type = _GRIDPROTECTION_VOLTSMSVALUE
-_GRIDPROTECTION_VOLTSMSVALUE.fields_by_name['volts'].message_type = _GRIDPROTECTION_VOLTSMSVALUE_VOLTS
-_GRIDPROTECTION_VOLTSMSVALUE.fields_by_name['ms'].message_type = _GRIDPROTECTION_VOLTSMSVALUE_MILLISECONDS
+_GRIDPROTECTION_VOLTSMSVALUE.fields_by_name['value'].message_type = _GRIDPROTECTION_INT32VALUESCALINGRO
+_GRIDPROTECTION_VOLTSMSVALUE.fields_by_name['holdtime'].message_type = _GRIDPROTECTION_INT32VALUERO
 _GRIDPROTECTION_VOLTSMSVALUE.containing_type = _GRIDPROTECTION
-_GRIDPROTECTION_HERTZMSVALUE_HERTZ.containing_type = _GRIDPROTECTION_HERTZMSVALUE
-_GRIDPROTECTION_HERTZMSVALUE_MILLISECONDS.containing_type = _GRIDPROTECTION_HERTZMSVALUE
-_GRIDPROTECTION_HERTZMSVALUE.fields_by_name['hertz'].message_type = _GRIDPROTECTION_HERTZMSVALUE_HERTZ
-_GRIDPROTECTION_HERTZMSVALUE.fields_by_name['ms'].message_type = _GRIDPROTECTION_HERTZMSVALUE_MILLISECONDS
+_GRIDPROTECTION_HERTZMSVALUE.fields_by_name['value'].message_type = _GRIDPROTECTION_INT32VALUESCALINGRO
+_GRIDPROTECTION_HERTZMSVALUE.fields_by_name['holdtime'].message_type = _GRIDPROTECTION_INT32VALUERO
 _GRIDPROTECTION_HERTZMSVALUE.containing_type = _GRIDPROTECTION
-_GRIDPROTECTION.fields_by_name['vgrid_max_value'].message_type = _GRIDPROTECTION_VOLTSMSVALUE
-_GRIDPROTECTION.fields_by_name['vgrid_min_value'].message_type = _GRIDPROTECTION_VOLTSMSVALUE
-_GRIDPROTECTION.fields_by_name['fgrid_max_value'].message_type = _GRIDPROTECTION_HERTZMSVALUE
-_GRIDPROTECTION.fields_by_name['fgrid_min_value'].message_type = _GRIDPROTECTION_HERTZMSVALUE
-_GRIDPROTECTION.fields_by_name['grid_monitor_time'].message_type = _GRIDPROTECTION_GRIDMONITORTIME
+_GRIDPROTECTION.fields_by_name['vgMaxList'].message_type = _GRIDPROTECTION_VOLTSMSVALUE
+_GRIDPROTECTION.fields_by_name['vgMinList'].message_type = _GRIDPROTECTION_VOLTSMSVALUE
+_GRIDPROTECTION.fields_by_name['fgMaxList'].message_type = _GRIDPROTECTION_HERTZMSVALUE
+_GRIDPROTECTION.fields_by_name['fgMinList'].message_type = _GRIDPROTECTION_HERTZMSVALUE
+_GRIDPROTECTION.fields_by_name['grmTime'].message_type = _GRIDPROTECTION_INT32VALUERO
 _GRIDPROTECTION.fields_by_name['header'].message_type = _GRIDPROTECTION_HEADER
 DESCRIPTOR.message_types_by_name['GridProtection'] = _GRIDPROTECTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GridProtection = _reflection.GeneratedProtocolMessageType('GridProtection', (_message.Message,), dict(
 
-  GridMonitorTime = _reflection.GeneratedProtocolMessageType('GridMonitorTime', (_message.Message,), dict(
-    DESCRIPTOR = _GRIDPROTECTION_GRIDMONITORTIME,
+  Int32ValueRo = _reflection.GeneratedProtocolMessageType('Int32ValueRo', (_message.Message,), dict(
+    DESCRIPTOR = _GRIDPROTECTION_INT32VALUERO,
     __module__ = 'grid_protection_pb2'
-    # @@protoc_insertion_point(class_scope:GridProtection.GridMonitorTime)
+    # @@protoc_insertion_point(class_scope:GridProtection.Int32ValueRo)
+    ))
+  ,
+
+  Int32ValueScalingRo = _reflection.GeneratedProtocolMessageType('Int32ValueScalingRo', (_message.Message,), dict(
+    DESCRIPTOR = _GRIDPROTECTION_INT32VALUESCALINGRO,
+    __module__ = 'grid_protection_pb2'
+    # @@protoc_insertion_point(class_scope:GridProtection.Int32ValueScalingRo)
     ))
   ,
 
@@ -402,45 +323,17 @@ GridProtection = _reflection.GeneratedProtocolMessageType('GridProtection', (_me
     ))
   ,
 
-  VoltsMSValue = _reflection.GeneratedProtocolMessageType('VoltsMSValue', (_message.Message,), dict(
-
-    Volts = _reflection.GeneratedProtocolMessageType('Volts', (_message.Message,), dict(
-      DESCRIPTOR = _GRIDPROTECTION_VOLTSMSVALUE_VOLTS,
-      __module__ = 'grid_protection_pb2'
-      # @@protoc_insertion_point(class_scope:GridProtection.VoltsMSValue.Volts)
-      ))
-    ,
-
-    Milliseconds = _reflection.GeneratedProtocolMessageType('Milliseconds', (_message.Message,), dict(
-      DESCRIPTOR = _GRIDPROTECTION_VOLTSMSVALUE_MILLISECONDS,
-      __module__ = 'grid_protection_pb2'
-      # @@protoc_insertion_point(class_scope:GridProtection.VoltsMSValue.Milliseconds)
-      ))
-    ,
+  VoltsMsValue = _reflection.GeneratedProtocolMessageType('VoltsMsValue', (_message.Message,), dict(
     DESCRIPTOR = _GRIDPROTECTION_VOLTSMSVALUE,
     __module__ = 'grid_protection_pb2'
-    # @@protoc_insertion_point(class_scope:GridProtection.VoltsMSValue)
+    # @@protoc_insertion_point(class_scope:GridProtection.VoltsMsValue)
     ))
   ,
 
-  HertzMSValue = _reflection.GeneratedProtocolMessageType('HertzMSValue', (_message.Message,), dict(
-
-    Hertz = _reflection.GeneratedProtocolMessageType('Hertz', (_message.Message,), dict(
-      DESCRIPTOR = _GRIDPROTECTION_HERTZMSVALUE_HERTZ,
-      __module__ = 'grid_protection_pb2'
-      # @@protoc_insertion_point(class_scope:GridProtection.HertzMSValue.Hertz)
-      ))
-    ,
-
-    Milliseconds = _reflection.GeneratedProtocolMessageType('Milliseconds', (_message.Message,), dict(
-      DESCRIPTOR = _GRIDPROTECTION_HERTZMSVALUE_MILLISECONDS,
-      __module__ = 'grid_protection_pb2'
-      # @@protoc_insertion_point(class_scope:GridProtection.HertzMSValue.Milliseconds)
-      ))
-    ,
+  HertzMsValue = _reflection.GeneratedProtocolMessageType('HertzMsValue', (_message.Message,), dict(
     DESCRIPTOR = _GRIDPROTECTION_HERTZMSVALUE,
     __module__ = 'grid_protection_pb2'
-    # @@protoc_insertion_point(class_scope:GridProtection.HertzMSValue)
+    # @@protoc_insertion_point(class_scope:GridProtection.HertzMsValue)
     ))
   ,
   DESCRIPTOR = _GRIDPROTECTION,
@@ -448,14 +341,11 @@ GridProtection = _reflection.GeneratedProtocolMessageType('GridProtection', (_me
   # @@protoc_insertion_point(class_scope:GridProtection)
   ))
 _sym_db.RegisterMessage(GridProtection)
-_sym_db.RegisterMessage(GridProtection.GridMonitorTime)
+_sym_db.RegisterMessage(GridProtection.Int32ValueRo)
+_sym_db.RegisterMessage(GridProtection.Int32ValueScalingRo)
 _sym_db.RegisterMessage(GridProtection.Header)
-_sym_db.RegisterMessage(GridProtection.VoltsMSValue)
-_sym_db.RegisterMessage(GridProtection.VoltsMSValue.Volts)
-_sym_db.RegisterMessage(GridProtection.VoltsMSValue.Milliseconds)
-_sym_db.RegisterMessage(GridProtection.HertzMSValue)
-_sym_db.RegisterMessage(GridProtection.HertzMSValue.Hertz)
-_sym_db.RegisterMessage(GridProtection.HertzMSValue.Milliseconds)
+_sym_db.RegisterMessage(GridProtection.VoltsMsValue)
+_sym_db.RegisterMessage(GridProtection.HertzMsValue)
 
 
 # @@protoc_insertion_point(module_scope)

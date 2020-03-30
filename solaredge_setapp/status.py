@@ -9,34 +9,7 @@ class Status:
             return self.parse_protobuf(bytes)
 
     def parse_protobuf(self, bytes):
-        
-        # str serial
-        # float power_ac
-        # float voltage_ac
-        # float frequency
-        # bool monitoring
-        # str status from enum solaredge_setapp.Status
-        # bool switch
-        # float cosphi
-        # float power_ac_limit
-        # int country_id
-        # str country from enum solaredge_setapp.Countries
-        # str portia_error
-        # int portia_subsystem_id
-        # dict optimizers {int total, int online}
-        # dict energy {float day, float month, float year, float total}
-        # list inverters [
-            # str serial": inverter.serial,
-            # float voltage_dc": inverter.voltage_dc,
-            # dict isolation {int fault_location, int isolation, int alpha}
-            # dict optimizers {int total, int online}
-            # dict temperature {int value, {bool celsius, bool fahrenheit}}
-            # int fan
-            # str error
-            # int subsystem_id
-            # str bad_position
-        # ]
-    
+
         parsed = {}
 
         try:
@@ -44,80 +17,118 @@ class Status:
             proto.ParseFromString(bytes)
             
             parsed = {
-                "serial": str(proto.serial),
-                "power_ac": float(proto.power_ac),
-                "voltage_ac": float(proto.voltage_ac),
-                "frequency": float(proto.frequency),
-                "monitoring": bool(proto.monitoring),
+                "serial": str(proto.sn),
+                "power_ac": float(proto.powerWatt),
+                "power_ac_limit": int(proto.limit),
+                "voltage_ac": float(proto.voltage),
+                "frequency": float(proto.frequencyHz),
+                "status": int(proto.status),
+                "switch": bool(proto.switchStatus),
+                "cosphi": float(proto.cosPhi),
+                "country_id": int(proto.country),
+                "portia_subsystem_id": int(proto.portiaSubsystem),
                 "afci": {
-                    "enabled": proto.afci.enabled,
-                    "manual_reconnect": proto.afci.manual_reconnect
+                    "enabled": bool(proto.afci.enable),
+                    "manual_reconnect": bool(proto.afci.manualReconnect),
+                    "test_result": int(proto.afci.test.result)
+                },
+                "optimizers": {
+                    "total": int(proto.optimizersStatus.enabled),
+                    "online": int(proto.optimizersStatus.connected)
+                },
+                "server_connection": bool(proto.sOk),
+                "server_communication": {
+                    "physical": bool(proto.serverComm.lanTest.physicalConnection),
+                    "ip": bool(proto.serverComm.lanTest.ipAddress),
+                    "gateway": bool(proto.serverComm.lanTest.gatewayLink),
+                    "internet": bool(proto.serverComm.lanTest.internetLink),
+                    "monitoring": bool(proto.serverComm.lanTest.monitoringLink),
+                    "server": bool(proto.serverComm.lanTest.sOk)
+                },
+                "server_channel": {
+                    "lan": bool(proto.serverChannel.lan.value),
+                    "cellular": bool(proto.serverChannel.cellular.value),
+                    "rs485_1": bool(proto.serverChannel.rs4851SeSlave.value),
+                    "rs485_2": bool(proto.serverChannel.rs4852SeSlave.value),
+                    "wifi": bool(proto.serverChannel.wifi.value),
+                    "zigbee": bool(proto.serverChannel.zigbee.value) 
+                },
+                "energy": {
+                    "day": float(proto.energy.today),
+                    "month": float(proto.energy.thisMonth),
+                    "year": float(proto.energy.thisYear),
+                    "total": float(proto.energy.total)
+                },
+                "inverters": [],
+                "meters": [],
+                "batteries": [],
+                "communication": {
+                    "lan": {
+                        "mac": str(proto.communication.lanInfo.mac.value),
+                        "dhcp": bool(proto.communication.lanInfo.dhcp.value),
+                        "ip": str(proto.communication.lanInfo.ip.ipAddress.value),
+                        "netmask": str(proto.communication.lanInfo.ip.subnetMask.value),
+                        "gateway": str(proto.communication.lanInfo.ip.gateway.value),
+                        "dns": str(proto.communication.lanInfo.ip.dns.value),
+                        "connected": bool(proto.communication.lanInfo.cableConnected.value)
+                    },
+                    "rs485_1": {
+                        "protocol": {
+                            "se_slave": bool(proto.communication.rs4851.protocol.seSlave),
+                            "se_master": bool(proto.communication.rs4851.protocol.seMaster),
+                            "modbus_multi_devices": bool(proto.communication.rs4851.protocol.modbusMultiDevices),
+                            "sunspec": bool(proto.communication.rs4851.protocol.sunspec),
+                            "none": bool(proto.communication.rs4851.protocol.none)
+                        }
+                    },
+                    "rs485_2": {
+                         "protocol": {
+                            "se_slave": bool(proto.communication.rs4852.protocol.seSlave),
+                            "se_master": bool(proto.communication.rs4852.protocol.seMaster),
+                            "modbus_multi_devices": bool(proto.communication.rs4852.protocol.modbusMultiDevices),
+                            "sunspec": bool(proto.communication.rs4852.protocol.sunspec),
+                            "none": bool(proto.communication.rs4852.protocol.none)
+                        }
+                    }
                 }
             }
 
             try:
-                parsed["status"] = solaredge_setapp.Status(int(proto.status)).name
+                parsed["status"] = solaredge_setapp.Status(parsed["status"]).name
             except ValueError as e:
                 parsed["status"] = solaredge_setapp.Status(-1).name
 
-            parsed["switch"] = bool(proto.switch)
-            parsed["cosphi"] = float(proto.cosphi)
-            parsed["power_ac_limit"] = int(proto.power_ac_limit)
-            parsed["country_id"] = int(proto.country)
-            
             try:
                 parsed["country"] = solaredge_setapp.Countries(parsed["country_id"]).name
             except ValueError as e:
                 parsed["country"] = solaredge_setapp.Countries(-1).name
-    
-            parsed["portia_error"] = str(proto.portia_error)
-            parsed["portia_subsystem_id"] = int(proto.portia_subsystem)
-    
-            parsed["optimizers"] = {
-                "total": int(proto.optimizers.total),
-                "online": int(proto.optimizers.online)
-            }
-
-            parsed["server_communication"] = {
-                "physical": bool(proto.server_communication.status.physical),
-                "ip": bool(proto.server_communication.status.ipaddress),
-                "gateway": bool(proto.server_communication.status.gateway),
-                "internet": bool(proto.server_communication.status.internet),
-                "monitoring": bool(proto.server_communication.status.monitoring),
-                "server": bool(proto.server_communication.status.server)
-            }
-
-            parsed["communication"] = {
-                "lan": {
-                    "mac": proto.communication.lan.mac.value,
-                    "dhcp": bool(proto.communication.lan.dhcp.value),
-                    "ip": proto.communication.lan.ip.ip.value,
-                    "netmask": proto.communication.lan.ip.netmask.value,
-                    "gateway": proto.communication.lan.ip.gateway.value,
-                    "dns": proto.communication.lan.ip.dns.value,
-                    "connected": bool(proto.communication.lan.connected.value)
-                }
-            }
-
-            parsed["energy"] = {
-                "day": float(proto.energy.day),
-                "month": float(proto.energy.month),
-                "year": float(proto.energy.year),
-                "total": float(proto.energy.total)
-            }
-
-            parsed["inverters"] = []
 
             for inverter in proto.inverters.primary, proto.inverters.left, proto.inverters.right:
-                if not inverter.serial:
+                if not inverter.dspSn:
                     continue
 
+                if inverter.power.scaling:
+                    inverter_power_ac = float(inverter.power.value / inverter.power.scaling)
+                else:
+                    inverter_power_ac = float(inverter.power.value)
+
+                if inverter.isolation.rIso.scaling:
+                    inverter_isolation_r_iso = float(inverter.isolation.rIso.value / inverter.isolation.rIso.scaling)
+                else:
+                    inverter_isolation_r_iso = float(inverter.isolation.rIso.value)
+
+                if inverter.isolation.alpha.scaling:
+                    inverter_isolation_alpha = float(inverter.isolation.alpha.value / inverter.isolation.alpha.scaling)
+                else:
+                    inverter_isolation_alpha = float(inverter.isolation.alpha.value)               
+
                 parsed["inverters"].append({
-                    "serial": str(inverter.serial),
-                    "voltage_dc": float(inverter.voltage_dc),
+                    "serial": str(inverter.dspSn),
+                    "voltage_dc": float(inverter.voltage),
+                    "power_ac": inverter_power_ac,
                     "optimizers": {
-                        "total": int(inverter.optimizers.total),
-                        "online": int(inverter.optimizers.online)
+                        "total": int(inverter.optimizers.enabled),
+                        "online": int(inverter.optimizers.connected)
                     },
                     "temperature": {
                         "value": int(inverter.temperature.value),
@@ -127,14 +138,11 @@ class Status:
                         }
                     },
                     "isolation": {
-                        "fault_location": int(inverter.isolation.fault_location),
-                        "isolation": int(inverter.isolation.r_iso.isolation),
-                        "alpha": int(inverter.isolation.alpha.isolation)
+                        "fault_location": int(inverter.isolation.faultLocation),
+                        "r_iso": inverter_isolation_r_iso,
+                        "alpha": inverter_isolation_alpha
                     },
-                    "fan": int(inverter.fan),
-                    "error": str(inverter.error),
-                    "subsystem_id": int(inverter.subsystem_id),
-                    "bad_position": str(inverter.bad_position)
+                    "subsystem_id": int(inverter.subsystem)
                 })
         except AttributeError as e:
             print(f"AttributeError: {e}")

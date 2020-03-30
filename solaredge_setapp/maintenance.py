@@ -11,83 +11,69 @@ class Maintenance:
             return self.parse_protobuf(bytes)
 
     def parse_protobuf(self, bytes):
-        
-        # str name
-        # int utf_offset
-        # str ntp_server
-        # int timestamp
-        # list inverters {
-            # str serial
-            # dict isolation {int fault_location, int isolation, int alpha}
-            # dict optimizers_status {int total, int online}
-            # list optimizers {
-                # str serial
-                # bool online
-                # float po_power
-                # int po_voltage
-                # int module_voltage
-                # int module_current
-                # int temperature 
-                # int timestamp
-            # }
-        # }
+
+        parsed = {}
 
         try:
             proto = solaredge_setapp.maintenance_pb2.Maintenance()
             proto.ParseFromString(bytes)
             
             parsed = {
-                "system": str(proto.system.name),
-                "utc_offset": int(proto.time.utc_offset),
-                "ntp_server": str(proto.time.ntp_server),
-                "timestamp": int(datetime.datetime.strptime(
-                    "{year} {month} {day} {hour} {minutes} {seconds}".format(
-                    year=proto.time.current_time.year,
-                    month=proto.time.current_time.month,
-                    day=proto.time.current_time.day,
-                    hour=proto.time.current_time.hour,
-                    minutes=proto.time.current_time.minutes,
-                    seconds=proto.time.current_time.seconds
-                ), "%Y %m %d %H %M %S").timestamp()),
+                "serial": str(proto.header.id),
+                "timestamp": int(proto.header.timestamp),
+                "standby": bool(proto.standby.activated),
+                "utc_offset": int(proto.dateAndTime.gmtOffset),
+                "ntp_server": str(proto.dateAndTime.ntp),
                 "afci": {
-                    "enabled": proto.afci.enabled,
-                    "manual_reconnect": proto.afci.manual_reconnect
-                }
+                    "enabled": bool(proto.afci.enable),
+                    "manual_reconnect": bool(proto.afci.manualReconnect),
+                    "test_result": int(proto.afci.test.result)
+                },
             }
 
             parsed["inverters"] = []
 
             for inverter in proto.diagnostics.inverters.primary, proto.diagnostics.inverters.left, proto.diagnostics.inverters.right:
-                if inverter.serial:
+                if inverter.invSn:
+
+                    if inverter.isolation.rIso.scaling:
+                        inverter_isolation_r_iso = float(inverter.isolation.rIso.value / inverter.isolation.rIso.scaling)
+                    else:
+                        inverter_isolation_r_iso = float(inverter.isolation.rIso.value)
+
+                    if inverter.isolation.alpha.scaling:
+                        inverter_isolation_alpha = float(inverter.isolation.alpha.value / inverter.isolation.alpha.scaling)
+                    else:
+                        inverter_isolation_alpha = float(inverter.isolation.alpha.value)
+
                     parsed["inverters"].append({
-                        "serial": str(inverter.serial),
+                        "serial": str(inverter.invSn),
                         "isolation": {
-                            "fault_location": int(inverter.isolation.fault_location),
-                            "isolation": int(inverter.isolation.r_iso.isolation),
-                            "alpha": int(inverter.isolation.alpha.isolation)
+                            "fault_location": int(inverter.isolation.faultLocation),
+                            "r_iso": inverter_isolation_r_iso,
+                            "alpha": inverter_isolation_alpha
                         },
                         "optimizers_status": {
-                            "total": int(inverter.optimizers_status.total),
-                            "online": int(inverter.optimizers_status.online)
+                            "total": int(inverter.optimizersStatus.enabled),
+                            "online": int(inverter.optimizersStatus.connected)
                         },       
                         "optimizers": [{
-                            "serial": str(po.serial),
-                            "online": bool(po.online),
-                            "po_power": float(po.po_power),
-                            "po_voltage": int(po.po_voltage),
-                            "module_voltage": int(po.module_voltage),
-                            "module_current": int(po.module_current),
+                            "serial": str(po.sn),
+                            "online": bool(po.reports),
+                            "po_voltage": int(po.outputV),
+                            "module_voltage": int(po.inputV),
+                            "module_current": int(po.inputC),
                             "temperature": int(po.temperature.value),
-                            "timestamp": 0 if not bool(po.online) else int(datetime.datetime.strptime(
+                            "timestamp": 0 if not bool(po.reports) else int(datetime.datetime.strptime(
                                 "{year} {month} {day} {hour} {minutes} {seconds}".format(
-                                year=po.last_report.year,
-                                month=po.last_report.month,
-                                day=po.last_report.day,
-                                hour=po.last_report.hour,
-                                minutes=po.last_report.minutes,
-                                seconds=po.last_report.seconds
+                                year=po.date.year,
+                                month=po.date.month,
+                                day=po.date.day,
+                                hour=po.date.hour,
+                                minutes=po.date.minute,
+                                seconds=po.date.second
                             ), "%Y %m %d %H %M %S").timestamp())
-                        } for po in inverter.optimizer]
+                        } for po in inverter.optimizerList]
                 })
         except AttributeError as e:
             print(f"AttributeError: {e}")
