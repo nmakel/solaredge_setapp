@@ -102,7 +102,7 @@ class Status:
                 parsed["country"] = solaredge_setapp.Countries(parsed["country_id"]).name
             except ValueError as e:
                 parsed["country"] = solaredge_setapp.Countries(-1).name
-
+            
             for inverter in proto.inverters.primary, proto.inverters.left, proto.inverters.right:
                 if not inverter.dsp_sn:
                     continue
