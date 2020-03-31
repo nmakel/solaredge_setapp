@@ -1,184 +1,487 @@
 syntax = "proto3";
 
+
 message Status {
-    
-    message Int32ValueScaling {
+
+    message UInt32 {
+        uint32 value = 1;
+        bool ro = 2;
+        UInt64Attr attributes = 3;
+    }
+    message UInt32Attr {
+        uint32 min = 1;
+        uint32 max = 2;
+        uint32 step = 3;
+    }
+
+    message UInt64 {
+        uint64 value = 1;
+        bool ro = 2;
+        UInt64Attr attributes = 3;
+    }
+    message UInt64Attr {
+        uint64 min = 1;
+        uint64 max = 2;
+        uint64 step = 3;
+    }
+
+    message Float32 {
         int32 value = 1;
         int32 scaling = 2;
     }
-    message BoolValueRo {
+
+    message FloatS {
+        int32 value = 1;
+        int32 scaling = 2;
+        bool ro = 3;
+        FloatSAttr attributes = 4;
+    }
+    message FloatSAttr {
+        int32 min = 1;
+        int32 max = 2;
+        int32 step = 3;
+    }
+
+    message BoolVal {
         bool value = 1;
         bool ro = 2;
     }
-    message StringValueRo {
+
+    message StringVal {
         string value = 1;
         bool ro = 2;
     }
 
-    message Site {
-        message InverterStatus {
-            string enabled = 1;
-            string connected = 2;
+    message Temperature {
+        message Units {
+            bool celsius = 1;
+            bool fahrenheit = 2;
         }
 
-        float production_ac = 1;
-        float size_limit_ac = 2;
-        InverterStatus inverterStatus = 3;
+        uint32 value = 1;
+        Units units = 2;
+    }
+
+    message Site {
+        message InvertersStatus {
+            bool enabled = 1;
+            bool connected = 2;
+        }
+
+        float production_watt = 1;
+        float site_limit_watt = 2;
+        InvertersStatus inverters_status = 3;
     }
 
     message OptimizersStatus {
-        int32 enabled = 1;
-        int32 connected = 2;
-    }
-
-    message AFCI {
-        message Test {
-            int32 result = 1;
-        }
-
-        bool enable = 1;
-        bool manualReconnect = 2;
-        Test test = 3;
+        uint32 enabled = 1;
+        uint32 connected = 2; 
     }
 
     message Inverters {
-        message Inverter {
-            string dspSn = 1;
-            float voltage = 2;
-            OptimizersStatus optimizers = 3;
-            Temperature temperature = 4;
-            int32 fan = 5;
-            string error = 6;
-            int32 subsystem = 7;
-            string bad_position = 8;
-            Isolation isolation = 9;
-            Int32ValueScaling power = 10;
-        }
-
-        message Temperature {
-            message Units {
-                bool celsius = 1;
-                bool fahrenheit = 2;
+        message Unit {
+            message Isolation {
+                Float32 alpha = 1;
+                Float32 r_iso = 2;
+                int32 fault_location = 3;
             }
 
-            int32 value = 1;
-            Units units = 2;
+            string dsp_sn = 1;
+            float voltage = 2;
+            OptimizersStatus optimizers_status = 3;
+            Temperature temperature = 4;
+            bool fan = 5;
+            uint32 error_code = 6;
+            uint32 subsystem = 7;
+            bool bad_position = 8;
+            Isolation isolation = 9;
+            FloatS power = 10;
         }
 
-        message Isolation {
-            Int32ValueScaling alpha = 1;
-            Int32ValueScaling rIso = 2;
-            int32 faultLocation = 3;
-        }
-
-        Inverter left = 1;
-        Inverter primary = 2;
-        Inverter right = 3;
+        Unit left = 1;
+        Unit primary = 2;
+        Unit right = 3;
     }
 
     message Communication {
-        message LAN {
-            message IP {
-                StringValueRo ipAddress = 1;
-                StringValueRo subnetMask = 2;
-                StringValueRo gateway = 3;
-                StringValueRo dns = 4;
-            }
-
-            BoolValueRo dhcp = 1;
-            IP ip = 2;
-            StringValueRo mac = 3;
-            BoolValueRo cableConnected = 4;
-        }
-
-        message RS485 {
+        message Rs485Status {
             message Protocol {
-                bool seSlave = 1;
-                bool seMaster = 2;
-                bool modbusMultiDevices = 3;
+                bool se_slave = 1;
+                bool se_master = 2;
+                bool modbus_multi_devices = 3;
                 bool sunspec = 4;
                 bool none = 5;
             }
 
+            uint32 enabled = 1;
+            uint32 connected = 2;
             Protocol protocol = 3;
         }
 
-        RS485 rs4851 = 1;
-        RS485 rs4852 = 2;
-        LAN lanInfo = 7;
-    }
+        message Cellular {
+            enum CellularSignal {
+                NONE = 0;
+                LOW = 1;
+                LOWEST = 2;
+                MEDIUM = 3;
+                HIGH = 4;
+                HIGHEST = 5;
+                UNKNOWN = 6;
+            }
 
-    message ServerChannel {
-        BoolValueRo lan = 1;
-        BoolValueRo cellular = 2;
-        BoolValueRo rs4851SeSlave = 3;
-        BoolValueRo rs4852SeSlave = 4;
-        BoolValueRo zigbee = 5;
-        BoolValueRo wifi = 6;
+            CellularSignal signal_strength = 1;
+            string operator = 2;
+        }
+
+        message Wifi {
+            enum WifiSignal {
+                NONE = 0;
+                LOW = 1;
+                MID = 2;
+                HIGH = 3;
+                EXCELLENT = 4;
+            }
+
+            string chosen_network = 1;
+            WifiSignal chosen_network_signal = 2;
+            BoolVal connected_to_hg = 3;
+        }
+
+        message Zigbee {
+            message OperationMode {
+                bool none = 1;
+                bool se_slave = 2;
+                bool ha_gateway = 3;
+                bool p2p_slave = 4;
+            }
+
+            enum ZigbeeSignal {
+                NONE = 0;
+                LOW = 1;
+                MID = 2;
+                HIGH = 3;
+            }
+
+            enum SlaveStatus {
+                NOT_CONNECTED = 0;
+                CONNECTED = 1;
+                MASTER_NOT_FOUND = 2;
+            }
+
+            enum ModuleStatus {
+                INITIALIZING = 0;
+                OK = 1;
+            }
+
+            uint32 enabled = 1;
+            uint32 connected = 2;
+            OperationMode operation_mode = 3;
+            ZigbeeSignal signal_level = 4;
+            SlaveStatus zigbee_slave_status = 5;
+            ModuleStatus module_status = 6;
+        }
+
+        message Lan {
+            message IP {
+                StringVal ip_address = 1;
+                StringVal subnet_mask = 2;
+                StringVal gateway = 3;
+                StringVal dns = 4;
+            }
+
+            BoolVal dhcp = 1;
+            IP ip = 2;
+            StringVal mac = 3;
+            BoolVal cable_connected = 4;
+        }
+
+        enum LanStatus {
+            OK = 0;
+        }
+
+        Rs485Status rs485_1 = 1;
+        Rs485Status rs485_2 = 2;
+        LanStatus lan = 3;
+        Cellular cellular = 4;
+        Wifi wifi = 5;
+        Zigbee zigbee = 6;
+        Lan lan_info = 7;
     }
 
     message EnergyStatistics {
         float today = 1;
-        float thisMonth = 2;
-        float thisYear = 3;
+        float this_month = 2;
+        float this_year = 3;
         float total = 4;
+        FloatS current_consumption = 5;
+        UInt64 total_consumption = 6;
     }
-
-    message Meter {}
-
-    message Evese {}
-
-    message Battery {}
-
-    message Notification {}
-
-    message ServerCommunication {
-        message CommunicationStatus {
-            bool physicalConnection = 1;
-            bool ipAddress = 2;
-            bool gatewayLink = 3;
-            bool internetLink = 4;
-            bool monitoringLink = 5;
-            bool sOk = 6;
+    
+    message Evse {
+        enum CarStatus {
+            disconnected = 0;
+            connected = 1;
+            charging_car = 2;
         }
 
-        CommunicationStatus lanTest = 1;
+        enum ChargerStatus {
+            ready = 0;
+            initializing = 1;
+            charging = 2;
+            charging_boost = 3;
+            charging_excess_pv = 4;
+        }
+
+        CarStatus car_status = 1;
+        ChargerStatus charger_status = 2;
+        float charge_power = 3;
+        uint64 session_energy = 4;
+        uint32 error_code = 5;
+        uint32 subsystem = 6;
+        StringVal sn = 7;
     }
 
-    enum ManagerStatus {
-        SHUTTING_DOWN = 0;
-        ERROR = 1;
-        STANDBY = 2;
-        PAIRING = 3;
-        POWER_PRODUCTION = 4;
-        AC_CHARGING = 5;
-        NOT_PAIRED = 6;
-        NIGHT_MODE = 7;
-        GRID_MONITORING = 8;
-        IDLE = 9;
+    message Meter {
+        message Function {
+            BoolVal inverter_production = 1;
+            BoolVal export_import = 2;
+            BoolVal consumption = 3;
+            BoolVal site_production = 4;
+            BoolVal external_production = 5;
+            BoolVal m_export = 6;
+            BoolVal m_import = 7;
+            BoolVal production_and_export_import = 8;
+        }
+
+        enum ConnectionType {
+            RS485_1 = 0;
+            RS485_2 = 1;
+            S0 = 2;
+        }
+
+        enum Status {
+            OK = 0;
+            COMM_ERROR = 1;
+        }
+
+        ConnectionType connection_type = 1;
+        Function func = 2;
+        Status status = 3;
+        uint32 id = 4;
+        float power = 5;
+        float energy = 6;
+        uint32 s0_pulse = 7;
+        StringVal sn = 8;
+    }
+    
+    message Battery {
+        enum Status {
+            CONNECTED = 0;
+            DISCNNECTED = 1;
+        }
+
+        enum State {
+            BMS_STATE_INVALID = 0;
+            BMS_STATE_OFF = 1;
+            BMS_STATE_STDBY = 2;
+            BMS_STATE_INIT = 3;
+            BMS_STATE_CHARGE = 4;
+            BMS_STATE_DISCHARGE = 5;
+            BMS_STATE_FAULT = 6;
+            BMS_STATE_IDLE = 7;
+            BMS_STATE_COMM_ERROR = 8;
+            BMS_STATE_RESERVED1 = 9;
+            BMS_STATE_RESERVED2 = 10;
+            BMS_STATE_SLEEP = 11;
+        }
+
+        string sn = 1;
+        StringVal type = 2;
+        Status status = 3;
+        State state = 4;
+        float power = 5;
+        float soe = 6;
+        uint32 error_code = 7;
+        uint32 subsystem = 8;
+    }
+
+    message Notification {
+        message Header {
+            enum Type {
+                ERROR = 0;
+                WARNING = 1;
+                INFORMATION = 2;
+            }
+
+            UInt32 id = 1;
+            Type type = 2;
+        }
+
+        message Shutdown {
+            Header header = 1;
+        }
+
+        message GRM {
+            Header header = 1;
+            float remaining_time = 2;
+            UInt32 total_time = 3;
+        }
+
+        message Pairing {
+            message PairingData {
+                message Request {
+                    uint32 duration = 1;
+                }
+
+                message Status {
+                    enum Info {
+                        OK = 0;
+                        INV_OFF = 2;
+                        NIGHT_MODE = 3;
+                        IN_PROCESS = 4;
+                        ERROR = 5;
+                        ERROR_OPT_DETECT = 6;
+                        ERROR_STRING_DETECT = 7;
+                        NOT_IN_PROCESS = 8;
+                    }
+
+                    enum Stage {
+                        NOT_ACTIVE = 0;
+                        WAIT_VIN_DECREASE = 1;
+                        PAIRING = 2;
+                        SAVE_SESSION = 3;
+                        OPT_DETECT = 4;
+                        STRING_DETECT = 5;
+                        END = 6;
+                    }
+
+                    uint32 sessionID = 1;
+                    Info info = 2;
+                    Stage stage = 3;
+                    uint32 progress = 4;
+                    int32 remaining_time = 5;
+                }
+
+                Request request = 1;
+                Status status = 2;
+            }
+
+            Header header = 1;
+            PairingData pairing_data = 2;
+        }
+
+        message SlaveDetect {
+            message SlaveDetectData {
+                UInt32 duration = 1;
+                UInt32 num_of_slaves = 2;
+                UInt32 num_of_loops = 3;
+                UInt32 max_num_of_loops = 4;
+                BoolVal Stop = 5;
+            }
+
+            Header header = 1;
+            SlaveDetectData slave_detect_data = 2;
+        }
+
+        message NotActivated {
+            Header header = 1;
+        }
+
+        message ErrorBanner {
+            Header header = 1;
+            UInt32 error_code = 2;
+            UInt32 subsystem = 3;
+        }
+
+        Shutdown shutdown = 1;
+        GRM grm = 2;
+        Pairing pairing = 3;
+        SlaveDetect slave_detect = 4;
+        NotActivated not_activated = 5;
+        ErrorBanner error_banner = 6;
+    }
+
+    message server_communication {
+        enum CommTestStatus {
+            FAILED = 0;
+            PASSED = 1;
+            NOT_TESTED = 2;
+        }
+
+        message LanTest {
+            CommTestStatus physical_connection = 1;
+            CommTestStatus ip_address = 2;
+            CommTestStatus gateway_link = 3;
+            CommTestStatus internet_link = 4;
+            CommTestStatus monitoring_link = 5;
+            CommTestStatus s_ok = 6;
+        }
+
+        message HgCommTest {
+            CommTestStatus repeater_1_connection = 1;
+            CommTestStatus repeater_2_connection = 2;
+            CommTestStatus homegateway_connection = 3;
+            CommTestStatus physical_connection = 4;
+            CommTestStatus ip_address = 5;
+            CommTestStatus gateway_link = 6;
+            CommTestStatus internet_link = 7;
+            CommTestStatus monitoring_link = 8;
+            CommTestStatus s_ok = 9;
+        }
+
+        LanTest lan_test = 1;
+        HgCommTest hg2_test = 2;
+    }
+
+    message Afci {
+        message Test {
+            enum AfciTestResult {
+                AFCI_TEST_FAIL = 0;
+                AFCI_TEST_ERROR = -1;
+                AFCI_TEST_PASS = 1;
+            }
+
+            AfciTestResult result = 1;
+            uint32 timeout = 2;
+        }
+
+        bool enable = 1;
+        bool manual_reconnect = 2;
+        Test test = 3;
+        bool dsp_error = 4;
+    }
+
+    message ServerChannel {
+        BoolVal lan = 1;
+        BoolVal cellular = 2;
+        BoolVal wifi = 3;
+        BoolVal rs485_1_se_slave = 4;
+        BoolVal zigbee = 5;
+        BoolVal rs485_2_se_slave = 6;
     }
 
     string sn = 1;
     Site site = 2;
-    float powerWatt = 3;
+    float power_watt = 3;
     float voltage = 4;
-    float frequencyHz = 5;
-    OptimizersStatus optimizersStatus = 6;
-    bool sOk = 7;
-    ManagerStatus status = 8;
-    bool switchStatus = 9;
-    float cosPhi = 10;
+    float frequency_hz = 5;
+    OptimizersStatus optimizers_status = 6;
+    bool s_ok = 7;
+    int32 status = 8;
+    bool switch_status = 9;
+    float cos_Phi = 10;
     float limit = 11;
     int32 country = 12;
     Inverters inverters = 13;
     Communication communication = 14;
     EnergyStatistics energy = 15;
-    int32 portiaSubsystem = 17;
-    Evese evese = 18;
-    repeated Meter metersList = 19;
-    repeated Battery batteriesList = 20;
+    uint32 portia_error_code = 16;
+    uint32 portia_subsystem = 17;
+    Evse evse = 18;
+    repeated Meter meters = 19;
+    repeated Battery batteries = 20;
     Notification notification = 21;
-    ServerCommunication serverComm = 22;
-    AFCI afci = 23;
-    ServerChannel serverChannel = 24;
+    server_communication server_comm = 22;
+    Afci afci = 23;
+    ServerChannel server_channel = 24;
 }

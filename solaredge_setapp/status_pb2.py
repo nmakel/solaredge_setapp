@@ -19,82 +19,734 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cstatus.proto\"\xf4\x19\n\x06Status\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x11\n\tpowerWatt\x18\x03 \x01(\x02\x12\x0f\n\x07voltage\x18\x04 \x01(\x02\x12\x13\n\x0b\x66requencyHz\x18\x05 \x01(\x02\x12\x32\n\x10optimizersStatus\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x0b\n\x03sOk\x18\x07 \x01(\x08\x12%\n\x06status\x18\x08 \x01(\x0e\x32\x15.Status.ManagerStatus\x12\x14\n\x0cswitchStatus\x18\t \x01(\x08\x12\x0e\n\x06\x63osPhi\x18\n \x01(\x02\x12\r\n\x05limit\x18\x0b \x01(\x02\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\x05\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x17\n\x0fportiaSubsystem\x18\x11 \x01(\x05\x12\x1c\n\x05\x65vese\x18\x12 \x01(\x0b\x32\r.Status.Evese\x12!\n\nmetersList\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12&\n\rbatteriesList\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12/\n\nserverComm\x18\x16 \x01(\x0b\x32\x1b.Status.ServerCommunication\x12\x1a\n\x04\x61\x66\x63i\x18\x17 \x01(\x0b\x32\x0c.Status.AFCI\x12,\n\rserverChannel\x18\x18 \x01(\x0b\x32\x15.Status.ServerChannel\x1a\x33\n\x11Int32ValueScaling\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x1a(\n\x0b\x42oolValueRo\x12\r\n\x05value\x18\x01 \x01(\x08\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a*\n\rStringValueRo\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a\x9f\x01\n\x04Site\x12\x15\n\rproduction_ac\x18\x01 \x01(\x02\x12\x15\n\rsize_limit_ac\x18\x02 \x01(\x02\x12\x33\n\x0einverterStatus\x18\x03 \x01(\x0b\x32\x1b.Status.Site.InverterStatus\x1a\x34\n\x0eInverterStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\t\x12\x11\n\tconnected\x18\x02 \x01(\t\x1a\x36\n\x10OptimizersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x05\x12\x11\n\tconnected\x18\x02 \x01(\x05\x1ah\n\x04\x41\x46\x43I\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12\x17\n\x0fmanualReconnect\x18\x02 \x01(\x08\x12\x1f\n\x04test\x18\x03 \x01(\x0b\x32\x11.Status.AFCI.Test\x1a\x16\n\x04Test\x12\x0e\n\x06result\x18\x01 \x01(\x05\x1a\xb2\x05\n\tInverters\x12(\n\x04left\x18\x01 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12+\n\x07primary\x18\x02 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x12)\n\x05right\x18\x03 \x01(\x0b\x32\x1a.Status.Inverters.Inverter\x1a\xab\x02\n\x08Inverter\x12\r\n\x05\x64spSn\x18\x01 \x01(\t\x12\x0f\n\x07voltage\x18\x02 \x01(\x02\x12,\n\noptimizers\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x32\n\x0btemperature\x18\x04 \x01(\x0b\x32\x1d.Status.Inverters.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x05\x12\r\n\x05\x65rror\x18\x06 \x01(\t\x12\x11\n\tsubsystem\x18\x07 \x01(\x05\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\t\x12.\n\tisolation\x18\t \x01(\x0b\x32\x1b.Status.Inverters.Isolation\x12(\n\x05power\x18\n \x01(\x0b\x32\x19.Status.Int32ValueScaling\x1a~\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x32\n\x05units\x18\x02 \x01(\x0b\x32#.Status.Inverters.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1au\n\tIsolation\x12(\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x19.Status.Int32ValueScaling\x12\'\n\x04rIso\x18\x02 \x01(\x0b\x32\x19.Status.Int32ValueScaling\x12\x15\n\rfaultLocation\x18\x03 \x01(\x05\x1a\x8f\x05\n\rCommunication\x12+\n\x06rs4851\x18\x01 \x01(\x0b\x32\x1b.Status.Communication.RS485\x12+\n\x06rs4852\x18\x02 \x01(\x0b\x32\x1b.Status.Communication.RS485\x12*\n\x07lanInfo\x18\x07 \x01(\x0b\x32\x19.Status.Communication.LAN\x1a\xcb\x02\n\x03LAN\x12!\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x13.Status.BoolValueRo\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.LAN.IP\x12\"\n\x03mac\x18\x03 \x01(\x0b\x32\x15.Status.StringValueRo\x12+\n\x0e\x63\x61\x62leConnected\x18\x04 \x01(\x0b\x32\x13.Status.BoolValueRo\x1a\xa5\x01\n\x02IP\x12(\n\tipAddress\x18\x01 \x01(\x0b\x32\x15.Status.StringValueRo\x12)\n\nsubnetMask\x18\x02 \x01(\x0b\x32\x15.Status.StringValueRo\x12&\n\x07gateway\x18\x03 \x01(\x0b\x32\x15.Status.StringValueRo\x12\"\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x15.Status.StringValueRo\x1a\xa9\x01\n\x05RS485\x12\x36\n\x08protocol\x18\x03 \x01(\x0b\x32$.Status.Communication.RS485.Protocol\x1ah\n\x08Protocol\x12\x0f\n\x07seSlave\x18\x01 \x01(\x08\x12\x10\n\x08seMaster\x18\x02 \x01(\x08\x12\x1a\n\x12modbusMultiDevices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\x0c\n\x04none\x18\x05 \x01(\x08\x1a\xf8\x01\n\rServerChannel\x12 \n\x03lan\x18\x01 \x01(\x0b\x32\x13.Status.BoolValueRo\x12%\n\x08\x63\x65llular\x18\x02 \x01(\x0b\x32\x13.Status.BoolValueRo\x12*\n\rrs4851SeSlave\x18\x03 \x01(\x0b\x32\x13.Status.BoolValueRo\x12*\n\rrs4852SeSlave\x18\x04 \x01(\x0b\x32\x13.Status.BoolValueRo\x12#\n\x06zigbee\x18\x05 \x01(\x0b\x32\x13.Status.BoolValueRo\x12!\n\x04wifi\x18\x06 \x01(\x0b\x32\x13.Status.BoolValueRo\x1aU\n\x10\x45nergyStatistics\x12\r\n\x05today\x18\x01 \x01(\x02\x12\x11\n\tthisMonth\x18\x02 \x01(\x02\x12\x10\n\x08thisYear\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x1a\x07\n\x05Meter\x1a\x07\n\x05\x45vese\x1a\t\n\x07\x42\x61ttery\x1a\x0e\n\x0cNotification\x1a\xee\x01\n\x13ServerCommunication\x12@\n\x07lanTest\x18\x01 \x01(\x0b\x32/.Status.ServerCommunication.CommunicationStatus\x1a\x94\x01\n\x13\x43ommunicationStatus\x12\x1a\n\x12physicalConnection\x18\x01 \x01(\x08\x12\x11\n\tipAddress\x18\x02 \x01(\x08\x12\x13\n\x0bgatewayLink\x18\x03 \x01(\x08\x12\x14\n\x0cinternetLink\x18\x04 \x01(\x08\x12\x16\n\x0emonitoringLink\x18\x05 \x01(\x08\x12\x0b\n\x03sOk\x18\x06 \x01(\x08\"\xad\x01\n\rManagerStatus\x12\x11\n\rSHUTTING_DOWN\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07STANDBY\x10\x02\x12\x0b\n\x07PAIRING\x10\x03\x12\x14\n\x10POWER_PRODUCTION\x10\x04\x12\x0f\n\x0b\x41\x43_CHARGING\x10\x05\x12\x0e\n\nNOT_PAIRED\x10\x06\x12\x0e\n\nNIGHT_MODE\x10\x07\x12\x13\n\x0fGRID_MONITORING\x10\x08\x12\x08\n\x04IDLE\x10\tb\x06proto3')
+  serialized_pb=_b('\n\x0cstatus.proto\"\xe9I\n\x06Status\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x12\n\npower_watt\x18\x03 \x01(\x02\x12\x0f\n\x07voltage\x18\x04 \x01(\x02\x12\x14\n\x0c\x66requency_hz\x18\x05 \x01(\x02\x12\x33\n\x11optimizers_status\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x0c\n\x04s_ok\x18\x07 \x01(\x08\x12\x0e\n\x06status\x18\x08 \x01(\x05\x12\x15\n\rswitch_status\x18\t \x01(\x08\x12\x0f\n\x07\x63os_Phi\x18\n \x01(\x02\x12\r\n\x05limit\x18\x0b \x01(\x02\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\x05\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x19\n\x11portia_error_code\x18\x10 \x01(\r\x12\x18\n\x10portia_subsystem\x18\x11 \x01(\r\x12\x1a\n\x04\x65vse\x18\x12 \x01(\x0b\x32\x0c.Status.Evse\x12\x1d\n\x06meters\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12\"\n\tbatteries\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12\x31\n\x0bserver_comm\x18\x16 \x01(\x0b\x32\x1c.Status.server_communication\x12\x1a\n\x04\x61\x66\x63i\x18\x17 \x01(\x0b\x32\x0c.Status.Afci\x12-\n\x0eserver_channel\x18\x18 \x01(\x0b\x32\x15.Status.ServerChannel\x1aK\n\x06UInt32\x12\r\n\x05value\x18\x01 \x01(\r\x12\n\n\x02ro\x18\x02 \x01(\x08\x12&\n\nattributes\x18\x03 \x01(\x0b\x32\x12.Status.UInt64Attr\x1a\x34\n\nUInt32Attr\x12\x0b\n\x03min\x18\x01 \x01(\r\x12\x0b\n\x03max\x18\x02 \x01(\r\x12\x0c\n\x04step\x18\x03 \x01(\r\x1aK\n\x06UInt64\x12\r\n\x05value\x18\x01 \x01(\x04\x12\n\n\x02ro\x18\x02 \x01(\x08\x12&\n\nattributes\x18\x03 \x01(\x0b\x32\x12.Status.UInt64Attr\x1a\x34\n\nUInt64Attr\x12\x0b\n\x03min\x18\x01 \x01(\x04\x12\x0b\n\x03max\x18\x02 \x01(\x04\x12\x0c\n\x04step\x18\x03 \x01(\x04\x1a)\n\x07\x46loat32\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x1a\\\n\x06\x46loatS\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x12\n\n\x02ro\x18\x03 \x01(\x08\x12&\n\nattributes\x18\x04 \x01(\x0b\x32\x12.Status.FloatSAttr\x1a\x34\n\nFloatSAttr\x12\x0b\n\x03min\x18\x01 \x01(\x05\x12\x0b\n\x03max\x18\x02 \x01(\x05\x12\x0c\n\x04step\x18\x03 \x01(\x05\x1a$\n\x07\x42oolVal\x12\r\n\x05value\x18\x01 \x01(\x08\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a&\n\tStringVal\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1at\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\r\x12(\n\x05units\x18\x02 \x01(\x0b\x32\x19.Status.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xa7\x01\n\x04Site\x12\x17\n\x0fproduction_watt\x18\x01 \x01(\x02\x12\x17\n\x0fsite_limit_watt\x18\x02 \x01(\x02\x12\x36\n\x10inverters_status\x18\x03 \x01(\x0b\x32\x1c.Status.Site.InvertersStatus\x1a\x35\n\x0fInvertersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x11\n\tconnected\x18\x02 \x01(\x08\x1a\x36\n\x10OptimizersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x1a\x8d\x04\n\tInverters\x12$\n\x04left\x18\x01 \x01(\x0b\x32\x16.Status.Inverters.Unit\x12\'\n\x07primary\x18\x02 \x01(\x0b\x32\x16.Status.Inverters.Unit\x12%\n\x05right\x18\x03 \x01(\x0b\x32\x16.Status.Inverters.Unit\x1a\x89\x03\n\x04Unit\x12\x0e\n\x06\x64sp_sn\x18\x01 \x01(\t\x12\x0f\n\x07voltage\x18\x02 \x01(\x02\x12\x33\n\x11optimizers_status\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12(\n\x0btemperature\x18\x04 \x01(\x0b\x32\x13.Status.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x08\x12\x12\n\nerror_code\x18\x06 \x01(\r\x12\x11\n\tsubsystem\x18\x07 \x01(\r\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\x08\x12\x33\n\tisolation\x18\t \x01(\x0b\x32 .Status.Inverters.Unit.Isolation\x12\x1d\n\x05power\x18\n \x01(\x0b\x32\x0e.Status.FloatS\x1a\x63\n\tIsolation\x12\x1e\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x0f.Status.Float32\x12\x1e\n\x05r_iso\x18\x02 \x01(\x0b\x32\x0f.Status.Float32\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x1a\xde\x0e\n\rCommunication\x12\x32\n\x07rs485_1\x18\x01 \x01(\x0b\x32!.Status.Communication.Rs485Status\x12\x32\n\x07rs485_2\x18\x02 \x01(\x0b\x32!.Status.Communication.Rs485Status\x12,\n\x03lan\x18\x03 \x01(\x0e\x32\x1f.Status.Communication.LanStatus\x12\x30\n\x08\x63\x65llular\x18\x04 \x01(\x0b\x32\x1e.Status.Communication.Cellular\x12(\n\x04wifi\x18\x05 \x01(\x0b\x32\x1a.Status.Communication.Wifi\x12,\n\x06zigbee\x18\x06 \x01(\x0b\x32\x1c.Status.Communication.Zigbee\x12+\n\x08lan_info\x18\x07 \x01(\x0b\x32\x19.Status.Communication.Lan\x1a\xdd\x01\n\x0bRs485Status\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x12<\n\x08protocol\x18\x03 \x01(\x0b\x32*.Status.Communication.Rs485Status.Protocol\x1al\n\x08Protocol\x12\x10\n\x08se_slave\x18\x01 \x01(\x08\x12\x11\n\tse_master\x18\x02 \x01(\x08\x12\x1c\n\x14modbus_multi_devices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\x0c\n\x04none\x18\x05 \x01(\x08\x1a\xc5\x01\n\x08\x43\x65llular\x12\x46\n\x0fsignal_strength\x18\x01 \x01(\x0e\x32-.Status.Communication.Cellular.CellularSignal\x12\x10\n\x08operator\x18\x02 \x01(\t\"_\n\x0e\x43\x65llularSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\n\n\x06LOWEST\x10\x02\x12\n\n\x06MEDIUM\x10\x03\x12\x08\n\x04HIGH\x10\x04\x12\x0b\n\x07HIGHEST\x10\x05\x12\x0b\n\x07UNKNOWN\x10\x06\x1a\xd1\x01\n\x04Wifi\x12\x16\n\x0e\x63hosen_network\x18\x01 \x01(\t\x12\x44\n\x15\x63hosen_network_signal\x18\x02 \x01(\x0e\x32%.Status.Communication.Wifi.WifiSignal\x12(\n\x0f\x63onnected_to_hg\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\"A\n\nWifiSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\x07\n\x03MID\x10\x02\x12\x08\n\x04HIGH\x10\x03\x12\r\n\tEXCELLENT\x10\x04\x1a\xb9\x04\n\x06Zigbee\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x12\x42\n\x0eoperation_mode\x18\x03 \x01(\x0b\x32*.Status.Communication.Zigbee.OperationMode\x12?\n\x0csignal_level\x18\x04 \x01(\x0e\x32).Status.Communication.Zigbee.ZigbeeSignal\x12\x45\n\x13zigbee_slave_status\x18\x05 \x01(\x0e\x32(.Status.Communication.Zigbee.SlaveStatus\x12@\n\rmodule_status\x18\x06 \x01(\x0e\x32).Status.Communication.Zigbee.ModuleStatus\x1aV\n\rOperationMode\x12\x0c\n\x04none\x18\x01 \x01(\x08\x12\x10\n\x08se_slave\x18\x02 \x01(\x08\x12\x12\n\nha_gateway\x18\x03 \x01(\x08\x12\x11\n\tp2p_slave\x18\x04 \x01(\x08\"4\n\x0cZigbeeSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\x07\n\x03MID\x10\x02\x12\x08\n\x04HIGH\x10\x03\"E\n\x0bSlaveStatus\x12\x11\n\rNOT_CONNECTED\x10\x00\x12\r\n\tCONNECTED\x10\x01\x12\x14\n\x10MASTER_NOT_FOUND\x10\x02\"(\n\x0cModuleStatus\x12\x10\n\x0cINITIALIZING\x10\x00\x12\x06\n\x02OK\x10\x01\x1a\xb2\x02\n\x03Lan\x12\x1d\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.Lan.IP\x12\x1e\n\x03mac\x18\x03 \x01(\x0b\x32\x11.Status.StringVal\x12(\n\x0f\x63\x61\x62le_connected\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x1a\x97\x01\n\x02IP\x12%\n\nip_address\x18\x01 \x01(\x0b\x32\x11.Status.StringVal\x12&\n\x0bsubnet_mask\x18\x02 \x01(\x0b\x32\x11.Status.StringVal\x12\"\n\x07gateway\x18\x03 \x01(\x0b\x32\x11.Status.StringVal\x12\x1e\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x11.Status.StringVal\"\x13\n\tLanStatus\x12\x06\n\x02OK\x10\x00\x1a\xaf\x01\n\x10\x45nergyStatistics\x12\r\n\x05today\x18\x01 \x01(\x02\x12\x12\n\nthis_month\x18\x02 \x01(\x02\x12\x11\n\tthis_year\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x12+\n\x13\x63urrent_consumption\x18\x05 \x01(\x0b\x32\x0e.Status.FloatS\x12)\n\x11total_consumption\x18\x06 \x01(\x0b\x32\x0e.Status.UInt64\x1a\x82\x03\n\x04\x45vse\x12*\n\ncar_status\x18\x01 \x01(\x0e\x32\x16.Status.Evse.CarStatus\x12\x32\n\x0e\x63harger_status\x18\x02 \x01(\x0e\x32\x1a.Status.Evse.ChargerStatus\x12\x14\n\x0c\x63harge_power\x18\x03 \x01(\x02\x12\x16\n\x0esession_energy\x18\x04 \x01(\x04\x12\x12\n\nerror_code\x18\x05 \x01(\r\x12\x11\n\tsubsystem\x18\x06 \x01(\r\x12\x1d\n\x02sn\x18\x07 \x01(\x0b\x32\x11.Status.StringVal\">\n\tCarStatus\x12\x10\n\x0c\x64isconnected\x10\x00\x12\r\n\tconnected\x10\x01\x12\x10\n\x0c\x63harging_car\x10\x02\"f\n\rChargerStatus\x12\t\n\x05ready\x10\x00\x12\x10\n\x0cinitializing\x10\x01\x12\x0c\n\x08\x63harging\x10\x02\x12\x12\n\x0e\x63harging_boost\x10\x03\x12\x16\n\x12\x63harging_excess_pv\x10\x04\x1a\x9a\x05\n\x05Meter\x12\x35\n\x0f\x63onnection_type\x18\x01 \x01(\x0e\x32\x1c.Status.Meter.ConnectionType\x12$\n\x04\x66unc\x18\x02 \x01(\x0b\x32\x16.Status.Meter.Function\x12$\n\x06status\x18\x03 \x01(\x0e\x32\x14.Status.Meter.Status\x12\n\n\x02id\x18\x04 \x01(\r\x12\r\n\x05power\x18\x05 \x01(\x02\x12\x0e\n\x06\x65nergy\x18\x06 \x01(\x02\x12\x10\n\x08s0_pulse\x18\x07 \x01(\r\x12\x1d\n\x02sn\x18\x08 \x01(\x0b\x32\x11.Status.StringVal\x1a\xdb\x02\n\x08\x46unction\x12,\n\x13inverter_production\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12&\n\rexport_import\x18\x02 \x01(\x0b\x32\x0f.Status.BoolVal\x12$\n\x0b\x63onsumption\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\x12(\n\x0fsite_production\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x12,\n\x13\x65xternal_production\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08m_export\x18\x06 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08m_import\x18\x07 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x35\n\x1cproduction_and_export_import\x18\x08 \x01(\x0b\x32\x0f.Status.BoolVal\"2\n\x0e\x43onnectionType\x12\x0b\n\x07RS485_1\x10\x00\x12\x0b\n\x07RS485_2\x10\x01\x12\x06\n\x02S0\x10\x02\" \n\x06Status\x12\x06\n\x02OK\x10\x00\x12\x0e\n\nCOMM_ERROR\x10\x01\x1a\x87\x04\n\x07\x42\x61ttery\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0b\x32\x11.Status.StringVal\x12&\n\x06status\x18\x03 \x01(\x0e\x32\x16.Status.Battery.Status\x12$\n\x05state\x18\x04 \x01(\x0e\x32\x15.Status.Battery.State\x12\r\n\x05power\x18\x05 \x01(\x02\x12\x0b\n\x03soe\x18\x06 \x01(\x02\x12\x12\n\nerror_code\x18\x07 \x01(\r\x12\x11\n\tsubsystem\x18\x08 \x01(\r\"(\n\x06Status\x12\r\n\tCONNECTED\x10\x00\x12\x0f\n\x0b\x44ISCNNECTED\x10\x01\"\x93\x02\n\x05State\x12\x15\n\x11\x42MS_STATE_INVALID\x10\x00\x12\x11\n\rBMS_STATE_OFF\x10\x01\x12\x13\n\x0f\x42MS_STATE_STDBY\x10\x02\x12\x12\n\x0e\x42MS_STATE_INIT\x10\x03\x12\x14\n\x10\x42MS_STATE_CHARGE\x10\x04\x12\x17\n\x13\x42MS_STATE_DISCHARGE\x10\x05\x12\x13\n\x0f\x42MS_STATE_FAULT\x10\x06\x12\x12\n\x0e\x42MS_STATE_IDLE\x10\x07\x12\x18\n\x14\x42MS_STATE_COMM_ERROR\x10\x08\x12\x17\n\x13\x42MS_STATE_RESERVED1\x10\t\x12\x17\n\x13\x42MS_STATE_RESERVED2\x10\n\x12\x13\n\x0f\x42MS_STATE_SLEEP\x10\x0b\x1a\x8a\x0f\n\x0cNotification\x12/\n\x08shutdown\x18\x01 \x01(\x0b\x32\x1d.Status.Notification.Shutdown\x12%\n\x03grm\x18\x02 \x01(\x0b\x32\x18.Status.Notification.GRM\x12-\n\x07pairing\x18\x03 \x01(\x0b\x32\x1c.Status.Notification.Pairing\x12\x36\n\x0cslave_detect\x18\x04 \x01(\x0b\x32 .Status.Notification.SlaveDetect\x12\x38\n\rnot_activated\x18\x05 \x01(\x0b\x32!.Status.Notification.NotActivated\x12\x36\n\x0c\x65rror_banner\x18\x06 \x01(\x0b\x32 .Status.Notification.ErrorBanner\x1a\x85\x01\n\x06Header\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.Status.UInt32\x12.\n\x04type\x18\x02 \x01(\x0e\x32 .Status.Notification.Header.Type\"/\n\x04Type\x12\t\n\x05\x45RROR\x10\x00\x12\x0b\n\x07WARNING\x10\x01\x12\x0f\n\x0bINFORMATION\x10\x02\x1a\x37\n\x08Shutdown\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x1an\n\x03GRM\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12\x16\n\x0eremaining_time\x18\x02 \x01(\x02\x12\"\n\ntotal_time\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x1a\x80\x06\n\x07Pairing\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12>\n\x0cpairing_data\x18\x02 \x01(\x0b\x32(.Status.Notification.Pairing.PairingData\x1a\x87\x05\n\x0bPairingData\x12\x41\n\x07request\x18\x01 \x01(\x0b\x32\x30.Status.Notification.Pairing.PairingData.Request\x12?\n\x06status\x18\x02 \x01(\x0b\x32/.Status.Notification.Pairing.PairingData.Status\x1a\x1b\n\x07Request\x12\x10\n\x08\x64uration\x18\x01 \x01(\r\x1a\xd6\x03\n\x06Status\x12\x11\n\tsessionID\x18\x01 \x01(\r\x12\x42\n\x04info\x18\x02 \x01(\x0e\x32\x34.Status.Notification.Pairing.PairingData.Status.Info\x12\x44\n\x05stage\x18\x03 \x01(\x0e\x32\x35.Status.Notification.Pairing.PairingData.Status.Stage\x12\x10\n\x08progress\x18\x04 \x01(\r\x12\x16\n\x0eremaining_time\x18\x05 \x01(\x05\"\x89\x01\n\x04Info\x12\x06\n\x02OK\x10\x00\x12\x0b\n\x07INV_OFF\x10\x02\x12\x0e\n\nNIGHT_MODE\x10\x03\x12\x0e\n\nIN_PROCESS\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x14\n\x10\x45RROR_OPT_DETECT\x10\x06\x12\x17\n\x13\x45RROR_STRING_DETECT\x10\x07\x12\x12\n\x0eNOT_IN_PROCESS\x10\x08\"y\n\x05Stage\x12\x0e\n\nNOT_ACTIVE\x10\x00\x12\x15\n\x11WAIT_VIN_DECREASE\x10\x01\x12\x0b\n\x07PAIRING\x10\x02\x12\x10\n\x0cSAVE_SESSION\x10\x03\x12\x0e\n\nOPT_DETECT\x10\x04\x12\x11\n\rSTRING_DETECT\x10\x05\x12\x07\n\x03\x45ND\x10\x06\x1a\xd3\x02\n\x0bSlaveDetect\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12K\n\x11slave_detect_data\x18\x02 \x01(\x0b\x32\x30.Status.Notification.SlaveDetect.SlaveDetectData\x1a\xc9\x01\n\x0fSlaveDetectData\x12 \n\x08\x64uration\x18\x01 \x01(\x0b\x32\x0e.Status.UInt32\x12%\n\rnum_of_slaves\x18\x02 \x01(\x0b\x32\x0e.Status.UInt32\x12$\n\x0cnum_of_loops\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x12(\n\x10max_num_of_loops\x18\x04 \x01(\x0b\x32\x0e.Status.UInt32\x12\x1d\n\x04Stop\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x1a;\n\x0cNotActivated\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x1a\x81\x01\n\x0b\x45rrorBanner\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12\"\n\nerror_code\x18\x02 \x01(\x0b\x32\x0e.Status.UInt32\x12!\n\tsubsystem\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x1a\xe9\t\n\x14server_communication\x12\x36\n\x08lan_test\x18\x01 \x01(\x0b\x32$.Status.server_communication.LanTest\x12\x39\n\x08hg2_test\x18\x02 \x01(\x0b\x32\'.Status.server_communication.HgCommTest\x1a\x9c\x03\n\x07LanTest\x12H\n\x13physical_connection\x18\x01 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12?\n\nip_address\x18\x02 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x41\n\x0cgateway_link\x18\x03 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x42\n\rinternet_link\x18\x04 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x44\n\x0fmonitoring_link\x18\x05 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x39\n\x04s_ok\x18\x06 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x1a\x84\x05\n\nHgCommTest\x12J\n\x15repeater_1_connection\x18\x01 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12J\n\x15repeater_2_connection\x18\x02 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12K\n\x16homegateway_connection\x18\x03 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12H\n\x13physical_connection\x18\x04 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12?\n\nip_address\x18\x05 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x41\n\x0cgateway_link\x18\x06 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x42\n\rinternet_link\x18\x07 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x44\n\x0fmonitoring_link\x18\x08 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x39\n\x04s_ok\x18\t \x01(\x0e\x32+.Status.server_communication.CommTestStatus\"8\n\x0e\x43ommTestStatus\x12\n\n\x06\x46\x41ILED\x10\x00\x12\n\n\x06PASSED\x10\x01\x12\x0e\n\nNOT_TESTED\x10\x02\x1a\x88\x02\n\x04\x41\x66\x63i\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12\x18\n\x10manual_reconnect\x18\x02 \x01(\x08\x12\x1f\n\x04test\x18\x03 \x01(\x0b\x32\x11.Status.Afci.Test\x12\x11\n\tdsp_error\x18\x04 \x01(\x08\x1a\xa1\x01\n\x04Test\x12\x30\n\x06result\x18\x01 \x01(\x0e\x32 .Status.Afci.Test.AfciTestResult\x12\x0f\n\x07timeout\x18\x02 \x01(\r\"V\n\x0e\x41\x66\x63iTestResult\x12\x12\n\x0e\x41\x46\x43I_TEST_FAIL\x10\x00\x12\x1c\n\x0f\x41\x46\x43I_TEST_ERROR\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x12\n\x0e\x41\x46\x43I_TEST_PASS\x10\x01\x1a\xe6\x01\n\rServerChannel\x12\x1c\n\x03lan\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08\x63\x65llular\x18\x02 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x1d\n\x04wifi\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\x12)\n\x10rs485_1_se_slave\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x1f\n\x06zigbee\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x12)\n\x10rs485_2_se_slave\x18\x06 \x01(\x0b\x32\x0f.Status.BoolValb\x06proto3')
 )
 
 
 
-_STATUS_MANAGERSTATUS = _descriptor.EnumDescriptor(
-  name='ManagerStatus',
-  full_name='Status.ManagerStatus',
+_STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL = _descriptor.EnumDescriptor(
+  name='CellularSignal',
+  full_name='Status.Communication.Cellular.CellularSignal',
   filename=None,
   file=DESCRIPTOR,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='SHUTTING_DOWN', index=0, number=0,
+      name='NONE', index=0, number=0,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='ERROR', index=1, number=1,
+      name='LOW', index=1, number=1,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='STANDBY', index=2, number=2,
+      name='LOWEST', index=2, number=2,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='PAIRING', index=3, number=3,
+      name='MEDIUM', index=3, number=3,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='POWER_PRODUCTION', index=4, number=4,
+      name='HIGH', index=4, number=4,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='AC_CHARGING', index=5, number=5,
+      name='HIGHEST', index=5, number=5,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='NOT_PAIRED', index=6, number=6,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='NIGHT_MODE', index=7, number=7,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='GRID_MONITORING', index=8, number=8,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='IDLE', index=9, number=9,
+      name='UNKNOWN', index=6, number=6,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3160,
-  serialized_end=3333,
+  serialized_start=2806,
+  serialized_end=2901,
 )
-_sym_db.RegisterEnumDescriptor(_STATUS_MANAGERSTATUS)
+_sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL)
+
+_STATUS_COMMUNICATION_WIFI_WIFISIGNAL = _descriptor.EnumDescriptor(
+  name='WifiSignal',
+  full_name='Status.Communication.Wifi.WifiSignal',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NONE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='LOW', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='MID', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='HIGH', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='EXCELLENT', index=4, number=4,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3048,
+  serialized_end=3113,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_WIFI_WIFISIGNAL)
+
+_STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL = _descriptor.EnumDescriptor(
+  name='ZigbeeSignal',
+  full_name='Status.Communication.Zigbee.ZigbeeSignal',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NONE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='LOW', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='MID', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='HIGH', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3520,
+  serialized_end=3572,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL)
+
+_STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS = _descriptor.EnumDescriptor(
+  name='SlaveStatus',
+  full_name='Status.Communication.Zigbee.SlaveStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NOT_CONNECTED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CONNECTED', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='MASTER_NOT_FOUND', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3574,
+  serialized_end=3643,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS)
+
+_STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS = _descriptor.EnumDescriptor(
+  name='ModuleStatus',
+  full_name='Status.Communication.Zigbee.ModuleStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='INITIALIZING', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OK', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3645,
+  serialized_end=3685,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS)
+
+_STATUS_COMMUNICATION_LANSTATUS = _descriptor.EnumDescriptor(
+  name='LanStatus',
+  full_name='Status.Communication.LanStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='OK', index=0, number=0,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3996,
+  serialized_end=4015,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_LANSTATUS)
+
+_STATUS_EVSE_CARSTATUS = _descriptor.EnumDescriptor(
+  name='CarStatus',
+  full_name='Status.Evse.CarStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='disconnected', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='connected', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='charging_car', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4416,
+  serialized_end=4478,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_EVSE_CARSTATUS)
+
+_STATUS_EVSE_CHARGERSTATUS = _descriptor.EnumDescriptor(
+  name='ChargerStatus',
+  full_name='Status.Evse.ChargerStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ready', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='initializing', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='charging', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='charging_boost', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='charging_excess_pv', index=4, number=4,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4480,
+  serialized_end=4582,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_EVSE_CHARGERSTATUS)
+
+_STATUS_METER_CONNECTIONTYPE = _descriptor.EnumDescriptor(
+  name='ConnectionType',
+  full_name='Status.Meter.ConnectionType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='RS485_1', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RS485_2', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='S0', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5167,
+  serialized_end=5217,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_METER_CONNECTIONTYPE)
+
+_STATUS_METER_STATUS = _descriptor.EnumDescriptor(
+  name='Status',
+  full_name='Status.Meter.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='OK', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COMM_ERROR', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5219,
+  serialized_end=5251,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_METER_STATUS)
+
+_STATUS_BATTERY_STATUS = _descriptor.EnumDescriptor(
+  name='Status',
+  full_name='Status.Battery.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CONNECTED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DISCNNECTED', index=1, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5455,
+  serialized_end=5495,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_BATTERY_STATUS)
+
+_STATUS_BATTERY_STATE = _descriptor.EnumDescriptor(
+  name='State',
+  full_name='Status.Battery.State',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_INVALID', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_OFF', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_STDBY', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_INIT', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_CHARGE', index=4, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_DISCHARGE', index=5, number=5,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_FAULT', index=6, number=6,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_IDLE', index=7, number=7,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_COMM_ERROR', index=8, number=8,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_RESERVED1', index=9, number=9,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_RESERVED2', index=10, number=10,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BMS_STATE_SLEEP', index=11, number=11,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5498,
+  serialized_end=5773,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_BATTERY_STATE)
+
+_STATUS_NOTIFICATION_HEADER_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='Status.Notification.Header.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ERROR', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='WARNING', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='INFORMATION', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=6184,
+  serialized_end=6231,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_NOTIFICATION_HEADER_TYPE)
+
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_INFO = _descriptor.EnumDescriptor(
+  name='Info',
+  full_name='Status.Notification.Pairing.PairingData.Status.Info',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='OK', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='INV_OFF', index=1, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NIGHT_MODE', index=2, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='IN_PROCESS', index=3, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR', index=4, number=5,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR_OPT_DETECT', index=5, number=6,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR_STRING_DETECT', index=6, number=7,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NOT_IN_PROCESS', index=7, number=8,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=6911,
+  serialized_end=7048,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_INFO)
+
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_STAGE = _descriptor.EnumDescriptor(
+  name='Stage',
+  full_name='Status.Notification.Pairing.PairingData.Status.Stage',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='NOT_ACTIVE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='WAIT_VIN_DECREASE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PAIRING', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SAVE_SESSION', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OPT_DETECT', index=4, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STRING_DETECT', index=5, number=5,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='END', index=6, number=6,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=7050,
+  serialized_end=7171,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_STAGE)
+
+_STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS = _descriptor.EnumDescriptor(
+  name='CommTestStatus',
+  full_name='Status.server_communication.CommTestStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='FAILED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PASSED', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NOT_TESTED', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=8910,
+  serialized_end=8966,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS)
+
+_STATUS_AFCI_TEST_AFCITESTRESULT = _descriptor.EnumDescriptor(
+  name='AfciTestResult',
+  full_name='Status.Afci.Test.AfciTestResult',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='AFCI_TEST_FAIL', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='AFCI_TEST_ERROR', index=1, number=-1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='AFCI_TEST_PASS', index=2, number=1,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=9147,
+  serialized_end=9233,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS_AFCI_TEST_AFCITESTRESULT)
 
 
-_STATUS_INT32VALUESCALING = _descriptor.Descriptor(
-  name='Int32ValueScaling',
-  full_name='Status.Int32ValueScaling',
+_STATUS_UINT32 = _descriptor.Descriptor(
+  name='UInt32',
+  full_name='Status.UInt32',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Status.Int32ValueScaling.value', index=0,
+      name='value', full_name='Status.UInt32.value', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.UInt32.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='attributes', full_name='Status.UInt32.attributes', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=725,
+  serialized_end=800,
+)
+
+_STATUS_UINT32ATTR = _descriptor.Descriptor(
+  name='UInt32Attr',
+  full_name='Status.UInt32Attr',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='min', full_name='Status.UInt32Attr.min', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max', full_name='Status.UInt32Attr.max', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='step', full_name='Status.UInt32Attr.step', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=802,
+  serialized_end=854,
+)
+
+_STATUS_UINT64 = _descriptor.Descriptor(
+  name='UInt64',
+  full_name='Status.UInt64',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.UInt64.value', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.UInt64.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='attributes', full_name='Status.UInt64.attributes', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=856,
+  serialized_end=931,
+)
+
+_STATUS_UINT64ATTR = _descriptor.Descriptor(
+  name='UInt64Attr',
+  full_name='Status.UInt64Attr',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='min', full_name='Status.UInt64Attr.min', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max', full_name='Status.UInt64Attr.max', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='step', full_name='Status.UInt64Attr.step', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=933,
+  serialized_end=985,
+)
+
+_STATUS_FLOAT32 = _descriptor.Descriptor(
+  name='Float32',
+  full_name='Status.Float32',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.Float32.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='scaling', full_name='Status.Int32ValueScaling.scaling', index=1,
+      name='scaling', full_name='Status.Float32.scaling', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -112,353 +764,45 @@ _STATUS_INT32VALUESCALING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=721,
-  serialized_end=772,
+  serialized_start=987,
+  serialized_end=1028,
 )
 
-_STATUS_BOOLVALUERO = _descriptor.Descriptor(
-  name='BoolValueRo',
-  full_name='Status.BoolValueRo',
+_STATUS_FLOATS = _descriptor.Descriptor(
+  name='FloatS',
+  full_name='Status.FloatS',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Status.BoolValueRo.value', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ro', full_name='Status.BoolValueRo.ro', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=774,
-  serialized_end=814,
-)
-
-_STATUS_STRINGVALUERO = _descriptor.Descriptor(
-  name='StringValueRo',
-  full_name='Status.StringValueRo',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='Status.StringValueRo.value', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ro', full_name='Status.StringValueRo.ro', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=816,
-  serialized_end=858,
-)
-
-_STATUS_SITE_INVERTERSTATUS = _descriptor.Descriptor(
-  name='InverterStatus',
-  full_name='Status.Site.InverterStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='enabled', full_name='Status.Site.InverterStatus.enabled', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='connected', full_name='Status.Site.InverterStatus.connected', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=968,
-  serialized_end=1020,
-)
-
-_STATUS_SITE = _descriptor.Descriptor(
-  name='Site',
-  full_name='Status.Site',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='production_ac', full_name='Status.Site.production_ac', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='size_limit_ac', full_name='Status.Site.size_limit_ac', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='inverterStatus', full_name='Status.Site.inverterStatus', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STATUS_SITE_INVERTERSTATUS, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=861,
-  serialized_end=1020,
-)
-
-_STATUS_OPTIMIZERSSTATUS = _descriptor.Descriptor(
-  name='OptimizersStatus',
-  full_name='Status.OptimizersStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='enabled', full_name='Status.OptimizersStatus.enabled', index=0,
+      name='value', full_name='Status.FloatS.value', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='connected', full_name='Status.OptimizersStatus.connected', index=1,
+      name='scaling', full_name='Status.FloatS.scaling', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1022,
-  serialized_end=1076,
-)
-
-_STATUS_AFCI_TEST = _descriptor.Descriptor(
-  name='Test',
-  full_name='Status.AFCI.Test',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='result', full_name='Status.AFCI.Test.result', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1160,
-  serialized_end=1182,
-)
-
-_STATUS_AFCI = _descriptor.Descriptor(
-  name='AFCI',
-  full_name='Status.AFCI',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='enable', full_name='Status.AFCI.enable', index=0,
-      number=1, type=8, cpp_type=7, label=1,
+      name='ro', full_name='Status.FloatS.ro', index=2,
+      number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='manualReconnect', full_name='Status.AFCI.manualReconnect', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='test', full_name='Status.AFCI.test', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STATUS_AFCI_TEST, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1078,
-  serialized_end=1182,
-)
-
-_STATUS_INVERTERS_INVERTER = _descriptor.Descriptor(
-  name='Inverter',
-  full_name='Status.Inverters.Inverter',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dspSn', full_name='Status.Inverters.Inverter.dspSn', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='voltage', full_name='Status.Inverters.Inverter.voltage', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='optimizers', full_name='Status.Inverters.Inverter.optimizers', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='temperature', full_name='Status.Inverters.Inverter.temperature', index=3,
+      name='attributes', full_name='Status.FloatS.attributes', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='fan', full_name='Status.Inverters.Inverter.fan', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='error', full_name='Status.Inverters.Inverter.error', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='subsystem', full_name='Status.Inverters.Inverter.subsystem', index=6,
-      number=7, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='bad_position', full_name='Status.Inverters.Inverter.bad_position', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='isolation', full_name='Status.Inverters.Inverter.isolation', index=8,
-      number=9, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='power', full_name='Status.Inverters.Inverter.power', index=9,
-      number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -471,107 +815,33 @@ _STATUS_INVERTERS_INVERTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1329,
-  serialized_end=1628,
+  serialized_start=1030,
+  serialized_end=1122,
 )
 
-_STATUS_INVERTERS_TEMPERATURE_UNITS = _descriptor.Descriptor(
-  name='Units',
-  full_name='Status.Inverters.Temperature.Units',
+_STATUS_FLOATSATTR = _descriptor.Descriptor(
+  name='FloatSAttr',
+  full_name='Status.FloatSAttr',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='celsius', full_name='Status.Inverters.Temperature.Units.celsius', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='fahrenheit', full_name='Status.Inverters.Temperature.Units.fahrenheit', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1712,
-  serialized_end=1756,
-)
-
-_STATUS_INVERTERS_TEMPERATURE = _descriptor.Descriptor(
-  name='Temperature',
-  full_name='Status.Inverters.Temperature',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='Status.Inverters.Temperature.value', index=0,
+      name='min', full_name='Status.FloatSAttr.min', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='units', full_name='Status.Inverters.Temperature.units', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STATUS_INVERTERS_TEMPERATURE_UNITS, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1630,
-  serialized_end=1756,
-)
-
-_STATUS_INVERTERS_ISOLATION = _descriptor.Descriptor(
-  name='Isolation',
-  full_name='Status.Inverters.Isolation',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='alpha', full_name='Status.Inverters.Isolation.alpha', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='max', full_name='Status.FloatSAttr.max', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rIso', full_name='Status.Inverters.Isolation.rIso', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='faultLocation', full_name='Status.Inverters.Isolation.faultLocation', index=2,
+      name='step', full_name='Status.FloatSAttr.step', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -589,8 +859,411 @@ _STATUS_INVERTERS_ISOLATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1758,
-  serialized_end=1875,
+  serialized_start=1124,
+  serialized_end=1176,
+)
+
+_STATUS_BOOLVAL = _descriptor.Descriptor(
+  name='BoolVal',
+  full_name='Status.BoolVal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.BoolVal.value', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.BoolVal.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1178,
+  serialized_end=1214,
+)
+
+_STATUS_STRINGVAL = _descriptor.Descriptor(
+  name='StringVal',
+  full_name='Status.StringVal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.StringVal.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.StringVal.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1216,
+  serialized_end=1254,
+)
+
+_STATUS_TEMPERATURE_UNITS = _descriptor.Descriptor(
+  name='Units',
+  full_name='Status.Temperature.Units',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='celsius', full_name='Status.Temperature.Units.celsius', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fahrenheit', full_name='Status.Temperature.Units.fahrenheit', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1328,
+  serialized_end=1372,
+)
+
+_STATUS_TEMPERATURE = _descriptor.Descriptor(
+  name='Temperature',
+  full_name='Status.Temperature',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.Temperature.value', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='units', full_name='Status.Temperature.units', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_TEMPERATURE_UNITS, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1256,
+  serialized_end=1372,
+)
+
+_STATUS_SITE_INVERTERSSTATUS = _descriptor.Descriptor(
+  name='InvertersStatus',
+  full_name='Status.Site.InvertersStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='enabled', full_name='Status.Site.InvertersStatus.enabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connected', full_name='Status.Site.InvertersStatus.connected', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1489,
+  serialized_end=1542,
+)
+
+_STATUS_SITE = _descriptor.Descriptor(
+  name='Site',
+  full_name='Status.Site',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='production_watt', full_name='Status.Site.production_watt', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='site_limit_watt', full_name='Status.Site.site_limit_watt', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='inverters_status', full_name='Status.Site.inverters_status', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_SITE_INVERTERSSTATUS, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1375,
+  serialized_end=1542,
+)
+
+_STATUS_OPTIMIZERSSTATUS = _descriptor.Descriptor(
+  name='OptimizersStatus',
+  full_name='Status.OptimizersStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='enabled', full_name='Status.OptimizersStatus.enabled', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connected', full_name='Status.OptimizersStatus.connected', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1544,
+  serialized_end=1598,
+)
+
+_STATUS_INVERTERS_UNIT_ISOLATION = _descriptor.Descriptor(
+  name='Isolation',
+  full_name='Status.Inverters.Unit.Isolation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='alpha', full_name='Status.Inverters.Unit.Isolation.alpha', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='r_iso', full_name='Status.Inverters.Unit.Isolation.r_iso', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fault_location', full_name='Status.Inverters.Unit.Isolation.fault_location', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2027,
+  serialized_end=2126,
+)
+
+_STATUS_INVERTERS_UNIT = _descriptor.Descriptor(
+  name='Unit',
+  full_name='Status.Inverters.Unit',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dsp_sn', full_name='Status.Inverters.Unit.dsp_sn', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='voltage', full_name='Status.Inverters.Unit.voltage', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='optimizers_status', full_name='Status.Inverters.Unit.optimizers_status', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='temperature', full_name='Status.Inverters.Unit.temperature', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fan', full_name='Status.Inverters.Unit.fan', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='error_code', full_name='Status.Inverters.Unit.error_code', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subsystem', full_name='Status.Inverters.Unit.subsystem', index=6,
+      number=7, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bad_position', full_name='Status.Inverters.Unit.bad_position', index=7,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='isolation', full_name='Status.Inverters.Unit.isolation', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='power', full_name='Status.Inverters.Unit.power', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_INVERTERS_UNIT_ISOLATION, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1733,
+  serialized_end=2126,
 )
 
 _STATUS_INVERTERS = _descriptor.Descriptor(
@@ -624,7 +1297,7 @@ _STATUS_INVERTERS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_INVERTERS_INVERTER, _STATUS_INVERTERS_TEMPERATURE, _STATUS_INVERTERS_ISOLATION, ],
+  nested_types=[_STATUS_INVERTERS_UNIT, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -633,149 +1306,47 @@ _STATUS_INVERTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1185,
-  serialized_end=1875,
+  serialized_start=1601,
+  serialized_end=2126,
 )
 
-_STATUS_COMMUNICATION_LAN_IP = _descriptor.Descriptor(
-  name='IP',
-  full_name='Status.Communication.LAN.IP',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ipAddress', full_name='Status.Communication.LAN.IP.ipAddress', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='subnetMask', full_name='Status.Communication.LAN.IP.subnetMask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='gateway', full_name='Status.Communication.LAN.IP.gateway', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='dns', full_name='Status.Communication.LAN.IP.dns', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2196,
-  serialized_end=2361,
-)
-
-_STATUS_COMMUNICATION_LAN = _descriptor.Descriptor(
-  name='LAN',
-  full_name='Status.Communication.LAN',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dhcp', full_name='Status.Communication.LAN.dhcp', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ip', full_name='Status.Communication.LAN.ip', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='mac', full_name='Status.Communication.LAN.mac', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='cableConnected', full_name='Status.Communication.LAN.cableConnected', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STATUS_COMMUNICATION_LAN_IP, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2030,
-  serialized_end=2361,
-)
-
-_STATUS_COMMUNICATION_RS485_PROTOCOL = _descriptor.Descriptor(
+_STATUS_COMMUNICATION_RS485STATUS_PROTOCOL = _descriptor.Descriptor(
   name='Protocol',
-  full_name='Status.Communication.RS485.Protocol',
+  full_name='Status.Communication.Rs485Status.Protocol',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='seSlave', full_name='Status.Communication.RS485.Protocol.seSlave', index=0,
+      name='se_slave', full_name='Status.Communication.Rs485Status.Protocol.se_slave', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='seMaster', full_name='Status.Communication.RS485.Protocol.seMaster', index=1,
+      name='se_master', full_name='Status.Communication.Rs485Status.Protocol.se_master', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='modbusMultiDevices', full_name='Status.Communication.RS485.Protocol.modbusMultiDevices', index=2,
+      name='modbus_multi_devices', full_name='Status.Communication.Rs485Status.Protocol.modbus_multi_devices', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sunspec', full_name='Status.Communication.RS485.Protocol.sunspec', index=3,
+      name='sunspec', full_name='Status.Communication.Rs485Status.Protocol.sunspec', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='none', full_name='Status.Communication.RS485.Protocol.none', index=4,
+      name='none', full_name='Status.Communication.Rs485Status.Protocol.none', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -793,19 +1364,33 @@ _STATUS_COMMUNICATION_RS485_PROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2429,
-  serialized_end=2533,
+  serialized_start=2593,
+  serialized_end=2701,
 )
 
-_STATUS_COMMUNICATION_RS485 = _descriptor.Descriptor(
-  name='RS485',
-  full_name='Status.Communication.RS485',
+_STATUS_COMMUNICATION_RS485STATUS = _descriptor.Descriptor(
+  name='Rs485Status',
+  full_name='Status.Communication.Rs485Status',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='protocol', full_name='Status.Communication.RS485.protocol', index=0,
+      name='enabled', full_name='Status.Communication.Rs485Status.enabled', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connected', full_name='Status.Communication.Rs485Status.connected', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='protocol', full_name='Status.Communication.Rs485Status.protocol', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -814,7 +1399,7 @@ _STATUS_COMMUNICATION_RS485 = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_COMMUNICATION_RS485_PROTOCOL, ],
+  nested_types=[_STATUS_COMMUNICATION_RS485STATUS_PROTOCOL, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -823,8 +1408,312 @@ _STATUS_COMMUNICATION_RS485 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2364,
-  serialized_end=2533,
+  serialized_start=2480,
+  serialized_end=2701,
+)
+
+_STATUS_COMMUNICATION_CELLULAR = _descriptor.Descriptor(
+  name='Cellular',
+  full_name='Status.Communication.Cellular',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='signal_strength', full_name='Status.Communication.Cellular.signal_strength', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='operator', full_name='Status.Communication.Cellular.operator', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2704,
+  serialized_end=2901,
+)
+
+_STATUS_COMMUNICATION_WIFI = _descriptor.Descriptor(
+  name='Wifi',
+  full_name='Status.Communication.Wifi',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='chosen_network', full_name='Status.Communication.Wifi.chosen_network', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='chosen_network_signal', full_name='Status.Communication.Wifi.chosen_network_signal', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connected_to_hg', full_name='Status.Communication.Wifi.connected_to_hg', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STATUS_COMMUNICATION_WIFI_WIFISIGNAL,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2904,
+  serialized_end=3113,
+)
+
+_STATUS_COMMUNICATION_ZIGBEE_OPERATIONMODE = _descriptor.Descriptor(
+  name='OperationMode',
+  full_name='Status.Communication.Zigbee.OperationMode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='none', full_name='Status.Communication.Zigbee.OperationMode.none', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='se_slave', full_name='Status.Communication.Zigbee.OperationMode.se_slave', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ha_gateway', full_name='Status.Communication.Zigbee.OperationMode.ha_gateway', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='p2p_slave', full_name='Status.Communication.Zigbee.OperationMode.p2p_slave', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3432,
+  serialized_end=3518,
+)
+
+_STATUS_COMMUNICATION_ZIGBEE = _descriptor.Descriptor(
+  name='Zigbee',
+  full_name='Status.Communication.Zigbee',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='enabled', full_name='Status.Communication.Zigbee.enabled', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connected', full_name='Status.Communication.Zigbee.connected', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='operation_mode', full_name='Status.Communication.Zigbee.operation_mode', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='signal_level', full_name='Status.Communication.Zigbee.signal_level', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='zigbee_slave_status', full_name='Status.Communication.Zigbee.zigbee_slave_status', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='module_status', full_name='Status.Communication.Zigbee.module_status', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_COMMUNICATION_ZIGBEE_OPERATIONMODE, ],
+  enum_types=[
+    _STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL,
+    _STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS,
+    _STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3116,
+  serialized_end=3685,
+)
+
+_STATUS_COMMUNICATION_LAN_IP = _descriptor.Descriptor(
+  name='IP',
+  full_name='Status.Communication.Lan.IP',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ip_address', full_name='Status.Communication.Lan.IP.ip_address', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subnet_mask', full_name='Status.Communication.Lan.IP.subnet_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gateway', full_name='Status.Communication.Lan.IP.gateway', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dns', full_name='Status.Communication.Lan.IP.dns', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3843,
+  serialized_end=3994,
+)
+
+_STATUS_COMMUNICATION_LAN = _descriptor.Descriptor(
+  name='Lan',
+  full_name='Status.Communication.Lan',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dhcp', full_name='Status.Communication.Lan.dhcp', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ip', full_name='Status.Communication.Lan.ip', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='mac', full_name='Status.Communication.Lan.mac', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cable_connected', full_name='Status.Communication.Lan.cable_connected', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_COMMUNICATION_LAN_IP, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3688,
+  serialized_end=3994,
 )
 
 _STATUS_COMMUNICATION = _descriptor.Descriptor(
@@ -835,21 +1724,49 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='rs4851', full_name='Status.Communication.rs4851', index=0,
+      name='rs485_1', full_name='Status.Communication.rs485_1', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rs4852', full_name='Status.Communication.rs4852', index=1,
+      name='rs485_2', full_name='Status.Communication.rs485_2', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lanInfo', full_name='Status.Communication.lanInfo', index=2,
+      name='lan', full_name='Status.Communication.lan', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cellular', full_name='Status.Communication.cellular', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='wifi', full_name='Status.Communication.wifi', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='zigbee', full_name='Status.Communication.zigbee', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='lan_info', full_name='Status.Communication.lan_info', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -858,7 +1775,73 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_COMMUNICATION_LAN, _STATUS_COMMUNICATION_RS485, ],
+  nested_types=[_STATUS_COMMUNICATION_RS485STATUS, _STATUS_COMMUNICATION_CELLULAR, _STATUS_COMMUNICATION_WIFI, _STATUS_COMMUNICATION_ZIGBEE, _STATUS_COMMUNICATION_LAN, ],
+  enum_types=[
+    _STATUS_COMMUNICATION_LANSTATUS,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2129,
+  serialized_end=4015,
+)
+
+_STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
+  name='EnergyStatistics',
+  full_name='Status.EnergyStatistics',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='today', full_name='Status.EnergyStatistics.today', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='this_month', full_name='Status.EnergyStatistics.this_month', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='this_year', full_name='Status.EnergyStatistics.this_year', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='total', full_name='Status.EnergyStatistics.total', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='current_consumption', full_name='Status.EnergyStatistics.current_consumption', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='total_consumption', full_name='Status.EnergyStatistics.total_consumption', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -867,8 +1850,1111 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1878,
-  serialized_end=2533,
+  serialized_start=4018,
+  serialized_end=4193,
+)
+
+_STATUS_EVSE = _descriptor.Descriptor(
+  name='Evse',
+  full_name='Status.Evse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='car_status', full_name='Status.Evse.car_status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='charger_status', full_name='Status.Evse.charger_status', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='charge_power', full_name='Status.Evse.charge_power', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='session_energy', full_name='Status.Evse.session_energy', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='error_code', full_name='Status.Evse.error_code', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subsystem', full_name='Status.Evse.subsystem', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sn', full_name='Status.Evse.sn', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STATUS_EVSE_CARSTATUS,
+    _STATUS_EVSE_CHARGERSTATUS,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4196,
+  serialized_end=4582,
+)
+
+_STATUS_METER_FUNCTION = _descriptor.Descriptor(
+  name='Function',
+  full_name='Status.Meter.Function',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='inverter_production', full_name='Status.Meter.Function.inverter_production', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='export_import', full_name='Status.Meter.Function.export_import', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='consumption', full_name='Status.Meter.Function.consumption', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='site_production', full_name='Status.Meter.Function.site_production', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='external_production', full_name='Status.Meter.Function.external_production', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='m_export', full_name='Status.Meter.Function.m_export', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='m_import', full_name='Status.Meter.Function.m_import', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='production_and_export_import', full_name='Status.Meter.Function.production_and_export_import', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4818,
+  serialized_end=5165,
+)
+
+_STATUS_METER = _descriptor.Descriptor(
+  name='Meter',
+  full_name='Status.Meter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='connection_type', full_name='Status.Meter.connection_type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='func', full_name='Status.Meter.func', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='Status.Meter.status', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='Status.Meter.id', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='power', full_name='Status.Meter.power', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='energy', full_name='Status.Meter.energy', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='s0_pulse', full_name='Status.Meter.s0_pulse', index=6,
+      number=7, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sn', full_name='Status.Meter.sn', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_METER_FUNCTION, ],
+  enum_types=[
+    _STATUS_METER_CONNECTIONTYPE,
+    _STATUS_METER_STATUS,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4585,
+  serialized_end=5251,
+)
+
+_STATUS_BATTERY = _descriptor.Descriptor(
+  name='Battery',
+  full_name='Status.Battery',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='sn', full_name='Status.Battery.sn', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='Status.Battery.type', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='Status.Battery.status', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='Status.Battery.state', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='power', full_name='Status.Battery.power', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='soe', full_name='Status.Battery.soe', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='error_code', full_name='Status.Battery.error_code', index=6,
+      number=7, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subsystem', full_name='Status.Battery.subsystem', index=7,
+      number=8, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STATUS_BATTERY_STATUS,
+    _STATUS_BATTERY_STATE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5254,
+  serialized_end=5773,
+)
+
+_STATUS_NOTIFICATION_HEADER = _descriptor.Descriptor(
+  name='Header',
+  full_name='Status.Notification.Header',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='Status.Notification.Header.id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='Status.Notification.Header.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STATUS_NOTIFICATION_HEADER_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6098,
+  serialized_end=6231,
+)
+
+_STATUS_NOTIFICATION_SHUTDOWN = _descriptor.Descriptor(
+  name='Shutdown',
+  full_name='Status.Notification.Shutdown',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='Status.Notification.Shutdown.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6233,
+  serialized_end=6288,
+)
+
+_STATUS_NOTIFICATION_GRM = _descriptor.Descriptor(
+  name='GRM',
+  full_name='Status.Notification.GRM',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='Status.Notification.GRM.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='remaining_time', full_name='Status.Notification.GRM.remaining_time', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='total_time', full_name='Status.Notification.GRM.total_time', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6290,
+  serialized_end=6400,
+)
+
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_REQUEST = _descriptor.Descriptor(
+  name='Request',
+  full_name='Status.Notification.Pairing.PairingData.Request',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='duration', full_name='Status.Notification.Pairing.PairingData.Request.duration', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6671,
+  serialized_end=6698,
+)
+
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS = _descriptor.Descriptor(
+  name='Status',
+  full_name='Status.Notification.Pairing.PairingData.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='sessionID', full_name='Status.Notification.Pairing.PairingData.Status.sessionID', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='info', full_name='Status.Notification.Pairing.PairingData.Status.info', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='stage', full_name='Status.Notification.Pairing.PairingData.Status.stage', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='progress', full_name='Status.Notification.Pairing.PairingData.Status.progress', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='remaining_time', full_name='Status.Notification.Pairing.PairingData.Status.remaining_time', index=4,
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_INFO,
+    _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_STAGE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6701,
+  serialized_end=7171,
+)
+
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA = _descriptor.Descriptor(
+  name='PairingData',
+  full_name='Status.Notification.Pairing.PairingData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='request', full_name='Status.Notification.Pairing.PairingData.request', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='Status.Notification.Pairing.PairingData.status', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_REQUEST, _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6524,
+  serialized_end=7171,
+)
+
+_STATUS_NOTIFICATION_PAIRING = _descriptor.Descriptor(
+  name='Pairing',
+  full_name='Status.Notification.Pairing',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='Status.Notification.Pairing.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='pairing_data', full_name='Status.Notification.Pairing.pairing_data', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6403,
+  serialized_end=7171,
+)
+
+_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA = _descriptor.Descriptor(
+  name='SlaveDetectData',
+  full_name='Status.Notification.SlaveDetect.SlaveDetectData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='duration', full_name='Status.Notification.SlaveDetect.SlaveDetectData.duration', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='num_of_slaves', full_name='Status.Notification.SlaveDetect.SlaveDetectData.num_of_slaves', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='num_of_loops', full_name='Status.Notification.SlaveDetect.SlaveDetectData.num_of_loops', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_num_of_loops', full_name='Status.Notification.SlaveDetect.SlaveDetectData.max_num_of_loops', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Stop', full_name='Status.Notification.SlaveDetect.SlaveDetectData.Stop', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7312,
+  serialized_end=7513,
+)
+
+_STATUS_NOTIFICATION_SLAVEDETECT = _descriptor.Descriptor(
+  name='SlaveDetect',
+  full_name='Status.Notification.SlaveDetect',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='Status.Notification.SlaveDetect.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='slave_detect_data', full_name='Status.Notification.SlaveDetect.slave_detect_data', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7174,
+  serialized_end=7513,
+)
+
+_STATUS_NOTIFICATION_NOTACTIVATED = _descriptor.Descriptor(
+  name='NotActivated',
+  full_name='Status.Notification.NotActivated',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='Status.Notification.NotActivated.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7515,
+  serialized_end=7574,
+)
+
+_STATUS_NOTIFICATION_ERRORBANNER = _descriptor.Descriptor(
+  name='ErrorBanner',
+  full_name='Status.Notification.ErrorBanner',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='Status.Notification.ErrorBanner.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='error_code', full_name='Status.Notification.ErrorBanner.error_code', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subsystem', full_name='Status.Notification.ErrorBanner.subsystem', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7577,
+  serialized_end=7706,
+)
+
+_STATUS_NOTIFICATION = _descriptor.Descriptor(
+  name='Notification',
+  full_name='Status.Notification',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='shutdown', full_name='Status.Notification.shutdown', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='grm', full_name='Status.Notification.grm', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='pairing', full_name='Status.Notification.pairing', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='slave_detect', full_name='Status.Notification.slave_detect', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='not_activated', full_name='Status.Notification.not_activated', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='error_banner', full_name='Status.Notification.error_banner', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_NOTIFICATION_HEADER, _STATUS_NOTIFICATION_SHUTDOWN, _STATUS_NOTIFICATION_GRM, _STATUS_NOTIFICATION_PAIRING, _STATUS_NOTIFICATION_SLAVEDETECT, _STATUS_NOTIFICATION_NOTACTIVATED, _STATUS_NOTIFICATION_ERRORBANNER, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5776,
+  serialized_end=7706,
+)
+
+_STATUS_SERVER_COMMUNICATION_LANTEST = _descriptor.Descriptor(
+  name='LanTest',
+  full_name='Status.server_communication.LanTest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='physical_connection', full_name='Status.server_communication.LanTest.physical_connection', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ip_address', full_name='Status.server_communication.LanTest.ip_address', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gateway_link', full_name='Status.server_communication.LanTest.gateway_link', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='internet_link', full_name='Status.server_communication.LanTest.internet_link', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='monitoring_link', full_name='Status.server_communication.LanTest.monitoring_link', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='s_ok', full_name='Status.server_communication.LanTest.s_ok', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7849,
+  serialized_end=8261,
+)
+
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST = _descriptor.Descriptor(
+  name='HgCommTest',
+  full_name='Status.server_communication.HgCommTest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='repeater_1_connection', full_name='Status.server_communication.HgCommTest.repeater_1_connection', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='repeater_2_connection', full_name='Status.server_communication.HgCommTest.repeater_2_connection', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='homegateway_connection', full_name='Status.server_communication.HgCommTest.homegateway_connection', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='physical_connection', full_name='Status.server_communication.HgCommTest.physical_connection', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ip_address', full_name='Status.server_communication.HgCommTest.ip_address', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gateway_link', full_name='Status.server_communication.HgCommTest.gateway_link', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='internet_link', full_name='Status.server_communication.HgCommTest.internet_link', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='monitoring_link', full_name='Status.server_communication.HgCommTest.monitoring_link', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='s_ok', full_name='Status.server_communication.HgCommTest.s_ok', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8264,
+  serialized_end=8908,
+)
+
+_STATUS_SERVER_COMMUNICATION = _descriptor.Descriptor(
+  name='server_communication',
+  full_name='Status.server_communication',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='lan_test', full_name='Status.server_communication.lan_test', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hg2_test', full_name='Status.server_communication.hg2_test', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_SERVER_COMMUNICATION_LANTEST, _STATUS_SERVER_COMMUNICATION_HGCOMMTEST, ],
+  enum_types=[
+    _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7709,
+  serialized_end=8966,
+)
+
+_STATUS_AFCI_TEST = _descriptor.Descriptor(
+  name='Test',
+  full_name='Status.Afci.Test',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='Status.Afci.Test.result', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timeout', full_name='Status.Afci.Test.timeout', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _STATUS_AFCI_TEST_AFCITESTRESULT,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9072,
+  serialized_end=9233,
+)
+
+_STATUS_AFCI = _descriptor.Descriptor(
+  name='Afci',
+  full_name='Status.Afci',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='enable', full_name='Status.Afci.enable', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='manual_reconnect', full_name='Status.Afci.manual_reconnect', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='test', full_name='Status.Afci.test', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dsp_error', full_name='Status.Afci.dsp_error', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_AFCI_TEST, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8969,
+  serialized_end=9233,
 )
 
 _STATUS_SERVERCHANNEL = _descriptor.Descriptor(
@@ -893,14 +2979,14 @@ _STATUS_SERVERCHANNEL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rs4851SeSlave', full_name='Status.ServerChannel.rs4851SeSlave', index=2,
+      name='wifi', full_name='Status.ServerChannel.wifi', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rs4852SeSlave', full_name='Status.ServerChannel.rs4852SeSlave', index=3,
+      name='rs485_1_se_slave', full_name='Status.ServerChannel.rs485_1_se_slave', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -914,7 +3000,7 @@ _STATUS_SERVERCHANNEL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='wifi', full_name='Status.ServerChannel.wifi', index=5,
+      name='rs485_2_se_slave', full_name='Status.ServerChannel.rs485_2_se_slave', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -932,246 +3018,8 @@ _STATUS_SERVERCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2536,
-  serialized_end=2784,
-)
-
-_STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
-  name='EnergyStatistics',
-  full_name='Status.EnergyStatistics',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='today', full_name='Status.EnergyStatistics.today', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='thisMonth', full_name='Status.EnergyStatistics.thisMonth', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='thisYear', full_name='Status.EnergyStatistics.thisYear', index=2,
-      number=3, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='total', full_name='Status.EnergyStatistics.total', index=3,
-      number=4, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2786,
-  serialized_end=2871,
-)
-
-_STATUS_METER = _descriptor.Descriptor(
-  name='Meter',
-  full_name='Status.Meter',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2873,
-  serialized_end=2880,
-)
-
-_STATUS_EVESE = _descriptor.Descriptor(
-  name='Evese',
-  full_name='Status.Evese',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2882,
-  serialized_end=2889,
-)
-
-_STATUS_BATTERY = _descriptor.Descriptor(
-  name='Battery',
-  full_name='Status.Battery',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2891,
-  serialized_end=2900,
-)
-
-_STATUS_NOTIFICATION = _descriptor.Descriptor(
-  name='Notification',
-  full_name='Status.Notification',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2902,
-  serialized_end=2916,
-)
-
-_STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS = _descriptor.Descriptor(
-  name='CommunicationStatus',
-  full_name='Status.ServerCommunication.CommunicationStatus',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='physicalConnection', full_name='Status.ServerCommunication.CommunicationStatus.physicalConnection', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ipAddress', full_name='Status.ServerCommunication.CommunicationStatus.ipAddress', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='gatewayLink', full_name='Status.ServerCommunication.CommunicationStatus.gatewayLink', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='internetLink', full_name='Status.ServerCommunication.CommunicationStatus.internetLink', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='monitoringLink', full_name='Status.ServerCommunication.CommunicationStatus.monitoringLink', index=4,
-      number=5, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='sOk', full_name='Status.ServerCommunication.CommunicationStatus.sOk', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3009,
-  serialized_end=3157,
-)
-
-_STATUS_SERVERCOMMUNICATION = _descriptor.Descriptor(
-  name='ServerCommunication',
-  full_name='Status.ServerCommunication',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lanTest', full_name='Status.ServerCommunication.lanTest', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2919,
-  serialized_end=3157,
+  serialized_start=9236,
+  serialized_end=9466,
 )
 
 _STATUS = _descriptor.Descriptor(
@@ -1196,7 +3044,7 @@ _STATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='powerWatt', full_name='Status.powerWatt', index=2,
+      name='power_watt', full_name='Status.power_watt', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -1210,21 +3058,21 @@ _STATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='frequencyHz', full_name='Status.frequencyHz', index=4,
+      name='frequency_hz', full_name='Status.frequency_hz', index=4,
       number=5, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='optimizersStatus', full_name='Status.optimizersStatus', index=5,
+      name='optimizers_status', full_name='Status.optimizers_status', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sOk', full_name='Status.sOk', index=6,
+      name='s_ok', full_name='Status.s_ok', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1232,20 +3080,20 @@ _STATUS = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='status', full_name='Status.status', index=7,
-      number=8, type=14, cpp_type=8, label=1,
+      number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='switchStatus', full_name='Status.switchStatus', index=8,
+      name='switch_status', full_name='Status.switch_status', index=8,
       number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cosPhi', full_name='Status.cosPhi', index=9,
+      name='cos_Phi', full_name='Status.cos_Phi', index=9,
       number=10, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -1287,56 +3135,63 @@ _STATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='portiaSubsystem', full_name='Status.portiaSubsystem', index=15,
-      number=17, type=5, cpp_type=1, label=1,
+      name='portia_error_code', full_name='Status.portia_error_code', index=15,
+      number=16, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='evese', full_name='Status.evese', index=16,
+      name='portia_subsystem', full_name='Status.portia_subsystem', index=16,
+      number=17, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='evse', full_name='Status.evse', index=17,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='metersList', full_name='Status.metersList', index=17,
+      name='meters', full_name='Status.meters', index=18,
       number=19, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='batteriesList', full_name='Status.batteriesList', index=18,
+      name='batteries', full_name='Status.batteries', index=19,
       number=20, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='notification', full_name='Status.notification', index=19,
+      name='notification', full_name='Status.notification', index=20,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='serverComm', full_name='Status.serverComm', index=20,
+      name='server_comm', full_name='Status.server_comm', index=21,
       number=22, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='afci', full_name='Status.afci', index=21,
+      name='afci', full_name='Status.afci', index=22,
       number=23, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='serverChannel', full_name='Status.serverChannel', index=22,
+      name='server_channel', full_name='Status.server_channel', index=23,
       number=24, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1345,9 +3200,8 @@ _STATUS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_INT32VALUESCALING, _STATUS_BOOLVALUERO, _STATUS_STRINGVALUERO, _STATUS_SITE, _STATUS_OPTIMIZERSSTATUS, _STATUS_AFCI, _STATUS_INVERTERS, _STATUS_COMMUNICATION, _STATUS_SERVERCHANNEL, _STATUS_ENERGYSTATISTICS, _STATUS_METER, _STATUS_EVESE, _STATUS_BATTERY, _STATUS_NOTIFICATION, _STATUS_SERVERCOMMUNICATION, ],
+  nested_types=[_STATUS_UINT32, _STATUS_UINT32ATTR, _STATUS_UINT64, _STATUS_UINT64ATTR, _STATUS_FLOAT32, _STATUS_FLOATS, _STATUS_FLOATSATTR, _STATUS_BOOLVAL, _STATUS_STRINGVAL, _STATUS_TEMPERATURE, _STATUS_SITE, _STATUS_OPTIMIZERSSTATUS, _STATUS_INVERTERS, _STATUS_COMMUNICATION, _STATUS_ENERGYSTATISTICS, _STATUS_EVSE, _STATUS_METER, _STATUS_BATTERY, _STATUS_NOTIFICATION, _STATUS_SERVER_COMMUNICATION, _STATUS_AFCI, _STATUS_SERVERCHANNEL, ],
   enum_types=[
-    _STATUS_MANAGERSTATUS,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -1356,112 +3210,285 @@ _STATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=3333,
+  serialized_end=9466,
 )
 
-_STATUS_INT32VALUESCALING.containing_type = _STATUS
-_STATUS_BOOLVALUERO.containing_type = _STATUS
-_STATUS_STRINGVALUERO.containing_type = _STATUS
-_STATUS_SITE_INVERTERSTATUS.containing_type = _STATUS_SITE
-_STATUS_SITE.fields_by_name['inverterStatus'].message_type = _STATUS_SITE_INVERTERSTATUS
+_STATUS_UINT32.fields_by_name['attributes'].message_type = _STATUS_UINT64ATTR
+_STATUS_UINT32.containing_type = _STATUS
+_STATUS_UINT32ATTR.containing_type = _STATUS
+_STATUS_UINT64.fields_by_name['attributes'].message_type = _STATUS_UINT64ATTR
+_STATUS_UINT64.containing_type = _STATUS
+_STATUS_UINT64ATTR.containing_type = _STATUS
+_STATUS_FLOAT32.containing_type = _STATUS
+_STATUS_FLOATS.fields_by_name['attributes'].message_type = _STATUS_FLOATSATTR
+_STATUS_FLOATS.containing_type = _STATUS
+_STATUS_FLOATSATTR.containing_type = _STATUS
+_STATUS_BOOLVAL.containing_type = _STATUS
+_STATUS_STRINGVAL.containing_type = _STATUS
+_STATUS_TEMPERATURE_UNITS.containing_type = _STATUS_TEMPERATURE
+_STATUS_TEMPERATURE.fields_by_name['units'].message_type = _STATUS_TEMPERATURE_UNITS
+_STATUS_TEMPERATURE.containing_type = _STATUS
+_STATUS_SITE_INVERTERSSTATUS.containing_type = _STATUS_SITE
+_STATUS_SITE.fields_by_name['inverters_status'].message_type = _STATUS_SITE_INVERTERSSTATUS
 _STATUS_SITE.containing_type = _STATUS
 _STATUS_OPTIMIZERSSTATUS.containing_type = _STATUS
+_STATUS_INVERTERS_UNIT_ISOLATION.fields_by_name['alpha'].message_type = _STATUS_FLOAT32
+_STATUS_INVERTERS_UNIT_ISOLATION.fields_by_name['r_iso'].message_type = _STATUS_FLOAT32
+_STATUS_INVERTERS_UNIT_ISOLATION.containing_type = _STATUS_INVERTERS_UNIT
+_STATUS_INVERTERS_UNIT.fields_by_name['optimizers_status'].message_type = _STATUS_OPTIMIZERSSTATUS
+_STATUS_INVERTERS_UNIT.fields_by_name['temperature'].message_type = _STATUS_TEMPERATURE
+_STATUS_INVERTERS_UNIT.fields_by_name['isolation'].message_type = _STATUS_INVERTERS_UNIT_ISOLATION
+_STATUS_INVERTERS_UNIT.fields_by_name['power'].message_type = _STATUS_FLOATS
+_STATUS_INVERTERS_UNIT.containing_type = _STATUS_INVERTERS
+_STATUS_INVERTERS.fields_by_name['left'].message_type = _STATUS_INVERTERS_UNIT
+_STATUS_INVERTERS.fields_by_name['primary'].message_type = _STATUS_INVERTERS_UNIT
+_STATUS_INVERTERS.fields_by_name['right'].message_type = _STATUS_INVERTERS_UNIT
+_STATUS_INVERTERS.containing_type = _STATUS
+_STATUS_COMMUNICATION_RS485STATUS_PROTOCOL.containing_type = _STATUS_COMMUNICATION_RS485STATUS
+_STATUS_COMMUNICATION_RS485STATUS.fields_by_name['protocol'].message_type = _STATUS_COMMUNICATION_RS485STATUS_PROTOCOL
+_STATUS_COMMUNICATION_RS485STATUS.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION_CELLULAR.fields_by_name['signal_strength'].enum_type = _STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL
+_STATUS_COMMUNICATION_CELLULAR.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL.containing_type = _STATUS_COMMUNICATION_CELLULAR
+_STATUS_COMMUNICATION_WIFI.fields_by_name['chosen_network_signal'].enum_type = _STATUS_COMMUNICATION_WIFI_WIFISIGNAL
+_STATUS_COMMUNICATION_WIFI.fields_by_name['connected_to_hg'].message_type = _STATUS_BOOLVAL
+_STATUS_COMMUNICATION_WIFI.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION_WIFI_WIFISIGNAL.containing_type = _STATUS_COMMUNICATION_WIFI
+_STATUS_COMMUNICATION_ZIGBEE_OPERATIONMODE.containing_type = _STATUS_COMMUNICATION_ZIGBEE
+_STATUS_COMMUNICATION_ZIGBEE.fields_by_name['operation_mode'].message_type = _STATUS_COMMUNICATION_ZIGBEE_OPERATIONMODE
+_STATUS_COMMUNICATION_ZIGBEE.fields_by_name['signal_level'].enum_type = _STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL
+_STATUS_COMMUNICATION_ZIGBEE.fields_by_name['zigbee_slave_status'].enum_type = _STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS
+_STATUS_COMMUNICATION_ZIGBEE.fields_by_name['module_status'].enum_type = _STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS
+_STATUS_COMMUNICATION_ZIGBEE.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL.containing_type = _STATUS_COMMUNICATION_ZIGBEE
+_STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS.containing_type = _STATUS_COMMUNICATION_ZIGBEE
+_STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS.containing_type = _STATUS_COMMUNICATION_ZIGBEE
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['ip_address'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['subnet_mask'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.containing_type = _STATUS_COMMUNICATION_LAN
+_STATUS_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _STATUS_BOOLVAL
+_STATUS_COMMUNICATION_LAN.fields_by_name['ip'].message_type = _STATUS_COMMUNICATION_LAN_IP
+_STATUS_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN.fields_by_name['cable_connected'].message_type = _STATUS_BOOLVAL
+_STATUS_COMMUNICATION_LAN.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION.fields_by_name['rs485_1'].message_type = _STATUS_COMMUNICATION_RS485STATUS
+_STATUS_COMMUNICATION.fields_by_name['rs485_2'].message_type = _STATUS_COMMUNICATION_RS485STATUS
+_STATUS_COMMUNICATION.fields_by_name['lan'].enum_type = _STATUS_COMMUNICATION_LANSTATUS
+_STATUS_COMMUNICATION.fields_by_name['cellular'].message_type = _STATUS_COMMUNICATION_CELLULAR
+_STATUS_COMMUNICATION.fields_by_name['wifi'].message_type = _STATUS_COMMUNICATION_WIFI
+_STATUS_COMMUNICATION.fields_by_name['zigbee'].message_type = _STATUS_COMMUNICATION_ZIGBEE
+_STATUS_COMMUNICATION.fields_by_name['lan_info'].message_type = _STATUS_COMMUNICATION_LAN
+_STATUS_COMMUNICATION.containing_type = _STATUS
+_STATUS_COMMUNICATION_LANSTATUS.containing_type = _STATUS_COMMUNICATION
+_STATUS_ENERGYSTATISTICS.fields_by_name['current_consumption'].message_type = _STATUS_FLOATS
+_STATUS_ENERGYSTATISTICS.fields_by_name['total_consumption'].message_type = _STATUS_UINT64
+_STATUS_ENERGYSTATISTICS.containing_type = _STATUS
+_STATUS_EVSE.fields_by_name['car_status'].enum_type = _STATUS_EVSE_CARSTATUS
+_STATUS_EVSE.fields_by_name['charger_status'].enum_type = _STATUS_EVSE_CHARGERSTATUS
+_STATUS_EVSE.fields_by_name['sn'].message_type = _STATUS_STRINGVAL
+_STATUS_EVSE.containing_type = _STATUS
+_STATUS_EVSE_CARSTATUS.containing_type = _STATUS_EVSE
+_STATUS_EVSE_CHARGERSTATUS.containing_type = _STATUS_EVSE
+_STATUS_METER_FUNCTION.fields_by_name['inverter_production'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.fields_by_name['export_import'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.fields_by_name['consumption'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.fields_by_name['site_production'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.fields_by_name['external_production'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.fields_by_name['m_export'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.fields_by_name['m_import'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.fields_by_name['production_and_export_import'].message_type = _STATUS_BOOLVAL
+_STATUS_METER_FUNCTION.containing_type = _STATUS_METER
+_STATUS_METER.fields_by_name['connection_type'].enum_type = _STATUS_METER_CONNECTIONTYPE
+_STATUS_METER.fields_by_name['func'].message_type = _STATUS_METER_FUNCTION
+_STATUS_METER.fields_by_name['status'].enum_type = _STATUS_METER_STATUS
+_STATUS_METER.fields_by_name['sn'].message_type = _STATUS_STRINGVAL
+_STATUS_METER.containing_type = _STATUS
+_STATUS_METER_CONNECTIONTYPE.containing_type = _STATUS_METER
+_STATUS_METER_STATUS.containing_type = _STATUS_METER
+_STATUS_BATTERY.fields_by_name['type'].message_type = _STATUS_STRINGVAL
+_STATUS_BATTERY.fields_by_name['status'].enum_type = _STATUS_BATTERY_STATUS
+_STATUS_BATTERY.fields_by_name['state'].enum_type = _STATUS_BATTERY_STATE
+_STATUS_BATTERY.containing_type = _STATUS
+_STATUS_BATTERY_STATUS.containing_type = _STATUS_BATTERY
+_STATUS_BATTERY_STATE.containing_type = _STATUS_BATTERY
+_STATUS_NOTIFICATION_HEADER.fields_by_name['id'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_HEADER.fields_by_name['type'].enum_type = _STATUS_NOTIFICATION_HEADER_TYPE
+_STATUS_NOTIFICATION_HEADER.containing_type = _STATUS_NOTIFICATION
+_STATUS_NOTIFICATION_HEADER_TYPE.containing_type = _STATUS_NOTIFICATION_HEADER
+_STATUS_NOTIFICATION_SHUTDOWN.fields_by_name['header'].message_type = _STATUS_NOTIFICATION_HEADER
+_STATUS_NOTIFICATION_SHUTDOWN.containing_type = _STATUS_NOTIFICATION
+_STATUS_NOTIFICATION_GRM.fields_by_name['header'].message_type = _STATUS_NOTIFICATION_HEADER
+_STATUS_NOTIFICATION_GRM.fields_by_name['total_time'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_GRM.containing_type = _STATUS_NOTIFICATION
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_REQUEST.containing_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS.fields_by_name['info'].enum_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_INFO
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS.fields_by_name['stage'].enum_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_STAGE
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS.containing_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_INFO.containing_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_STAGE.containing_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA.fields_by_name['request'].message_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_REQUEST
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA.fields_by_name['status'].message_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS
+_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA.containing_type = _STATUS_NOTIFICATION_PAIRING
+_STATUS_NOTIFICATION_PAIRING.fields_by_name['header'].message_type = _STATUS_NOTIFICATION_HEADER
+_STATUS_NOTIFICATION_PAIRING.fields_by_name['pairing_data'].message_type = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA
+_STATUS_NOTIFICATION_PAIRING.containing_type = _STATUS_NOTIFICATION
+_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA.fields_by_name['duration'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA.fields_by_name['num_of_slaves'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA.fields_by_name['num_of_loops'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA.fields_by_name['max_num_of_loops'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA.fields_by_name['Stop'].message_type = _STATUS_BOOLVAL
+_STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA.containing_type = _STATUS_NOTIFICATION_SLAVEDETECT
+_STATUS_NOTIFICATION_SLAVEDETECT.fields_by_name['header'].message_type = _STATUS_NOTIFICATION_HEADER
+_STATUS_NOTIFICATION_SLAVEDETECT.fields_by_name['slave_detect_data'].message_type = _STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA
+_STATUS_NOTIFICATION_SLAVEDETECT.containing_type = _STATUS_NOTIFICATION
+_STATUS_NOTIFICATION_NOTACTIVATED.fields_by_name['header'].message_type = _STATUS_NOTIFICATION_HEADER
+_STATUS_NOTIFICATION_NOTACTIVATED.containing_type = _STATUS_NOTIFICATION
+_STATUS_NOTIFICATION_ERRORBANNER.fields_by_name['header'].message_type = _STATUS_NOTIFICATION_HEADER
+_STATUS_NOTIFICATION_ERRORBANNER.fields_by_name['error_code'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_ERRORBANNER.fields_by_name['subsystem'].message_type = _STATUS_UINT32
+_STATUS_NOTIFICATION_ERRORBANNER.containing_type = _STATUS_NOTIFICATION
+_STATUS_NOTIFICATION.fields_by_name['shutdown'].message_type = _STATUS_NOTIFICATION_SHUTDOWN
+_STATUS_NOTIFICATION.fields_by_name['grm'].message_type = _STATUS_NOTIFICATION_GRM
+_STATUS_NOTIFICATION.fields_by_name['pairing'].message_type = _STATUS_NOTIFICATION_PAIRING
+_STATUS_NOTIFICATION.fields_by_name['slave_detect'].message_type = _STATUS_NOTIFICATION_SLAVEDETECT
+_STATUS_NOTIFICATION.fields_by_name['not_activated'].message_type = _STATUS_NOTIFICATION_NOTACTIVATED
+_STATUS_NOTIFICATION.fields_by_name['error_banner'].message_type = _STATUS_NOTIFICATION_ERRORBANNER
+_STATUS_NOTIFICATION.containing_type = _STATUS
+_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['physical_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['ip_address'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['gateway_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['internet_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['monitoring_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['s_ok'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_LANTEST.containing_type = _STATUS_SERVER_COMMUNICATION
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['repeater_1_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['repeater_2_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['homegateway_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['physical_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['ip_address'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['gateway_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['internet_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['monitoring_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['s_ok'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.containing_type = _STATUS_SERVER_COMMUNICATION
+_STATUS_SERVER_COMMUNICATION.fields_by_name['lan_test'].message_type = _STATUS_SERVER_COMMUNICATION_LANTEST
+_STATUS_SERVER_COMMUNICATION.fields_by_name['hg2_test'].message_type = _STATUS_SERVER_COMMUNICATION_HGCOMMTEST
+_STATUS_SERVER_COMMUNICATION.containing_type = _STATUS
+_STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS.containing_type = _STATUS_SERVER_COMMUNICATION
+_STATUS_AFCI_TEST.fields_by_name['result'].enum_type = _STATUS_AFCI_TEST_AFCITESTRESULT
 _STATUS_AFCI_TEST.containing_type = _STATUS_AFCI
+_STATUS_AFCI_TEST_AFCITESTRESULT.containing_type = _STATUS_AFCI_TEST
 _STATUS_AFCI.fields_by_name['test'].message_type = _STATUS_AFCI_TEST
 _STATUS_AFCI.containing_type = _STATUS
-_STATUS_INVERTERS_INVERTER.fields_by_name['optimizers'].message_type = _STATUS_OPTIMIZERSSTATUS
-_STATUS_INVERTERS_INVERTER.fields_by_name['temperature'].message_type = _STATUS_INVERTERS_TEMPERATURE
-_STATUS_INVERTERS_INVERTER.fields_by_name['isolation'].message_type = _STATUS_INVERTERS_ISOLATION
-_STATUS_INVERTERS_INVERTER.fields_by_name['power'].message_type = _STATUS_INT32VALUESCALING
-_STATUS_INVERTERS_INVERTER.containing_type = _STATUS_INVERTERS
-_STATUS_INVERTERS_TEMPERATURE_UNITS.containing_type = _STATUS_INVERTERS_TEMPERATURE
-_STATUS_INVERTERS_TEMPERATURE.fields_by_name['units'].message_type = _STATUS_INVERTERS_TEMPERATURE_UNITS
-_STATUS_INVERTERS_TEMPERATURE.containing_type = _STATUS_INVERTERS
-_STATUS_INVERTERS_ISOLATION.fields_by_name['alpha'].message_type = _STATUS_INT32VALUESCALING
-_STATUS_INVERTERS_ISOLATION.fields_by_name['rIso'].message_type = _STATUS_INT32VALUESCALING
-_STATUS_INVERTERS_ISOLATION.containing_type = _STATUS_INVERTERS
-_STATUS_INVERTERS.fields_by_name['left'].message_type = _STATUS_INVERTERS_INVERTER
-_STATUS_INVERTERS.fields_by_name['primary'].message_type = _STATUS_INVERTERS_INVERTER
-_STATUS_INVERTERS.fields_by_name['right'].message_type = _STATUS_INVERTERS_INVERTER
-_STATUS_INVERTERS.containing_type = _STATUS
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['ipAddress'].message_type = _STATUS_STRINGVALUERO
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['subnetMask'].message_type = _STATUS_STRINGVALUERO
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _STATUS_STRINGVALUERO
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _STATUS_STRINGVALUERO
-_STATUS_COMMUNICATION_LAN_IP.containing_type = _STATUS_COMMUNICATION_LAN
-_STATUS_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _STATUS_BOOLVALUERO
-_STATUS_COMMUNICATION_LAN.fields_by_name['ip'].message_type = _STATUS_COMMUNICATION_LAN_IP
-_STATUS_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _STATUS_STRINGVALUERO
-_STATUS_COMMUNICATION_LAN.fields_by_name['cableConnected'].message_type = _STATUS_BOOLVALUERO
-_STATUS_COMMUNICATION_LAN.containing_type = _STATUS_COMMUNICATION
-_STATUS_COMMUNICATION_RS485_PROTOCOL.containing_type = _STATUS_COMMUNICATION_RS485
-_STATUS_COMMUNICATION_RS485.fields_by_name['protocol'].message_type = _STATUS_COMMUNICATION_RS485_PROTOCOL
-_STATUS_COMMUNICATION_RS485.containing_type = _STATUS_COMMUNICATION
-_STATUS_COMMUNICATION.fields_by_name['rs4851'].message_type = _STATUS_COMMUNICATION_RS485
-_STATUS_COMMUNICATION.fields_by_name['rs4852'].message_type = _STATUS_COMMUNICATION_RS485
-_STATUS_COMMUNICATION.fields_by_name['lanInfo'].message_type = _STATUS_COMMUNICATION_LAN
-_STATUS_COMMUNICATION.containing_type = _STATUS
-_STATUS_SERVERCHANNEL.fields_by_name['lan'].message_type = _STATUS_BOOLVALUERO
-_STATUS_SERVERCHANNEL.fields_by_name['cellular'].message_type = _STATUS_BOOLVALUERO
-_STATUS_SERVERCHANNEL.fields_by_name['rs4851SeSlave'].message_type = _STATUS_BOOLVALUERO
-_STATUS_SERVERCHANNEL.fields_by_name['rs4852SeSlave'].message_type = _STATUS_BOOLVALUERO
-_STATUS_SERVERCHANNEL.fields_by_name['zigbee'].message_type = _STATUS_BOOLVALUERO
-_STATUS_SERVERCHANNEL.fields_by_name['wifi'].message_type = _STATUS_BOOLVALUERO
+_STATUS_SERVERCHANNEL.fields_by_name['lan'].message_type = _STATUS_BOOLVAL
+_STATUS_SERVERCHANNEL.fields_by_name['cellular'].message_type = _STATUS_BOOLVAL
+_STATUS_SERVERCHANNEL.fields_by_name['wifi'].message_type = _STATUS_BOOLVAL
+_STATUS_SERVERCHANNEL.fields_by_name['rs485_1_se_slave'].message_type = _STATUS_BOOLVAL
+_STATUS_SERVERCHANNEL.fields_by_name['zigbee'].message_type = _STATUS_BOOLVAL
+_STATUS_SERVERCHANNEL.fields_by_name['rs485_2_se_slave'].message_type = _STATUS_BOOLVAL
 _STATUS_SERVERCHANNEL.containing_type = _STATUS
-_STATUS_ENERGYSTATISTICS.containing_type = _STATUS
-_STATUS_METER.containing_type = _STATUS
-_STATUS_EVESE.containing_type = _STATUS
-_STATUS_BATTERY.containing_type = _STATUS
-_STATUS_NOTIFICATION.containing_type = _STATUS
-_STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS.containing_type = _STATUS_SERVERCOMMUNICATION
-_STATUS_SERVERCOMMUNICATION.fields_by_name['lanTest'].message_type = _STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS
-_STATUS_SERVERCOMMUNICATION.containing_type = _STATUS
 _STATUS.fields_by_name['site'].message_type = _STATUS_SITE
-_STATUS.fields_by_name['optimizersStatus'].message_type = _STATUS_OPTIMIZERSSTATUS
-_STATUS.fields_by_name['status'].enum_type = _STATUS_MANAGERSTATUS
+_STATUS.fields_by_name['optimizers_status'].message_type = _STATUS_OPTIMIZERSSTATUS
 _STATUS.fields_by_name['inverters'].message_type = _STATUS_INVERTERS
 _STATUS.fields_by_name['communication'].message_type = _STATUS_COMMUNICATION
 _STATUS.fields_by_name['energy'].message_type = _STATUS_ENERGYSTATISTICS
-_STATUS.fields_by_name['evese'].message_type = _STATUS_EVESE
-_STATUS.fields_by_name['metersList'].message_type = _STATUS_METER
-_STATUS.fields_by_name['batteriesList'].message_type = _STATUS_BATTERY
+_STATUS.fields_by_name['evse'].message_type = _STATUS_EVSE
+_STATUS.fields_by_name['meters'].message_type = _STATUS_METER
+_STATUS.fields_by_name['batteries'].message_type = _STATUS_BATTERY
 _STATUS.fields_by_name['notification'].message_type = _STATUS_NOTIFICATION
-_STATUS.fields_by_name['serverComm'].message_type = _STATUS_SERVERCOMMUNICATION
+_STATUS.fields_by_name['server_comm'].message_type = _STATUS_SERVER_COMMUNICATION
 _STATUS.fields_by_name['afci'].message_type = _STATUS_AFCI
-_STATUS.fields_by_name['serverChannel'].message_type = _STATUS_SERVERCHANNEL
-_STATUS_MANAGERSTATUS.containing_type = _STATUS
+_STATUS.fields_by_name['server_channel'].message_type = _STATUS_SERVERCHANNEL
 DESCRIPTOR.message_types_by_name['Status'] = _STATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), dict(
 
-  Int32ValueScaling = _reflection.GeneratedProtocolMessageType('Int32ValueScaling', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_INT32VALUESCALING,
+  UInt32 = _reflection.GeneratedProtocolMessageType('UInt32', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_UINT32,
     __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.Int32ValueScaling)
+    # @@protoc_insertion_point(class_scope:Status.UInt32)
     ))
   ,
 
-  BoolValueRo = _reflection.GeneratedProtocolMessageType('BoolValueRo', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_BOOLVALUERO,
+  UInt32Attr = _reflection.GeneratedProtocolMessageType('UInt32Attr', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_UINT32ATTR,
     __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.BoolValueRo)
+    # @@protoc_insertion_point(class_scope:Status.UInt32Attr)
     ))
   ,
 
-  StringValueRo = _reflection.GeneratedProtocolMessageType('StringValueRo', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_STRINGVALUERO,
+  UInt64 = _reflection.GeneratedProtocolMessageType('UInt64', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_UINT64,
     __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.StringValueRo)
+    # @@protoc_insertion_point(class_scope:Status.UInt64)
+    ))
+  ,
+
+  UInt64Attr = _reflection.GeneratedProtocolMessageType('UInt64Attr', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_UINT64ATTR,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.UInt64Attr)
+    ))
+  ,
+
+  Float32 = _reflection.GeneratedProtocolMessageType('Float32', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_FLOAT32,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.Float32)
+    ))
+  ,
+
+  FloatS = _reflection.GeneratedProtocolMessageType('FloatS', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_FLOATS,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.FloatS)
+    ))
+  ,
+
+  FloatSAttr = _reflection.GeneratedProtocolMessageType('FloatSAttr', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_FLOATSATTR,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.FloatSAttr)
+    ))
+  ,
+
+  BoolVal = _reflection.GeneratedProtocolMessageType('BoolVal', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_BOOLVAL,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.BoolVal)
+    ))
+  ,
+
+  StringVal = _reflection.GeneratedProtocolMessageType('StringVal', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_STRINGVAL,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.StringVal)
+    ))
+  ,
+
+  Temperature = _reflection.GeneratedProtocolMessageType('Temperature', (_message.Message,), dict(
+
+    Units = _reflection.GeneratedProtocolMessageType('Units', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_TEMPERATURE_UNITS,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Temperature.Units)
+      ))
+    ,
+    DESCRIPTOR = _STATUS_TEMPERATURE,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.Temperature)
     ))
   ,
 
   Site = _reflection.GeneratedProtocolMessageType('Site', (_message.Message,), dict(
 
-    InverterStatus = _reflection.GeneratedProtocolMessageType('InverterStatus', (_message.Message,), dict(
-      DESCRIPTOR = _STATUS_SITE_INVERTERSTATUS,
+    InvertersStatus = _reflection.GeneratedProtocolMessageType('InvertersStatus', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_SITE_INVERTERSSTATUS,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Site.InverterStatus)
+      # @@protoc_insertion_point(class_scope:Status.Site.InvertersStatus)
       ))
     ,
     DESCRIPTOR = _STATUS_SITE,
@@ -1477,47 +3504,19 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
     ))
   ,
 
-  AFCI = _reflection.GeneratedProtocolMessageType('AFCI', (_message.Message,), dict(
-
-    Test = _reflection.GeneratedProtocolMessageType('Test', (_message.Message,), dict(
-      DESCRIPTOR = _STATUS_AFCI_TEST,
-      __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.AFCI.Test)
-      ))
-    ,
-    DESCRIPTOR = _STATUS_AFCI,
-    __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.AFCI)
-    ))
-  ,
-
   Inverters = _reflection.GeneratedProtocolMessageType('Inverters', (_message.Message,), dict(
 
-    Inverter = _reflection.GeneratedProtocolMessageType('Inverter', (_message.Message,), dict(
-      DESCRIPTOR = _STATUS_INVERTERS_INVERTER,
-      __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Inverters.Inverter)
-      ))
-    ,
+    Unit = _reflection.GeneratedProtocolMessageType('Unit', (_message.Message,), dict(
 
-    Temperature = _reflection.GeneratedProtocolMessageType('Temperature', (_message.Message,), dict(
-
-      Units = _reflection.GeneratedProtocolMessageType('Units', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_INVERTERS_TEMPERATURE_UNITS,
+      Isolation = _reflection.GeneratedProtocolMessageType('Isolation', (_message.Message,), dict(
+        DESCRIPTOR = _STATUS_INVERTERS_UNIT_ISOLATION,
         __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Inverters.Temperature.Units)
+        # @@protoc_insertion_point(class_scope:Status.Inverters.Unit.Isolation)
         ))
       ,
-      DESCRIPTOR = _STATUS_INVERTERS_TEMPERATURE,
+      DESCRIPTOR = _STATUS_INVERTERS_UNIT,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Inverters.Temperature)
-      ))
-    ,
-
-    Isolation = _reflection.GeneratedProtocolMessageType('Isolation', (_message.Message,), dict(
-      DESCRIPTOR = _STATUS_INVERTERS_ISOLATION,
-      __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Inverters.Isolation)
+      # @@protoc_insertion_point(class_scope:Status.Inverters.Unit)
       ))
     ,
     DESCRIPTOR = _STATUS_INVERTERS,
@@ -1528,43 +3527,64 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
 
   Communication = _reflection.GeneratedProtocolMessageType('Communication', (_message.Message,), dict(
 
-    LAN = _reflection.GeneratedProtocolMessageType('LAN', (_message.Message,), dict(
+    Rs485Status = _reflection.GeneratedProtocolMessageType('Rs485Status', (_message.Message,), dict(
+
+      Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), dict(
+        DESCRIPTOR = _STATUS_COMMUNICATION_RS485STATUS_PROTOCOL,
+        __module__ = 'status_pb2'
+        # @@protoc_insertion_point(class_scope:Status.Communication.Rs485Status.Protocol)
+        ))
+      ,
+      DESCRIPTOR = _STATUS_COMMUNICATION_RS485STATUS,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Communication.Rs485Status)
+      ))
+    ,
+
+    Cellular = _reflection.GeneratedProtocolMessageType('Cellular', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_COMMUNICATION_CELLULAR,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Communication.Cellular)
+      ))
+    ,
+
+    Wifi = _reflection.GeneratedProtocolMessageType('Wifi', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_COMMUNICATION_WIFI,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Communication.Wifi)
+      ))
+    ,
+
+    Zigbee = _reflection.GeneratedProtocolMessageType('Zigbee', (_message.Message,), dict(
+
+      OperationMode = _reflection.GeneratedProtocolMessageType('OperationMode', (_message.Message,), dict(
+        DESCRIPTOR = _STATUS_COMMUNICATION_ZIGBEE_OPERATIONMODE,
+        __module__ = 'status_pb2'
+        # @@protoc_insertion_point(class_scope:Status.Communication.Zigbee.OperationMode)
+        ))
+      ,
+      DESCRIPTOR = _STATUS_COMMUNICATION_ZIGBEE,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Communication.Zigbee)
+      ))
+    ,
+
+    Lan = _reflection.GeneratedProtocolMessageType('Lan', (_message.Message,), dict(
 
       IP = _reflection.GeneratedProtocolMessageType('IP', (_message.Message,), dict(
         DESCRIPTOR = _STATUS_COMMUNICATION_LAN_IP,
         __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.LAN.IP)
+        # @@protoc_insertion_point(class_scope:Status.Communication.Lan.IP)
         ))
       ,
       DESCRIPTOR = _STATUS_COMMUNICATION_LAN,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Communication.LAN)
-      ))
-    ,
-
-    RS485 = _reflection.GeneratedProtocolMessageType('RS485', (_message.Message,), dict(
-
-      Protocol = _reflection.GeneratedProtocolMessageType('Protocol', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_RS485_PROTOCOL,
-        __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.RS485.Protocol)
-        ))
-      ,
-      DESCRIPTOR = _STATUS_COMMUNICATION_RS485,
-      __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Communication.RS485)
+      # @@protoc_insertion_point(class_scope:Status.Communication.Lan)
       ))
     ,
     DESCRIPTOR = _STATUS_COMMUNICATION,
     __module__ = 'status_pb2'
     # @@protoc_insertion_point(class_scope:Status.Communication)
-    ))
-  ,
-
-  ServerChannel = _reflection.GeneratedProtocolMessageType('ServerChannel', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_SERVERCHANNEL,
-    __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.ServerChannel)
     ))
   ,
 
@@ -1575,17 +3595,24 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
     ))
   ,
 
-  Meter = _reflection.GeneratedProtocolMessageType('Meter', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_METER,
+  Evse = _reflection.GeneratedProtocolMessageType('Evse', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_EVSE,
     __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.Meter)
+    # @@protoc_insertion_point(class_scope:Status.Evse)
     ))
   ,
 
-  Evese = _reflection.GeneratedProtocolMessageType('Evese', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_EVESE,
+  Meter = _reflection.GeneratedProtocolMessageType('Meter', (_message.Message,), dict(
+
+    Function = _reflection.GeneratedProtocolMessageType('Function', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_METER_FUNCTION,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Meter.Function)
+      ))
+    ,
+    DESCRIPTOR = _STATUS_METER,
     __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.Evese)
+    # @@protoc_insertion_point(class_scope:Status.Meter)
     ))
   ,
 
@@ -1597,23 +3624,128 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
   ,
 
   Notification = _reflection.GeneratedProtocolMessageType('Notification', (_message.Message,), dict(
+
+    Header = _reflection.GeneratedProtocolMessageType('Header', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_NOTIFICATION_HEADER,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Notification.Header)
+      ))
+    ,
+
+    Shutdown = _reflection.GeneratedProtocolMessageType('Shutdown', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_NOTIFICATION_SHUTDOWN,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Notification.Shutdown)
+      ))
+    ,
+
+    GRM = _reflection.GeneratedProtocolMessageType('GRM', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_NOTIFICATION_GRM,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Notification.GRM)
+      ))
+    ,
+
+    Pairing = _reflection.GeneratedProtocolMessageType('Pairing', (_message.Message,), dict(
+
+      PairingData = _reflection.GeneratedProtocolMessageType('PairingData', (_message.Message,), dict(
+
+        Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), dict(
+          DESCRIPTOR = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_REQUEST,
+          __module__ = 'status_pb2'
+          # @@protoc_insertion_point(class_scope:Status.Notification.Pairing.PairingData.Request)
+          ))
+        ,
+
+        Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), dict(
+          DESCRIPTOR = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS,
+          __module__ = 'status_pb2'
+          # @@protoc_insertion_point(class_scope:Status.Notification.Pairing.PairingData.Status)
+          ))
+        ,
+        DESCRIPTOR = _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA,
+        __module__ = 'status_pb2'
+        # @@protoc_insertion_point(class_scope:Status.Notification.Pairing.PairingData)
+        ))
+      ,
+      DESCRIPTOR = _STATUS_NOTIFICATION_PAIRING,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Notification.Pairing)
+      ))
+    ,
+
+    SlaveDetect = _reflection.GeneratedProtocolMessageType('SlaveDetect', (_message.Message,), dict(
+
+      SlaveDetectData = _reflection.GeneratedProtocolMessageType('SlaveDetectData', (_message.Message,), dict(
+        DESCRIPTOR = _STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA,
+        __module__ = 'status_pb2'
+        # @@protoc_insertion_point(class_scope:Status.Notification.SlaveDetect.SlaveDetectData)
+        ))
+      ,
+      DESCRIPTOR = _STATUS_NOTIFICATION_SLAVEDETECT,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Notification.SlaveDetect)
+      ))
+    ,
+
+    NotActivated = _reflection.GeneratedProtocolMessageType('NotActivated', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_NOTIFICATION_NOTACTIVATED,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Notification.NotActivated)
+      ))
+    ,
+
+    ErrorBanner = _reflection.GeneratedProtocolMessageType('ErrorBanner', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_NOTIFICATION_ERRORBANNER,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Notification.ErrorBanner)
+      ))
+    ,
     DESCRIPTOR = _STATUS_NOTIFICATION,
     __module__ = 'status_pb2'
     # @@protoc_insertion_point(class_scope:Status.Notification)
     ))
   ,
 
-  ServerCommunication = _reflection.GeneratedProtocolMessageType('ServerCommunication', (_message.Message,), dict(
+  server_communication = _reflection.GeneratedProtocolMessageType('server_communication', (_message.Message,), dict(
 
-    CommunicationStatus = _reflection.GeneratedProtocolMessageType('CommunicationStatus', (_message.Message,), dict(
-      DESCRIPTOR = _STATUS_SERVERCOMMUNICATION_COMMUNICATIONSTATUS,
+    LanTest = _reflection.GeneratedProtocolMessageType('LanTest', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_SERVER_COMMUNICATION_LANTEST,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.ServerCommunication.CommunicationStatus)
+      # @@protoc_insertion_point(class_scope:Status.server_communication.LanTest)
       ))
     ,
-    DESCRIPTOR = _STATUS_SERVERCOMMUNICATION,
+
+    HgCommTest = _reflection.GeneratedProtocolMessageType('HgCommTest', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_SERVER_COMMUNICATION_HGCOMMTEST,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.server_communication.HgCommTest)
+      ))
+    ,
+    DESCRIPTOR = _STATUS_SERVER_COMMUNICATION,
     __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.ServerCommunication)
+    # @@protoc_insertion_point(class_scope:Status.server_communication)
+    ))
+  ,
+
+  Afci = _reflection.GeneratedProtocolMessageType('Afci', (_message.Message,), dict(
+
+    Test = _reflection.GeneratedProtocolMessageType('Test', (_message.Message,), dict(
+      DESCRIPTOR = _STATUS_AFCI_TEST,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Afci.Test)
+      ))
+    ,
+    DESCRIPTOR = _STATUS_AFCI,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.Afci)
+    ))
+  ,
+
+  ServerChannel = _reflection.GeneratedProtocolMessageType('ServerChannel', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_SERVERCHANNEL,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.ServerChannel)
     ))
   ,
   DESCRIPTOR = _STATUS,
@@ -1621,32 +3753,55 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
   # @@protoc_insertion_point(class_scope:Status)
   ))
 _sym_db.RegisterMessage(Status)
-_sym_db.RegisterMessage(Status.Int32ValueScaling)
-_sym_db.RegisterMessage(Status.BoolValueRo)
-_sym_db.RegisterMessage(Status.StringValueRo)
+_sym_db.RegisterMessage(Status.UInt32)
+_sym_db.RegisterMessage(Status.UInt32Attr)
+_sym_db.RegisterMessage(Status.UInt64)
+_sym_db.RegisterMessage(Status.UInt64Attr)
+_sym_db.RegisterMessage(Status.Float32)
+_sym_db.RegisterMessage(Status.FloatS)
+_sym_db.RegisterMessage(Status.FloatSAttr)
+_sym_db.RegisterMessage(Status.BoolVal)
+_sym_db.RegisterMessage(Status.StringVal)
+_sym_db.RegisterMessage(Status.Temperature)
+_sym_db.RegisterMessage(Status.Temperature.Units)
 _sym_db.RegisterMessage(Status.Site)
-_sym_db.RegisterMessage(Status.Site.InverterStatus)
+_sym_db.RegisterMessage(Status.Site.InvertersStatus)
 _sym_db.RegisterMessage(Status.OptimizersStatus)
-_sym_db.RegisterMessage(Status.AFCI)
-_sym_db.RegisterMessage(Status.AFCI.Test)
 _sym_db.RegisterMessage(Status.Inverters)
-_sym_db.RegisterMessage(Status.Inverters.Inverter)
-_sym_db.RegisterMessage(Status.Inverters.Temperature)
-_sym_db.RegisterMessage(Status.Inverters.Temperature.Units)
-_sym_db.RegisterMessage(Status.Inverters.Isolation)
+_sym_db.RegisterMessage(Status.Inverters.Unit)
+_sym_db.RegisterMessage(Status.Inverters.Unit.Isolation)
 _sym_db.RegisterMessage(Status.Communication)
-_sym_db.RegisterMessage(Status.Communication.LAN)
-_sym_db.RegisterMessage(Status.Communication.LAN.IP)
-_sym_db.RegisterMessage(Status.Communication.RS485)
-_sym_db.RegisterMessage(Status.Communication.RS485.Protocol)
-_sym_db.RegisterMessage(Status.ServerChannel)
+_sym_db.RegisterMessage(Status.Communication.Rs485Status)
+_sym_db.RegisterMessage(Status.Communication.Rs485Status.Protocol)
+_sym_db.RegisterMessage(Status.Communication.Cellular)
+_sym_db.RegisterMessage(Status.Communication.Wifi)
+_sym_db.RegisterMessage(Status.Communication.Zigbee)
+_sym_db.RegisterMessage(Status.Communication.Zigbee.OperationMode)
+_sym_db.RegisterMessage(Status.Communication.Lan)
+_sym_db.RegisterMessage(Status.Communication.Lan.IP)
 _sym_db.RegisterMessage(Status.EnergyStatistics)
+_sym_db.RegisterMessage(Status.Evse)
 _sym_db.RegisterMessage(Status.Meter)
-_sym_db.RegisterMessage(Status.Evese)
+_sym_db.RegisterMessage(Status.Meter.Function)
 _sym_db.RegisterMessage(Status.Battery)
 _sym_db.RegisterMessage(Status.Notification)
-_sym_db.RegisterMessage(Status.ServerCommunication)
-_sym_db.RegisterMessage(Status.ServerCommunication.CommunicationStatus)
+_sym_db.RegisterMessage(Status.Notification.Header)
+_sym_db.RegisterMessage(Status.Notification.Shutdown)
+_sym_db.RegisterMessage(Status.Notification.GRM)
+_sym_db.RegisterMessage(Status.Notification.Pairing)
+_sym_db.RegisterMessage(Status.Notification.Pairing.PairingData)
+_sym_db.RegisterMessage(Status.Notification.Pairing.PairingData.Request)
+_sym_db.RegisterMessage(Status.Notification.Pairing.PairingData.Status)
+_sym_db.RegisterMessage(Status.Notification.SlaveDetect)
+_sym_db.RegisterMessage(Status.Notification.SlaveDetect.SlaveDetectData)
+_sym_db.RegisterMessage(Status.Notification.NotActivated)
+_sym_db.RegisterMessage(Status.Notification.ErrorBanner)
+_sym_db.RegisterMessage(Status.server_communication)
+_sym_db.RegisterMessage(Status.server_communication.LanTest)
+_sym_db.RegisterMessage(Status.server_communication.HgCommTest)
+_sym_db.RegisterMessage(Status.Afci)
+_sym_db.RegisterMessage(Status.Afci.Test)
+_sym_db.RegisterMessage(Status.ServerChannel)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -19,11 +19,150 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11information.proto\"\xae\x04\n\x0bInformation\x12\n\n\x02sn\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12#\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x13.Information.Errors\x1a\x36\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\x05\x12\r\n\x05minor\x18\x02 \x01(\x05\x12\r\n\x05\x62uild\x18\x03 \x01(\x05\x1a\xca\x02\n\x06\x45rrors\x12.\n\nloggerList\x18\x01 \x03(\x0b\x32\x1a.Information.Errors.Logger\x1a\xad\x01\n\x05\x45rror\x12\x11\n\terrorCode\x18\x01 \x01(\x05\x12\x31\n\tstartTime\x18\x02 \x01(\x0b\x32\x1e.Information.Errors.Error.Date\x1a^\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x12\x0c\n\x04hour\x18\x04 \x01(\x05\x12\x0e\n\x06minute\x18\x05 \x01(\x05\x12\x0e\n\x06second\x18\x06 \x01(\x05\x1a`\n\x06Logger\x12\x14\n\x0c\x63ontrollerid\x18\x01 \x01(\x05\x12\x11\n\tsubsystem\x18\x02 \x01(\x05\x12-\n\nerrorsList\x18\x03 \x03(\x0b\x32\x19.Information.Errors.Errorb\x06proto3')
+  serialized_pb=_b('\n\x11information.proto\"\xff\x06\n\x0bInformation\x12\n\n\x02sn\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12)\n\x06hw_ids\x18\x05 \x01(\x0b\x32\x19.Information.StringKeyVal\x12,\n\terror_log\x18\x06 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x0bwarning_log\x18\x07 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x1e.Information.ControllersErrors\x12)\n\x0b\x62ui_version\x18\t \x01(\x0b\x32\x14.Information.Version\x1a*\n\x0cUInt32KeyVal\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r\x1a*\n\x0cStringKeyVal\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x1a^\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\r\x12\r\n\x05month\x18\x02 \x01(\r\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\r\x12\x0c\n\x04hour\x18\x04 \x01(\r\x12\x0e\n\x06minute\x18\x05 \x01(\r\x12\x0e\n\x06second\x18\x06 \x01(\r\x1aH\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\r\x12\r\n\x05minor\x18\x02 \x01(\r\x12\r\n\x05\x62uild\x18\x03 \x01(\r\x12\x10\n\x08\x63i_build\x18\x04 \x01(\r\x1a\x92\x02\n\x11\x43ontrollersErrors\x12<\n\x07loggers\x18\x01 \x03(\x0b\x32+.Information.ControllersErrors.ErrorsLogger\x1a\xbe\x01\n\x0c\x45rrorsLogger\x12\x14\n\x0c\x63ontrollerID\x18\x01 \x01(\r\x12\x11\n\tsubsystem\x18\x02 \x01(\r\x12\x41\n\x06\x65rrors\x18\x03 \x03(\x0b\x32\x31.Information.ControllersErrors.ErrorsLogger.Error\x1a\x42\n\x05\x45rror\x12\x12\n\nerror_code\x18\x01 \x01(\r\x12%\n\nstart_time\x18\x02 \x01(\x0b\x32\x11.Information.Dateb\x06proto3')
 )
 
 
 
+
+_INFORMATION_UINT32KEYVAL = _descriptor.Descriptor(
+  name='UInt32KeyVal',
+  full_name='Information.UInt32KeyVal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='Information.UInt32KeyVal.key', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Information.UInt32KeyVal.value', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=384,
+  serialized_end=426,
+)
+
+_INFORMATION_STRINGKEYVAL = _descriptor.Descriptor(
+  name='StringKeyVal',
+  full_name='Information.StringKeyVal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='Information.StringKeyVal.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Information.StringKeyVal.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=428,
+  serialized_end=470,
+)
+
+_INFORMATION_DATE = _descriptor.Descriptor(
+  name='Date',
+  full_name='Information.Date',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='year', full_name='Information.Date.year', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='month', full_name='Information.Date.month', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='day', full_name='Information.Date.day', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='hour', full_name='Information.Date.hour', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='minute', full_name='Information.Date.minute', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='second', full_name='Information.Date.second', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=472,
+  serialized_end=566,
+)
 
 _INFORMATION_VERSION = _descriptor.Descriptor(
   name='Version',
@@ -34,21 +173,28 @@ _INFORMATION_VERSION = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='major', full_name='Information.Version.major', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='minor', full_name='Information.Version.minor', index=1,
-      number=2, type=5, cpp_type=1, label=1,
+      number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='build', full_name='Information.Version.build', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ci_build', full_name='Information.Version.ci_build', index=3,
+      number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -65,91 +211,26 @@ _INFORMATION_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=193,
-  serialized_end=247,
+  serialized_start=568,
+  serialized_end=640,
 )
 
-_INFORMATION_ERRORS_ERROR_DATE = _descriptor.Descriptor(
-  name='Date',
-  full_name='Information.Errors.Error.Date',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='year', full_name='Information.Errors.Error.Date.year', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='month', full_name='Information.Errors.Error.Date.month', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='day', full_name='Information.Errors.Error.Date.day', index=2,
-      number=3, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='hour', full_name='Information.Errors.Error.Date.hour', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='minute', full_name='Information.Errors.Error.Date.minute', index=4,
-      number=5, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='second', full_name='Information.Errors.Error.Date.second', index=5,
-      number=6, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=388,
-  serialized_end=482,
-)
-
-_INFORMATION_ERRORS_ERROR = _descriptor.Descriptor(
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR = _descriptor.Descriptor(
   name='Error',
-  full_name='Information.Errors.Error',
+  full_name='Information.ControllersErrors.ErrorsLogger.Error',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='errorCode', full_name='Information.Errors.Error.errorCode', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      name='error_code', full_name='Information.ControllersErrors.ErrorsLogger.Error.error_code', index=0,
+      number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='startTime', full_name='Information.Errors.Error.startTime', index=1,
+      name='start_time', full_name='Information.ControllersErrors.ErrorsLogger.Error.start_time', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -158,50 +239,6 @@ _INFORMATION_ERRORS_ERROR = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_INFORMATION_ERRORS_ERROR_DATE, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=309,
-  serialized_end=482,
-)
-
-_INFORMATION_ERRORS_LOGGER = _descriptor.Descriptor(
-  name='Logger',
-  full_name='Information.Errors.Logger',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='controllerid', full_name='Information.Errors.Logger.controllerid', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='subsystem', full_name='Information.Errors.Logger.subsystem', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='errorsList', full_name='Information.Errors.Logger.errorsList', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
   nested_types=[],
   enum_types=[
   ],
@@ -211,20 +248,34 @@ _INFORMATION_ERRORS_LOGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=484,
-  serialized_end=580,
+  serialized_start=851,
+  serialized_end=917,
 )
 
-_INFORMATION_ERRORS = _descriptor.Descriptor(
-  name='Errors',
-  full_name='Information.Errors',
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER = _descriptor.Descriptor(
+  name='ErrorsLogger',
+  full_name='Information.ControllersErrors.ErrorsLogger',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='loggerList', full_name='Information.Errors.loggerList', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='controllerID', full_name='Information.ControllersErrors.ErrorsLogger.controllerID', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subsystem', full_name='Information.ControllersErrors.ErrorsLogger.subsystem', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='errors', full_name='Information.ControllersErrors.ErrorsLogger.errors', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -232,7 +283,7 @@ _INFORMATION_ERRORS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_INFORMATION_ERRORS_ERROR, _INFORMATION_ERRORS_LOGGER, ],
+  nested_types=[_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -241,8 +292,38 @@ _INFORMATION_ERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=250,
-  serialized_end=580,
+  serialized_start=727,
+  serialized_end=917,
+)
+
+_INFORMATION_CONTROLLERSERRORS = _descriptor.Descriptor(
+  name='ControllersErrors',
+  full_name='Information.ControllersErrors',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='loggers', full_name='Information.ControllersErrors.loggers', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=643,
+  serialized_end=917,
 )
 
 _INFORMATION = _descriptor.Descriptor(
@@ -281,8 +362,36 @@ _INFORMATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='errors', full_name='Information.errors', index=4,
+      name='hw_ids', full_name='Information.hw_ids', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='error_log', full_name='Information.error_log', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='warning_log', full_name='Information.warning_log', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='errors', full_name='Information.errors', index=7,
       number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='bui_version', full_name='Information.bui_version', index=8,
+      number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -290,7 +399,7 @@ _INFORMATION = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_INFORMATION_VERSION, _INFORMATION_ERRORS, ],
+  nested_types=[_INFORMATION_UINT32KEYVAL, _INFORMATION_STRINGKEYVAL, _INFORMATION_DATE, _INFORMATION_VERSION, _INFORMATION_CONTROLLERSERRORS, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -300,25 +409,52 @@ _INFORMATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=580,
+  serialized_end=917,
 )
 
+_INFORMATION_UINT32KEYVAL.containing_type = _INFORMATION
+_INFORMATION_STRINGKEYVAL.containing_type = _INFORMATION
+_INFORMATION_DATE.containing_type = _INFORMATION
 _INFORMATION_VERSION.containing_type = _INFORMATION
-_INFORMATION_ERRORS_ERROR_DATE.containing_type = _INFORMATION_ERRORS_ERROR
-_INFORMATION_ERRORS_ERROR.fields_by_name['startTime'].message_type = _INFORMATION_ERRORS_ERROR_DATE
-_INFORMATION_ERRORS_ERROR.containing_type = _INFORMATION_ERRORS
-_INFORMATION_ERRORS_LOGGER.fields_by_name['errorsList'].message_type = _INFORMATION_ERRORS_ERROR
-_INFORMATION_ERRORS_LOGGER.containing_type = _INFORMATION_ERRORS
-_INFORMATION_ERRORS.fields_by_name['loggerList'].message_type = _INFORMATION_ERRORS_LOGGER
-_INFORMATION_ERRORS.containing_type = _INFORMATION
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR.fields_by_name['start_time'].message_type = _INFORMATION_DATE
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR.containing_type = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER.fields_by_name['errors'].message_type = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER.containing_type = _INFORMATION_CONTROLLERSERRORS
+_INFORMATION_CONTROLLERSERRORS.fields_by_name['loggers'].message_type = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER
+_INFORMATION_CONTROLLERSERRORS.containing_type = _INFORMATION
 _INFORMATION.fields_by_name['cpu'].message_type = _INFORMATION_VERSION
 _INFORMATION.fields_by_name['dsp1'].message_type = _INFORMATION_VERSION
 _INFORMATION.fields_by_name['dsp2'].message_type = _INFORMATION_VERSION
-_INFORMATION.fields_by_name['errors'].message_type = _INFORMATION_ERRORS
+_INFORMATION.fields_by_name['hw_ids'].message_type = _INFORMATION_STRINGKEYVAL
+_INFORMATION.fields_by_name['error_log'].message_type = _INFORMATION_UINT32KEYVAL
+_INFORMATION.fields_by_name['warning_log'].message_type = _INFORMATION_UINT32KEYVAL
+_INFORMATION.fields_by_name['errors'].message_type = _INFORMATION_CONTROLLERSERRORS
+_INFORMATION.fields_by_name['bui_version'].message_type = _INFORMATION_VERSION
 DESCRIPTOR.message_types_by_name['Information'] = _INFORMATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Information = _reflection.GeneratedProtocolMessageType('Information', (_message.Message,), dict(
+
+  UInt32KeyVal = _reflection.GeneratedProtocolMessageType('UInt32KeyVal', (_message.Message,), dict(
+    DESCRIPTOR = _INFORMATION_UINT32KEYVAL,
+    __module__ = 'information_pb2'
+    # @@protoc_insertion_point(class_scope:Information.UInt32KeyVal)
+    ))
+  ,
+
+  StringKeyVal = _reflection.GeneratedProtocolMessageType('StringKeyVal', (_message.Message,), dict(
+    DESCRIPTOR = _INFORMATION_STRINGKEYVAL,
+    __module__ = 'information_pb2'
+    # @@protoc_insertion_point(class_scope:Information.StringKeyVal)
+    ))
+  ,
+
+  Date = _reflection.GeneratedProtocolMessageType('Date', (_message.Message,), dict(
+    DESCRIPTOR = _INFORMATION_DATE,
+    __module__ = 'information_pb2'
+    # @@protoc_insertion_point(class_scope:Information.Date)
+    ))
+  ,
 
   Version = _reflection.GeneratedProtocolMessageType('Version', (_message.Message,), dict(
     DESCRIPTOR = _INFORMATION_VERSION,
@@ -327,31 +463,24 @@ Information = _reflection.GeneratedProtocolMessageType('Information', (_message.
     ))
   ,
 
-  Errors = _reflection.GeneratedProtocolMessageType('Errors', (_message.Message,), dict(
+  ControllersErrors = _reflection.GeneratedProtocolMessageType('ControllersErrors', (_message.Message,), dict(
 
-    Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
+    ErrorsLogger = _reflection.GeneratedProtocolMessageType('ErrorsLogger', (_message.Message,), dict(
 
-      Date = _reflection.GeneratedProtocolMessageType('Date', (_message.Message,), dict(
-        DESCRIPTOR = _INFORMATION_ERRORS_ERROR_DATE,
+      Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
+        DESCRIPTOR = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR,
         __module__ = 'information_pb2'
-        # @@protoc_insertion_point(class_scope:Information.Errors.Error.Date)
+        # @@protoc_insertion_point(class_scope:Information.ControllersErrors.ErrorsLogger.Error)
         ))
       ,
-      DESCRIPTOR = _INFORMATION_ERRORS_ERROR,
+      DESCRIPTOR = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER,
       __module__ = 'information_pb2'
-      # @@protoc_insertion_point(class_scope:Information.Errors.Error)
+      # @@protoc_insertion_point(class_scope:Information.ControllersErrors.ErrorsLogger)
       ))
     ,
-
-    Logger = _reflection.GeneratedProtocolMessageType('Logger', (_message.Message,), dict(
-      DESCRIPTOR = _INFORMATION_ERRORS_LOGGER,
-      __module__ = 'information_pb2'
-      # @@protoc_insertion_point(class_scope:Information.Errors.Logger)
-      ))
-    ,
-    DESCRIPTOR = _INFORMATION_ERRORS,
+    DESCRIPTOR = _INFORMATION_CONTROLLERSERRORS,
     __module__ = 'information_pb2'
-    # @@protoc_insertion_point(class_scope:Information.Errors)
+    # @@protoc_insertion_point(class_scope:Information.ControllersErrors)
     ))
   ,
   DESCRIPTOR = _INFORMATION,
@@ -359,11 +488,13 @@ Information = _reflection.GeneratedProtocolMessageType('Information', (_message.
   # @@protoc_insertion_point(class_scope:Information)
   ))
 _sym_db.RegisterMessage(Information)
+_sym_db.RegisterMessage(Information.UInt32KeyVal)
+_sym_db.RegisterMessage(Information.StringKeyVal)
+_sym_db.RegisterMessage(Information.Date)
 _sym_db.RegisterMessage(Information.Version)
-_sym_db.RegisterMessage(Information.Errors)
-_sym_db.RegisterMessage(Information.Errors.Error)
-_sym_db.RegisterMessage(Information.Errors.Error.Date)
-_sym_db.RegisterMessage(Information.Errors.Logger)
+_sym_db.RegisterMessage(Information.ControllersErrors)
+_sym_db.RegisterMessage(Information.ControllersErrors.ErrorsLogger)
+_sym_db.RegisterMessage(Information.ControllersErrors.ErrorsLogger.Error)
 
 
 # @@protoc_insertion_point(module_scope)
