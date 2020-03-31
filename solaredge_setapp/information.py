@@ -23,21 +23,21 @@ class Information:
             parsed["dsp1"] = str(f"{proto.dsp1.major}.{proto.dsp1.minor}.{proto.dsp1.build}")
             parsed["dsp2"] = str(f"{proto.dsp2.major}.{proto.dsp2.minor}.{proto.dsp2.build}")
 
-            for logger in proto.errors.loggerList:
+            for logger in proto.errors.loggers:
                 parsed["errors"] = [{
-                    "controller_id": int(logger.controllerid), 
+                    "controller_id": int(logger.controllerID), 
                     "subsystem_id": int(logger.subsystem),
-                    "error_code": int(error.errorCode),
+                    "error_code": int(error.error_code),
                     "timestamp": int(datetime.datetime.strptime(
                         "{year} {month} {day} {hour} {minutes} {seconds}".format(
-                            year=int(error.startTime.year),
-                            month=int(error.startTime.month),
-                            day=int(error.startTime.day),
-                            hour=int(error.startTime.hour),
-                            minutes=int(error.startTime.minute),
-                            seconds=int(error.startTime.second)
+                            year=int(error.start_time.year),
+                            month=int(error.start_time.month),
+                            day=int(error.start_time.day),
+                            hour=int(error.start_time.hour),
+                            minutes=int(error.start_time.minute),
+                            seconds=int(error.start_time.second)
                         ), "%Y %m %d %H %M %S").timestamp()),
-                } for error in logger.errorsList]
+                } for error in logger.errors]
         except AttributeError as e:
             print(f"AttributeError: {e}")
 

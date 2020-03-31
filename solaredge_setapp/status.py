@@ -18,45 +18,45 @@ class Status:
             
             parsed = {
                 "serial": str(proto.sn),
-                "power_ac": float(proto.powerWatt),
+                "power_ac": float(proto.power_watt),
                 "power_ac_limit": int(proto.limit),
                 "voltage_ac": float(proto.voltage),
-                "frequency": float(proto.frequencyHz),
+                "frequency": float(proto.frequency_hz),
                 "status": int(proto.status),
-                "switch": bool(proto.switchStatus),
-                "cosphi": float(proto.cosPhi),
+                "switch": bool(proto.switch_status),
+                "cosphi": float(proto.cos_Phi),
                 "country_id": int(proto.country),
-                "portia_subsystem_id": int(proto.portiaSubsystem),
+                "portia_subsystem_id": int(proto.portia_subsystem),
                 "afci": {
                     "enabled": bool(proto.afci.enable),
-                    "manual_reconnect": bool(proto.afci.manualReconnect),
+                    "manual_reconnect": bool(proto.afci.manual_reconnect),
                     "test_result": int(proto.afci.test.result)
                 },
                 "optimizers": {
-                    "total": int(proto.optimizersStatus.enabled),
-                    "online": int(proto.optimizersStatus.connected)
+                    "total": int(proto.optimizers_status.enabled),
+                    "online": int(proto.optimizers_status.connected)
                 },
-                "server_connection": bool(proto.sOk),
+                "server_connection": bool(proto.s_ok),
                 "server_communication": {
-                    "physical": bool(proto.serverComm.lanTest.physicalConnection),
-                    "ip": bool(proto.serverComm.lanTest.ipAddress),
-                    "gateway": bool(proto.serverComm.lanTest.gatewayLink),
-                    "internet": bool(proto.serverComm.lanTest.internetLink),
-                    "monitoring": bool(proto.serverComm.lanTest.monitoringLink),
-                    "server": bool(proto.serverComm.lanTest.sOk)
+                    "physical": bool(proto.server_comm.lan_test.physical_connection),
+                    "ip": bool(proto.server_comm.lan_test.ip_address),
+                    "gateway": bool(proto.server_comm.lan_test.gateway_link),
+                    "internet": bool(proto.server_comm.lan_test.internet_link),
+                    "monitoring": bool(proto.server_comm.lan_test.monitoring_link),
+                    "server": bool(proto.server_comm.lan_test.s_ok)
                 },
                 "server_channel": {
-                    "lan": bool(proto.serverChannel.lan.value),
-                    "cellular": bool(proto.serverChannel.cellular.value),
-                    "rs485_1": bool(proto.serverChannel.rs4851SeSlave.value),
-                    "rs485_2": bool(proto.serverChannel.rs4852SeSlave.value),
-                    "wifi": bool(proto.serverChannel.wifi.value),
-                    "zigbee": bool(proto.serverChannel.zigbee.value) 
+                    "lan": bool(proto.server_channel.lan.value),
+                    "cellular": bool(proto.server_channel.cellular.value),
+                    "rs485_1": bool(proto.server_channel.rs485_1_se_slave.value),
+                    "rs485_2": bool(proto.server_channel.rs485_2_se_slave.value),
+                    "wifi": bool(proto.server_channel.wifi.value),
+                    "zigbee": bool(proto.server_channel.zigbee.value) 
                 },
                 "energy": {
                     "day": float(proto.energy.today),
-                    "month": float(proto.energy.thisMonth),
-                    "year": float(proto.energy.thisYear),
+                    "month": float(proto.energy.this_month),
+                    "year": float(proto.energy.this_year),
                     "total": float(proto.energy.total)
                 },
                 "inverters": [],
@@ -64,30 +64,30 @@ class Status:
                 "batteries": [],
                 "communication": {
                     "lan": {
-                        "mac": str(proto.communication.lanInfo.mac.value),
-                        "dhcp": bool(proto.communication.lanInfo.dhcp.value),
-                        "ip": str(proto.communication.lanInfo.ip.ipAddress.value),
-                        "netmask": str(proto.communication.lanInfo.ip.subnetMask.value),
-                        "gateway": str(proto.communication.lanInfo.ip.gateway.value),
-                        "dns": str(proto.communication.lanInfo.ip.dns.value),
-                        "connected": bool(proto.communication.lanInfo.cableConnected.value)
+                        "mac": str(proto.communication.lan_info.mac.value),
+                        "dhcp": bool(proto.communication.lan_info.dhcp.value),
+                        "ip": str(proto.communication.lan_info.ip.ip_address.value),
+                        "netmask": str(proto.communication.lan_info.ip.subnet_mask.value),
+                        "gateway": str(proto.communication.lan_info.ip.gateway.value),
+                        "dns": str(proto.communication.lan_info.ip.dns.value),
+                        "connected": bool(proto.communication.lan_info.cable_connected.value)
                     },
                     "rs485_1": {
                         "protocol": {
-                            "se_slave": bool(proto.communication.rs4851.protocol.seSlave),
-                            "se_master": bool(proto.communication.rs4851.protocol.seMaster),
-                            "modbus_multi_devices": bool(proto.communication.rs4851.protocol.modbusMultiDevices),
-                            "sunspec": bool(proto.communication.rs4851.protocol.sunspec),
-                            "none": bool(proto.communication.rs4851.protocol.none)
+                            "se_slave": bool(proto.communication.rs485_1.protocol.se_slave),
+                            "se_master": bool(proto.communication.rs485_1.protocol.se_master),
+                            "modbus_multi_devices": bool(proto.communication.rs485_1.protocol.modbus_multi_devices),
+                            "sunspec": bool(proto.communication.rs485_1.protocol.sunspec),
+                            "none": bool(proto.communication.rs485_1.protocol.none)
                         }
                     },
                     "rs485_2": {
                          "protocol": {
-                            "se_slave": bool(proto.communication.rs4852.protocol.seSlave),
-                            "se_master": bool(proto.communication.rs4852.protocol.seMaster),
-                            "modbus_multi_devices": bool(proto.communication.rs4852.protocol.modbusMultiDevices),
-                            "sunspec": bool(proto.communication.rs4852.protocol.sunspec),
-                            "none": bool(proto.communication.rs4852.protocol.none)
+                            "se_slave": bool(proto.communication.rs485_2.protocol.se_slave),
+                            "se_master": bool(proto.communication.rs485_2.protocol.se_master),
+                            "modbus_multi_devices": bool(proto.communication.rs485_2.protocol.modbus_multi_devices),
+                            "sunspec": bool(proto.communication.rs485_2.protocol.sunspec),
+                            "none": bool(proto.communication.rs485_2.protocol.none)
                         }
                     }
                 }
@@ -104,7 +104,7 @@ class Status:
                 parsed["country"] = solaredge_setapp.Countries(-1).name
 
             for inverter in proto.inverters.primary, proto.inverters.left, proto.inverters.right:
-                if not inverter.dspSn:
+                if not inverter.dsp_sn:
                     continue
 
                 if inverter.power.scaling:
@@ -112,10 +112,10 @@ class Status:
                 else:
                     inverter_power_ac = float(inverter.power.value)
 
-                if inverter.isolation.rIso.scaling:
-                    inverter_isolation_r_iso = float(inverter.isolation.rIso.value / inverter.isolation.rIso.scaling)
+                if inverter.isolation.r_iso.scaling:
+                    inverter_isolation_r_iso = float(inverter.isolation.r_iso.value / inverter.isolation.r_iso.scaling)
                 else:
-                    inverter_isolation_r_iso = float(inverter.isolation.rIso.value)
+                    inverter_isolation_r_iso = float(inverter.isolation.r_iso.value)
 
                 if inverter.isolation.alpha.scaling:
                     inverter_isolation_alpha = float(inverter.isolation.alpha.value / inverter.isolation.alpha.scaling)
@@ -123,12 +123,12 @@ class Status:
                     inverter_isolation_alpha = float(inverter.isolation.alpha.value)               
 
                 parsed["inverters"].append({
-                    "serial": str(inverter.dspSn),
+                    "serial": str(inverter.dsp_sn),
                     "voltage_dc": float(inverter.voltage),
                     "power_ac": inverter_power_ac,
                     "optimizers": {
-                        "total": int(inverter.optimizers.enabled),
-                        "online": int(inverter.optimizers.connected)
+                        "total": int(inverter.optimizers_status.enabled),
+                        "online": int(inverter.optimizers_status.connected)
                     },
                     "temperature": {
                         "value": int(inverter.temperature.value),
@@ -138,7 +138,7 @@ class Status:
                         }
                     },
                     "isolation": {
-                        "fault_location": int(inverter.isolation.faultLocation),
+                        "fault_location": int(inverter.isolation.fault_location),
                         "r_iso": inverter_isolation_r_iso,
                         "alpha": inverter_isolation_alpha
                     },
