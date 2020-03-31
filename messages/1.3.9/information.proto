@@ -52,5 +52,4 @@ message Information {
     UInt32KeyVal error_log = 6;
     UInt32KeyVal warning_log = 7;
     ControllersErrors errors = 8;
-    Version bui_version = 9;
 }

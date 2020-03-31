@@ -3,6 +3,23 @@ syntax = "proto3";
 
 message Status {
 
+    message FloatS {
+        int32 value = 1;
+        int32 scaling = 2;
+        bool ro = 3;
+        FloatSAttr attributes = 4;
+    }
+    message FloatSAttr {
+        int32 min = 1;
+        int32 max = 2;
+        int32 step = 3;
+    }
+
+    message Float32 {
+        int32 value = 1;
+        int32 scaling = 2;
+    }
+
     message UInt32 {
         uint32 value = 1;
         bool ro = 2;
@@ -25,23 +42,6 @@ message Status {
         uint64 step = 3;
     }
 
-    message Float32 {
-        int32 value = 1;
-        int32 scaling = 2;
-    }
-
-    message FloatS {
-        int32 value = 1;
-        int32 scaling = 2;
-        bool ro = 3;
-        FloatSAttr attributes = 4;
-    }
-    message FloatSAttr {
-        int32 min = 1;
-        int32 max = 2;
-        int32 step = 3;
-    }
-
     message BoolVal {
         bool value = 1;
         bool ro = 2;
@@ -50,6 +50,210 @@ message Status {
     message StringVal {
         string value = 1;
         bool ro = 2;
+    }
+
+    enum MngrStatus {  
+        SHUTTING_DOWN = 0;
+        ERROR = 1;
+        STANDBY = 2;
+        PAIRING = 3;
+        POWER_PRODUCTION = 4;
+        AC_CHARGING = 5;
+        NOT_PAIRED = 6;
+        NIGHT_MODE = 7;
+        GRID_MONITORING = 8;
+        IDLE = 9;
+        GRM_PAIRING = 10;   
+        UNSET = -1;
+    }
+
+    enum Countries {
+        COUNTRY_GENERAL = 0;
+        COUNTRY_AUSTRALIA = 1;
+        COUNTRY_FRANCE = 2;
+        COUNTRY_GERMANY = 3;
+        COUNTRY_GREECE_CONTINENT = 4;
+        COUNTRY_GREECE_ISLANDS = 5;
+        COUNTRY_ISRAEL = 6;
+        COUNTRY_ITALY = 7;
+        COUNTRY_SPAIN = 8;
+        COUNTRY_UK = 9;
+        COUNTRY_US_AUTO = 10;
+        COUNTRY_US_208V = 11;
+        COUNTRY_US_240V = 12;
+        COUNTRY_US_208V_NO_NEUTRAL = 13;
+        COUNTRY_US_240V_NO_NEUTRAL = 14;
+        COUNTRY_BULGARIA = 15;
+        COUNTRY_CZECH_REPUBLIC = 16;
+        COUNTRY_CYPRESS = 17;
+        COUNTRY_BELGIUM = 18;
+        COUNTRY_NETHERLANDS = 19;
+        COUNTRY_PORTUGAL = 20;
+        COUNTRY_AUSTRIA = 21;
+        COUNTRY_THAILAND_MEA = 22;
+        COUNTRY_SINGAPORE = 23;
+        COUNTRY_KOREA = 24;
+        COUNTRY_JAPAN_AUTO = 25;
+        COUNTRY_JAPAN_50HZ = 26;
+        COUNTRY_JAPAN_60HZ = 27;
+        COUNTRY_TAIWAN = 28;
+        COUNTRY_DENMARK = 29;
+        COUNTRY_SWEDEN = 30;
+        COUNTRY_THAILAND_PEA = 31;
+        COUNTRY_SRI_LANKA = 32;
+        COUNTRY_MAURITIUS = 33;
+        COUNTRY_DENMARK_RES = 34;
+        COUNTRY_US_277V = 35;
+        COUNTRY_SLOVENIA = 36;
+        COUNTRY_POLAND = 37;
+        COUNTRY_GERMANY_MVGC = 38;
+        COUNTRY_UK_240V = 39;
+        COUNTRY_LITHUANIA = 40;
+        COUNTRY_CHINA = 41;
+        COUNTRY_PHILIPPINES = 42;
+        COUNTRY_BRAZIL = 43;
+        COUNTRY_MEXICO_220 = 44;
+        COUNTRY_MEXICO_277 = 45;
+        COUNTRY_ROMANIA = 46;
+        COUNTRY_LATVIA = 47;
+        COUNTRY_SOUTH_AFRICA = 48;
+        COUNTRY_TURKEY = 49;
+        COUNTRY_ITALY_NO_SPI = 50;
+        COUNTRY_US_HAWAII_AUTO = 51;
+        COUNTRY_US_HAWAII_208V = 52;
+        COUNTRY_US_HAWAII_240V = 53;
+        COUNTRY_US_HAWAII_208V_NO_NEUTRAL = 54;
+        COUNTRY_US_HAWAII_240V_NO_NEUTRAL = 55;
+        COUNTRY_US_HAWAII_277 = 56;
+        COUNTRY_SWITZERLAND = 57;
+        COUNTRY_CUSTOM = 58;
+        COUNTRY_INDIA = 59;
+        COUNTRY_CROATIA = 60;
+        COUNTRY_JAMAICA_240_NO_NEUTRAL = 61;
+        COUNTRY_JAMAICA_220_NO_NEUTRAL = 62;
+        COUNTRY_BARBADOS_230_NO_NEUTRAL = 63;
+        COUNTRY_ST_LUCIA = 64;
+        COUNTRY_AUSTRALIA_QLD = 65;
+        COUNTRY_DENMARK_VDE = 66;
+        COUNTRY_DENMARK_VDE_RES = 67;
+        COUNTRY_IRELAND = 68;
+        COUNTRY_US_KAUAI_AUTO = 69;
+        COUNTRY_US_KAUAI_208 = 70;
+        COUNTRY_US_KAUAI_240 = 71;
+        COUNTRY_US_KAUAI_208_NO_NEUTRAL = 72;
+        COUNTRY_US_KAUAI_240_NO_NEUTRAL = 73;
+        COUNTRY_US_KAUAI_277 = 74;
+        COUNTRY_CYPRESS_240 = 75;
+        COUNTRY_CURACAO = 76;
+        COUNTRY_N_CYPRESS_240 = 77;
+        COUNTRY_ISRAEL_COMMERCIAL = 78;
+        COUNTRY_ARUBA = 79;
+        COUNTRY_MEXICO_240 = 80;
+        COUNTRY_BARBADOS_115V_NO_NEUTRAL = 81;
+        COUNTRY_MALAYSIA = 82;
+        COUNTRY_TAHITI = 83;
+        COUNTRY_HUNGARY = 84;
+        COUNTRY_KUWAIT = 85;
+        COUNTRY_CYPRUS_MV = 86;
+        COUNTRY_NORWAY = 87;
+        COUNTRY_NORTH_IRELAND = 88;
+        COUNTRY_GERMANY_MV_480V = 89;
+        COUNTRY_US_HAWAII2_AUTO = 90;
+        COUNTRY_US_HAWAII2_208V = 91;
+        COUNTRY_US_HAWAII2_208V_NO_NEUTRAL = 92;
+        COUNTRY_US_HAWAII2_240V = 93;
+        COUNTRY_US_HAWAII2_240V_NO_NEUTRAL = 94;
+        COUNTRY_US_HAWAII2_277 = 95;
+        COUNTRY_US_NY_AUTO = 96;
+        COUNTRY_US_NY_208V = 97;
+        COUNTRY_US_NY_208V_NO_NEUTRAL = 98;
+        COUNTRY_US_NY_240V = 99;
+        COUNTRY_US_NY_240V_NO_NEUTRAL = 100;
+        COUNTRY_US_NY_277 = 101;
+        COUNTRY_JAPAN_MV_380V_50HZ = 102;
+        COUNTRY_JAPAN_MV_380V_60HZ = 103;
+        COUNTRY_US_AUTO_RULE21 = 104;
+        COUNTRY_US_208V_RULE21 = 105;
+        COUNTRY_US_208V_NO_NEUTRAL_RULE21 = 106;
+        COUNTRY_US_240V_RULE21 = 107;
+        COUNTRY_US_240V_NO_NEUTRAL_RULE21 = 108;
+        COUNTRY_US_277V_RULE21 = 109;
+        COUNTRY_ITALY_277V_NO_SPI = 110;
+        COUNTRY_PHILIPPINES_230V_DELTA = 111;
+        COUNTRY_UK_480V = 112;
+        COUNTRY_ZIMBABWE_230V = 113;
+        COUNTRY_INDONESIA = 114;
+        COUNTRY_JAPAN_MV_480V_50_HZ = 115;
+        COUNTRY_JAPAN_MV_480V_60_HZ = 116;
+        COUNTRY_EUROPE_EN50438 = 117;
+        COUNTRY_CAPE_VERDE = 118;
+        COUNTRY_NEW_ZEALAND = 119;
+        COUNTRY_GHANA = 120;
+        COUNTRY_FINLAND = 121;
+        COUNTRY_GRENADA = 122;
+        COUNTRY_DUBAI_LV = 123;
+        COUNTRY_SLOVAKIA_ZSED = 124;
+        COUNTRY_SLOVAKIA_SSED = 125;
+        COUNTRY_SLOVAKIA_VSD = 126;
+        COUNTRY_PUERTO_RICO_277V = 127;
+        COUNTRY_SOUTH_AFRICA_MV = 128;
+        COUNTRY_PHILIPPINES_MV = 129;
+        COUNTRY_TAIWAN_MV = 130;
+        COUNTRY_INDIA_MV = 131;
+        COUNTRY_US_CO_AUTO = 132;
+        COUNTRY_US_CO_208V = 133;
+        COUNTRY_US_CO_208V_NO_NEUTRAL = 134;
+        COUNTRY_US_CO_240V_NO_NEUTRAL = 135;
+        COUNTRY_US_CO_240V = 136;
+        COUNTRY_US_CO_277V = 137;
+        COUNTRY_VICTORIA = 138;
+        COUNTRY_KENYA = 139;
+        COUNTRY_TURKEY_MV = 140;
+        COUNTRY_SPAIN_MV = 141;
+        COUNTRY_THAILAND_MEA_MV = 142;
+        COUNTRY_THAILAND_PEA_MV = 143;
+        COUNTRY_CHINA_MV = 144;
+        COUNTRY_TAIWAN_220_NO_NEUTRAL = 145;
+        COUNTRY_MAURITIUS_ABOVE_220K = 146;
+        COUNTRY_FRANCE_MV = 147;
+        COUNTRY_CEZ = 148;
+        COUNTRY_BELGIUM_DELTA = 149;
+        COUNTRY_NORWAY_DELTA = 150;
+        COUNTRY_NETHERLANDS_MV = 151;
+        COUNTRY_MACAU = 152;
+        COUNTRY_ARGENTINA = 153;
+        COUNTRY_ARGENTINA_COMMERCIAL = 154;
+        COUNTRY_SWEDEN_MV = 155;
+        COUNTRY_VIETNAM = 156;
+        COUNTRY_BRAZIL_127V_220V = 157;
+        COUNTRY_BARBADOS_200 = 158;
+        COUNTRY_US_NEW_ENGLAND_208 = 159;
+        COUNTRY_US_NEW_ENGLAND_240 = 160;
+        COUNTRY_US_NEW_ENGLAND_208_NO_NEUTRAL = 161;
+        COUNTRY_US_NEW_ENGLAND_240_NO_NEUTRAL = 162;
+        COUNTRY_US_NEW_ENGLAND_277 = 163;
+        COUNTRY_KOREA_LOW_DC = 164;
+        COUNTRY_ISRAEL_480V_MV = 165;
+        COUNTRY_BRAZIL_277 = 166;
+        COUNTRY_HUNGARY_EON = 167;
+        COUNTRY_SPANISH_ISLANDS = 168;
+        COUNTRY_PERU = 169;
+        COUNTRY_COLUMBIA = 170;
+        COUNTRY_CHILE = 171;
+        COUNTRY_ECUADOR = 172;
+        COUNTRY_QATAR = 173;
+        COUNTRY_AUSTRALIA_480V = 174;
+        COUNTRY_HONG_KONG = 175;
+        COUNTRY_URUGUAY = 176;
+        COUNTRY_ITALIY_A68 = 177;
+        COUNTRY_ESTONIA = 178;
+        COUNTRY_NONE = -1;
+    }
+
+    enum SwitchStatus {
+        OFF = 0;
+        ON = 1;
+        P = 2;
     }
 
     message Temperature {
@@ -64,8 +268,8 @@ message Status {
 
     message Site {
         message InvertersStatus {
-            bool enabled = 1;
-            bool connected = 2;
+            uint32 enabled = 1;
+            uint32 connected = 2;
         }
 
         float production_watt = 1;
@@ -83,7 +287,7 @@ message Status {
             message Isolation {
                 Float32 alpha = 1;
                 Float32 r_iso = 2;
-                int32 fault_location = 3;
+                uint32 fault_location = 3;
             }
 
             string dsp_sn = 1;
@@ -104,6 +308,10 @@ message Status {
     }
 
     message Communication {
+        enum LanStatus {
+            OK = 0;
+        }
+
         message Rs485Status {
             message Protocol {
                 bool se_slave = 1;
@@ -116,6 +324,20 @@ message Status {
             uint32 enabled = 1;
             uint32 connected = 2;
             Protocol protocol = 3;
+        }
+
+        message Lan {
+            message IP {
+                StringVal ip_address = 1;
+                StringVal subnet_mask = 2;
+                StringVal gateway = 3;
+                StringVal dns = 4;
+            }
+
+            BoolVal dhcp = 1;
+            IP ip = 2;
+            StringVal mac = 3;
+            BoolVal cable_connected = 4;
         }
 
         message Cellular {
@@ -148,13 +370,6 @@ message Status {
         }
 
         message Zigbee {
-            message OperationMode {
-                bool none = 1;
-                bool se_slave = 2;
-                bool ha_gateway = 3;
-                bool p2p_slave = 4;
-            }
-
             enum ZigbeeSignal {
                 NONE = 0;
                 LOW = 1;
@@ -173,30 +388,19 @@ message Status {
                 OK = 1;
             }
 
+            message OperationMode {
+                bool none = 1;
+                bool se_slave = 2;
+                bool ha_gateway = 3;
+                bool p2p_slave = 4;
+            }
+
             uint32 enabled = 1;
             uint32 connected = 2;
             OperationMode operation_mode = 3;
             ZigbeeSignal signal_level = 4;
             SlaveStatus zigbee_slave_status = 5;
             ModuleStatus module_status = 6;
-        }
-
-        message Lan {
-            message IP {
-                StringVal ip_address = 1;
-                StringVal subnet_mask = 2;
-                StringVal gateway = 3;
-                StringVal dns = 4;
-            }
-
-            BoolVal dhcp = 1;
-            IP ip = 2;
-            StringVal mac = 3;
-            BoolVal cable_connected = 4;
-        }
-
-        enum LanStatus {
-            OK = 0;
         }
 
         Rs485Status rs485_1 = 1;
@@ -216,7 +420,7 @@ message Status {
         FloatS current_consumption = 5;
         UInt64 total_consumption = 6;
     }
-    
+
     message Evse {
         enum CarStatus {
             disconnected = 0;
@@ -242,17 +446,6 @@ message Status {
     }
 
     message Meter {
-        message Function {
-            BoolVal inverter_production = 1;
-            BoolVal export_import = 2;
-            BoolVal consumption = 3;
-            BoolVal site_production = 4;
-            BoolVal external_production = 5;
-            BoolVal m_export = 6;
-            BoolVal m_import = 7;
-            BoolVal production_and_export_import = 8;
-        }
-
         enum ConnectionType {
             RS485_1 = 0;
             RS485_2 = 1;
@@ -264,6 +457,17 @@ message Status {
             COMM_ERROR = 1;
         }
 
+        message Function {
+            BoolVal inverter_production = 1;
+            BoolVal export_import = 2;
+            BoolVal consumption = 3;
+            BoolVal site_production = 4;
+            BoolVal external_production = 5;
+            BoolVal m_export = 6;
+            BoolVal m_import = 7;
+            BoolVal production_and_export_import = 8;
+        }
+
         ConnectionType connection_type = 1;
         Function func = 2;
         Status status = 3;
@@ -273,7 +477,7 @@ message Status {
         uint32 s0_pulse = 7;
         StringVal sn = 8;
     }
-    
+
     message Battery {
         enum Status {
             CONNECTED = 0;
@@ -401,7 +605,7 @@ message Status {
         ErrorBanner error_banner = 6;
     }
 
-    message server_communication {
+    message ServerCommunication {
         enum CommTestStatus {
             FAILED = 0;
             PASSED = 1;
@@ -437,8 +641,8 @@ message Status {
         message Test {
             enum AfciTestResult {
                 AFCI_TEST_FAIL = 0;
-                AFCI_TEST_ERROR = -1;
                 AFCI_TEST_PASS = 1;
+                AFCI_TEST_ERROR = -1;
             }
 
             AfciTestResult result = 1;
@@ -467,11 +671,11 @@ message Status {
     float frequency_hz = 5;
     OptimizersStatus optimizers_status = 6;
     bool s_ok = 7;
-    int32 status = 8;
-    bool switch_status = 9;
+    MngrStatus status = 8;
+    SwitchStatus switch_status = 9;
     float cos_Phi = 10;
     float limit = 11;
-    int32 country = 12;
+    Countries country = 12;
     Inverters inverters = 13;
     Communication communication = 14;
     EnergyStatistics energy = 15;
@@ -481,7 +685,7 @@ message Status {
     repeated Meter meters = 19;
     repeated Battery batteries = 20;
     Notification notification = 21;
-    server_communication server_comm = 22;
+    ServerCommunication server_comm = 22;
     Afci afci = 23;
     ServerChannel server_channel = 24;
 }

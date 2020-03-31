@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cstatus.proto\"\xe9I\n\x06Status\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x12\n\npower_watt\x18\x03 \x01(\x02\x12\x0f\n\x07voltage\x18\x04 \x01(\x02\x12\x14\n\x0c\x66requency_hz\x18\x05 \x01(\x02\x12\x33\n\x11optimizers_status\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x0c\n\x04s_ok\x18\x07 \x01(\x08\x12\x0e\n\x06status\x18\x08 \x01(\x05\x12\x15\n\rswitch_status\x18\t \x01(\x08\x12\x0f\n\x07\x63os_Phi\x18\n \x01(\x02\x12\r\n\x05limit\x18\x0b \x01(\x02\x12\x0f\n\x07\x63ountry\x18\x0c \x01(\x05\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x19\n\x11portia_error_code\x18\x10 \x01(\r\x12\x18\n\x10portia_subsystem\x18\x11 \x01(\r\x12\x1a\n\x04\x65vse\x18\x12 \x01(\x0b\x32\x0c.Status.Evse\x12\x1d\n\x06meters\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12\"\n\tbatteries\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12\x31\n\x0bserver_comm\x18\x16 \x01(\x0b\x32\x1c.Status.server_communication\x12\x1a\n\x04\x61\x66\x63i\x18\x17 \x01(\x0b\x32\x0c.Status.Afci\x12-\n\x0eserver_channel\x18\x18 \x01(\x0b\x32\x15.Status.ServerChannel\x1aK\n\x06UInt32\x12\r\n\x05value\x18\x01 \x01(\r\x12\n\n\x02ro\x18\x02 \x01(\x08\x12&\n\nattributes\x18\x03 \x01(\x0b\x32\x12.Status.UInt32Attr\x1a\x34\n\nUInt32Attr\x12\x0b\n\x03min\x18\x01 \x01(\r\x12\x0b\n\x03max\x18\x02 \x01(\r\x12\x0c\n\x04step\x18\x03 \x01(\r\x1aK\n\x06UInt64\x12\r\n\x05value\x18\x01 \x01(\x04\x12\n\n\x02ro\x18\x02 \x01(\x08\x12&\n\nattributes\x18\x03 \x01(\x0b\x32\x12.Status.UInt64Attr\x1a\x34\n\nUInt64Attr\x12\x0b\n\x03min\x18\x01 \x01(\x04\x12\x0b\n\x03max\x18\x02 \x01(\x04\x12\x0c\n\x04step\x18\x03 \x01(\x04\x1a)\n\x07\x46loat32\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x1a\\\n\x06\x46loatS\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x12\n\n\x02ro\x18\x03 \x01(\x08\x12&\n\nattributes\x18\x04 \x01(\x0b\x32\x12.Status.FloatSAttr\x1a\x34\n\nFloatSAttr\x12\x0b\n\x03min\x18\x01 \x01(\x05\x12\x0b\n\x03max\x18\x02 \x01(\x05\x12\x0c\n\x04step\x18\x03 \x01(\x05\x1a$\n\x07\x42oolVal\x12\r\n\x05value\x18\x01 \x01(\x08\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a&\n\tStringVal\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1at\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\r\x12(\n\x05units\x18\x02 \x01(\x0b\x32\x19.Status.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xa7\x01\n\x04Site\x12\x17\n\x0fproduction_watt\x18\x01 \x01(\x02\x12\x17\n\x0fsite_limit_watt\x18\x02 \x01(\x02\x12\x36\n\x10inverters_status\x18\x03 \x01(\x0b\x32\x1c.Status.Site.InvertersStatus\x1a\x35\n\x0fInvertersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x11\n\tconnected\x18\x02 \x01(\x08\x1a\x36\n\x10OptimizersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x1a\x8d\x04\n\tInverters\x12$\n\x04left\x18\x01 \x01(\x0b\x32\x16.Status.Inverters.Unit\x12\'\n\x07primary\x18\x02 \x01(\x0b\x32\x16.Status.Inverters.Unit\x12%\n\x05right\x18\x03 \x01(\x0b\x32\x16.Status.Inverters.Unit\x1a\x89\x03\n\x04Unit\x12\x0e\n\x06\x64sp_sn\x18\x01 \x01(\t\x12\x0f\n\x07voltage\x18\x02 \x01(\x02\x12\x33\n\x11optimizers_status\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12(\n\x0btemperature\x18\x04 \x01(\x0b\x32\x13.Status.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x08\x12\x12\n\nerror_code\x18\x06 \x01(\r\x12\x11\n\tsubsystem\x18\x07 \x01(\r\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\x08\x12\x33\n\tisolation\x18\t \x01(\x0b\x32 .Status.Inverters.Unit.Isolation\x12\x1d\n\x05power\x18\n \x01(\x0b\x32\x0e.Status.FloatS\x1a\x63\n\tIsolation\x12\x1e\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x0f.Status.Float32\x12\x1e\n\x05r_iso\x18\x02 \x01(\x0b\x32\x0f.Status.Float32\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\x05\x1a\xde\x0e\n\rCommunication\x12\x32\n\x07rs485_1\x18\x01 \x01(\x0b\x32!.Status.Communication.Rs485Status\x12\x32\n\x07rs485_2\x18\x02 \x01(\x0b\x32!.Status.Communication.Rs485Status\x12,\n\x03lan\x18\x03 \x01(\x0e\x32\x1f.Status.Communication.LanStatus\x12\x30\n\x08\x63\x65llular\x18\x04 \x01(\x0b\x32\x1e.Status.Communication.Cellular\x12(\n\x04wifi\x18\x05 \x01(\x0b\x32\x1a.Status.Communication.Wifi\x12,\n\x06zigbee\x18\x06 \x01(\x0b\x32\x1c.Status.Communication.Zigbee\x12+\n\x08lan_info\x18\x07 \x01(\x0b\x32\x19.Status.Communication.Lan\x1a\xdd\x01\n\x0bRs485Status\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x12<\n\x08protocol\x18\x03 \x01(\x0b\x32*.Status.Communication.Rs485Status.Protocol\x1al\n\x08Protocol\x12\x10\n\x08se_slave\x18\x01 \x01(\x08\x12\x11\n\tse_master\x18\x02 \x01(\x08\x12\x1c\n\x14modbus_multi_devices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\x0c\n\x04none\x18\x05 \x01(\x08\x1a\xc5\x01\n\x08\x43\x65llular\x12\x46\n\x0fsignal_strength\x18\x01 \x01(\x0e\x32-.Status.Communication.Cellular.CellularSignal\x12\x10\n\x08operator\x18\x02 \x01(\t\"_\n\x0e\x43\x65llularSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\n\n\x06LOWEST\x10\x02\x12\n\n\x06MEDIUM\x10\x03\x12\x08\n\x04HIGH\x10\x04\x12\x0b\n\x07HIGHEST\x10\x05\x12\x0b\n\x07UNKNOWN\x10\x06\x1a\xd1\x01\n\x04Wifi\x12\x16\n\x0e\x63hosen_network\x18\x01 \x01(\t\x12\x44\n\x15\x63hosen_network_signal\x18\x02 \x01(\x0e\x32%.Status.Communication.Wifi.WifiSignal\x12(\n\x0f\x63onnected_to_hg\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\"A\n\nWifiSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\x07\n\x03MID\x10\x02\x12\x08\n\x04HIGH\x10\x03\x12\r\n\tEXCELLENT\x10\x04\x1a\xb9\x04\n\x06Zigbee\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x12\x42\n\x0eoperation_mode\x18\x03 \x01(\x0b\x32*.Status.Communication.Zigbee.OperationMode\x12?\n\x0csignal_level\x18\x04 \x01(\x0e\x32).Status.Communication.Zigbee.ZigbeeSignal\x12\x45\n\x13zigbee_slave_status\x18\x05 \x01(\x0e\x32(.Status.Communication.Zigbee.SlaveStatus\x12@\n\rmodule_status\x18\x06 \x01(\x0e\x32).Status.Communication.Zigbee.ModuleStatus\x1aV\n\rOperationMode\x12\x0c\n\x04none\x18\x01 \x01(\x08\x12\x10\n\x08se_slave\x18\x02 \x01(\x08\x12\x12\n\nha_gateway\x18\x03 \x01(\x08\x12\x11\n\tp2p_slave\x18\x04 \x01(\x08\"4\n\x0cZigbeeSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\x07\n\x03MID\x10\x02\x12\x08\n\x04HIGH\x10\x03\"E\n\x0bSlaveStatus\x12\x11\n\rNOT_CONNECTED\x10\x00\x12\r\n\tCONNECTED\x10\x01\x12\x14\n\x10MASTER_NOT_FOUND\x10\x02\"(\n\x0cModuleStatus\x12\x10\n\x0cINITIALIZING\x10\x00\x12\x06\n\x02OK\x10\x01\x1a\xb2\x02\n\x03Lan\x12\x1d\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.Lan.IP\x12\x1e\n\x03mac\x18\x03 \x01(\x0b\x32\x11.Status.StringVal\x12(\n\x0f\x63\x61\x62le_connected\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x1a\x97\x01\n\x02IP\x12%\n\nip_address\x18\x01 \x01(\x0b\x32\x11.Status.StringVal\x12&\n\x0bsubnet_mask\x18\x02 \x01(\x0b\x32\x11.Status.StringVal\x12\"\n\x07gateway\x18\x03 \x01(\x0b\x32\x11.Status.StringVal\x12\x1e\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x11.Status.StringVal\"\x13\n\tLanStatus\x12\x06\n\x02OK\x10\x00\x1a\xaf\x01\n\x10\x45nergyStatistics\x12\r\n\x05today\x18\x01 \x01(\x02\x12\x12\n\nthis_month\x18\x02 \x01(\x02\x12\x11\n\tthis_year\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x12+\n\x13\x63urrent_consumption\x18\x05 \x01(\x0b\x32\x0e.Status.FloatS\x12)\n\x11total_consumption\x18\x06 \x01(\x0b\x32\x0e.Status.UInt64\x1a\x82\x03\n\x04\x45vse\x12*\n\ncar_status\x18\x01 \x01(\x0e\x32\x16.Status.Evse.CarStatus\x12\x32\n\x0e\x63harger_status\x18\x02 \x01(\x0e\x32\x1a.Status.Evse.ChargerStatus\x12\x14\n\x0c\x63harge_power\x18\x03 \x01(\x02\x12\x16\n\x0esession_energy\x18\x04 \x01(\x04\x12\x12\n\nerror_code\x18\x05 \x01(\r\x12\x11\n\tsubsystem\x18\x06 \x01(\r\x12\x1d\n\x02sn\x18\x07 \x01(\x0b\x32\x11.Status.StringVal\">\n\tCarStatus\x12\x10\n\x0c\x64isconnected\x10\x00\x12\r\n\tconnected\x10\x01\x12\x10\n\x0c\x63harging_car\x10\x02\"f\n\rChargerStatus\x12\t\n\x05ready\x10\x00\x12\x10\n\x0cinitializing\x10\x01\x12\x0c\n\x08\x63harging\x10\x02\x12\x12\n\x0e\x63harging_boost\x10\x03\x12\x16\n\x12\x63harging_excess_pv\x10\x04\x1a\x9a\x05\n\x05Meter\x12\x35\n\x0f\x63onnection_type\x18\x01 \x01(\x0e\x32\x1c.Status.Meter.ConnectionType\x12$\n\x04\x66unc\x18\x02 \x01(\x0b\x32\x16.Status.Meter.Function\x12$\n\x06status\x18\x03 \x01(\x0e\x32\x14.Status.Meter.Status\x12\n\n\x02id\x18\x04 \x01(\r\x12\r\n\x05power\x18\x05 \x01(\x02\x12\x0e\n\x06\x65nergy\x18\x06 \x01(\x02\x12\x10\n\x08s0_pulse\x18\x07 \x01(\r\x12\x1d\n\x02sn\x18\x08 \x01(\x0b\x32\x11.Status.StringVal\x1a\xdb\x02\n\x08\x46unction\x12,\n\x13inverter_production\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12&\n\rexport_import\x18\x02 \x01(\x0b\x32\x0f.Status.BoolVal\x12$\n\x0b\x63onsumption\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\x12(\n\x0fsite_production\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x12,\n\x13\x65xternal_production\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08m_export\x18\x06 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08m_import\x18\x07 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x35\n\x1cproduction_and_export_import\x18\x08 \x01(\x0b\x32\x0f.Status.BoolVal\"2\n\x0e\x43onnectionType\x12\x0b\n\x07RS485_1\x10\x00\x12\x0b\n\x07RS485_2\x10\x01\x12\x06\n\x02S0\x10\x02\" \n\x06Status\x12\x06\n\x02OK\x10\x00\x12\x0e\n\nCOMM_ERROR\x10\x01\x1a\x87\x04\n\x07\x42\x61ttery\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0b\x32\x11.Status.StringVal\x12&\n\x06status\x18\x03 \x01(\x0e\x32\x16.Status.Battery.Status\x12$\n\x05state\x18\x04 \x01(\x0e\x32\x15.Status.Battery.State\x12\r\n\x05power\x18\x05 \x01(\x02\x12\x0b\n\x03soe\x18\x06 \x01(\x02\x12\x12\n\nerror_code\x18\x07 \x01(\r\x12\x11\n\tsubsystem\x18\x08 \x01(\r\"(\n\x06Status\x12\r\n\tCONNECTED\x10\x00\x12\x0f\n\x0b\x44ISCNNECTED\x10\x01\"\x93\x02\n\x05State\x12\x15\n\x11\x42MS_STATE_INVALID\x10\x00\x12\x11\n\rBMS_STATE_OFF\x10\x01\x12\x13\n\x0f\x42MS_STATE_STDBY\x10\x02\x12\x12\n\x0e\x42MS_STATE_INIT\x10\x03\x12\x14\n\x10\x42MS_STATE_CHARGE\x10\x04\x12\x17\n\x13\x42MS_STATE_DISCHARGE\x10\x05\x12\x13\n\x0f\x42MS_STATE_FAULT\x10\x06\x12\x12\n\x0e\x42MS_STATE_IDLE\x10\x07\x12\x18\n\x14\x42MS_STATE_COMM_ERROR\x10\x08\x12\x17\n\x13\x42MS_STATE_RESERVED1\x10\t\x12\x17\n\x13\x42MS_STATE_RESERVED2\x10\n\x12\x13\n\x0f\x42MS_STATE_SLEEP\x10\x0b\x1a\x8a\x0f\n\x0cNotification\x12/\n\x08shutdown\x18\x01 \x01(\x0b\x32\x1d.Status.Notification.Shutdown\x12%\n\x03grm\x18\x02 \x01(\x0b\x32\x18.Status.Notification.GRM\x12-\n\x07pairing\x18\x03 \x01(\x0b\x32\x1c.Status.Notification.Pairing\x12\x36\n\x0cslave_detect\x18\x04 \x01(\x0b\x32 .Status.Notification.SlaveDetect\x12\x38\n\rnot_activated\x18\x05 \x01(\x0b\x32!.Status.Notification.NotActivated\x12\x36\n\x0c\x65rror_banner\x18\x06 \x01(\x0b\x32 .Status.Notification.ErrorBanner\x1a\x85\x01\n\x06Header\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.Status.UInt32\x12.\n\x04type\x18\x02 \x01(\x0e\x32 .Status.Notification.Header.Type\"/\n\x04Type\x12\t\n\x05\x45RROR\x10\x00\x12\x0b\n\x07WARNING\x10\x01\x12\x0f\n\x0bINFORMATION\x10\x02\x1a\x37\n\x08Shutdown\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x1an\n\x03GRM\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12\x16\n\x0eremaining_time\x18\x02 \x01(\x02\x12\"\n\ntotal_time\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x1a\x80\x06\n\x07Pairing\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12>\n\x0cpairing_data\x18\x02 \x01(\x0b\x32(.Status.Notification.Pairing.PairingData\x1a\x87\x05\n\x0bPairingData\x12\x41\n\x07request\x18\x01 \x01(\x0b\x32\x30.Status.Notification.Pairing.PairingData.Request\x12?\n\x06status\x18\x02 \x01(\x0b\x32/.Status.Notification.Pairing.PairingData.Status\x1a\x1b\n\x07Request\x12\x10\n\x08\x64uration\x18\x01 \x01(\r\x1a\xd6\x03\n\x06Status\x12\x11\n\tsessionID\x18\x01 \x01(\r\x12\x42\n\x04info\x18\x02 \x01(\x0e\x32\x34.Status.Notification.Pairing.PairingData.Status.Info\x12\x44\n\x05stage\x18\x03 \x01(\x0e\x32\x35.Status.Notification.Pairing.PairingData.Status.Stage\x12\x10\n\x08progress\x18\x04 \x01(\r\x12\x16\n\x0eremaining_time\x18\x05 \x01(\x05\"\x89\x01\n\x04Info\x12\x06\n\x02OK\x10\x00\x12\x0b\n\x07INV_OFF\x10\x02\x12\x0e\n\nNIGHT_MODE\x10\x03\x12\x0e\n\nIN_PROCESS\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x14\n\x10\x45RROR_OPT_DETECT\x10\x06\x12\x17\n\x13\x45RROR_STRING_DETECT\x10\x07\x12\x12\n\x0eNOT_IN_PROCESS\x10\x08\"y\n\x05Stage\x12\x0e\n\nNOT_ACTIVE\x10\x00\x12\x15\n\x11WAIT_VIN_DECREASE\x10\x01\x12\x0b\n\x07PAIRING\x10\x02\x12\x10\n\x0cSAVE_SESSION\x10\x03\x12\x0e\n\nOPT_DETECT\x10\x04\x12\x11\n\rSTRING_DETECT\x10\x05\x12\x07\n\x03\x45ND\x10\x06\x1a\xd3\x02\n\x0bSlaveDetect\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12K\n\x11slave_detect_data\x18\x02 \x01(\x0b\x32\x30.Status.Notification.SlaveDetect.SlaveDetectData\x1a\xc9\x01\n\x0fSlaveDetectData\x12 \n\x08\x64uration\x18\x01 \x01(\x0b\x32\x0e.Status.UInt32\x12%\n\rnum_of_slaves\x18\x02 \x01(\x0b\x32\x0e.Status.UInt32\x12$\n\x0cnum_of_loops\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x12(\n\x10max_num_of_loops\x18\x04 \x01(\x0b\x32\x0e.Status.UInt32\x12\x1d\n\x04Stop\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x1a;\n\x0cNotActivated\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x1a\x81\x01\n\x0b\x45rrorBanner\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12\"\n\nerror_code\x18\x02 \x01(\x0b\x32\x0e.Status.UInt32\x12!\n\tsubsystem\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x1a\xe9\t\n\x14server_communication\x12\x36\n\x08lan_test\x18\x01 \x01(\x0b\x32$.Status.server_communication.LanTest\x12\x39\n\x08hg2_test\x18\x02 \x01(\x0b\x32\'.Status.server_communication.HgCommTest\x1a\x9c\x03\n\x07LanTest\x12H\n\x13physical_connection\x18\x01 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12?\n\nip_address\x18\x02 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x41\n\x0cgateway_link\x18\x03 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x42\n\rinternet_link\x18\x04 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x44\n\x0fmonitoring_link\x18\x05 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x39\n\x04s_ok\x18\x06 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x1a\x84\x05\n\nHgCommTest\x12J\n\x15repeater_1_connection\x18\x01 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12J\n\x15repeater_2_connection\x18\x02 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12K\n\x16homegateway_connection\x18\x03 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12H\n\x13physical_connection\x18\x04 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12?\n\nip_address\x18\x05 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x41\n\x0cgateway_link\x18\x06 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x42\n\rinternet_link\x18\x07 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x44\n\x0fmonitoring_link\x18\x08 \x01(\x0e\x32+.Status.server_communication.CommTestStatus\x12\x39\n\x04s_ok\x18\t \x01(\x0e\x32+.Status.server_communication.CommTestStatus\"8\n\x0e\x43ommTestStatus\x12\n\n\x06\x46\x41ILED\x10\x00\x12\n\n\x06PASSED\x10\x01\x12\x0e\n\nNOT_TESTED\x10\x02\x1a\x88\x02\n\x04\x41\x66\x63i\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12\x18\n\x10manual_reconnect\x18\x02 \x01(\x08\x12\x1f\n\x04test\x18\x03 \x01(\x0b\x32\x11.Status.Afci.Test\x12\x11\n\tdsp_error\x18\x04 \x01(\x08\x1a\xa1\x01\n\x04Test\x12\x30\n\x06result\x18\x01 \x01(\x0e\x32 .Status.Afci.Test.AfciTestResult\x12\x0f\n\x07timeout\x18\x02 \x01(\r\"V\n\x0e\x41\x66\x63iTestResult\x12\x12\n\x0e\x41\x46\x43I_TEST_FAIL\x10\x00\x12\x1c\n\x0f\x41\x46\x43I_TEST_ERROR\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x12\n\x0e\x41\x46\x43I_TEST_PASS\x10\x01\x1a\xe6\x01\n\rServerChannel\x12\x1c\n\x03lan\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08\x63\x65llular\x18\x02 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x1d\n\x04wifi\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\x12)\n\x10rs485_1_se_slave\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x1f\n\x06zigbee\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x12)\n\x10rs485_2_se_slave\x18\x06 \x01(\x0b\x32\x0f.Status.BoolValb\x06proto3')
+  serialized_pb=_b('\n\x0cstatus.proto\"\x80q\n\x06Status\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x1a\n\x04site\x18\x02 \x01(\x0b\x32\x0c.Status.Site\x12\x12\n\npower_watt\x18\x03 \x01(\x02\x12\x0f\n\x07voltage\x18\x04 \x01(\x02\x12\x14\n\x0c\x66requency_hz\x18\x05 \x01(\x02\x12\x33\n\x11optimizers_status\x18\x06 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12\x0c\n\x04s_ok\x18\x07 \x01(\x08\x12\"\n\x06status\x18\x08 \x01(\x0e\x32\x12.Status.MngrStatus\x12+\n\rswitch_status\x18\t \x01(\x0e\x32\x14.Status.SwitchStatus\x12\x0f\n\x07\x63os_Phi\x18\n \x01(\x02\x12\r\n\x05limit\x18\x0b \x01(\x02\x12\"\n\x07\x63ountry\x18\x0c \x01(\x0e\x32\x11.Status.Countries\x12$\n\tinverters\x18\r \x01(\x0b\x32\x11.Status.Inverters\x12,\n\rcommunication\x18\x0e \x01(\x0b\x32\x15.Status.Communication\x12(\n\x06\x65nergy\x18\x0f \x01(\x0b\x32\x18.Status.EnergyStatistics\x12\x19\n\x11portia_error_code\x18\x10 \x01(\r\x12\x18\n\x10portia_subsystem\x18\x11 \x01(\r\x12\x1a\n\x04\x65vse\x18\x12 \x01(\x0b\x32\x0c.Status.Evse\x12\x1d\n\x06meters\x18\x13 \x03(\x0b\x32\r.Status.Meter\x12\"\n\tbatteries\x18\x14 \x03(\x0b\x32\x0f.Status.Battery\x12*\n\x0cnotification\x18\x15 \x01(\x0b\x32\x14.Status.Notification\x12\x30\n\x0bserver_comm\x18\x16 \x01(\x0b\x32\x1b.Status.ServerCommunication\x12\x1a\n\x04\x61\x66\x63i\x18\x17 \x01(\x0b\x32\x0c.Status.Afci\x12-\n\x0eserver_channel\x18\x18 \x01(\x0b\x32\x15.Status.ServerChannel\x1a\\\n\x06\x46loatS\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x12\n\n\x02ro\x18\x03 \x01(\x08\x12&\n\nattributes\x18\x04 \x01(\x0b\x32\x12.Status.FloatSAttr\x1a\x34\n\nFloatSAttr\x12\x0b\n\x03min\x18\x01 \x01(\x05\x12\x0b\n\x03max\x18\x02 \x01(\x05\x12\x0c\n\x04step\x18\x03 \x01(\x05\x1a)\n\x07\x46loat32\x12\r\n\x05value\x18\x01 \x01(\x05\x12\x0f\n\x07scaling\x18\x02 \x01(\x05\x1aK\n\x06UInt32\x12\r\n\x05value\x18\x01 \x01(\r\x12\n\n\x02ro\x18\x02 \x01(\x08\x12&\n\nattributes\x18\x03 \x01(\x0b\x32\x12.Status.UInt32Attr\x1a\x34\n\nUInt32Attr\x12\x0b\n\x03min\x18\x01 \x01(\r\x12\x0b\n\x03max\x18\x02 \x01(\r\x12\x0c\n\x04step\x18\x03 \x01(\r\x1aK\n\x06UInt64\x12\r\n\x05value\x18\x01 \x01(\x04\x12\n\n\x02ro\x18\x02 \x01(\x08\x12&\n\nattributes\x18\x03 \x01(\x0b\x32\x12.Status.UInt64Attr\x1a\x34\n\nUInt64Attr\x12\x0b\n\x03min\x18\x01 \x01(\x04\x12\x0b\n\x03max\x18\x02 \x01(\x04\x12\x0c\n\x04step\x18\x03 \x01(\x04\x1a$\n\x07\x42oolVal\x12\r\n\x05value\x18\x01 \x01(\x08\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a&\n\tStringVal\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1at\n\x0bTemperature\x12\r\n\x05value\x18\x01 \x01(\r\x12(\n\x05units\x18\x02 \x01(\x0b\x32\x19.Status.Temperature.Units\x1a,\n\x05Units\x12\x0f\n\x07\x63\x65lsius\x18\x01 \x01(\x08\x12\x12\n\nfahrenheit\x18\x02 \x01(\x08\x1a\xa7\x01\n\x04Site\x12\x17\n\x0fproduction_watt\x18\x01 \x01(\x02\x12\x17\n\x0fsite_limit_watt\x18\x02 \x01(\x02\x12\x36\n\x10inverters_status\x18\x03 \x01(\x0b\x32\x1c.Status.Site.InvertersStatus\x1a\x35\n\x0fInvertersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x1a\x36\n\x10OptimizersStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x1a\x8d\x04\n\tInverters\x12$\n\x04left\x18\x01 \x01(\x0b\x32\x16.Status.Inverters.Unit\x12\'\n\x07primary\x18\x02 \x01(\x0b\x32\x16.Status.Inverters.Unit\x12%\n\x05right\x18\x03 \x01(\x0b\x32\x16.Status.Inverters.Unit\x1a\x89\x03\n\x04Unit\x12\x0e\n\x06\x64sp_sn\x18\x01 \x01(\t\x12\x0f\n\x07voltage\x18\x02 \x01(\x02\x12\x33\n\x11optimizers_status\x18\x03 \x01(\x0b\x32\x18.Status.OptimizersStatus\x12(\n\x0btemperature\x18\x04 \x01(\x0b\x32\x13.Status.Temperature\x12\x0b\n\x03\x66\x61n\x18\x05 \x01(\x08\x12\x12\n\nerror_code\x18\x06 \x01(\r\x12\x11\n\tsubsystem\x18\x07 \x01(\r\x12\x14\n\x0c\x62\x61\x64_position\x18\x08 \x01(\x08\x12\x33\n\tisolation\x18\t \x01(\x0b\x32 .Status.Inverters.Unit.Isolation\x12\x1d\n\x05power\x18\n \x01(\x0b\x32\x0e.Status.FloatS\x1a\x63\n\tIsolation\x12\x1e\n\x05\x61lpha\x18\x01 \x01(\x0b\x32\x0f.Status.Float32\x12\x1e\n\x05r_iso\x18\x02 \x01(\x0b\x32\x0f.Status.Float32\x12\x16\n\x0e\x66\x61ult_location\x18\x03 \x01(\r\x1a\xde\x0e\n\rCommunication\x12\x32\n\x07rs485_1\x18\x01 \x01(\x0b\x32!.Status.Communication.Rs485Status\x12\x32\n\x07rs485_2\x18\x02 \x01(\x0b\x32!.Status.Communication.Rs485Status\x12,\n\x03lan\x18\x03 \x01(\x0e\x32\x1f.Status.Communication.LanStatus\x12\x30\n\x08\x63\x65llular\x18\x04 \x01(\x0b\x32\x1e.Status.Communication.Cellular\x12(\n\x04wifi\x18\x05 \x01(\x0b\x32\x1a.Status.Communication.Wifi\x12,\n\x06zigbee\x18\x06 \x01(\x0b\x32\x1c.Status.Communication.Zigbee\x12+\n\x08lan_info\x18\x07 \x01(\x0b\x32\x19.Status.Communication.Lan\x1a\xdd\x01\n\x0bRs485Status\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x12<\n\x08protocol\x18\x03 \x01(\x0b\x32*.Status.Communication.Rs485Status.Protocol\x1al\n\x08Protocol\x12\x10\n\x08se_slave\x18\x01 \x01(\x08\x12\x11\n\tse_master\x18\x02 \x01(\x08\x12\x1c\n\x14modbus_multi_devices\x18\x03 \x01(\x08\x12\x0f\n\x07sunspec\x18\x04 \x01(\x08\x12\x0c\n\x04none\x18\x05 \x01(\x08\x1a\xb2\x02\n\x03Lan\x12\x1d\n\x04\x64hcp\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12(\n\x02ip\x18\x02 \x01(\x0b\x32\x1c.Status.Communication.Lan.IP\x12\x1e\n\x03mac\x18\x03 \x01(\x0b\x32\x11.Status.StringVal\x12(\n\x0f\x63\x61\x62le_connected\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x1a\x97\x01\n\x02IP\x12%\n\nip_address\x18\x01 \x01(\x0b\x32\x11.Status.StringVal\x12&\n\x0bsubnet_mask\x18\x02 \x01(\x0b\x32\x11.Status.StringVal\x12\"\n\x07gateway\x18\x03 \x01(\x0b\x32\x11.Status.StringVal\x12\x1e\n\x03\x64ns\x18\x04 \x01(\x0b\x32\x11.Status.StringVal\x1a\xc5\x01\n\x08\x43\x65llular\x12\x46\n\x0fsignal_strength\x18\x01 \x01(\x0e\x32-.Status.Communication.Cellular.CellularSignal\x12\x10\n\x08operator\x18\x02 \x01(\t\"_\n\x0e\x43\x65llularSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\n\n\x06LOWEST\x10\x02\x12\n\n\x06MEDIUM\x10\x03\x12\x08\n\x04HIGH\x10\x04\x12\x0b\n\x07HIGHEST\x10\x05\x12\x0b\n\x07UNKNOWN\x10\x06\x1a\xd1\x01\n\x04Wifi\x12\x16\n\x0e\x63hosen_network\x18\x01 \x01(\t\x12\x44\n\x15\x63hosen_network_signal\x18\x02 \x01(\x0e\x32%.Status.Communication.Wifi.WifiSignal\x12(\n\x0f\x63onnected_to_hg\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\"A\n\nWifiSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\x07\n\x03MID\x10\x02\x12\x08\n\x04HIGH\x10\x03\x12\r\n\tEXCELLENT\x10\x04\x1a\xb9\x04\n\x06Zigbee\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\r\x12\x11\n\tconnected\x18\x02 \x01(\r\x12\x42\n\x0eoperation_mode\x18\x03 \x01(\x0b\x32*.Status.Communication.Zigbee.OperationMode\x12?\n\x0csignal_level\x18\x04 \x01(\x0e\x32).Status.Communication.Zigbee.ZigbeeSignal\x12\x45\n\x13zigbee_slave_status\x18\x05 \x01(\x0e\x32(.Status.Communication.Zigbee.SlaveStatus\x12@\n\rmodule_status\x18\x06 \x01(\x0e\x32).Status.Communication.Zigbee.ModuleStatus\x1aV\n\rOperationMode\x12\x0c\n\x04none\x18\x01 \x01(\x08\x12\x10\n\x08se_slave\x18\x02 \x01(\x08\x12\x12\n\nha_gateway\x18\x03 \x01(\x08\x12\x11\n\tp2p_slave\x18\x04 \x01(\x08\"4\n\x0cZigbeeSignal\x12\x08\n\x04NONE\x10\x00\x12\x07\n\x03LOW\x10\x01\x12\x07\n\x03MID\x10\x02\x12\x08\n\x04HIGH\x10\x03\"E\n\x0bSlaveStatus\x12\x11\n\rNOT_CONNECTED\x10\x00\x12\r\n\tCONNECTED\x10\x01\x12\x14\n\x10MASTER_NOT_FOUND\x10\x02\"(\n\x0cModuleStatus\x12\x10\n\x0cINITIALIZING\x10\x00\x12\x06\n\x02OK\x10\x01\"\x13\n\tLanStatus\x12\x06\n\x02OK\x10\x00\x1a\xaf\x01\n\x10\x45nergyStatistics\x12\r\n\x05today\x18\x01 \x01(\x02\x12\x12\n\nthis_month\x18\x02 \x01(\x02\x12\x11\n\tthis_year\x18\x03 \x01(\x02\x12\r\n\x05total\x18\x04 \x01(\x02\x12+\n\x13\x63urrent_consumption\x18\x05 \x01(\x0b\x32\x0e.Status.FloatS\x12)\n\x11total_consumption\x18\x06 \x01(\x0b\x32\x0e.Status.UInt64\x1a\x82\x03\n\x04\x45vse\x12*\n\ncar_status\x18\x01 \x01(\x0e\x32\x16.Status.Evse.CarStatus\x12\x32\n\x0e\x63harger_status\x18\x02 \x01(\x0e\x32\x1a.Status.Evse.ChargerStatus\x12\x14\n\x0c\x63harge_power\x18\x03 \x01(\x02\x12\x16\n\x0esession_energy\x18\x04 \x01(\x04\x12\x12\n\nerror_code\x18\x05 \x01(\r\x12\x11\n\tsubsystem\x18\x06 \x01(\r\x12\x1d\n\x02sn\x18\x07 \x01(\x0b\x32\x11.Status.StringVal\">\n\tCarStatus\x12\x10\n\x0c\x64isconnected\x10\x00\x12\r\n\tconnected\x10\x01\x12\x10\n\x0c\x63harging_car\x10\x02\"f\n\rChargerStatus\x12\t\n\x05ready\x10\x00\x12\x10\n\x0cinitializing\x10\x01\x12\x0c\n\x08\x63harging\x10\x02\x12\x12\n\x0e\x63harging_boost\x10\x03\x12\x16\n\x12\x63harging_excess_pv\x10\x04\x1a\x9a\x05\n\x05Meter\x12\x35\n\x0f\x63onnection_type\x18\x01 \x01(\x0e\x32\x1c.Status.Meter.ConnectionType\x12$\n\x04\x66unc\x18\x02 \x01(\x0b\x32\x16.Status.Meter.Function\x12$\n\x06status\x18\x03 \x01(\x0e\x32\x14.Status.Meter.Status\x12\n\n\x02id\x18\x04 \x01(\r\x12\r\n\x05power\x18\x05 \x01(\x02\x12\x0e\n\x06\x65nergy\x18\x06 \x01(\x02\x12\x10\n\x08s0_pulse\x18\x07 \x01(\r\x12\x1d\n\x02sn\x18\x08 \x01(\x0b\x32\x11.Status.StringVal\x1a\xdb\x02\n\x08\x46unction\x12,\n\x13inverter_production\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12&\n\rexport_import\x18\x02 \x01(\x0b\x32\x0f.Status.BoolVal\x12$\n\x0b\x63onsumption\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\x12(\n\x0fsite_production\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x12,\n\x13\x65xternal_production\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08m_export\x18\x06 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08m_import\x18\x07 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x35\n\x1cproduction_and_export_import\x18\x08 \x01(\x0b\x32\x0f.Status.BoolVal\"2\n\x0e\x43onnectionType\x12\x0b\n\x07RS485_1\x10\x00\x12\x0b\n\x07RS485_2\x10\x01\x12\x06\n\x02S0\x10\x02\" \n\x06Status\x12\x06\n\x02OK\x10\x00\x12\x0e\n\nCOMM_ERROR\x10\x01\x1a\x87\x04\n\x07\x42\x61ttery\x12\n\n\x02sn\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0b\x32\x11.Status.StringVal\x12&\n\x06status\x18\x03 \x01(\x0e\x32\x16.Status.Battery.Status\x12$\n\x05state\x18\x04 \x01(\x0e\x32\x15.Status.Battery.State\x12\r\n\x05power\x18\x05 \x01(\x02\x12\x0b\n\x03soe\x18\x06 \x01(\x02\x12\x12\n\nerror_code\x18\x07 \x01(\r\x12\x11\n\tsubsystem\x18\x08 \x01(\r\"(\n\x06Status\x12\r\n\tCONNECTED\x10\x00\x12\x0f\n\x0b\x44ISCNNECTED\x10\x01\"\x93\x02\n\x05State\x12\x15\n\x11\x42MS_STATE_INVALID\x10\x00\x12\x11\n\rBMS_STATE_OFF\x10\x01\x12\x13\n\x0f\x42MS_STATE_STDBY\x10\x02\x12\x12\n\x0e\x42MS_STATE_INIT\x10\x03\x12\x14\n\x10\x42MS_STATE_CHARGE\x10\x04\x12\x17\n\x13\x42MS_STATE_DISCHARGE\x10\x05\x12\x13\n\x0f\x42MS_STATE_FAULT\x10\x06\x12\x12\n\x0e\x42MS_STATE_IDLE\x10\x07\x12\x18\n\x14\x42MS_STATE_COMM_ERROR\x10\x08\x12\x17\n\x13\x42MS_STATE_RESERVED1\x10\t\x12\x17\n\x13\x42MS_STATE_RESERVED2\x10\n\x12\x13\n\x0f\x42MS_STATE_SLEEP\x10\x0b\x1a\x8a\x0f\n\x0cNotification\x12/\n\x08shutdown\x18\x01 \x01(\x0b\x32\x1d.Status.Notification.Shutdown\x12%\n\x03grm\x18\x02 \x01(\x0b\x32\x18.Status.Notification.GRM\x12-\n\x07pairing\x18\x03 \x01(\x0b\x32\x1c.Status.Notification.Pairing\x12\x36\n\x0cslave_detect\x18\x04 \x01(\x0b\x32 .Status.Notification.SlaveDetect\x12\x38\n\rnot_activated\x18\x05 \x01(\x0b\x32!.Status.Notification.NotActivated\x12\x36\n\x0c\x65rror_banner\x18\x06 \x01(\x0b\x32 .Status.Notification.ErrorBanner\x1a\x85\x01\n\x06Header\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.Status.UInt32\x12.\n\x04type\x18\x02 \x01(\x0e\x32 .Status.Notification.Header.Type\"/\n\x04Type\x12\t\n\x05\x45RROR\x10\x00\x12\x0b\n\x07WARNING\x10\x01\x12\x0f\n\x0bINFORMATION\x10\x02\x1a\x37\n\x08Shutdown\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x1an\n\x03GRM\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12\x16\n\x0eremaining_time\x18\x02 \x01(\x02\x12\"\n\ntotal_time\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x1a\x80\x06\n\x07Pairing\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12>\n\x0cpairing_data\x18\x02 \x01(\x0b\x32(.Status.Notification.Pairing.PairingData\x1a\x87\x05\n\x0bPairingData\x12\x41\n\x07request\x18\x01 \x01(\x0b\x32\x30.Status.Notification.Pairing.PairingData.Request\x12?\n\x06status\x18\x02 \x01(\x0b\x32/.Status.Notification.Pairing.PairingData.Status\x1a\x1b\n\x07Request\x12\x10\n\x08\x64uration\x18\x01 \x01(\r\x1a\xd6\x03\n\x06Status\x12\x11\n\tsessionID\x18\x01 \x01(\r\x12\x42\n\x04info\x18\x02 \x01(\x0e\x32\x34.Status.Notification.Pairing.PairingData.Status.Info\x12\x44\n\x05stage\x18\x03 \x01(\x0e\x32\x35.Status.Notification.Pairing.PairingData.Status.Stage\x12\x10\n\x08progress\x18\x04 \x01(\r\x12\x16\n\x0eremaining_time\x18\x05 \x01(\x05\"\x89\x01\n\x04Info\x12\x06\n\x02OK\x10\x00\x12\x0b\n\x07INV_OFF\x10\x02\x12\x0e\n\nNIGHT_MODE\x10\x03\x12\x0e\n\nIN_PROCESS\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x14\n\x10\x45RROR_OPT_DETECT\x10\x06\x12\x17\n\x13\x45RROR_STRING_DETECT\x10\x07\x12\x12\n\x0eNOT_IN_PROCESS\x10\x08\"y\n\x05Stage\x12\x0e\n\nNOT_ACTIVE\x10\x00\x12\x15\n\x11WAIT_VIN_DECREASE\x10\x01\x12\x0b\n\x07PAIRING\x10\x02\x12\x10\n\x0cSAVE_SESSION\x10\x03\x12\x0e\n\nOPT_DETECT\x10\x04\x12\x11\n\rSTRING_DETECT\x10\x05\x12\x07\n\x03\x45ND\x10\x06\x1a\xd3\x02\n\x0bSlaveDetect\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12K\n\x11slave_detect_data\x18\x02 \x01(\x0b\x32\x30.Status.Notification.SlaveDetect.SlaveDetectData\x1a\xc9\x01\n\x0fSlaveDetectData\x12 \n\x08\x64uration\x18\x01 \x01(\x0b\x32\x0e.Status.UInt32\x12%\n\rnum_of_slaves\x18\x02 \x01(\x0b\x32\x0e.Status.UInt32\x12$\n\x0cnum_of_loops\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x12(\n\x10max_num_of_loops\x18\x04 \x01(\x0b\x32\x0e.Status.UInt32\x12\x1d\n\x04Stop\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x1a;\n\x0cNotActivated\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x1a\x81\x01\n\x0b\x45rrorBanner\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.Status.Notification.Header\x12\"\n\nerror_code\x18\x02 \x01(\x0b\x32\x0e.Status.UInt32\x12!\n\tsubsystem\x18\x03 \x01(\x0b\x32\x0e.Status.UInt32\x1a\xd7\t\n\x13ServerCommunication\x12\x35\n\x08lan_test\x18\x01 \x01(\x0b\x32#.Status.ServerCommunication.LanTest\x12\x38\n\x08hg2_test\x18\x02 \x01(\x0b\x32&.Status.ServerCommunication.HgCommTest\x1a\x96\x03\n\x07LanTest\x12G\n\x13physical_connection\x18\x01 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12>\n\nip_address\x18\x02 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12@\n\x0cgateway_link\x18\x03 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12\x41\n\rinternet_link\x18\x04 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12\x43\n\x0fmonitoring_link\x18\x05 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12\x38\n\x04s_ok\x18\x06 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x1a\xfb\x04\n\nHgCommTest\x12I\n\x15repeater_1_connection\x18\x01 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12I\n\x15repeater_2_connection\x18\x02 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12J\n\x16homegateway_connection\x18\x03 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12G\n\x13physical_connection\x18\x04 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12>\n\nip_address\x18\x05 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12@\n\x0cgateway_link\x18\x06 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12\x41\n\rinternet_link\x18\x07 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12\x43\n\x0fmonitoring_link\x18\x08 \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\x12\x38\n\x04s_ok\x18\t \x01(\x0e\x32*.Status.ServerCommunication.CommTestStatus\"8\n\x0e\x43ommTestStatus\x12\n\n\x06\x46\x41ILED\x10\x00\x12\n\n\x06PASSED\x10\x01\x12\x0e\n\nNOT_TESTED\x10\x02\x1a\x88\x02\n\x04\x41\x66\x63i\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12\x18\n\x10manual_reconnect\x18\x02 \x01(\x08\x12\x1f\n\x04test\x18\x03 \x01(\x0b\x32\x11.Status.Afci.Test\x12\x11\n\tdsp_error\x18\x04 \x01(\x08\x1a\xa1\x01\n\x04Test\x12\x30\n\x06result\x18\x01 \x01(\x0e\x32 .Status.Afci.Test.AfciTestResult\x12\x0f\n\x07timeout\x18\x02 \x01(\r\"V\n\x0e\x41\x66\x63iTestResult\x12\x12\n\x0e\x41\x46\x43I_TEST_FAIL\x10\x00\x12\x12\n\x0e\x41\x46\x43I_TEST_PASS\x10\x01\x12\x1c\n\x0f\x41\x46\x43I_TEST_ERROR\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x1a\xe6\x01\n\rServerChannel\x12\x1c\n\x03lan\x18\x01 \x01(\x0b\x32\x0f.Status.BoolVal\x12!\n\x08\x63\x65llular\x18\x02 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x1d\n\x04wifi\x18\x03 \x01(\x0b\x32\x0f.Status.BoolVal\x12)\n\x10rs485_1_se_slave\x18\x04 \x01(\x0b\x32\x0f.Status.BoolVal\x12\x1f\n\x06zigbee\x18\x05 \x01(\x0b\x32\x0f.Status.BoolVal\x12)\n\x10rs485_2_se_slave\x18\x06 \x01(\x0b\x32\x0f.Status.BoolVal\"\xcf\x01\n\nMngrStatus\x12\x11\n\rSHUTTING_DOWN\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x12\x0b\n\x07STANDBY\x10\x02\x12\x0b\n\x07PAIRING\x10\x03\x12\x14\n\x10POWER_PRODUCTION\x10\x04\x12\x0f\n\x0b\x41\x43_CHARGING\x10\x05\x12\x0e\n\nNOT_PAIRED\x10\x06\x12\x0e\n\nNIGHT_MODE\x10\x07\x12\x13\n\x0fGRID_MONITORING\x10\x08\x12\x08\n\x04IDLE\x10\t\x12\x0f\n\x0bGRM_PAIRING\x10\n\x12\x12\n\x05UNSET\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\"\xf0$\n\tCountries\x12\x13\n\x0f\x43OUNTRY_GENERAL\x10\x00\x12\x15\n\x11\x43OUNTRY_AUSTRALIA\x10\x01\x12\x12\n\x0e\x43OUNTRY_FRANCE\x10\x02\x12\x13\n\x0f\x43OUNTRY_GERMANY\x10\x03\x12\x1c\n\x18\x43OUNTRY_GREECE_CONTINENT\x10\x04\x12\x1a\n\x16\x43OUNTRY_GREECE_ISLANDS\x10\x05\x12\x12\n\x0e\x43OUNTRY_ISRAEL\x10\x06\x12\x11\n\rCOUNTRY_ITALY\x10\x07\x12\x11\n\rCOUNTRY_SPAIN\x10\x08\x12\x0e\n\nCOUNTRY_UK\x10\t\x12\x13\n\x0f\x43OUNTRY_US_AUTO\x10\n\x12\x13\n\x0f\x43OUNTRY_US_208V\x10\x0b\x12\x13\n\x0f\x43OUNTRY_US_240V\x10\x0c\x12\x1e\n\x1a\x43OUNTRY_US_208V_NO_NEUTRAL\x10\r\x12\x1e\n\x1a\x43OUNTRY_US_240V_NO_NEUTRAL\x10\x0e\x12\x14\n\x10\x43OUNTRY_BULGARIA\x10\x0f\x12\x1a\n\x16\x43OUNTRY_CZECH_REPUBLIC\x10\x10\x12\x13\n\x0f\x43OUNTRY_CYPRESS\x10\x11\x12\x13\n\x0f\x43OUNTRY_BELGIUM\x10\x12\x12\x17\n\x13\x43OUNTRY_NETHERLANDS\x10\x13\x12\x14\n\x10\x43OUNTRY_PORTUGAL\x10\x14\x12\x13\n\x0f\x43OUNTRY_AUSTRIA\x10\x15\x12\x18\n\x14\x43OUNTRY_THAILAND_MEA\x10\x16\x12\x15\n\x11\x43OUNTRY_SINGAPORE\x10\x17\x12\x11\n\rCOUNTRY_KOREA\x10\x18\x12\x16\n\x12\x43OUNTRY_JAPAN_AUTO\x10\x19\x12\x16\n\x12\x43OUNTRY_JAPAN_50HZ\x10\x1a\x12\x16\n\x12\x43OUNTRY_JAPAN_60HZ\x10\x1b\x12\x12\n\x0e\x43OUNTRY_TAIWAN\x10\x1c\x12\x13\n\x0f\x43OUNTRY_DENMARK\x10\x1d\x12\x12\n\x0e\x43OUNTRY_SWEDEN\x10\x1e\x12\x18\n\x14\x43OUNTRY_THAILAND_PEA\x10\x1f\x12\x15\n\x11\x43OUNTRY_SRI_LANKA\x10 \x12\x15\n\x11\x43OUNTRY_MAURITIUS\x10!\x12\x17\n\x13\x43OUNTRY_DENMARK_RES\x10\"\x12\x13\n\x0f\x43OUNTRY_US_277V\x10#\x12\x14\n\x10\x43OUNTRY_SLOVENIA\x10$\x12\x12\n\x0e\x43OUNTRY_POLAND\x10%\x12\x18\n\x14\x43OUNTRY_GERMANY_MVGC\x10&\x12\x13\n\x0f\x43OUNTRY_UK_240V\x10\'\x12\x15\n\x11\x43OUNTRY_LITHUANIA\x10(\x12\x11\n\rCOUNTRY_CHINA\x10)\x12\x17\n\x13\x43OUNTRY_PHILIPPINES\x10*\x12\x12\n\x0e\x43OUNTRY_BRAZIL\x10+\x12\x16\n\x12\x43OUNTRY_MEXICO_220\x10,\x12\x16\n\x12\x43OUNTRY_MEXICO_277\x10-\x12\x13\n\x0f\x43OUNTRY_ROMANIA\x10.\x12\x12\n\x0e\x43OUNTRY_LATVIA\x10/\x12\x18\n\x14\x43OUNTRY_SOUTH_AFRICA\x10\x30\x12\x12\n\x0e\x43OUNTRY_TURKEY\x10\x31\x12\x18\n\x14\x43OUNTRY_ITALY_NO_SPI\x10\x32\x12\x1a\n\x16\x43OUNTRY_US_HAWAII_AUTO\x10\x33\x12\x1a\n\x16\x43OUNTRY_US_HAWAII_208V\x10\x34\x12\x1a\n\x16\x43OUNTRY_US_HAWAII_240V\x10\x35\x12%\n!COUNTRY_US_HAWAII_208V_NO_NEUTRAL\x10\x36\x12%\n!COUNTRY_US_HAWAII_240V_NO_NEUTRAL\x10\x37\x12\x19\n\x15\x43OUNTRY_US_HAWAII_277\x10\x38\x12\x17\n\x13\x43OUNTRY_SWITZERLAND\x10\x39\x12\x12\n\x0e\x43OUNTRY_CUSTOM\x10:\x12\x11\n\rCOUNTRY_INDIA\x10;\x12\x13\n\x0f\x43OUNTRY_CROATIA\x10<\x12\"\n\x1e\x43OUNTRY_JAMAICA_240_NO_NEUTRAL\x10=\x12\"\n\x1e\x43OUNTRY_JAMAICA_220_NO_NEUTRAL\x10>\x12#\n\x1f\x43OUNTRY_BARBADOS_230_NO_NEUTRAL\x10?\x12\x14\n\x10\x43OUNTRY_ST_LUCIA\x10@\x12\x19\n\x15\x43OUNTRY_AUSTRALIA_QLD\x10\x41\x12\x17\n\x13\x43OUNTRY_DENMARK_VDE\x10\x42\x12\x1b\n\x17\x43OUNTRY_DENMARK_VDE_RES\x10\x43\x12\x13\n\x0f\x43OUNTRY_IRELAND\x10\x44\x12\x19\n\x15\x43OUNTRY_US_KAUAI_AUTO\x10\x45\x12\x18\n\x14\x43OUNTRY_US_KAUAI_208\x10\x46\x12\x18\n\x14\x43OUNTRY_US_KAUAI_240\x10G\x12#\n\x1f\x43OUNTRY_US_KAUAI_208_NO_NEUTRAL\x10H\x12#\n\x1f\x43OUNTRY_US_KAUAI_240_NO_NEUTRAL\x10I\x12\x18\n\x14\x43OUNTRY_US_KAUAI_277\x10J\x12\x17\n\x13\x43OUNTRY_CYPRESS_240\x10K\x12\x13\n\x0f\x43OUNTRY_CURACAO\x10L\x12\x19\n\x15\x43OUNTRY_N_CYPRESS_240\x10M\x12\x1d\n\x19\x43OUNTRY_ISRAEL_COMMERCIAL\x10N\x12\x11\n\rCOUNTRY_ARUBA\x10O\x12\x16\n\x12\x43OUNTRY_MEXICO_240\x10P\x12$\n COUNTRY_BARBADOS_115V_NO_NEUTRAL\x10Q\x12\x14\n\x10\x43OUNTRY_MALAYSIA\x10R\x12\x12\n\x0e\x43OUNTRY_TAHITI\x10S\x12\x13\n\x0f\x43OUNTRY_HUNGARY\x10T\x12\x12\n\x0e\x43OUNTRY_KUWAIT\x10U\x12\x15\n\x11\x43OUNTRY_CYPRUS_MV\x10V\x12\x12\n\x0e\x43OUNTRY_NORWAY\x10W\x12\x19\n\x15\x43OUNTRY_NORTH_IRELAND\x10X\x12\x1b\n\x17\x43OUNTRY_GERMANY_MV_480V\x10Y\x12\x1b\n\x17\x43OUNTRY_US_HAWAII2_AUTO\x10Z\x12\x1b\n\x17\x43OUNTRY_US_HAWAII2_208V\x10[\x12&\n\"COUNTRY_US_HAWAII2_208V_NO_NEUTRAL\x10\\\x12\x1b\n\x17\x43OUNTRY_US_HAWAII2_240V\x10]\x12&\n\"COUNTRY_US_HAWAII2_240V_NO_NEUTRAL\x10^\x12\x1a\n\x16\x43OUNTRY_US_HAWAII2_277\x10_\x12\x16\n\x12\x43OUNTRY_US_NY_AUTO\x10`\x12\x16\n\x12\x43OUNTRY_US_NY_208V\x10\x61\x12!\n\x1d\x43OUNTRY_US_NY_208V_NO_NEUTRAL\x10\x62\x12\x16\n\x12\x43OUNTRY_US_NY_240V\x10\x63\x12!\n\x1d\x43OUNTRY_US_NY_240V_NO_NEUTRAL\x10\x64\x12\x15\n\x11\x43OUNTRY_US_NY_277\x10\x65\x12\x1e\n\x1a\x43OUNTRY_JAPAN_MV_380V_50HZ\x10\x66\x12\x1e\n\x1a\x43OUNTRY_JAPAN_MV_380V_60HZ\x10g\x12\x1a\n\x16\x43OUNTRY_US_AUTO_RULE21\x10h\x12\x1a\n\x16\x43OUNTRY_US_208V_RULE21\x10i\x12%\n!COUNTRY_US_208V_NO_NEUTRAL_RULE21\x10j\x12\x1a\n\x16\x43OUNTRY_US_240V_RULE21\x10k\x12%\n!COUNTRY_US_240V_NO_NEUTRAL_RULE21\x10l\x12\x1a\n\x16\x43OUNTRY_US_277V_RULE21\x10m\x12\x1d\n\x19\x43OUNTRY_ITALY_277V_NO_SPI\x10n\x12\"\n\x1e\x43OUNTRY_PHILIPPINES_230V_DELTA\x10o\x12\x13\n\x0f\x43OUNTRY_UK_480V\x10p\x12\x19\n\x15\x43OUNTRY_ZIMBABWE_230V\x10q\x12\x15\n\x11\x43OUNTRY_INDONESIA\x10r\x12\x1f\n\x1b\x43OUNTRY_JAPAN_MV_480V_50_HZ\x10s\x12\x1f\n\x1b\x43OUNTRY_JAPAN_MV_480V_60_HZ\x10t\x12\x1a\n\x16\x43OUNTRY_EUROPE_EN50438\x10u\x12\x16\n\x12\x43OUNTRY_CAPE_VERDE\x10v\x12\x17\n\x13\x43OUNTRY_NEW_ZEALAND\x10w\x12\x11\n\rCOUNTRY_GHANA\x10x\x12\x13\n\x0f\x43OUNTRY_FINLAND\x10y\x12\x13\n\x0f\x43OUNTRY_GRENADA\x10z\x12\x14\n\x10\x43OUNTRY_DUBAI_LV\x10{\x12\x19\n\x15\x43OUNTRY_SLOVAKIA_ZSED\x10|\x12\x19\n\x15\x43OUNTRY_SLOVAKIA_SSED\x10}\x12\x18\n\x14\x43OUNTRY_SLOVAKIA_VSD\x10~\x12\x1c\n\x18\x43OUNTRY_PUERTO_RICO_277V\x10\x7f\x12\x1c\n\x17\x43OUNTRY_SOUTH_AFRICA_MV\x10\x80\x01\x12\x1b\n\x16\x43OUNTRY_PHILIPPINES_MV\x10\x81\x01\x12\x16\n\x11\x43OUNTRY_TAIWAN_MV\x10\x82\x01\x12\x15\n\x10\x43OUNTRY_INDIA_MV\x10\x83\x01\x12\x17\n\x12\x43OUNTRY_US_CO_AUTO\x10\x84\x01\x12\x17\n\x12\x43OUNTRY_US_CO_208V\x10\x85\x01\x12\"\n\x1d\x43OUNTRY_US_CO_208V_NO_NEUTRAL\x10\x86\x01\x12\"\n\x1d\x43OUNTRY_US_CO_240V_NO_NEUTRAL\x10\x87\x01\x12\x17\n\x12\x43OUNTRY_US_CO_240V\x10\x88\x01\x12\x17\n\x12\x43OUNTRY_US_CO_277V\x10\x89\x01\x12\x15\n\x10\x43OUNTRY_VICTORIA\x10\x8a\x01\x12\x12\n\rCOUNTRY_KENYA\x10\x8b\x01\x12\x16\n\x11\x43OUNTRY_TURKEY_MV\x10\x8c\x01\x12\x15\n\x10\x43OUNTRY_SPAIN_MV\x10\x8d\x01\x12\x1c\n\x17\x43OUNTRY_THAILAND_MEA_MV\x10\x8e\x01\x12\x1c\n\x17\x43OUNTRY_THAILAND_PEA_MV\x10\x8f\x01\x12\x15\n\x10\x43OUNTRY_CHINA_MV\x10\x90\x01\x12\"\n\x1d\x43OUNTRY_TAIWAN_220_NO_NEUTRAL\x10\x91\x01\x12!\n\x1c\x43OUNTRY_MAURITIUS_ABOVE_220K\x10\x92\x01\x12\x16\n\x11\x43OUNTRY_FRANCE_MV\x10\x93\x01\x12\x10\n\x0b\x43OUNTRY_CEZ\x10\x94\x01\x12\x1a\n\x15\x43OUNTRY_BELGIUM_DELTA\x10\x95\x01\x12\x19\n\x14\x43OUNTRY_NORWAY_DELTA\x10\x96\x01\x12\x1b\n\x16\x43OUNTRY_NETHERLANDS_MV\x10\x97\x01\x12\x12\n\rCOUNTRY_MACAU\x10\x98\x01\x12\x16\n\x11\x43OUNTRY_ARGENTINA\x10\x99\x01\x12!\n\x1c\x43OUNTRY_ARGENTINA_COMMERCIAL\x10\x9a\x01\x12\x16\n\x11\x43OUNTRY_SWEDEN_MV\x10\x9b\x01\x12\x14\n\x0f\x43OUNTRY_VIETNAM\x10\x9c\x01\x12\x1d\n\x18\x43OUNTRY_BRAZIL_127V_220V\x10\x9d\x01\x12\x19\n\x14\x43OUNTRY_BARBADOS_200\x10\x9e\x01\x12\x1f\n\x1a\x43OUNTRY_US_NEW_ENGLAND_208\x10\x9f\x01\x12\x1f\n\x1a\x43OUNTRY_US_NEW_ENGLAND_240\x10\xa0\x01\x12*\n%COUNTRY_US_NEW_ENGLAND_208_NO_NEUTRAL\x10\xa1\x01\x12*\n%COUNTRY_US_NEW_ENGLAND_240_NO_NEUTRAL\x10\xa2\x01\x12\x1f\n\x1a\x43OUNTRY_US_NEW_ENGLAND_277\x10\xa3\x01\x12\x19\n\x14\x43OUNTRY_KOREA_LOW_DC\x10\xa4\x01\x12\x1b\n\x16\x43OUNTRY_ISRAEL_480V_MV\x10\xa5\x01\x12\x17\n\x12\x43OUNTRY_BRAZIL_277\x10\xa6\x01\x12\x18\n\x13\x43OUNTRY_HUNGARY_EON\x10\xa7\x01\x12\x1c\n\x17\x43OUNTRY_SPANISH_ISLANDS\x10\xa8\x01\x12\x11\n\x0c\x43OUNTRY_PERU\x10\xa9\x01\x12\x15\n\x10\x43OUNTRY_COLUMBIA\x10\xaa\x01\x12\x12\n\rCOUNTRY_CHILE\x10\xab\x01\x12\x14\n\x0f\x43OUNTRY_ECUADOR\x10\xac\x01\x12\x12\n\rCOUNTRY_QATAR\x10\xad\x01\x12\x1b\n\x16\x43OUNTRY_AUSTRALIA_480V\x10\xae\x01\x12\x16\n\x11\x43OUNTRY_HONG_KONG\x10\xaf\x01\x12\x14\n\x0f\x43OUNTRY_URUGUAY\x10\xb0\x01\x12\x17\n\x12\x43OUNTRY_ITALIY_A68\x10\xb1\x01\x12\x14\n\x0f\x43OUNTRY_ESTONIA\x10\xb2\x01\x12\x19\n\x0c\x43OUNTRY_NONE\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\"&\n\x0cSwitchStatus\x12\x07\n\x03OFF\x10\x00\x12\x06\n\x02ON\x10\x01\x12\x05\n\x01P\x10\x02\x62\x06proto3')
 )
 
 
@@ -61,8 +61,8 @@ _STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2806,
-  serialized_end=2901,
+  serialized_start=3175,
+  serialized_end=3270,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL)
 
@@ -95,8 +95,8 @@ _STATUS_COMMUNICATION_WIFI_WIFISIGNAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3048,
-  serialized_end=3113,
+  serialized_start=3417,
+  serialized_end=3482,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_WIFI_WIFISIGNAL)
 
@@ -125,8 +125,8 @@ _STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3520,
-  serialized_end=3572,
+  serialized_start=3889,
+  serialized_end=3941,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL)
 
@@ -151,8 +151,8 @@ _STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3574,
-  serialized_end=3643,
+  serialized_start=3943,
+  serialized_end=4012,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS)
 
@@ -173,8 +173,8 @@ _STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3645,
-  serialized_end=3685,
+  serialized_start=4014,
+  serialized_end=4054,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS)
 
@@ -191,8 +191,8 @@ _STATUS_COMMUNICATION_LANSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3996,
-  serialized_end=4015,
+  serialized_start=4056,
+  serialized_end=4075,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_COMMUNICATION_LANSTATUS)
 
@@ -217,8 +217,8 @@ _STATUS_EVSE_CARSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4416,
-  serialized_end=4478,
+  serialized_start=4476,
+  serialized_end=4538,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_EVSE_CARSTATUS)
 
@@ -251,8 +251,8 @@ _STATUS_EVSE_CHARGERSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4480,
-  serialized_end=4582,
+  serialized_start=4540,
+  serialized_end=4642,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_EVSE_CHARGERSTATUS)
 
@@ -277,8 +277,8 @@ _STATUS_METER_CONNECTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5167,
-  serialized_end=5217,
+  serialized_start=5227,
+  serialized_end=5277,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_METER_CONNECTIONTYPE)
 
@@ -299,8 +299,8 @@ _STATUS_METER_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5219,
-  serialized_end=5251,
+  serialized_start=5279,
+  serialized_end=5311,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_METER_STATUS)
 
@@ -321,8 +321,8 @@ _STATUS_BATTERY_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5455,
-  serialized_end=5495,
+  serialized_start=5515,
+  serialized_end=5555,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_BATTERY_STATUS)
 
@@ -383,8 +383,8 @@ _STATUS_BATTERY_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5498,
-  serialized_end=5773,
+  serialized_start=5558,
+  serialized_end=5833,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_BATTERY_STATE)
 
@@ -409,8 +409,8 @@ _STATUS_NOTIFICATION_HEADER_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6184,
-  serialized_end=6231,
+  serialized_start=6244,
+  serialized_end=6291,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_NOTIFICATION_HEADER_TYPE)
 
@@ -455,8 +455,8 @@ _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_INFO = _descriptor.EnumDescripto
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6911,
-  serialized_end=7048,
+  serialized_start=6971,
+  serialized_end=7108,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_INFO)
 
@@ -497,14 +497,14 @@ _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_STAGE = _descriptor.EnumDescript
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7050,
-  serialized_end=7171,
+  serialized_start=7110,
+  serialized_end=7231,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS_STAGE)
 
-_STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS = _descriptor.EnumDescriptor(
+_STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS = _descriptor.EnumDescriptor(
   name='CommTestStatus',
-  full_name='Status.server_communication.CommTestStatus',
+  full_name='Status.ServerCommunication.CommTestStatus',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -523,10 +523,10 @@ _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8910,
-  serialized_end=8966,
+  serialized_start=8952,
+  serialized_end=9008,
 )
-_sym_db.RegisterEnumDescriptor(_STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS)
+_sym_db.RegisterEnumDescriptor(_STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS)
 
 _STATUS_AFCI_TEST_AFCITESTRESULT = _descriptor.EnumDescriptor(
   name='AfciTestResult',
@@ -539,234 +539,843 @@ _STATUS_AFCI_TEST_AFCITESTRESULT = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='AFCI_TEST_ERROR', index=1, number=-1,
+      name='AFCI_TEST_PASS', index=1, number=1,
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='AFCI_TEST_PASS', index=2, number=1,
+      name='AFCI_TEST_ERROR', index=2, number=-1,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9147,
-  serialized_end=9233,
+  serialized_start=9189,
+  serialized_end=9275,
 )
 _sym_db.RegisterEnumDescriptor(_STATUS_AFCI_TEST_AFCITESTRESULT)
 
-
-_STATUS_UINT32 = _descriptor.Descriptor(
-  name='UInt32',
-  full_name='Status.UInt32',
+_STATUS_MNGRSTATUS = _descriptor.EnumDescriptor(
+  name='MngrStatus',
+  full_name='Status.MngrStatus',
   filename=None,
   file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SHUTTING_DOWN', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ERROR', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STANDBY', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PAIRING', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='POWER_PRODUCTION', index=4, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='AC_CHARGING', index=5, number=5,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NOT_PAIRED', index=6, number=6,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NIGHT_MODE', index=7, number=7,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='GRID_MONITORING', index=8, number=8,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='IDLE', index=9, number=9,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='GRM_PAIRING', index=10, number=10,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='UNSET', index=11, number=-1,
+      serialized_options=None,
+      type=None),
+  ],
   containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='Status.UInt32.value', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ro', full_name='Status.UInt32.ro', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='attributes', full_name='Status.UInt32.attributes', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
   serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=725,
-  serialized_end=800,
+  serialized_start=9511,
+  serialized_end=9718,
 )
+_sym_db.RegisterEnumDescriptor(_STATUS_MNGRSTATUS)
 
-_STATUS_UINT32ATTR = _descriptor.Descriptor(
-  name='UInt32Attr',
-  full_name='Status.UInt32Attr',
+_STATUS_COUNTRIES = _descriptor.EnumDescriptor(
+  name='Countries',
+  full_name='Status.Countries',
   filename=None,
   file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GENERAL', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_AUSTRALIA', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_FRANCE', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GERMANY', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GREECE_CONTINENT', index=4, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GREECE_ISLANDS', index=5, number=5,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ISRAEL', index=6, number=6,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ITALY', index=7, number=7,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SPAIN', index=8, number=8,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_UK', index=9, number=9,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_AUTO', index=10, number=10,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_208V', index=11, number=11,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_240V', index=12, number=12,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_208V_NO_NEUTRAL', index=13, number=13,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_240V_NO_NEUTRAL', index=14, number=14,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BULGARIA', index=15, number=15,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CZECH_REPUBLIC', index=16, number=16,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CYPRESS', index=17, number=17,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BELGIUM', index=18, number=18,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_NETHERLANDS', index=19, number=19,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_PORTUGAL', index=20, number=20,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_AUSTRIA', index=21, number=21,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_THAILAND_MEA', index=22, number=22,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SINGAPORE', index=23, number=23,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_KOREA', index=24, number=24,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAPAN_AUTO', index=25, number=25,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAPAN_50HZ', index=26, number=26,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAPAN_60HZ', index=27, number=27,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_TAIWAN', index=28, number=28,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_DENMARK', index=29, number=29,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SWEDEN', index=30, number=30,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_THAILAND_PEA', index=31, number=31,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SRI_LANKA', index=32, number=32,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_MAURITIUS', index=33, number=33,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_DENMARK_RES', index=34, number=34,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_277V', index=35, number=35,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SLOVENIA', index=36, number=36,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_POLAND', index=37, number=37,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GERMANY_MVGC', index=38, number=38,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_UK_240V', index=39, number=39,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_LITHUANIA', index=40, number=40,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CHINA', index=41, number=41,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_PHILIPPINES', index=42, number=42,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BRAZIL', index=43, number=43,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_MEXICO_220', index=44, number=44,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_MEXICO_277', index=45, number=45,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ROMANIA', index=46, number=46,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_LATVIA', index=47, number=47,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SOUTH_AFRICA', index=48, number=48,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_TURKEY', index=49, number=49,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ITALY_NO_SPI', index=50, number=50,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII_AUTO', index=51, number=51,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII_208V', index=52, number=52,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII_240V', index=53, number=53,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII_208V_NO_NEUTRAL', index=54, number=54,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII_240V_NO_NEUTRAL', index=55, number=55,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII_277', index=56, number=56,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SWITZERLAND', index=57, number=57,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CUSTOM', index=58, number=58,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_INDIA', index=59, number=59,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CROATIA', index=60, number=60,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAMAICA_240_NO_NEUTRAL', index=61, number=61,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAMAICA_220_NO_NEUTRAL', index=62, number=62,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BARBADOS_230_NO_NEUTRAL', index=63, number=63,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ST_LUCIA', index=64, number=64,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_AUSTRALIA_QLD', index=65, number=65,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_DENMARK_VDE', index=66, number=66,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_DENMARK_VDE_RES', index=67, number=67,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_IRELAND', index=68, number=68,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_KAUAI_AUTO', index=69, number=69,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_KAUAI_208', index=70, number=70,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_KAUAI_240', index=71, number=71,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_KAUAI_208_NO_NEUTRAL', index=72, number=72,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_KAUAI_240_NO_NEUTRAL', index=73, number=73,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_KAUAI_277', index=74, number=74,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CYPRESS_240', index=75, number=75,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CURACAO', index=76, number=76,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_N_CYPRESS_240', index=77, number=77,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ISRAEL_COMMERCIAL', index=78, number=78,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ARUBA', index=79, number=79,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_MEXICO_240', index=80, number=80,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BARBADOS_115V_NO_NEUTRAL', index=81, number=81,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_MALAYSIA', index=82, number=82,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_TAHITI', index=83, number=83,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_HUNGARY', index=84, number=84,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_KUWAIT', index=85, number=85,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CYPRUS_MV', index=86, number=86,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_NORWAY', index=87, number=87,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_NORTH_IRELAND', index=88, number=88,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GERMANY_MV_480V', index=89, number=89,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII2_AUTO', index=90, number=90,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII2_208V', index=91, number=91,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII2_208V_NO_NEUTRAL', index=92, number=92,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII2_240V', index=93, number=93,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII2_240V_NO_NEUTRAL', index=94, number=94,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_HAWAII2_277', index=95, number=95,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NY_AUTO', index=96, number=96,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NY_208V', index=97, number=97,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NY_208V_NO_NEUTRAL', index=98, number=98,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NY_240V', index=99, number=99,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NY_240V_NO_NEUTRAL', index=100, number=100,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NY_277', index=101, number=101,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAPAN_MV_380V_50HZ', index=102, number=102,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAPAN_MV_380V_60HZ', index=103, number=103,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_AUTO_RULE21', index=104, number=104,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_208V_RULE21', index=105, number=105,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_208V_NO_NEUTRAL_RULE21', index=106, number=106,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_240V_RULE21', index=107, number=107,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_240V_NO_NEUTRAL_RULE21', index=108, number=108,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_277V_RULE21', index=109, number=109,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ITALY_277V_NO_SPI', index=110, number=110,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_PHILIPPINES_230V_DELTA', index=111, number=111,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_UK_480V', index=112, number=112,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ZIMBABWE_230V', index=113, number=113,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_INDONESIA', index=114, number=114,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAPAN_MV_480V_50_HZ', index=115, number=115,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_JAPAN_MV_480V_60_HZ', index=116, number=116,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_EUROPE_EN50438', index=117, number=117,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CAPE_VERDE', index=118, number=118,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_NEW_ZEALAND', index=119, number=119,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GHANA', index=120, number=120,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_FINLAND', index=121, number=121,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_GRENADA', index=122, number=122,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_DUBAI_LV', index=123, number=123,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SLOVAKIA_ZSED', index=124, number=124,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SLOVAKIA_SSED', index=125, number=125,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SLOVAKIA_VSD', index=126, number=126,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_PUERTO_RICO_277V', index=127, number=127,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SOUTH_AFRICA_MV', index=128, number=128,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_PHILIPPINES_MV', index=129, number=129,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_TAIWAN_MV', index=130, number=130,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_INDIA_MV', index=131, number=131,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_CO_AUTO', index=132, number=132,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_CO_208V', index=133, number=133,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_CO_208V_NO_NEUTRAL', index=134, number=134,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_CO_240V_NO_NEUTRAL', index=135, number=135,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_CO_240V', index=136, number=136,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_CO_277V', index=137, number=137,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_VICTORIA', index=138, number=138,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_KENYA', index=139, number=139,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_TURKEY_MV', index=140, number=140,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SPAIN_MV', index=141, number=141,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_THAILAND_MEA_MV', index=142, number=142,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_THAILAND_PEA_MV', index=143, number=143,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CHINA_MV', index=144, number=144,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_TAIWAN_220_NO_NEUTRAL', index=145, number=145,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_MAURITIUS_ABOVE_220K', index=146, number=146,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_FRANCE_MV', index=147, number=147,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CEZ', index=148, number=148,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BELGIUM_DELTA', index=149, number=149,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_NORWAY_DELTA', index=150, number=150,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_NETHERLANDS_MV', index=151, number=151,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_MACAU', index=152, number=152,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ARGENTINA', index=153, number=153,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ARGENTINA_COMMERCIAL', index=154, number=154,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SWEDEN_MV', index=155, number=155,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_VIETNAM', index=156, number=156,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BRAZIL_127V_220V', index=157, number=157,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BARBADOS_200', index=158, number=158,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NEW_ENGLAND_208', index=159, number=159,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NEW_ENGLAND_240', index=160, number=160,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NEW_ENGLAND_208_NO_NEUTRAL', index=161, number=161,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NEW_ENGLAND_240_NO_NEUTRAL', index=162, number=162,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_US_NEW_ENGLAND_277', index=163, number=163,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_KOREA_LOW_DC', index=164, number=164,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ISRAEL_480V_MV', index=165, number=165,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_BRAZIL_277', index=166, number=166,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_HUNGARY_EON', index=167, number=167,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_SPANISH_ISLANDS', index=168, number=168,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_PERU', index=169, number=169,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_COLUMBIA', index=170, number=170,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_CHILE', index=171, number=171,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ECUADOR', index=172, number=172,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_QATAR', index=173, number=173,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_AUSTRALIA_480V', index=174, number=174,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_HONG_KONG', index=175, number=175,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_URUGUAY', index=176, number=176,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ITALIY_A68', index=177, number=177,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_ESTONIA', index=178, number=178,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='COUNTRY_NONE', index=179, number=-1,
+      serialized_options=None,
+      type=None),
+  ],
   containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='min', full_name='Status.UInt32Attr.min', index=0,
-      number=1, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='max', full_name='Status.UInt32Attr.max', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='step', full_name='Status.UInt32Attr.step', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
   serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=802,
-  serialized_end=854,
+  serialized_start=9721,
+  serialized_end=14441,
 )
+_sym_db.RegisterEnumDescriptor(_STATUS_COUNTRIES)
 
-_STATUS_UINT64 = _descriptor.Descriptor(
-  name='UInt64',
-  full_name='Status.UInt64',
+_STATUS_SWITCHSTATUS = _descriptor.EnumDescriptor(
+  name='SwitchStatus',
+  full_name='Status.SwitchStatus',
   filename=None,
   file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='OFF', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ON', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='P', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
   containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='Status.UInt64.value', index=0,
-      number=1, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ro', full_name='Status.UInt64.ro', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='attributes', full_name='Status.UInt64.attributes', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
   serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=856,
-  serialized_end=931,
+  serialized_start=14443,
+  serialized_end=14481,
 )
+_sym_db.RegisterEnumDescriptor(_STATUS_SWITCHSTATUS)
 
-_STATUS_UINT64ATTR = _descriptor.Descriptor(
-  name='UInt64Attr',
-  full_name='Status.UInt64Attr',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='min', full_name='Status.UInt64Attr.min', index=0,
-      number=1, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='max', full_name='Status.UInt64Attr.max', index=1,
-      number=2, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='step', full_name='Status.UInt64Attr.step', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=933,
-  serialized_end=985,
-)
-
-_STATUS_FLOAT32 = _descriptor.Descriptor(
-  name='Float32',
-  full_name='Status.Float32',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value', full_name='Status.Float32.value', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='scaling', full_name='Status.Float32.scaling', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=987,
-  serialized_end=1028,
-)
 
 _STATUS_FLOATS = _descriptor.Descriptor(
   name='FloatS',
@@ -815,8 +1424,8 @@ _STATUS_FLOATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1122,
+  serialized_start=785,
+  serialized_end=877,
 )
 
 _STATUS_FLOATSATTR = _descriptor.Descriptor(
@@ -859,8 +1468,221 @@ _STATUS_FLOATSATTR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1124,
-  serialized_end=1176,
+  serialized_start=879,
+  serialized_end=931,
+)
+
+_STATUS_FLOAT32 = _descriptor.Descriptor(
+  name='Float32',
+  full_name='Status.Float32',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.Float32.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scaling', full_name='Status.Float32.scaling', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=933,
+  serialized_end=974,
+)
+
+_STATUS_UINT32 = _descriptor.Descriptor(
+  name='UInt32',
+  full_name='Status.UInt32',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.UInt32.value', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.UInt32.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='attributes', full_name='Status.UInt32.attributes', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=976,
+  serialized_end=1051,
+)
+
+_STATUS_UINT32ATTR = _descriptor.Descriptor(
+  name='UInt32Attr',
+  full_name='Status.UInt32Attr',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='min', full_name='Status.UInt32Attr.min', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max', full_name='Status.UInt32Attr.max', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='step', full_name='Status.UInt32Attr.step', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1053,
+  serialized_end=1105,
+)
+
+_STATUS_UINT64 = _descriptor.Descriptor(
+  name='UInt64',
+  full_name='Status.UInt64',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Status.UInt64.value', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Status.UInt64.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='attributes', full_name='Status.UInt64.attributes', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1107,
+  serialized_end=1182,
+)
+
+_STATUS_UINT64ATTR = _descriptor.Descriptor(
+  name='UInt64Attr',
+  full_name='Status.UInt64Attr',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='min', full_name='Status.UInt64Attr.min', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max', full_name='Status.UInt64Attr.max', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='step', full_name='Status.UInt64Attr.step', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1184,
+  serialized_end=1236,
 )
 
 _STATUS_BOOLVAL = _descriptor.Descriptor(
@@ -896,8 +1718,8 @@ _STATUS_BOOLVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1178,
-  serialized_end=1214,
+  serialized_start=1238,
+  serialized_end=1274,
 )
 
 _STATUS_STRINGVAL = _descriptor.Descriptor(
@@ -933,8 +1755,8 @@ _STATUS_STRINGVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1216,
-  serialized_end=1254,
+  serialized_start=1276,
+  serialized_end=1314,
 )
 
 _STATUS_TEMPERATURE_UNITS = _descriptor.Descriptor(
@@ -970,8 +1792,8 @@ _STATUS_TEMPERATURE_UNITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1328,
-  serialized_end=1372,
+  serialized_start=1388,
+  serialized_end=1432,
 )
 
 _STATUS_TEMPERATURE = _descriptor.Descriptor(
@@ -1007,8 +1829,8 @@ _STATUS_TEMPERATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1372,
+  serialized_start=1316,
+  serialized_end=1432,
 )
 
 _STATUS_SITE_INVERTERSSTATUS = _descriptor.Descriptor(
@@ -1020,15 +1842,15 @@ _STATUS_SITE_INVERTERSSTATUS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='enabled', full_name='Status.Site.InvertersStatus.enabled', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='connected', full_name='Status.Site.InvertersStatus.connected', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -1044,8 +1866,8 @@ _STATUS_SITE_INVERTERSSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1489,
-  serialized_end=1542,
+  serialized_start=1549,
+  serialized_end=1602,
 )
 
 _STATUS_SITE = _descriptor.Descriptor(
@@ -1088,8 +1910,8 @@ _STATUS_SITE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1375,
-  serialized_end=1542,
+  serialized_start=1435,
+  serialized_end=1602,
 )
 
 _STATUS_OPTIMIZERSSTATUS = _descriptor.Descriptor(
@@ -1125,8 +1947,8 @@ _STATUS_OPTIMIZERSSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1544,
-  serialized_end=1598,
+  serialized_start=1604,
+  serialized_end=1658,
 )
 
 _STATUS_INVERTERS_UNIT_ISOLATION = _descriptor.Descriptor(
@@ -1152,7 +1974,7 @@ _STATUS_INVERTERS_UNIT_ISOLATION = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fault_location', full_name='Status.Inverters.Unit.Isolation.fault_location', index=2,
-      number=3, type=5, cpp_type=1, label=1,
+      number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1169,8 +1991,8 @@ _STATUS_INVERTERS_UNIT_ISOLATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2027,
-  serialized_end=2126,
+  serialized_start=2087,
+  serialized_end=2186,
 )
 
 _STATUS_INVERTERS_UNIT = _descriptor.Descriptor(
@@ -1262,8 +2084,8 @@ _STATUS_INVERTERS_UNIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1733,
-  serialized_end=2126,
+  serialized_start=1793,
+  serialized_end=2186,
 )
 
 _STATUS_INVERTERS = _descriptor.Descriptor(
@@ -1306,8 +2128,8 @@ _STATUS_INVERTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1601,
-  serialized_end=2126,
+  serialized_start=1661,
+  serialized_end=2186,
 )
 
 _STATUS_COMMUNICATION_RS485STATUS_PROTOCOL = _descriptor.Descriptor(
@@ -1364,8 +2186,8 @@ _STATUS_COMMUNICATION_RS485STATUS_PROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2593,
-  serialized_end=2701,
+  serialized_start=2653,
+  serialized_end=2761,
 )
 
 _STATUS_COMMUNICATION_RS485STATUS = _descriptor.Descriptor(
@@ -1408,8 +2230,110 @@ _STATUS_COMMUNICATION_RS485STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2480,
-  serialized_end=2701,
+  serialized_start=2540,
+  serialized_end=2761,
+)
+
+_STATUS_COMMUNICATION_LAN_IP = _descriptor.Descriptor(
+  name='IP',
+  full_name='Status.Communication.Lan.IP',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ip_address', full_name='Status.Communication.Lan.IP.ip_address', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subnet_mask', full_name='Status.Communication.Lan.IP.subnet_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gateway', full_name='Status.Communication.Lan.IP.gateway', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dns', full_name='Status.Communication.Lan.IP.dns', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2919,
+  serialized_end=3070,
+)
+
+_STATUS_COMMUNICATION_LAN = _descriptor.Descriptor(
+  name='Lan',
+  full_name='Status.Communication.Lan',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='dhcp', full_name='Status.Communication.Lan.dhcp', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ip', full_name='Status.Communication.Lan.ip', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='mac', full_name='Status.Communication.Lan.mac', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cable_connected', full_name='Status.Communication.Lan.cable_connected', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_STATUS_COMMUNICATION_LAN_IP, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2764,
+  serialized_end=3070,
 )
 
 _STATUS_COMMUNICATION_CELLULAR = _descriptor.Descriptor(
@@ -1446,8 +2370,8 @@ _STATUS_COMMUNICATION_CELLULAR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2704,
-  serialized_end=2901,
+  serialized_start=3073,
+  serialized_end=3270,
 )
 
 _STATUS_COMMUNICATION_WIFI = _descriptor.Descriptor(
@@ -1491,8 +2415,8 @@ _STATUS_COMMUNICATION_WIFI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2904,
-  serialized_end=3113,
+  serialized_start=3273,
+  serialized_end=3482,
 )
 
 _STATUS_COMMUNICATION_ZIGBEE_OPERATIONMODE = _descriptor.Descriptor(
@@ -1542,8 +2466,8 @@ _STATUS_COMMUNICATION_ZIGBEE_OPERATIONMODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3432,
-  serialized_end=3518,
+  serialized_start=3801,
+  serialized_end=3887,
 )
 
 _STATUS_COMMUNICATION_ZIGBEE = _descriptor.Descriptor(
@@ -1610,110 +2534,8 @@ _STATUS_COMMUNICATION_ZIGBEE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3116,
-  serialized_end=3685,
-)
-
-_STATUS_COMMUNICATION_LAN_IP = _descriptor.Descriptor(
-  name='IP',
-  full_name='Status.Communication.Lan.IP',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ip_address', full_name='Status.Communication.Lan.IP.ip_address', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='subnet_mask', full_name='Status.Communication.Lan.IP.subnet_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='gateway', full_name='Status.Communication.Lan.IP.gateway', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='dns', full_name='Status.Communication.Lan.IP.dns', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3843,
-  serialized_end=3994,
-)
-
-_STATUS_COMMUNICATION_LAN = _descriptor.Descriptor(
-  name='Lan',
-  full_name='Status.Communication.Lan',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dhcp', full_name='Status.Communication.Lan.dhcp', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ip', full_name='Status.Communication.Lan.ip', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='mac', full_name='Status.Communication.Lan.mac', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='cable_connected', full_name='Status.Communication.Lan.cable_connected', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_STATUS_COMMUNICATION_LAN_IP, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3688,
-  serialized_end=3994,
+  serialized_start=3485,
+  serialized_end=4054,
 )
 
 _STATUS_COMMUNICATION = _descriptor.Descriptor(
@@ -1775,7 +2597,7 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_COMMUNICATION_RS485STATUS, _STATUS_COMMUNICATION_CELLULAR, _STATUS_COMMUNICATION_WIFI, _STATUS_COMMUNICATION_ZIGBEE, _STATUS_COMMUNICATION_LAN, ],
+  nested_types=[_STATUS_COMMUNICATION_RS485STATUS, _STATUS_COMMUNICATION_LAN, _STATUS_COMMUNICATION_CELLULAR, _STATUS_COMMUNICATION_WIFI, _STATUS_COMMUNICATION_ZIGBEE, ],
   enum_types=[
     _STATUS_COMMUNICATION_LANSTATUS,
   ],
@@ -1785,8 +2607,8 @@ _STATUS_COMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2129,
-  serialized_end=4015,
+  serialized_start=2189,
+  serialized_end=4075,
 )
 
 _STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
@@ -1850,8 +2672,8 @@ _STATUS_ENERGYSTATISTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4018,
-  serialized_end=4193,
+  serialized_start=4078,
+  serialized_end=4253,
 )
 
 _STATUS_EVSE = _descriptor.Descriptor(
@@ -1924,8 +2746,8 @@ _STATUS_EVSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4196,
-  serialized_end=4582,
+  serialized_start=4256,
+  serialized_end=4642,
 )
 
 _STATUS_METER_FUNCTION = _descriptor.Descriptor(
@@ -2003,8 +2825,8 @@ _STATUS_METER_FUNCTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4818,
-  serialized_end=5165,
+  serialized_start=4878,
+  serialized_end=5225,
 )
 
 _STATUS_METER = _descriptor.Descriptor(
@@ -2084,8 +2906,8 @@ _STATUS_METER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4585,
-  serialized_end=5251,
+  serialized_start=4645,
+  serialized_end=5311,
 )
 
 _STATUS_BATTERY = _descriptor.Descriptor(
@@ -2165,8 +2987,8 @@ _STATUS_BATTERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5254,
-  serialized_end=5773,
+  serialized_start=5314,
+  serialized_end=5833,
 )
 
 _STATUS_NOTIFICATION_HEADER = _descriptor.Descriptor(
@@ -2203,8 +3025,8 @@ _STATUS_NOTIFICATION_HEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6098,
-  serialized_end=6231,
+  serialized_start=6158,
+  serialized_end=6291,
 )
 
 _STATUS_NOTIFICATION_SHUTDOWN = _descriptor.Descriptor(
@@ -2233,8 +3055,8 @@ _STATUS_NOTIFICATION_SHUTDOWN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6233,
-  serialized_end=6288,
+  serialized_start=6293,
+  serialized_end=6348,
 )
 
 _STATUS_NOTIFICATION_GRM = _descriptor.Descriptor(
@@ -2277,8 +3099,8 @@ _STATUS_NOTIFICATION_GRM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6290,
-  serialized_end=6400,
+  serialized_start=6350,
+  serialized_end=6460,
 )
 
 _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_REQUEST = _descriptor.Descriptor(
@@ -2307,8 +3129,8 @@ _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6671,
-  serialized_end=6698,
+  serialized_start=6731,
+  serialized_end=6758,
 )
 
 _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS = _descriptor.Descriptor(
@@ -2367,8 +3189,8 @@ _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6701,
-  serialized_end=7171,
+  serialized_start=6761,
+  serialized_end=7231,
 )
 
 _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA = _descriptor.Descriptor(
@@ -2404,8 +3226,8 @@ _STATUS_NOTIFICATION_PAIRING_PAIRINGDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6524,
-  serialized_end=7171,
+  serialized_start=6584,
+  serialized_end=7231,
 )
 
 _STATUS_NOTIFICATION_PAIRING = _descriptor.Descriptor(
@@ -2441,8 +3263,8 @@ _STATUS_NOTIFICATION_PAIRING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6403,
-  serialized_end=7171,
+  serialized_start=6463,
+  serialized_end=7231,
 )
 
 _STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA = _descriptor.Descriptor(
@@ -2499,8 +3321,8 @@ _STATUS_NOTIFICATION_SLAVEDETECT_SLAVEDETECTDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7312,
-  serialized_end=7513,
+  serialized_start=7372,
+  serialized_end=7573,
 )
 
 _STATUS_NOTIFICATION_SLAVEDETECT = _descriptor.Descriptor(
@@ -2536,8 +3358,8 @@ _STATUS_NOTIFICATION_SLAVEDETECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7174,
-  serialized_end=7513,
+  serialized_start=7234,
+  serialized_end=7573,
 )
 
 _STATUS_NOTIFICATION_NOTACTIVATED = _descriptor.Descriptor(
@@ -2566,8 +3388,8 @@ _STATUS_NOTIFICATION_NOTACTIVATED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7515,
-  serialized_end=7574,
+  serialized_start=7575,
+  serialized_end=7634,
 )
 
 _STATUS_NOTIFICATION_ERRORBANNER = _descriptor.Descriptor(
@@ -2610,8 +3432,8 @@ _STATUS_NOTIFICATION_ERRORBANNER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7577,
-  serialized_end=7706,
+  serialized_start=7637,
+  serialized_end=7766,
 )
 
 _STATUS_NOTIFICATION = _descriptor.Descriptor(
@@ -2675,54 +3497,54 @@ _STATUS_NOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5776,
-  serialized_end=7706,
+  serialized_start=5836,
+  serialized_end=7766,
 )
 
-_STATUS_SERVER_COMMUNICATION_LANTEST = _descriptor.Descriptor(
+_STATUS_SERVERCOMMUNICATION_LANTEST = _descriptor.Descriptor(
   name='LanTest',
-  full_name='Status.server_communication.LanTest',
+  full_name='Status.ServerCommunication.LanTest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='physical_connection', full_name='Status.server_communication.LanTest.physical_connection', index=0,
+      name='physical_connection', full_name='Status.ServerCommunication.LanTest.physical_connection', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip_address', full_name='Status.server_communication.LanTest.ip_address', index=1,
+      name='ip_address', full_name='Status.ServerCommunication.LanTest.ip_address', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='gateway_link', full_name='Status.server_communication.LanTest.gateway_link', index=2,
+      name='gateway_link', full_name='Status.ServerCommunication.LanTest.gateway_link', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='internet_link', full_name='Status.server_communication.LanTest.internet_link', index=3,
+      name='internet_link', full_name='Status.ServerCommunication.LanTest.internet_link', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='monitoring_link', full_name='Status.server_communication.LanTest.monitoring_link', index=4,
+      name='monitoring_link', full_name='Status.ServerCommunication.LanTest.monitoring_link', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='s_ok', full_name='Status.server_communication.LanTest.s_ok', index=5,
+      name='s_ok', full_name='Status.ServerCommunication.LanTest.s_ok', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2740,75 +3562,75 @@ _STATUS_SERVER_COMMUNICATION_LANTEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7849,
-  serialized_end=8261,
+  serialized_start=7906,
+  serialized_end=8312,
 )
 
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST = _descriptor.Descriptor(
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST = _descriptor.Descriptor(
   name='HgCommTest',
-  full_name='Status.server_communication.HgCommTest',
+  full_name='Status.ServerCommunication.HgCommTest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='repeater_1_connection', full_name='Status.server_communication.HgCommTest.repeater_1_connection', index=0,
+      name='repeater_1_connection', full_name='Status.ServerCommunication.HgCommTest.repeater_1_connection', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='repeater_2_connection', full_name='Status.server_communication.HgCommTest.repeater_2_connection', index=1,
+      name='repeater_2_connection', full_name='Status.ServerCommunication.HgCommTest.repeater_2_connection', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='homegateway_connection', full_name='Status.server_communication.HgCommTest.homegateway_connection', index=2,
+      name='homegateway_connection', full_name='Status.ServerCommunication.HgCommTest.homegateway_connection', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='physical_connection', full_name='Status.server_communication.HgCommTest.physical_connection', index=3,
+      name='physical_connection', full_name='Status.ServerCommunication.HgCommTest.physical_connection', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ip_address', full_name='Status.server_communication.HgCommTest.ip_address', index=4,
+      name='ip_address', full_name='Status.ServerCommunication.HgCommTest.ip_address', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='gateway_link', full_name='Status.server_communication.HgCommTest.gateway_link', index=5,
+      name='gateway_link', full_name='Status.ServerCommunication.HgCommTest.gateway_link', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='internet_link', full_name='Status.server_communication.HgCommTest.internet_link', index=6,
+      name='internet_link', full_name='Status.ServerCommunication.HgCommTest.internet_link', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='monitoring_link', full_name='Status.server_communication.HgCommTest.monitoring_link', index=7,
+      name='monitoring_link', full_name='Status.ServerCommunication.HgCommTest.monitoring_link', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='s_ok', full_name='Status.server_communication.HgCommTest.s_ok', index=8,
+      name='s_ok', full_name='Status.ServerCommunication.HgCommTest.s_ok', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2826,26 +3648,26 @@ _STATUS_SERVER_COMMUNICATION_HGCOMMTEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8264,
-  serialized_end=8908,
+  serialized_start=8315,
+  serialized_end=8950,
 )
 
-_STATUS_SERVER_COMMUNICATION = _descriptor.Descriptor(
-  name='server_communication',
-  full_name='Status.server_communication',
+_STATUS_SERVERCOMMUNICATION = _descriptor.Descriptor(
+  name='ServerCommunication',
+  full_name='Status.ServerCommunication',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='lan_test', full_name='Status.server_communication.lan_test', index=0,
+      name='lan_test', full_name='Status.ServerCommunication.lan_test', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hg2_test', full_name='Status.server_communication.hg2_test', index=1,
+      name='hg2_test', full_name='Status.ServerCommunication.hg2_test', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2854,9 +3676,9 @@ _STATUS_SERVER_COMMUNICATION = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_SERVER_COMMUNICATION_LANTEST, _STATUS_SERVER_COMMUNICATION_HGCOMMTEST, ],
+  nested_types=[_STATUS_SERVERCOMMUNICATION_LANTEST, _STATUS_SERVERCOMMUNICATION_HGCOMMTEST, ],
   enum_types=[
-    _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS,
+    _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -2864,8 +3686,8 @@ _STATUS_SERVER_COMMUNICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7709,
-  serialized_end=8966,
+  serialized_start=7769,
+  serialized_end=9008,
 )
 
 _STATUS_AFCI_TEST = _descriptor.Descriptor(
@@ -2902,8 +3724,8 @@ _STATUS_AFCI_TEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9072,
-  serialized_end=9233,
+  serialized_start=9114,
+  serialized_end=9275,
 )
 
 _STATUS_AFCI = _descriptor.Descriptor(
@@ -2953,8 +3775,8 @@ _STATUS_AFCI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8969,
-  serialized_end=9233,
+  serialized_start=9011,
+  serialized_end=9275,
 )
 
 _STATUS_SERVERCHANNEL = _descriptor.Descriptor(
@@ -3018,8 +3840,8 @@ _STATUS_SERVERCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9236,
-  serialized_end=9466,
+  serialized_start=9278,
+  serialized_end=9508,
 )
 
 _STATUS = _descriptor.Descriptor(
@@ -3080,15 +3902,15 @@ _STATUS = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='status', full_name='Status.status', index=7,
-      number=8, type=5, cpp_type=1, label=1,
+      number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='switch_status', full_name='Status.switch_status', index=8,
-      number=9, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -3108,7 +3930,7 @@ _STATUS = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='country', full_name='Status.country', index=11,
-      number=12, type=5, cpp_type=1, label=1,
+      number=12, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -3200,8 +4022,11 @@ _STATUS = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STATUS_UINT32, _STATUS_UINT32ATTR, _STATUS_UINT64, _STATUS_UINT64ATTR, _STATUS_FLOAT32, _STATUS_FLOATS, _STATUS_FLOATSATTR, _STATUS_BOOLVAL, _STATUS_STRINGVAL, _STATUS_TEMPERATURE, _STATUS_SITE, _STATUS_OPTIMIZERSSTATUS, _STATUS_INVERTERS, _STATUS_COMMUNICATION, _STATUS_ENERGYSTATISTICS, _STATUS_EVSE, _STATUS_METER, _STATUS_BATTERY, _STATUS_NOTIFICATION, _STATUS_SERVER_COMMUNICATION, _STATUS_AFCI, _STATUS_SERVERCHANNEL, ],
+  nested_types=[_STATUS_FLOATS, _STATUS_FLOATSATTR, _STATUS_FLOAT32, _STATUS_UINT32, _STATUS_UINT32ATTR, _STATUS_UINT64, _STATUS_UINT64ATTR, _STATUS_BOOLVAL, _STATUS_STRINGVAL, _STATUS_TEMPERATURE, _STATUS_SITE, _STATUS_OPTIMIZERSSTATUS, _STATUS_INVERTERS, _STATUS_COMMUNICATION, _STATUS_ENERGYSTATISTICS, _STATUS_EVSE, _STATUS_METER, _STATUS_BATTERY, _STATUS_NOTIFICATION, _STATUS_SERVERCOMMUNICATION, _STATUS_AFCI, _STATUS_SERVERCHANNEL, ],
   enum_types=[
+    _STATUS_MNGRSTATUS,
+    _STATUS_COUNTRIES,
+    _STATUS_SWITCHSTATUS,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -3210,19 +4035,19 @@ _STATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=17,
-  serialized_end=9466,
+  serialized_end=14481,
 )
 
+_STATUS_FLOATS.fields_by_name['attributes'].message_type = _STATUS_FLOATSATTR
+_STATUS_FLOATS.containing_type = _STATUS
+_STATUS_FLOATSATTR.containing_type = _STATUS
+_STATUS_FLOAT32.containing_type = _STATUS
 _STATUS_UINT32.fields_by_name['attributes'].message_type = _STATUS_UINT32ATTR
 _STATUS_UINT32.containing_type = _STATUS
 _STATUS_UINT32ATTR.containing_type = _STATUS
 _STATUS_UINT64.fields_by_name['attributes'].message_type = _STATUS_UINT64ATTR
 _STATUS_UINT64.containing_type = _STATUS
 _STATUS_UINT64ATTR.containing_type = _STATUS
-_STATUS_FLOAT32.containing_type = _STATUS
-_STATUS_FLOATS.fields_by_name['attributes'].message_type = _STATUS_FLOATSATTR
-_STATUS_FLOATS.containing_type = _STATUS
-_STATUS_FLOATSATTR.containing_type = _STATUS
 _STATUS_BOOLVAL.containing_type = _STATUS
 _STATUS_STRINGVAL.containing_type = _STATUS
 _STATUS_TEMPERATURE_UNITS.containing_type = _STATUS_TEMPERATURE
@@ -3247,6 +4072,16 @@ _STATUS_INVERTERS.containing_type = _STATUS
 _STATUS_COMMUNICATION_RS485STATUS_PROTOCOL.containing_type = _STATUS_COMMUNICATION_RS485STATUS
 _STATUS_COMMUNICATION_RS485STATUS.fields_by_name['protocol'].message_type = _STATUS_COMMUNICATION_RS485STATUS_PROTOCOL
 _STATUS_COMMUNICATION_RS485STATUS.containing_type = _STATUS_COMMUNICATION
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['ip_address'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['subnet_mask'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN_IP.containing_type = _STATUS_COMMUNICATION_LAN
+_STATUS_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _STATUS_BOOLVAL
+_STATUS_COMMUNICATION_LAN.fields_by_name['ip'].message_type = _STATUS_COMMUNICATION_LAN_IP
+_STATUS_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _STATUS_STRINGVAL
+_STATUS_COMMUNICATION_LAN.fields_by_name['cable_connected'].message_type = _STATUS_BOOLVAL
+_STATUS_COMMUNICATION_LAN.containing_type = _STATUS_COMMUNICATION
 _STATUS_COMMUNICATION_CELLULAR.fields_by_name['signal_strength'].enum_type = _STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL
 _STATUS_COMMUNICATION_CELLULAR.containing_type = _STATUS_COMMUNICATION
 _STATUS_COMMUNICATION_CELLULAR_CELLULARSIGNAL.containing_type = _STATUS_COMMUNICATION_CELLULAR
@@ -3263,16 +4098,6 @@ _STATUS_COMMUNICATION_ZIGBEE.containing_type = _STATUS_COMMUNICATION
 _STATUS_COMMUNICATION_ZIGBEE_ZIGBEESIGNAL.containing_type = _STATUS_COMMUNICATION_ZIGBEE
 _STATUS_COMMUNICATION_ZIGBEE_SLAVESTATUS.containing_type = _STATUS_COMMUNICATION_ZIGBEE
 _STATUS_COMMUNICATION_ZIGBEE_MODULESTATUS.containing_type = _STATUS_COMMUNICATION_ZIGBEE
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['ip_address'].message_type = _STATUS_STRINGVAL
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['subnet_mask'].message_type = _STATUS_STRINGVAL
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['gateway'].message_type = _STATUS_STRINGVAL
-_STATUS_COMMUNICATION_LAN_IP.fields_by_name['dns'].message_type = _STATUS_STRINGVAL
-_STATUS_COMMUNICATION_LAN_IP.containing_type = _STATUS_COMMUNICATION_LAN
-_STATUS_COMMUNICATION_LAN.fields_by_name['dhcp'].message_type = _STATUS_BOOLVAL
-_STATUS_COMMUNICATION_LAN.fields_by_name['ip'].message_type = _STATUS_COMMUNICATION_LAN_IP
-_STATUS_COMMUNICATION_LAN.fields_by_name['mac'].message_type = _STATUS_STRINGVAL
-_STATUS_COMMUNICATION_LAN.fields_by_name['cable_connected'].message_type = _STATUS_BOOLVAL
-_STATUS_COMMUNICATION_LAN.containing_type = _STATUS_COMMUNICATION
 _STATUS_COMMUNICATION.fields_by_name['rs485_1'].message_type = _STATUS_COMMUNICATION_RS485STATUS
 _STATUS_COMMUNICATION.fields_by_name['rs485_2'].message_type = _STATUS_COMMUNICATION_RS485STATUS
 _STATUS_COMMUNICATION.fields_by_name['lan'].enum_type = _STATUS_COMMUNICATION_LANSTATUS
@@ -3356,27 +4181,27 @@ _STATUS_NOTIFICATION.fields_by_name['slave_detect'].message_type = _STATUS_NOTIF
 _STATUS_NOTIFICATION.fields_by_name['not_activated'].message_type = _STATUS_NOTIFICATION_NOTACTIVATED
 _STATUS_NOTIFICATION.fields_by_name['error_banner'].message_type = _STATUS_NOTIFICATION_ERRORBANNER
 _STATUS_NOTIFICATION.containing_type = _STATUS
-_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['physical_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['ip_address'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['gateway_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['internet_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['monitoring_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_LANTEST.fields_by_name['s_ok'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_LANTEST.containing_type = _STATUS_SERVER_COMMUNICATION
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['repeater_1_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['repeater_2_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['homegateway_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['physical_connection'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['ip_address'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['gateway_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['internet_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['monitoring_link'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.fields_by_name['s_ok'].enum_type = _STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS
-_STATUS_SERVER_COMMUNICATION_HGCOMMTEST.containing_type = _STATUS_SERVER_COMMUNICATION
-_STATUS_SERVER_COMMUNICATION.fields_by_name['lan_test'].message_type = _STATUS_SERVER_COMMUNICATION_LANTEST
-_STATUS_SERVER_COMMUNICATION.fields_by_name['hg2_test'].message_type = _STATUS_SERVER_COMMUNICATION_HGCOMMTEST
-_STATUS_SERVER_COMMUNICATION.containing_type = _STATUS
-_STATUS_SERVER_COMMUNICATION_COMMTESTSTATUS.containing_type = _STATUS_SERVER_COMMUNICATION
+_STATUS_SERVERCOMMUNICATION_LANTEST.fields_by_name['physical_connection'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_LANTEST.fields_by_name['ip_address'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_LANTEST.fields_by_name['gateway_link'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_LANTEST.fields_by_name['internet_link'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_LANTEST.fields_by_name['monitoring_link'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_LANTEST.fields_by_name['s_ok'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_LANTEST.containing_type = _STATUS_SERVERCOMMUNICATION
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['repeater_1_connection'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['repeater_2_connection'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['homegateway_connection'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['physical_connection'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['ip_address'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['gateway_link'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['internet_link'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['monitoring_link'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.fields_by_name['s_ok'].enum_type = _STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS
+_STATUS_SERVERCOMMUNICATION_HGCOMMTEST.containing_type = _STATUS_SERVERCOMMUNICATION
+_STATUS_SERVERCOMMUNICATION.fields_by_name['lan_test'].message_type = _STATUS_SERVERCOMMUNICATION_LANTEST
+_STATUS_SERVERCOMMUNICATION.fields_by_name['hg2_test'].message_type = _STATUS_SERVERCOMMUNICATION_HGCOMMTEST
+_STATUS_SERVERCOMMUNICATION.containing_type = _STATUS
+_STATUS_SERVERCOMMUNICATION_COMMTESTSTATUS.containing_type = _STATUS_SERVERCOMMUNICATION
 _STATUS_AFCI_TEST.fields_by_name['result'].enum_type = _STATUS_AFCI_TEST_AFCITESTRESULT
 _STATUS_AFCI_TEST.containing_type = _STATUS_AFCI
 _STATUS_AFCI_TEST_AFCITESTRESULT.containing_type = _STATUS_AFCI_TEST
@@ -3391,6 +4216,9 @@ _STATUS_SERVERCHANNEL.fields_by_name['rs485_2_se_slave'].message_type = _STATUS_
 _STATUS_SERVERCHANNEL.containing_type = _STATUS
 _STATUS.fields_by_name['site'].message_type = _STATUS_SITE
 _STATUS.fields_by_name['optimizers_status'].message_type = _STATUS_OPTIMIZERSSTATUS
+_STATUS.fields_by_name['status'].enum_type = _STATUS_MNGRSTATUS
+_STATUS.fields_by_name['switch_status'].enum_type = _STATUS_SWITCHSTATUS
+_STATUS.fields_by_name['country'].enum_type = _STATUS_COUNTRIES
 _STATUS.fields_by_name['inverters'].message_type = _STATUS_INVERTERS
 _STATUS.fields_by_name['communication'].message_type = _STATUS_COMMUNICATION
 _STATUS.fields_by_name['energy'].message_type = _STATUS_ENERGYSTATISTICS
@@ -3398,13 +4226,37 @@ _STATUS.fields_by_name['evse'].message_type = _STATUS_EVSE
 _STATUS.fields_by_name['meters'].message_type = _STATUS_METER
 _STATUS.fields_by_name['batteries'].message_type = _STATUS_BATTERY
 _STATUS.fields_by_name['notification'].message_type = _STATUS_NOTIFICATION
-_STATUS.fields_by_name['server_comm'].message_type = _STATUS_SERVER_COMMUNICATION
+_STATUS.fields_by_name['server_comm'].message_type = _STATUS_SERVERCOMMUNICATION
 _STATUS.fields_by_name['afci'].message_type = _STATUS_AFCI
 _STATUS.fields_by_name['server_channel'].message_type = _STATUS_SERVERCHANNEL
+_STATUS_MNGRSTATUS.containing_type = _STATUS
+_STATUS_COUNTRIES.containing_type = _STATUS
+_STATUS_SWITCHSTATUS.containing_type = _STATUS
 DESCRIPTOR.message_types_by_name['Status'] = _STATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), dict(
+
+  FloatS = _reflection.GeneratedProtocolMessageType('FloatS', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_FLOATS,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.FloatS)
+    ))
+  ,
+
+  FloatSAttr = _reflection.GeneratedProtocolMessageType('FloatSAttr', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_FLOATSATTR,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.FloatSAttr)
+    ))
+  ,
+
+  Float32 = _reflection.GeneratedProtocolMessageType('Float32', (_message.Message,), dict(
+    DESCRIPTOR = _STATUS_FLOAT32,
+    __module__ = 'status_pb2'
+    # @@protoc_insertion_point(class_scope:Status.Float32)
+    ))
+  ,
 
   UInt32 = _reflection.GeneratedProtocolMessageType('UInt32', (_message.Message,), dict(
     DESCRIPTOR = _STATUS_UINT32,
@@ -3431,27 +4283,6 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
     DESCRIPTOR = _STATUS_UINT64ATTR,
     __module__ = 'status_pb2'
     # @@protoc_insertion_point(class_scope:Status.UInt64Attr)
-    ))
-  ,
-
-  Float32 = _reflection.GeneratedProtocolMessageType('Float32', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_FLOAT32,
-    __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.Float32)
-    ))
-  ,
-
-  FloatS = _reflection.GeneratedProtocolMessageType('FloatS', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_FLOATS,
-    __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.FloatS)
-    ))
-  ,
-
-  FloatSAttr = _reflection.GeneratedProtocolMessageType('FloatSAttr', (_message.Message,), dict(
-    DESCRIPTOR = _STATUS_FLOATSATTR,
-    __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.FloatSAttr)
     ))
   ,
 
@@ -3541,6 +4372,20 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
       ))
     ,
 
+    Lan = _reflection.GeneratedProtocolMessageType('Lan', (_message.Message,), dict(
+
+      IP = _reflection.GeneratedProtocolMessageType('IP', (_message.Message,), dict(
+        DESCRIPTOR = _STATUS_COMMUNICATION_LAN_IP,
+        __module__ = 'status_pb2'
+        # @@protoc_insertion_point(class_scope:Status.Communication.Lan.IP)
+        ))
+      ,
+      DESCRIPTOR = _STATUS_COMMUNICATION_LAN,
+      __module__ = 'status_pb2'
+      # @@protoc_insertion_point(class_scope:Status.Communication.Lan)
+      ))
+    ,
+
     Cellular = _reflection.GeneratedProtocolMessageType('Cellular', (_message.Message,), dict(
       DESCRIPTOR = _STATUS_COMMUNICATION_CELLULAR,
       __module__ = 'status_pb2'
@@ -3566,20 +4411,6 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
       DESCRIPTOR = _STATUS_COMMUNICATION_ZIGBEE,
       __module__ = 'status_pb2'
       # @@protoc_insertion_point(class_scope:Status.Communication.Zigbee)
-      ))
-    ,
-
-    Lan = _reflection.GeneratedProtocolMessageType('Lan', (_message.Message,), dict(
-
-      IP = _reflection.GeneratedProtocolMessageType('IP', (_message.Message,), dict(
-        DESCRIPTOR = _STATUS_COMMUNICATION_LAN_IP,
-        __module__ = 'status_pb2'
-        # @@protoc_insertion_point(class_scope:Status.Communication.Lan.IP)
-        ))
-      ,
-      DESCRIPTOR = _STATUS_COMMUNICATION_LAN,
-      __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.Communication.Lan)
       ))
     ,
     DESCRIPTOR = _STATUS_COMMUNICATION,
@@ -3707,24 +4538,24 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
     ))
   ,
 
-  server_communication = _reflection.GeneratedProtocolMessageType('server_communication', (_message.Message,), dict(
+  ServerCommunication = _reflection.GeneratedProtocolMessageType('ServerCommunication', (_message.Message,), dict(
 
     LanTest = _reflection.GeneratedProtocolMessageType('LanTest', (_message.Message,), dict(
-      DESCRIPTOR = _STATUS_SERVER_COMMUNICATION_LANTEST,
+      DESCRIPTOR = _STATUS_SERVERCOMMUNICATION_LANTEST,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.server_communication.LanTest)
+      # @@protoc_insertion_point(class_scope:Status.ServerCommunication.LanTest)
       ))
     ,
 
     HgCommTest = _reflection.GeneratedProtocolMessageType('HgCommTest', (_message.Message,), dict(
-      DESCRIPTOR = _STATUS_SERVER_COMMUNICATION_HGCOMMTEST,
+      DESCRIPTOR = _STATUS_SERVERCOMMUNICATION_HGCOMMTEST,
       __module__ = 'status_pb2'
-      # @@protoc_insertion_point(class_scope:Status.server_communication.HgCommTest)
+      # @@protoc_insertion_point(class_scope:Status.ServerCommunication.HgCommTest)
       ))
     ,
-    DESCRIPTOR = _STATUS_SERVER_COMMUNICATION,
+    DESCRIPTOR = _STATUS_SERVERCOMMUNICATION,
     __module__ = 'status_pb2'
-    # @@protoc_insertion_point(class_scope:Status.server_communication)
+    # @@protoc_insertion_point(class_scope:Status.ServerCommunication)
     ))
   ,
 
@@ -3753,13 +4584,13 @@ Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,),
   # @@protoc_insertion_point(class_scope:Status)
   ))
 _sym_db.RegisterMessage(Status)
+_sym_db.RegisterMessage(Status.FloatS)
+_sym_db.RegisterMessage(Status.FloatSAttr)
+_sym_db.RegisterMessage(Status.Float32)
 _sym_db.RegisterMessage(Status.UInt32)
 _sym_db.RegisterMessage(Status.UInt32Attr)
 _sym_db.RegisterMessage(Status.UInt64)
 _sym_db.RegisterMessage(Status.UInt64Attr)
-_sym_db.RegisterMessage(Status.Float32)
-_sym_db.RegisterMessage(Status.FloatS)
-_sym_db.RegisterMessage(Status.FloatSAttr)
 _sym_db.RegisterMessage(Status.BoolVal)
 _sym_db.RegisterMessage(Status.StringVal)
 _sym_db.RegisterMessage(Status.Temperature)
@@ -3773,12 +4604,12 @@ _sym_db.RegisterMessage(Status.Inverters.Unit.Isolation)
 _sym_db.RegisterMessage(Status.Communication)
 _sym_db.RegisterMessage(Status.Communication.Rs485Status)
 _sym_db.RegisterMessage(Status.Communication.Rs485Status.Protocol)
+_sym_db.RegisterMessage(Status.Communication.Lan)
+_sym_db.RegisterMessage(Status.Communication.Lan.IP)
 _sym_db.RegisterMessage(Status.Communication.Cellular)
 _sym_db.RegisterMessage(Status.Communication.Wifi)
 _sym_db.RegisterMessage(Status.Communication.Zigbee)
 _sym_db.RegisterMessage(Status.Communication.Zigbee.OperationMode)
-_sym_db.RegisterMessage(Status.Communication.Lan)
-_sym_db.RegisterMessage(Status.Communication.Lan.IP)
 _sym_db.RegisterMessage(Status.EnergyStatistics)
 _sym_db.RegisterMessage(Status.Evse)
 _sym_db.RegisterMessage(Status.Meter)
@@ -3796,9 +4627,9 @@ _sym_db.RegisterMessage(Status.Notification.SlaveDetect)
 _sym_db.RegisterMessage(Status.Notification.SlaveDetect.SlaveDetectData)
 _sym_db.RegisterMessage(Status.Notification.NotActivated)
 _sym_db.RegisterMessage(Status.Notification.ErrorBanner)
-_sym_db.RegisterMessage(Status.server_communication)
-_sym_db.RegisterMessage(Status.server_communication.LanTest)
-_sym_db.RegisterMessage(Status.server_communication.HgCommTest)
+_sym_db.RegisterMessage(Status.ServerCommunication)
+_sym_db.RegisterMessage(Status.ServerCommunication.LanTest)
+_sym_db.RegisterMessage(Status.ServerCommunication.HgCommTest)
 _sym_db.RegisterMessage(Status.Afci)
 _sym_db.RegisterMessage(Status.Afci.Test)
 _sym_db.RegisterMessage(Status.ServerChannel)

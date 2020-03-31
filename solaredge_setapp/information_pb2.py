@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x11information.proto\"\xff\x06\n\x0bInformation\x12\n\n\x02sn\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12)\n\x06hw_ids\x18\x05 \x01(\x0b\x32\x19.Information.StringKeyVal\x12,\n\terror_log\x18\x06 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x0bwarning_log\x18\x07 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x1e.Information.ControllersErrors\x12)\n\x0b\x62ui_version\x18\t \x01(\x0b\x32\x14.Information.Version\x1a*\n\x0cUInt32KeyVal\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r\x1a*\n\x0cStringKeyVal\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x1a^\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\r\x12\r\n\x05month\x18\x02 \x01(\r\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\r\x12\x0c\n\x04hour\x18\x04 \x01(\r\x12\x0e\n\x06minute\x18\x05 \x01(\r\x12\x0e\n\x06second\x18\x06 \x01(\r\x1aH\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\r\x12\r\n\x05minor\x18\x02 \x01(\r\x12\r\n\x05\x62uild\x18\x03 \x01(\r\x12\x10\n\x08\x63i_build\x18\x04 \x01(\r\x1a\x92\x02\n\x11\x43ontrollersErrors\x12<\n\x07loggers\x18\x01 \x03(\x0b\x32+.Information.ControllersErrors.ErrorsLogger\x1a\xbe\x01\n\x0c\x45rrorsLogger\x12\x14\n\x0c\x63ontrollerID\x18\x01 \x01(\r\x12\x11\n\tsubsystem\x18\x02 \x01(\r\x12\x41\n\x06\x65rrors\x18\x03 \x03(\x0b\x32\x31.Information.ControllersErrors.ErrorsLogger.Error\x1a\x42\n\x05\x45rror\x12\x12\n\nerror_code\x18\x01 \x01(\r\x12%\n\nstart_time\x18\x02 \x01(\x0b\x32\x11.Information.Dateb\x06proto3')
+  serialized_pb=_b('\n\x11information.proto\"\xd4\x06\n\x0bInformation\x12\n\n\x02sn\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12)\n\x06hw_ids\x18\x05 \x01(\x0b\x32\x19.Information.StringKeyVal\x12,\n\terror_log\x18\x06 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x0bwarning_log\x18\x07 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x1e.Information.ControllersErrors\x1a*\n\x0cUInt32KeyVal\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r\x1a*\n\x0cStringKeyVal\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x1a^\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\r\x12\r\n\x05month\x18\x02 \x01(\r\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\r\x12\x0c\n\x04hour\x18\x04 \x01(\r\x12\x0e\n\x06minute\x18\x05 \x01(\r\x12\x0e\n\x06second\x18\x06 \x01(\r\x1aH\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\r\x12\r\n\x05minor\x18\x02 \x01(\r\x12\r\n\x05\x62uild\x18\x03 \x01(\r\x12\x10\n\x08\x63i_build\x18\x04 \x01(\r\x1a\x92\x02\n\x11\x43ontrollersErrors\x12<\n\x07loggers\x18\x01 \x03(\x0b\x32+.Information.ControllersErrors.ErrorsLogger\x1a\xbe\x01\n\x0c\x45rrorsLogger\x12\x14\n\x0c\x63ontrollerID\x18\x01 \x01(\r\x12\x11\n\tsubsystem\x18\x02 \x01(\r\x12\x41\n\x06\x65rrors\x18\x03 \x03(\x0b\x32\x31.Information.ControllersErrors.ErrorsLogger.Error\x1a\x42\n\x05\x45rror\x12\x12\n\nerror_code\x18\x01 \x01(\r\x12%\n\nstart_time\x18\x02 \x01(\x0b\x32\x11.Information.Dateb\x06proto3')
 )
 
 
@@ -58,8 +58,8 @@ _INFORMATION_UINT32KEYVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=384,
-  serialized_end=426,
+  serialized_start=341,
+  serialized_end=383,
 )
 
 _INFORMATION_STRINGKEYVAL = _descriptor.Descriptor(
@@ -95,8 +95,8 @@ _INFORMATION_STRINGKEYVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=428,
-  serialized_end=470,
+  serialized_start=385,
+  serialized_end=427,
 )
 
 _INFORMATION_DATE = _descriptor.Descriptor(
@@ -160,8 +160,8 @@ _INFORMATION_DATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=472,
-  serialized_end=566,
+  serialized_start=429,
+  serialized_end=523,
 )
 
 _INFORMATION_VERSION = _descriptor.Descriptor(
@@ -211,8 +211,8 @@ _INFORMATION_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=568,
-  serialized_end=640,
+  serialized_start=525,
+  serialized_end=597,
 )
 
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR = _descriptor.Descriptor(
@@ -248,8 +248,8 @@ _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=851,
-  serialized_end=917,
+  serialized_start=808,
+  serialized_end=874,
 )
 
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER = _descriptor.Descriptor(
@@ -292,8 +292,8 @@ _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=727,
-  serialized_end=917,
+  serialized_start=684,
+  serialized_end=874,
 )
 
 _INFORMATION_CONTROLLERSERRORS = _descriptor.Descriptor(
@@ -322,8 +322,8 @@ _INFORMATION_CONTROLLERSERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=643,
-  serialized_end=917,
+  serialized_start=600,
+  serialized_end=874,
 )
 
 _INFORMATION = _descriptor.Descriptor(
@@ -389,13 +389,6 @@ _INFORMATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='bui_version', full_name='Information.bui_version', index=8,
-      number=9, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -409,7 +402,7 @@ _INFORMATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=917,
+  serialized_end=874,
 )
 
 _INFORMATION_UINT32KEYVAL.containing_type = _INFORMATION
@@ -429,7 +422,6 @@ _INFORMATION.fields_by_name['hw_ids'].message_type = _INFORMATION_STRINGKEYVAL
 _INFORMATION.fields_by_name['error_log'].message_type = _INFORMATION_UINT32KEYVAL
 _INFORMATION.fields_by_name['warning_log'].message_type = _INFORMATION_UINT32KEYVAL
 _INFORMATION.fields_by_name['errors'].message_type = _INFORMATION_CONTROLLERSERRORS
-_INFORMATION.fields_by_name['bui_version'].message_type = _INFORMATION_VERSION
 DESCRIPTOR.message_types_by_name['Information'] = _INFORMATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
