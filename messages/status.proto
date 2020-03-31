@@ -6,7 +6,7 @@ message Status {
     message UInt32 {
         uint32 value = 1;
         bool ro = 2;
-        UInt64Attr attributes = 3;
+        UInt32Attr attributes = 3;
     }
     message UInt32Attr {
         uint32 min = 1;
