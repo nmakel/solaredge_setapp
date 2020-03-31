@@ -42,24 +42,30 @@ status = solaredge_setapp.status.Status(status_request)
 print(f"Inverter {status['serial']} is {status['status']} at {status['power_ac']:.2f}W")
 ```
 
-See the relevant `.proto` file in `solaredge_setapp/messages/` for all possible fields, and `solaredge_setapp/%endpoint%.py` for all fields that are parsed for that particular endpoint.
+See the relevant `.proto` file in `solaredge_setapp/messages/`, and `solaredge_setapp/%endpoint%.py` for all fields that are parsed for that particular endpoint.
 
-The following API endpoints are available:
+The following API endpoints contain most of the useful information, and are therefore the primary focus:
 
-* **app_configs** - web/v1/app_configs - language and functionality, **fully implemented**
-* **communication** - web/v1/communication - ethernet, wifi and RS485 settings, **work in progress**
-* **grid_protection** - web/v1/grid_protection - grid protection settings, **work in progress**
-* **information** - web/v1/information - CPU and DSP versions, error logging, **fully implemented**
-* **maintenance** - web/v1/maintenance - power optimizer telemetry, **work in progress**
-* **power_control** - web/v1/power_control - grid power settings, **not implemented**
-* **region** - web/v1/region - language and country settings, **fully implemented**
-* **status** - web/v1/status - inverter and energy statistics, **work in progress**
+* **information** - web/v1/information - CPU and DSP versions, error logging
+* **maintenance** - web/v1/maintenance - power optimizer telemetry
+* **status** - web/v1/status - inverter and energy statistics
+
+The remaining endpoints mostly concern functionality of the commissioning interface itself, and are therefore not implemented:
+
+* **app_configs** - web/v1/app_configs - language and functionality
+* **communication** - web/v1/communication - ethernet, wifi and RS485 settings
+* **grid_protection** - web/v1/grid_protection - grid protection settings
+* **power_control** - web/v1/power_control - grid power settings
+* **region** - web/v1/region - language and country settings
+
 
 ## Working on protobuf messages
 
-Clone the project if you want to modify the protocol buffer messages.
-
 In order to use `compile_proto.sh` to (re)compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's `protobuf-compiler` package. *(Re-)compiling the protobuf messages is only necessary if you have made local changes to them.*
+
+You can test changes to .proto files directly by passing raw protobufs to `protoc`:
+
+```curl -s http://your-inverter-ip/web/v1/status | protoc --decode Status messages/status.proto```
 
 ## Limitations
 
