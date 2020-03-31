@@ -6,7 +6,7 @@ This project is built on the efforts of others: for Home Assistant users, see dr
 
 Developed and tested on a European SE3500H-RW000BNN4 SolarEdge single-phase inverter -- CPU versions 4.7.26, 4.6.24 and 4.5.41, and WSA 1.3.9, 1.2.9 and 1.1.12. It may work on older, or newer, versions of SetApp.
 
-Release 0.0.6 and earlier are compatible with WSA <= 1.3.9.
+Release 0.0.7 and earlier are compatible with WSA <= 1.3.9.
 
 ## Installation
 
