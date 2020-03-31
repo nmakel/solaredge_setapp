@@ -14,14 +14,10 @@ if __name__ == "__main__":
 
     data = {}
     web_services = [
-        ("Region", "web/v1/region", solaredge_setapp.region.Region(), "region"),
-        ("Communication", "web/v1/communication", solaredge_setapp.communication.Communication(), "communication"),
-        ("Power Control", "web/v1/power_control", solaredge_setapp.power_control.PowerControl(), "power_control"),
+        # name, endpoint_url, module_class, data_name
         ("Maintenance", "web/v1/maintenance", solaredge_setapp.maintenance.Maintenance(), "maintenance"),
         ("Information", "web/v1/information", solaredge_setapp.information.Information(), "information"),
-        ("WebAppConfigs", "web/v1/app_configs", solaredge_setapp.app_configs.WebAppConfigs(), "app_configs"),
-        ("Status", "web/v1/status", solaredge_setapp.status.Status(), "status"),
-        ("Grid Protection", "web/v1/grid_protection", solaredge_setapp.grid_protection.GridProtection(), "grid_protection"),
+        ("Status", "web/v1/status", solaredge_setapp.status.Status(), "status")
     ]
 
     try:

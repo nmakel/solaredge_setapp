@@ -1,11 +1,6 @@
-from solaredge_setapp import region
-from solaredge_setapp import communication
-from solaredge_setapp import power_control
 from solaredge_setapp import maintenance
 from solaredge_setapp import information
-from solaredge_setapp import app_configs
 from solaredge_setapp import status
-from solaredge_setapp import grid_protection
 
 import enum
 import itertools
@@ -244,6 +239,7 @@ Status = enum.Enum(
     )
 )
 
+
 _WIFI_STATUS = {
     0: ["None", "NONE"],
     1: ["Connected", "CONNECTED"],
@@ -260,19 +256,5 @@ WifiStatus = enum.Enum(
     value="WifiStatus",
     names=itertools.chain.from_iterable(
         itertools.product(v, [k]) for k, v in _WIFI_STATUS.items()
-    )
-)
-
-_WIFI_SIGNAL = {
-    0: ["None", "NONE"],
-    1: ["Poor", "LOW"],
-    2: ["Medium", "MID"],
-    3: ["Good", "HIGH"],
-    4: ["Excellent", "EXCELLENT"]
-}
-WifiSignal = enum.Enum(
-    value="WifiSignal",
-    names=itertools.chain.from_iterable(
-        itertools.product(v, [k]) for k, v in _WIFI_SIGNAL.items()
     )
 )
