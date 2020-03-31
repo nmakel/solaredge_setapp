@@ -2,9 +2,9 @@
 
 solaredge_setapp is a python library that parses inverter and power optimizer data from a compatible SolarEdge PV inverter. Only those models which support SetApp commissioning are supported.
 
-This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge-local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters.
+This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge-local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters. Developed and tested on a European SE3500H-RW000BNN4 SolarEdge single-phase inverter.
 
-Developed and tested on a European SE3500H-RW000BNN4 SolarEdge single-phase inverter -- CPU versions 4.7.26, 4.6.24 and 4.5.41, and WSA 1.3.9, 1.2.9 and 1.1.12. It may work on older, or newer, versions of SetApp.
+Current WSA target: **1.3.9**
 
 Release 0.0.7 and earlier are compatible with WSA <= 1.3.9.
 
