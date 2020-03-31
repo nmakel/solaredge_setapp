@@ -196,28 +196,6 @@ Countries = enum.Enum(
 )
 
 
-_LANGUAGES = {
-    0: ["English", "ENGLISH"],
-    1: ["German", "GERMAN"],
-    2: ["Spanish (Hispanic)", "SPANISH_MEXICAN"],
-    3: ["French", "FRENCH"],
-    4: ["Italian", "ITALIAN"],
-    5: ["Dutch", "DUTCH"],
-    6: ["Japanese", "JAPANESE"],
-    7: ["Korean", "KOREAN"],
-    8: ["Chinese (Traditional)", "CHINESE_TRADITIONAL"],
-    9: ["Portuguese (Brazilian)", "PORTUGUESE_BRAZILIAN"],
-    10: ["Polish", "POLISH"],
-    11: ["Hungarian", "HUNGARIAN"]
-}
-Languages = enum.Enum(
-    value="Languages",
-    names=itertools.chain.from_iterable(
-        itertools.product(v, [k]) for k, v in _LANGUAGES.items()
-    )
-)
-
-
 _STATUS = {
     -1: ["Not Set", "UNSET"],
     0: ["Shutting Down", "SHUTTING_DOWN"],
@@ -236,25 +214,5 @@ Status = enum.Enum(
     value="Status",
     names=itertools.chain.from_iterable(
         itertools.product(v, [k]) for k, v in _STATUS.items()
-    )
-)
-
-
-_WIFI_STATUS = {
-    0: ["None", "NONE"],
-    1: ["Connected", "CONNECTED"],
-    2: ["In Progress", "IN_PROGRESS"],
-    3: ["Disconnected", "DISCONNECTED"],
-    4: ["WPS Discovery", "WPS_DISCOVERY"],
-    5: ["Invalid Password", "ERROR_PASSWORD"],
-    6: ["DHCP Error", "ERROR_DHCP"],
-    7: ["Connection Error", "ERROR_COMMUNICATION"],
-    8: ["Unknown Error", "ERROR_OTHER"],
-    9: ["Server Unreachable", "ERROR_UNREACHABLE"]
-}
-WifiStatus = enum.Enum(
-    value="WifiStatus",
-    names=itertools.chain.from_iterable(
-        itertools.product(v, [k]) for k, v in _WIFI_STATUS.items()
     )
 )
