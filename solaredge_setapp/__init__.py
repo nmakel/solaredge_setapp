@@ -216,3 +216,155 @@ Status = enum.Enum(
         itertools.product(v, [k]) for k, v in _STATUS.items()
     )
 )
+
+
+class AfciTestResult(enum.Enum):
+    AFCI_TEST_FAIL = 0
+    AFCI_TEST_ERROR = -1
+    AFCI_TEST_PASS = 1
+
+
+class InverterTestCondition(enum.Enum):
+    TEST_COND_OK = 0
+    TEST_COND_NOT_READY_GRM = 1
+    TEST_COND_NOT_READY_PROD = 2
+    TEST_COND_NOT_READY_INV_OFF = 3
+
+
+class InverterTestStatus(enum.Enum):
+    TEST_STATUS_NOT_TESTED = 0
+    TEST_STATUS_PASSED = 1
+    TEST_STATUS_FAILED = 2
+
+
+class BatterySelfTestPrecondition(enum.Enum):
+    TEST_PRE_COND_OK = 0
+    TEST_PRE_COND_NOT_READY_INV_OFF = 1
+    TEST_PRE_COND_NOT_READY_INV_COMM_ERROR = 2
+    TEST_PRE_COND_NOT_READY_INV_BATT_ERROR = 3
+    TEST_PRE_COND_NOT_READY_MIN_SOE = 4
+
+
+class BatterTestStatus(enum.Enum):
+    NOT_TESTED = 0
+    IN_PROGRESS = 1
+    PASSED = 2
+    FAILED = 3
+
+
+class LanStatus(enum.Enum):
+    OK = 0
+
+
+class CellularSignal(enum.Enum):
+    NONE = 0
+    LOW = 1
+    LOWEST = 2
+    MEDIUM = 3
+    HIGH = 4
+    HIGHEST = 5
+    UNKNOWN = 6
+
+
+class WifiSignal(enum.Enum):
+    NONE = 0
+    LOW = 1
+    MID = 2
+    HIGH = 3
+    EXCELLENT = 4
+
+
+class ZigbeeSignal(enum.Enum):
+    NONE = 0
+    LOW = 1
+    MID = 2
+    HIGH = 3
+
+
+class ZigbeeSlaveStatus(enum.Enum):
+    NOT_CONNECTED = 0
+    CONNECTED = 1
+    MASTER_NOT_FOUND = 2
+
+
+class ZigbeeModuleStatus(enum.Enum):
+    INITIALIZING = 0
+    OK = 1
+
+
+class EvseCarStatus(enum.Enum):
+    disconnected = 0
+    connected = 1
+    charging_car = 2
+
+
+class EvseChargerStatus(enum.Enum):
+    ready = 0
+    initializing = 1
+    charging = 2
+    charging_boost = 3
+    charging_excess_pv = 4
+
+
+class MeterConnectionType(enum.Enum):
+    RS485_1 = 0
+    RS485_2 = 1
+    S0 = 2
+
+
+class MeterStatus(enum.Enum):
+    OK = 0
+    COMM_ERROR = 1
+
+
+class BatteryStatus(enum.Enum):
+    CONNECTED = 0
+    DISCNNECTED = 1
+
+
+class BatteryState(enum.Enum):
+    BMS_STATE_INVALID = 0
+    BMS_STATE_OFF = 1
+    BMS_STATE_STDBY = 2
+    BMS_STATE_INIT = 3
+    BMS_STATE_CHARGE = 4
+    BMS_STATE_DISCHARGE = 5
+    BMS_STATE_FAULT = 6
+    BMS_STATE_IDLE = 7
+    BMS_STATE_COMM_ERROR = 8
+    BMS_STATE_RESERVED1 = 9
+    BMS_STATE_RESERVED2 = 10
+    BMS_STATE_SLEEP = 11
+
+
+class HeaderType(enum.Enum):
+    ERROR = 0
+    WARNING = 1
+    INFORMATION = 2
+
+
+class PairingStatusInfo(enum.Enum):
+    OK = 0
+    INV_OFF = 2
+    NIGHT_MODE = 3
+    IN_PROCESS = 4
+    ERROR = 5
+    ERROR_OPT_DETECT = 6
+    ERROR_STRING_DETECT = 7
+    NOT_IN_PROCESS = 8
+
+
+class PairingStatusStage(enum.Enum):
+    NOT_ACTIVE = 0
+    WAIT_VIN_DECREASE = 1
+    PAIRING = 2
+    SAVE_SESSION = 3
+    OPT_DETECT = 4
+    STRING_DETECT = 5
+    END = 6
+
+
+class CommTestStatus(enum.Enum):
+    FAILED = 0
+    PASSED = 1
+    NOT_TESTED = 2

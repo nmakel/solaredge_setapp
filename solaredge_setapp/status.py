@@ -30,7 +30,7 @@ class Status:
                 "afci": {
                     "enabled": bool(proto.afci.enable),
                     "manual_reconnect": bool(proto.afci.manual_reconnect),
-                    "test_result": int(proto.afci.test.result)
+                    "test_result": solaredge_setapp.AfciTestResult(int(proto.afci.test.result)).name
                 },
                 "optimizers": {
                     "total": int(proto.optimizers_status.enabled),
