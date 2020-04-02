@@ -26,7 +26,8 @@ class Maintenance:
                 "ntp_server": str(proto.date_and_time.ntp),
                 "afci": {
                     "enabled": bool(proto.afci.enable),
-                    "manual_reconnect": bool(proto.afci.manual_reconnect)
+                    "manual_reconnect": bool(proto.afci.manual_reconnect),
+                    "test_result": solaredge_setapp.AfciTestResult(int(proto.afci.test.result)).name
                 },
             }
 
