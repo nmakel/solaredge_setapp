@@ -6,7 +6,7 @@ import enum
 import itertools
 
 
-TARGET_VERSION = "1.3.9"
+TARGET_VERSION = "1.4.10"
 
 
 _COUNTRIES = {
