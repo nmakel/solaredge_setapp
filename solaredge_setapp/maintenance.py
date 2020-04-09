@@ -22,7 +22,7 @@ class Maintenance:
                 "timestamp": int(proto.header.timestamp),
                 "standby": bool(proto.standby.activated.value),
                 "utc_offset": int(proto.date_and_time.gmt_offset.value),
-                "ntp_server": str(proto.date_and_time.ntp).replace("\n\t", ""),
+                "ntp_server": str(proto.date_and_time.ntp.value),
                 "afci": {
                     "enabled": bool(proto.afci.enable.value),
                     "manual_reconnect": bool(proto.afci.manual_reconnect.value),
@@ -33,7 +33,7 @@ class Maintenance:
             parsed["inverters"] = []
 
             for inverter in proto.diagnostics.inverters.primary, proto.diagnostics.inverters.left, proto.diagnostics.inverters.right:
-                if inverter.inv_sn:
+                if inverter.inv_sn.value:
 
                     if inverter.isolation.r_iso.scaling:
                         inverter_isolation_r_iso = float(inverter.isolation.r_iso.value / inverter.isolation.r_iso.scaling)
@@ -46,7 +46,7 @@ class Maintenance:
                         inverter_isolation_alpha = float(inverter.isolation.alpha.value)
 
                     parsed["inverters"].append({
-                        "serial": str(inverter.inv_sn).replace("\n\u000b", ""),
+                        "serial": str(inverter.inv_sn.value),
                         "isolation": {
                             "fault_location": int(inverter.isolation.fault_location.value),
                             "r_iso": inverter_isolation_r_iso,
@@ -57,7 +57,7 @@ class Maintenance:
                             "online": int(inverter.optimizers_status.connected.value)
                         },       
                         "optimizers": [{
-                            "serial": str(po.sn).replace("\n\u000b", ""),
+                            "serial": str(po.sn.value),
                             "online": bool(po.reports.value),
                             "po_voltage": int(po.output_v.value),
                             "po_power": int(po.energy.value),

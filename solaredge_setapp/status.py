@@ -37,12 +37,12 @@ class Status:
                 },
                 "server_connection": bool(proto.s_ok),
                 "server_communication": {
-                    "physical": bool(proto.server_comm.lan_test.physical_connection),
-                    "ip": bool(proto.server_comm.lan_test.ip_address),
-                    "gateway": bool(proto.server_comm.lan_test.gateway_link),
-                    "internet": bool(proto.server_comm.lan_test.internet_link),
-                    "monitoring": bool(proto.server_comm.lan_test.monitoring_link),
-                    "server": bool(proto.server_comm.lan_test.s_ok)
+                    "physical": solaredge_setapp.CommTestStatus(int(proto.server_comm.lan_test.physical_connection)).name,
+                    "ip": solaredge_setapp.CommTestStatus(int(proto.server_comm.lan_test.ip_address)).name,
+                    "gateway": solaredge_setapp.CommTestStatus(int(proto.server_comm.lan_test.gateway_link)).name,
+                    "internet": solaredge_setapp.CommTestStatus(int(proto.server_comm.lan_test.internet_link)).name,
+                    "monitoring": solaredge_setapp.CommTestStatus(int(proto.server_comm.lan_test.monitoring_link)).name,
+                    "server": solaredge_setapp.CommTestStatus(int(proto.server_comm.lan_test.s_ok)).name
                 },
                 "server_channel": {
                     "lan": bool(proto.server_channel.lan.value),
