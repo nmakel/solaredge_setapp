@@ -15,11 +15,6 @@ message Status {
         int32 step = 3;
     }
 
-    message Float32 {
-        int32 value = 1;
-        int32 scaling = 2;
-    }
-
     message Int32 {
         uint32 value = 1;
         bool ro = 2;
@@ -40,17 +35,6 @@ message Status {
         uint32 min = 1;
         uint32 max = 2;
         uint32 step = 3;
-    }
-
-    message UInt64 {
-        uint64 value = 1;
-        bool ro = 2;
-        UInt64Attr attributes = 3;
-    }
-    message UInt64Attr {
-        uint64 min = 1;
-        uint64 max = 2;
-        uint64 step = 3;
     }
 
     message BoolVal {
@@ -267,6 +251,12 @@ message Status {
         P = 2;
     }
 
+    enum ServerChannelMethod {
+        MANUAL_SELECT = 0;
+        AUTO_SELECT = 1;
+    }
+
+
     message Temperature {
         message Units {
             BoolVal celsius = 1;
@@ -289,15 +279,15 @@ message Status {
     }
 
     message OptimizersStatus {
-        int32 enabled = 1;
-        int32 connected = 2; 
+        uint32 enabled = 1;
+        uint32 connected = 2; 
     }
 
     message Inverters {
         message Unit {
             message Isolation {
-                Float32 alpha = 1;
-                Float32 r_iso = 2;
+                FloatS alpha = 1;
+                FloatS r_iso = 2;
                 UInt32 fault_location = 3;
             }
 
@@ -429,7 +419,6 @@ message Status {
         float this_year = 3;
         float total = 4;
         FloatS current_consumption = 5;
-        UInt64 total_consumption = 6;
     }
 
     message Evse {
@@ -450,7 +439,7 @@ message Status {
         CarStatus car_status = 1;
         ChargerStatus charger_status = 2;
         float charge_power = 3;
-        uint64 session_energy = 4;
+        float session_energy = 4;
         uint32 error_code = 5;
         uint32 subsystem = 6;
         StringVal sn = 7;
@@ -538,7 +527,7 @@ message Status {
 
         message GRM {
             Header header = 1;
-            float remaining_time = 2;
+            UInt32 remaining_time = 2;
             UInt32 total_time = 3;
         }
 
@@ -574,7 +563,7 @@ message Status {
                     Info info = 2;
                     Stage stage = 3;
                     uint32 progress = 4;
-                    int32 remaining_time = 5;
+                    uint32 remaining_time = 5;
                 }
 
                 Request request = 1;
@@ -663,7 +652,7 @@ message Status {
         BoolVal enable = 1;
         BoolVal manual_reconnect = 2;
         Test test = 3;
-        bool dsp_error = 4;
+        BoolVal dsp_error = 4;
     }
 
     message ServerChannel {
@@ -673,6 +662,67 @@ message Status {
         BoolVal rs485_1_se_slave = 4;
         BoolVal zigbee = 5;
         BoolVal rs485_2_se_slave = 6;
+    }
+
+    message Bui {
+        enum OperationMode {
+            INV_OPER_MODE_ON_GRID = 0;
+            INV_OPER_MODE_STORAGE_OFF_GRID = 1;
+            INV_OPER_MODE_DG_OFF_GRID = 2;
+        }
+
+        message SubsystemError {
+            UInt32 error_code = 1;
+            UInt32 subsystem = 2;
+        }
+
+        StringVal sn = 1;
+        OperationMode operation_mode = 2;
+        BoolVal communicating = 3;
+        SubsystemError subsystem_error = 4;
+    }
+
+    message SOkStatus {
+        enum LanNetStatus {
+            LAN_UNKNOWN = 0;
+        }
+
+        enum WifiNetStatus {
+            WIFI_UNKNOWN = 0;
+        }
+
+        enum CellNetStatus {
+            CELL_UNKNOWN = 0;
+            CELL_NOT_DETECTED = 1;
+            CELL_DETECTION_IN_PROGRESS = 2;
+            CELL_INIT_MODULE = 3;
+            CELL_NO_SIM_CARD = 4;
+            CELL_MISSING_PIN = 5;
+            CELL_SIM_NOT_REGISTERED = 6;
+            CELL_MODEM_NOT_ACTIVATED = 7;
+            CELL_MISSING_APN = 8;
+            CELL_NO_SIGNAL = 9;
+            CELL_NO_COMM_WITH_MODULE = 10;
+            CELL_ESTABLISHING_INTERNET_CONNECTION = 11;
+            CELL_NO_INTERNET_CONNECTION = 12;
+            CELL_NO_TELEM_PLAN_SELECT = 13;
+            CELL_ACTIVATING_TELEM_PLAN = 14;
+            CELL_ACTIVATING_ERROR_NO_RESPONSE = 15;
+            CELL_ACTIVATING_ERROR_UNIDENTIFIED_NUMBER = 16;
+            CELL_ACTIVATING_ERROR_SMS_BLOCKED = 17;
+            CELL_ACTIVATING_ERROR_NO_SMS = 18;
+            CELL_ACTIVATING_ERROR = 19;
+            CELL_CONNECTING_TO_SERVER = 20;
+            CELL_CONNECTED = 21;
+        }
+
+        LanNetStatus lan_net_status = 1;
+        WifiNetStatus wifi_net_status = 2;
+        CellNetStatus cell_net_status = 3;
+    }
+
+    message AdvancedGridSettings {
+        BoolVal alternative_power_source = 1;
     }
 
     string sn = 1;
@@ -699,4 +749,8 @@ message Status {
     ServerCommunication server_comm = 22;
     Afci afci = 23;
     ServerChannel server_channel = 24;
+    ServerChannelMethod server_channel_method = 25;
+    Bui bui = 26;
+    SOkStatus s_ok_status = 27;
+    AdvancedGridSettings advanced_grid_settings = 28;
 }

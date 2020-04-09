@@ -2,7 +2,7 @@ syntax = "proto3";
 
 
 message Maintenance {
-   
+
     message FloatS {
         int32 value = 1;
         int32 scaling = 2;
@@ -13,11 +13,6 @@ message Maintenance {
         int32 min = 1;
         int32 max = 2;
         int32 step = 3;
-    }
-
-    message Float32 {
-        int32 value = 1;
-        int32 scaling = 2;
     }
 
     message Int32 {
@@ -42,17 +37,6 @@ message Maintenance {
         uint32 step = 3;
     }
 
-    message UInt64 {
-        uint64 value = 1;
-        bool ro = 2;
-        UInt64Attr attributes = 3;
-    }
-    message UInt64Attr {
-        uint64 min = 1;
-        uint64 max = 2;
-        uint64 step = 3;
-    }
-
     message BoolVal {
         bool value = 1;
         bool ro = 2;
@@ -74,7 +58,7 @@ message Maintenance {
         }
 
         Date date = 1;
-        string ntp = 2;
+        StringVal ntp = 2;
         Int32 gmt_offset = 3;
     }
 
@@ -103,7 +87,7 @@ message Maintenance {
         BoolVal enable = 1;
         BoolVal manual_reconnect = 2;
         Test test = 3;
-        bool dsp_error = 4;
+        BoolVal dsp_error = 4;
     }
 
     message FwUpgrade {}
@@ -113,10 +97,10 @@ message Maintenance {
         message Inverters {
             message Unit {
                 message Optimizer {
-                    string sn = 1;
+                    StringVal sn = 1;
                     BoolVal reports = 2;
                     DateAndTime.Date date = 3;
-                    Float32 energy = 4;
+                    FloatS energy = 4;
                     UInt32 output_v = 5;
                     UInt32 input_v = 6;
                     UInt32 input_c = 7;
@@ -124,14 +108,14 @@ message Maintenance {
                 }
 
                 message Isolation {
-                    Float32 alpha = 1;
-                    Float32 r_iso = 2;
+                    FloatS alpha = 1;
+                    FloatS r_iso = 2;
                     UInt32 fault_location = 3;
                 }
 
                 message OptimizersStatus {
-                    int32 enabled = 1;
-                    int32 connected = 2; 
+                    UInt32 enabled = 1;
+                    UInt32 connected = 2; 
                 }
 
                 message SelfTest {
@@ -144,16 +128,16 @@ message Maintenance {
 
                     message Test {
                         message SettingsValues {
-                            Float32 vgmax = 1;
-                            Float32 vgmin = 2;
-                            Float32 fgmax = 3;
-                            Float32 fgmin = 4;
-                            uint32 holdtime = 5;
+                            FloatS vgmax = 1;
+                            FloatS vgmin = 2;
+                            FloatS fgmax = 3;
+                            FloatS fgmin = 4;
+                            UInt32 holdtime = 5;
                         }
 
                         message ResultsValues {
-                            Float32 trip_value = 1;
-                            uint32 trip_time = 2;
+                            FloatS trip_value = 1;
+                            UInt32 trip_time = 2;
                         }
 
                         enum TestStatus {
@@ -162,8 +146,8 @@ message Maintenance {
                             TEST_STATUS_FAILED = 2;
                         }
 
-                        uint32 idx = 1;
-                        string name = 2;
+                        UInt32 idx = 1;
+                        StringVal name = 2;
                         SettingsValues settings = 3;
                         ResultsValues result = 4;
                         TestStatus status = 5;
@@ -182,7 +166,7 @@ message Maintenance {
                     Optimizer optimizer_4 = 6;
                 }
 
-                string inv_sn = 1;
+                StringVal inv_sn = 1;
                 repeated Optimizer optimizer = 2;
                 Isolation isolation = 3;
                 OptimizersStatus optimizers_status = 4;
@@ -212,9 +196,9 @@ message Maintenance {
             }
 
             message BatteryTest {
-                uint32 idx = 1;
-                string battery_sn = 2;
-                int32 battery_power = 3;
+                UInt32 idx = 1;
+                StringVal battery_sn = 2;
+                Int32 battery_power = 3;
                 BatteryTestStatus communication = 4;
                 BatteryTestStatus charge = 5;
                 BatteryTestStatus discharge = 6;
@@ -243,15 +227,15 @@ message Maintenance {
 
     message GridProtection {
         message Trip {
-            Float32 value = 1;
-            uint32 holdtime = 2;
+            FloatS value = 1;
+            UInt32 holdtime = 2;
         }
 
         Trip vg_max = 1;
         Trip vg_min = 2;
         Trip fg_max = 3;
         Trip fg_min = 4;
-        uint32 grm_time = 5;
+        UInt32 grm_time = 5;
         Trip v_line_max = 6;
         Trip v_line_min = 7;
     }
@@ -259,12 +243,20 @@ message Maintenance {
     message BoardReplacement {}
 
     message GridProtectionLogin {
-        string password = 1;
+        StringVal password = 1;
     }
 
     message Header {
         string id = 1;
         uint32 timestamp = 2;
+    }
+
+    message CircuitBreakers {
+        FloatS inv_rating = 1;
+    }
+
+    message Bui {
+        BoolVal hw_reboot = 1;
     }
 
     DateAndTime date_and_time = 1;
@@ -276,8 +268,10 @@ message Maintenance {
     Standby standby = 7;
     GridProtection grid_protection = 8;
     BoardReplacement board_replacement = 9;
-    bool factory_reset = 10;
-    bool reset_counters = 11;
+    BoolVal factory_reset = 10;
+    BoolVal reset_counters = 11;
     GridProtectionLogin grid_protection_login = 12;
     Header header = 13;
+    CircuitBreakers circuit_breakers = 14;
+    Bui bui = 15;
 }
