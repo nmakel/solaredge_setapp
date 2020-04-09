@@ -11,7 +11,6 @@ class Maintenance:
             return self.parse_protobuf(bytes)
 
     def parse_protobuf(self, bytes):
-
         parsed = {}
 
         try:
@@ -21,12 +20,12 @@ class Maintenance:
             parsed = {
                 "serial": str(proto.header.id),
                 "timestamp": int(proto.header.timestamp),
-                "standby": bool(proto.standby.activated),
-                "utc_offset": int(proto.date_and_time.gmt_offset),
-                "ntp_server": str(proto.date_and_time.ntp),
+                "standby": bool(proto.standby.activated.value),
+                "utc_offset": int(proto.date_and_time.gmt_offset.value),
+                "ntp_server": str(proto.date_and_time.ntp).replace("\n\t", ""),
                 "afci": {
-                    "enabled": bool(proto.afci.enable),
-                    "manual_reconnect": bool(proto.afci.manual_reconnect),
+                    "enabled": bool(proto.afci.enable.value),
+                    "manual_reconnect": bool(proto.afci.manual_reconnect.value),
                     "test_result": solaredge_setapp.AfciTestResult(int(proto.afci.test.result)).name
                 },
             }
@@ -47,32 +46,32 @@ class Maintenance:
                         inverter_isolation_alpha = float(inverter.isolation.alpha.value)
 
                     parsed["inverters"].append({
-                        "serial": str(inverter.inv_sn),
+                        "serial": str(inverter.inv_sn).replace("\n\u000b", ""),
                         "isolation": {
-                            "fault_location": int(inverter.isolation.fault_location),
+                            "fault_location": int(inverter.isolation.fault_location.value),
                             "r_iso": inverter_isolation_r_iso,
                             "alpha": inverter_isolation_alpha
                         },
                         "optimizers_status": {
-                            "total": int(inverter.optimizers_status.enabled),
-                            "online": int(inverter.optimizers_status.connected)
+                            "total": int(inverter.optimizers_status.enabled.value),
+                            "online": int(inverter.optimizers_status.connected.value)
                         },       
                         "optimizers": [{
-                            "serial": str(po.sn),
-                            "online": bool(po.reports),
-                            "po_voltage": int(po.output_v),
+                            "serial": str(po.sn).replace("\n\u000b", ""),
+                            "online": bool(po.reports.value),
+                            "po_voltage": int(po.output_v.value),
                             "po_power": int(po.energy.value),
-                            "module_voltage": int(po.input_v),
-                            "module_current": int(po.input_c),
-                            "temperature": int(po.temperature.value),
+                            "module_voltage": int(po.input_v.value),
+                            "module_current": int(po.input_c.value),
+                            "temperature": int(po.temperature.value.value),
                             "timestamp": 0 if not bool(po.reports) else int(datetime.datetime.strptime(
                                 "{year} {month} {day} {hour} {minutes} {seconds}".format(
-                                year=po.date.year,
-                                month=po.date.month,
-                                day=po.date.day,
-                                hour=po.date.hour,
-                                minutes=po.date.minute,
-                                seconds=po.date.second
+                                year=po.date.year.value,
+                                month=po.date.month.value,
+                                day=po.date.day.value,
+                                hour=po.date.hour.value,
+                                minutes=po.date.minute.value,
+                                seconds=po.date.second.value
                             ), "%Y %m %d %H %M %S").timestamp())
                         } for po in inverter.optimizer]
                 })

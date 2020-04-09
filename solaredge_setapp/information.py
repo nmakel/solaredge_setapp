@@ -11,7 +11,6 @@ class Information:
             return self.parse_protobuf(bytes)
 
     def parse_protobuf(self, bytes):
-
         parsed = {}
 
         try:

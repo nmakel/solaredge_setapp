@@ -9,7 +9,6 @@ class Status:
             return self.parse_protobuf(bytes)
 
     def parse_protobuf(self, bytes):
-
         parsed = {}
 
         try:
@@ -28,8 +27,8 @@ class Status:
                 "country_id": int(proto.country),
                 "portia_subsystem_id": int(proto.portia_subsystem),
                 "afci": {
-                    "enabled": bool(proto.afci.enable),
-                    "manual_reconnect": bool(proto.afci.manual_reconnect),
+                    "enabled": bool(proto.afci.enable.value),
+                    "manual_reconnect": bool(proto.afci.manual_reconnect.value),
                     "test_result": solaredge_setapp.AfciTestResult(int(proto.afci.test.result)).name
                 },
                 "optimizers": {
@@ -131,14 +130,14 @@ class Status:
                         "online": int(inverter.optimizers_status.connected)
                     },
                     "temperature": {
-                        "value": int(inverter.temperature.value),
+                        "value": int(inverter.temperature.value.value),
                         "unit": {
-                            "celsius": bool(inverter.temperature.units.celsius),
-                            "fahrenheit": bool(inverter.temperature.units.fahrenheit)
+                            "celsius": bool(inverter.temperature.units.celsius.value),
+                            "fahrenheit": bool(inverter.temperature.units.fahrenheit.value)
                         }
                     },
                     "isolation": {
-                        "fault_location": int(inverter.isolation.fault_location),
+                        "fault_location": int(inverter.isolation.fault_location.value),
                         "r_iso": inverter_isolation_r_iso,
                         "alpha": inverter_isolation_alpha
                     },
