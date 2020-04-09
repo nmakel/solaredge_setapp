@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+
+message Information {
+
+    message UInt32KeyVal {
+        uint32 key = 1;
+        uint32 value = 2;    
+    }
+
+    message StringKeyVal {
+        string key = 1;
+        string value = 2;
+    }
+
+    message Date {
+        uint32 year = 1;
+        uint32 month = 2;
+        uint32 day = 3;
+        uint32 hour = 4;
+        uint32 minute = 5;
+        uint32 second = 6;
+    }
+
+    message Version {
+        uint32 major = 1;
+        uint32 minor = 2;
+        uint32 build = 3;
+        uint32 ci_build = 4;
+    }
+
+    message ControllersErrors {
+        message ErrorsLogger {
+            message Error {
+                uint32 error_code = 1;
+                Date start_time = 2;
+            }
+            
+            uint32 controllerID = 1;
+            uint32 subsystem = 2;
+            repeated Error errors = 3;
+        }
+        
+        repeated ErrorsLogger loggers = 1;
+    }
+
+    string sn = 1;
+    Version cpu = 2;
+    Version dsp1 = 3;
+    Version dsp2 = 4;
+    StringKeyVal hw_ids = 5;
+    UInt32KeyVal error_log = 6;
+    UInt32KeyVal warning_log = 7;
+    ControllersErrors errors = 8;
+}
