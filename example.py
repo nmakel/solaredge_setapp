@@ -47,8 +47,8 @@ if __name__ == "__main__":
 
             print("\n\t{power_ac:7.2f}W\t{production_today:.2f}kWh ∑ {production_total:.2f}kWh".format(
                 power_ac=data["status"]["power_ac"],
-                production_today=(data["status"]["energy"]["day"]/1000),
-                production_total=(data["status"]["energy"]["total"]/1000)
+                production_today=(data["status"]["energy"]["day"] / 1000),
+                production_total=(data["status"]["energy"]["total"] / 1000)
             ))
 
             print("\n\t⏦ {voltage_ac:.2f}Vac @ {frequency:.2f}Hz".format(
@@ -73,7 +73,7 @@ if __name__ == "__main__":
                     total=inverter["optimizers_status"]["total"],
                     serial=inverter["serial"]
                 ))
-                
+
                 for po in inverter["optimizers"]:
                     print("\n\t{serial}\t{last_report}".format(
                         serial=po["serial"],

@@ -5,7 +5,7 @@ import datetime
 
 
 class Information:
-    
+
     def __init__(self, bytes=False):
         if bytes:
             return self.parse_protobuf(bytes)
@@ -24,7 +24,7 @@ class Information:
 
             for logger in proto.errors.loggers:
                 parsed["errors"] = [{
-                    "controller_id": int(logger.controllerID), 
+                    "controller_id": int(logger.controllerID),
                     "subsystem_id": int(logger.subsystem),
                     "error_code": int(error.error_code),
                     "timestamp": int(datetime.datetime.strptime(

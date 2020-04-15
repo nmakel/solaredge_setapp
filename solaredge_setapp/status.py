@@ -3,7 +3,7 @@ import solaredge_setapp.status_pb2
 
 
 class Status:
-    
+
     def __init__(self, bytes=False):
         if bytes:
             return self.parse_protobuf(bytes)
@@ -14,7 +14,7 @@ class Status:
         try:
             proto = solaredge_setapp.status_pb2.Status()
             proto.ParseFromString(bytes)
-            
+
             parsed = {
                 "serial": str(proto.sn),
                 "power_ac": float(proto.power_watt),
@@ -50,7 +50,7 @@ class Status:
                     "rs485_1": bool(proto.server_channel.rs485_1_se_slave.value),
                     "rs485_2": bool(proto.server_channel.rs485_2_se_slave.value),
                     "wifi": bool(proto.server_channel.wifi.value),
-                    "zigbee": bool(proto.server_channel.zigbee.value) 
+                    "zigbee": bool(proto.server_channel.zigbee.value)
                 },
                 "energy": {
                     "day": float(proto.energy.today),
@@ -81,7 +81,7 @@ class Status:
                         }
                     },
                     "rs485_2": {
-                         "protocol": {
+                        "protocol": {
                             "se_slave": bool(proto.communication.rs485_2.protocol.se_slave),
                             "se_master": bool(proto.communication.rs485_2.protocol.se_master),
                             "modbus_multi_devices": bool(proto.communication.rs485_2.protocol.modbus_multi_devices),
@@ -94,14 +94,14 @@ class Status:
 
             try:
                 parsed["status"] = solaredge_setapp.Status(parsed["status"]).name
-            except ValueError as e:
+            except ValueError:
                 parsed["status"] = solaredge_setapp.Status(-1).name
 
             try:
                 parsed["country"] = solaredge_setapp.Countries(parsed["country_id"]).name
-            except ValueError as e:
+            except ValueError:
                 parsed["country"] = solaredge_setapp.Countries(-1).name
-            
+
             for inverter in proto.inverters.primary, proto.inverters.left, proto.inverters.right:
                 if not inverter.dsp_sn:
                     continue
@@ -119,7 +119,7 @@ class Status:
                 if inverter.isolation.alpha.scaling:
                     inverter_isolation_alpha = float(inverter.isolation.alpha.value / inverter.isolation.alpha.scaling)
                 else:
-                    inverter_isolation_alpha = float(inverter.isolation.alpha.value)               
+                    inverter_isolation_alpha = float(inverter.isolation.alpha.value)
 
                 parsed["inverters"].append({
                     "serial": str(inverter.dsp_sn),

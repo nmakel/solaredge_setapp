@@ -5,7 +5,7 @@ import datetime
 
 
 class Maintenance:
-    
+
     def __init__(self, bytes=False):
         if bytes:
             return self.parse_protobuf(bytes)
@@ -16,7 +16,7 @@ class Maintenance:
         try:
             proto = solaredge_setapp.maintenance_pb2.Maintenance()
             proto.ParseFromString(bytes)
-            
+
             parsed = {
                 "serial": str(proto.header.id),
                 "timestamp": int(proto.header.timestamp),
@@ -55,7 +55,7 @@ class Maintenance:
                         "optimizers_status": {
                             "total": int(inverter.optimizers_status.enabled.value),
                             "online": int(inverter.optimizers_status.connected.value)
-                        },       
+                        },
                         "optimizers": [{
                             "serial": str(po.sn.value),
                             "online": bool(po.reports.value),
@@ -66,15 +66,15 @@ class Maintenance:
                             "temperature": int(po.temperature.value.value),
                             "timestamp": 0 if not bool(po.reports) else int(datetime.datetime.strptime(
                                 "{year} {month} {day} {hour} {minutes} {seconds}".format(
-                                year=po.date.year.value,
-                                month=po.date.month.value,
-                                day=po.date.day.value,
-                                hour=po.date.hour.value,
-                                minutes=po.date.minute.value,
-                                seconds=po.date.second.value
-                            ), "%Y %m %d %H %M %S").timestamp())
+                                    year=po.date.year.value,
+                                    month=po.date.month.value,
+                                    day=po.date.day.value,
+                                    hour=po.date.hour.value,
+                                    minutes=po.date.minute.value,
+                                    seconds=po.date.second.value
+                                ), "%Y %m %d %H %M %S").timestamp())
                         } for po in inverter.optimizer]
-                })
+                    })
         except AttributeError as e:
             print(f"AttributeError: {e}")
 

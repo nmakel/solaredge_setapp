@@ -2,7 +2,6 @@
 
 import solaredge_setapp
 import argparse
-import datetime
 import json
 import requests
 
