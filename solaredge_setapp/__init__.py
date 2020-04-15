@@ -1,6 +1,10 @@
 import enum
 import itertools
 
+import solaredge_setapp.information
+import solaredge_setapp.maintenance
+import solaredge_setapp.status
+
 
 TARGET_VERSION = "1.4.10"
 
