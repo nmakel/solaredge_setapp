@@ -10,7 +10,7 @@ Release 0.0.7 and earlier are compatible with WSA <= 1.3.9.
 
 ## Installation
 
-To install, either clone this project and install using `distutils`:
+To install, either clone this project and install using `setuptools`:
 
 ```python3 setup.py install```
 

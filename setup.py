@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
 import setuptools
-from distutils.core import setup
 
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setup(
+setuptools.setup(
     name="solaredge_setapp",
     version="0.1.1",
     description="SolarEdge SetApp protocol buffers parser library",
@@ -18,6 +17,7 @@ setup(
     author_email="",
     url="https://github.com/nmakel/solaredge_setapp",
     packages=["solaredge_setapp"],
+    include_package_data=True,
     install_requires=[
         "protobuf>=3.6.1",
         "requests>=2.12.4"
