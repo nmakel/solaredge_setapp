@@ -172,11 +172,13 @@ message Maintenance {
                 OptimizersStatus optimizers_status = 4;
                 SelfTest self_test = 5;
                 repeated QuadOptimizer quad_optimizer = 6;
+                uint32 position = 7;
             }
 
             Unit left = 1;
             Unit primary = 2;
             Unit right = 3;
+            repeated Unit units_list = 4;
         }
 
         message BatterySelfTest {
