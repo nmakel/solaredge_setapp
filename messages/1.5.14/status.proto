@@ -1,0 +1,756 @@
+syntax = "proto3";
+
+
+message Status {
+
+    message FloatS {
+        int32 value = 1;
+        int32 scaling = 2;
+        bool ro = 3;
+        FloatSAttr attributes = 4;
+    }
+    message FloatSAttr {
+        int32 min = 1;
+        int32 max = 2;
+        int32 step = 3;
+    }
+
+    message Int32 {
+        uint32 value = 1;
+        bool ro = 2;
+        Int32Attr attributes = 3;
+    }
+    message Int32Attr {
+        uint32 min = 1;
+        uint32 max = 2;
+        uint32 step = 3;
+    }
+
+    message UInt32 {
+        uint32 value = 1;
+        bool ro = 2;
+        UInt32Attr attributes = 3;
+    }
+    message UInt32Attr {
+        uint32 min = 1;
+        uint32 max = 2;
+        uint32 step = 3;
+    }
+
+    message BoolVal {
+        bool value = 1;
+        bool ro = 2;
+    }
+
+    message StringVal {
+        string value = 1;
+        bool ro = 2;
+    }
+
+    enum MngrStatus {  
+        SHUTTING_DOWN = 0;
+        ERROR = 1;
+        STANDBY = 2;
+        PAIRING = 3;
+        POWER_PRODUCTION = 4;
+        AC_CHARGING = 5;
+        NOT_PAIRED = 6;
+        NIGHT_MODE = 7;
+        GRID_MONITORING = 8;
+        IDLE = 9;
+        GRM_PAIRING = 10;   
+        UNSET = -1;
+    }
+
+    enum Countries {
+        COUNTRY_GENERAL = 0;
+        COUNTRY_AUSTRALIA = 1;
+        COUNTRY_FRANCE = 2;
+        COUNTRY_GERMANY = 3;
+        COUNTRY_GREECE_CONTINENT = 4;
+        COUNTRY_GREECE_ISLANDS = 5;
+        COUNTRY_ISRAEL = 6;
+        COUNTRY_ITALY = 7;
+        COUNTRY_SPAIN = 8;
+        COUNTRY_UK = 9;
+        COUNTRY_US_AUTO = 10;
+        COUNTRY_US_208V = 11;
+        COUNTRY_US_240V = 12;
+        COUNTRY_US_208V_NO_NEUTRAL = 13;
+        COUNTRY_US_240V_NO_NEUTRAL = 14;
+        COUNTRY_BULGARIA = 15;
+        COUNTRY_CZECH_REPUBLIC = 16;
+        COUNTRY_CYPRESS = 17;
+        COUNTRY_BELGIUM = 18;
+        COUNTRY_NETHERLANDS = 19;
+        COUNTRY_PORTUGAL = 20;
+        COUNTRY_AUSTRIA = 21;
+        COUNTRY_THAILAND_MEA = 22;
+        COUNTRY_SINGAPORE = 23;
+        COUNTRY_KOREA = 24;
+        COUNTRY_JAPAN_AUTO = 25;
+        COUNTRY_JAPAN_50HZ = 26;
+        COUNTRY_JAPAN_60HZ = 27;
+        COUNTRY_TAIWAN = 28;
+        COUNTRY_DENMARK = 29;
+        COUNTRY_SWEDEN = 30;
+        COUNTRY_THAILAND_PEA = 31;
+        COUNTRY_SRI_LANKA = 32;
+        COUNTRY_MAURITIUS = 33;
+        COUNTRY_DENMARK_RES = 34;
+        COUNTRY_US_277V = 35;
+        COUNTRY_SLOVENIA = 36;
+        COUNTRY_POLAND = 37;
+        COUNTRY_GERMANY_MVGC = 38;
+        COUNTRY_UK_240V = 39;
+        COUNTRY_LITHUANIA = 40;
+        COUNTRY_CHINA = 41;
+        COUNTRY_PHILIPPINES = 42;
+        COUNTRY_BRAZIL = 43;
+        COUNTRY_MEXICO_220 = 44;
+        COUNTRY_MEXICO_277 = 45;
+        COUNTRY_ROMANIA = 46;
+        COUNTRY_LATVIA = 47;
+        COUNTRY_SOUTH_AFRICA = 48;
+        COUNTRY_TURKEY = 49;
+        COUNTRY_ITALY_NO_SPI = 50;
+        COUNTRY_US_HAWAII_AUTO = 51;
+        COUNTRY_US_HAWAII_208V = 52;
+        COUNTRY_US_HAWAII_240V = 53;
+        COUNTRY_US_HAWAII_208V_NO_NEUTRAL = 54;
+        COUNTRY_US_HAWAII_240V_NO_NEUTRAL = 55;
+        COUNTRY_US_HAWAII_277 = 56;
+        COUNTRY_SWITZERLAND = 57;
+        COUNTRY_CUSTOM = 58;
+        COUNTRY_INDIA = 59;
+        COUNTRY_CROATIA = 60;
+        COUNTRY_JAMAICA_240_NO_NEUTRAL = 61;
+        COUNTRY_JAMAICA_220_NO_NEUTRAL = 62;
+        COUNTRY_BARBADOS_230_NO_NEUTRAL = 63;
+        COUNTRY_ST_LUCIA = 64;
+        COUNTRY_AUSTRALIA_QLD = 65;
+        COUNTRY_DENMARK_VDE = 66;
+        COUNTRY_DENMARK_VDE_RES = 67;
+        COUNTRY_IRELAND = 68;
+        COUNTRY_US_KAUAI_AUTO = 69;
+        COUNTRY_US_KAUAI_208 = 70;
+        COUNTRY_US_KAUAI_240 = 71;
+        COUNTRY_US_KAUAI_208_NO_NEUTRAL = 72;
+        COUNTRY_US_KAUAI_240_NO_NEUTRAL = 73;
+        COUNTRY_US_KAUAI_277 = 74;
+        COUNTRY_CYPRESS_240 = 75;
+        COUNTRY_CURACAO = 76;
+        COUNTRY_N_CYPRESS_240 = 77;
+        COUNTRY_ISRAEL_COMMERCIAL = 78;
+        COUNTRY_ARUBA = 79;
+        COUNTRY_MEXICO_240 = 80;
+        COUNTRY_BARBADOS_115V_NO_NEUTRAL = 81;
+        COUNTRY_MALAYSIA = 82;
+        COUNTRY_TAHITI = 83;
+        COUNTRY_HUNGARY = 84;
+        COUNTRY_KUWAIT = 85;
+        COUNTRY_CYPRUS_MV = 86;
+        COUNTRY_NORWAY = 87;
+        COUNTRY_NORTH_IRELAND = 88;
+        COUNTRY_GERMANY_MV_480V = 89;
+        COUNTRY_US_HAWAII2_AUTO = 90;
+        COUNTRY_US_HAWAII2_208V = 91;
+        COUNTRY_US_HAWAII2_208V_NO_NEUTRAL = 92;
+        COUNTRY_US_HAWAII2_240V = 93;
+        COUNTRY_US_HAWAII2_240V_NO_NEUTRAL = 94;
+        COUNTRY_US_HAWAII2_277 = 95;
+        COUNTRY_US_NY_AUTO = 96;
+        COUNTRY_US_NY_208V = 97;
+        COUNTRY_US_NY_208V_NO_NEUTRAL = 98;
+        COUNTRY_US_NY_240V = 99;
+        COUNTRY_US_NY_240V_NO_NEUTRAL = 100;
+        COUNTRY_US_NY_277 = 101;
+        COUNTRY_JAPAN_MV_380V_50HZ = 102;
+        COUNTRY_JAPAN_MV_380V_60HZ = 103;
+        COUNTRY_US_AUTO_RULE21 = 104;
+        COUNTRY_US_208V_RULE21 = 105;
+        COUNTRY_US_208V_NO_NEUTRAL_RULE21 = 106;
+        COUNTRY_US_240V_RULE21 = 107;
+        COUNTRY_US_240V_NO_NEUTRAL_RULE21 = 108;
+        COUNTRY_US_277V_RULE21 = 109;
+        COUNTRY_ITALY_277V_NO_SPI = 110;
+        COUNTRY_PHILIPPINES_230V_DELTA = 111;
+        COUNTRY_UK_480V = 112;
+        COUNTRY_ZIMBABWE_230V = 113;
+        COUNTRY_INDONESIA = 114;
+        COUNTRY_JAPAN_MV_480V_50_HZ = 115;
+        COUNTRY_JAPAN_MV_480V_60_HZ = 116;
+        COUNTRY_EUROPE_EN50438 = 117;
+        COUNTRY_CAPE_VERDE = 118;
+        COUNTRY_NEW_ZEALAND = 119;
+        COUNTRY_GHANA = 120;
+        COUNTRY_FINLAND = 121;
+        COUNTRY_GRENADA = 122;
+        COUNTRY_DUBAI_LV = 123;
+        COUNTRY_SLOVAKIA_ZSED = 124;
+        COUNTRY_SLOVAKIA_SSED = 125;
+        COUNTRY_SLOVAKIA_VSD = 126;
+        COUNTRY_PUERTO_RICO_277V = 127;
+        COUNTRY_SOUTH_AFRICA_MV = 128;
+        COUNTRY_PHILIPPINES_MV = 129;
+        COUNTRY_TAIWAN_MV = 130;
+        COUNTRY_INDIA_MV = 131;
+        COUNTRY_US_CO_AUTO = 132;
+        COUNTRY_US_CO_208V = 133;
+        COUNTRY_US_CO_208V_NO_NEUTRAL = 134;
+        COUNTRY_US_CO_240V_NO_NEUTRAL = 135;
+        COUNTRY_US_CO_240V = 136;
+        COUNTRY_US_CO_277V = 137;
+        COUNTRY_VICTORIA = 138;
+        COUNTRY_KENYA = 139;
+        COUNTRY_TURKEY_MV = 140;
+        COUNTRY_SPAIN_MV = 141;
+        COUNTRY_THAILAND_MEA_MV = 142;
+        COUNTRY_THAILAND_PEA_MV = 143;
+        COUNTRY_CHINA_MV = 144;
+        COUNTRY_TAIWAN_220_NO_NEUTRAL = 145;
+        COUNTRY_MAURITIUS_ABOVE_220K = 146;
+        COUNTRY_FRANCE_MV = 147;
+        COUNTRY_CEZ = 148;
+        COUNTRY_BELGIUM_DELTA = 149;
+        COUNTRY_NORWAY_DELTA = 150;
+        COUNTRY_NETHERLANDS_MV = 151;
+        COUNTRY_MACAU = 152;
+        COUNTRY_ARGENTINA = 153;
+        COUNTRY_ARGENTINA_COMMERCIAL = 154;
+        COUNTRY_SWEDEN_MV = 155;
+        COUNTRY_VIETNAM = 156;
+        COUNTRY_BRAZIL_127V_220V = 157;
+        COUNTRY_BARBADOS_200 = 158;
+        COUNTRY_US_NEW_ENGLAND_208 = 159;
+        COUNTRY_US_NEW_ENGLAND_240 = 160;
+        COUNTRY_US_NEW_ENGLAND_208_NO_NEUTRAL = 161;
+        COUNTRY_US_NEW_ENGLAND_240_NO_NEUTRAL = 162;
+        COUNTRY_US_NEW_ENGLAND_277 = 163;
+        COUNTRY_KOREA_LOW_DC = 164;
+        COUNTRY_ISRAEL_480V_MV = 165;
+        COUNTRY_BRAZIL_277 = 166;
+        COUNTRY_HUNGARY_EON = 167;
+        COUNTRY_SPANISH_ISLANDS = 168;
+        COUNTRY_PERU = 169;
+        COUNTRY_COLUMBIA = 170;
+        COUNTRY_CHILE = 171;
+        COUNTRY_ECUADOR = 172;
+        COUNTRY_QATAR = 173;
+        COUNTRY_AUSTRALIA_480V = 174;
+        COUNTRY_HONG_KONG = 175;
+        COUNTRY_URUGUAY = 176;
+        COUNTRY_ITALIY_A68 = 177;
+        COUNTRY_ESTONIA = 178;
+        COUNTRY_NONE = -1;
+    }
+
+    enum SwitchStatus {
+        OFF = 0;
+        ON = 1;
+        P = 2;
+    }
+
+    enum ServerChannelMethod {
+        MANUAL_SELECT = 0;
+        AUTO_SELECT = 1;
+    }
+
+
+    message Temperature {
+        message Units {
+            BoolVal celsius = 1;
+            BoolVal fahrenheit = 2;
+        }
+
+        UInt32 value = 1;
+        Units units = 2;
+    }
+
+    message Site {
+        message InvertersStatus {
+            uint32 enabled = 1;
+            uint32 connected = 2;
+        }
+
+        float production_watt = 1;
+        float site_limit_watt = 2;
+        InvertersStatus inverters_status = 3;
+    }
+
+    message OptimizersStatus {
+        uint32 enabled = 1;
+        uint32 connected = 2; 
+    }
+
+    message Inverters {
+        message Unit {
+            message Isolation {
+                FloatS alpha = 1;
+                FloatS r_iso = 2;
+                UInt32 fault_location = 3;
+            }
+
+            string dsp_sn = 1;
+            float voltage = 2;
+            OptimizersStatus optimizers_status = 3;
+            Temperature temperature = 4;
+            bool fan = 5;
+            uint32 error_code = 6;
+            uint32 subsystem = 7;
+            bool bad_position = 8;
+            Isolation isolation = 9;
+            FloatS power = 10;
+        }
+
+        Unit left = 1;
+        Unit primary = 2;
+        Unit right = 3;
+    }
+
+    message Communication {
+        enum LanStatus {
+            OK = 0;
+        }
+
+        message Rs485Status {
+            message Protocol {
+                bool se_slave = 1;
+                bool se_master = 2;
+                bool modbus_multi_devices = 3;
+                bool sunspec = 4;
+                bool none = 5;
+            }
+
+            uint32 enabled = 1;
+            uint32 connected = 2;
+            Protocol protocol = 3;
+        }
+
+        message Lan {
+            message IP {
+                StringVal ip_address = 1;
+                StringVal subnet_mask = 2;
+                StringVal gateway = 3;
+                StringVal dns = 4;
+            }
+
+            BoolVal dhcp = 1;
+            IP ip = 2;
+            StringVal mac = 3;
+            BoolVal cable_connected = 4;
+        }
+
+        message Cellular {
+            enum CellularSignal {
+                NONE = 0;
+                LOW = 1;
+                LOWEST = 2;
+                MEDIUM = 3;
+                HIGH = 4;
+                HIGHEST = 5;
+                UNKNOWN = 6;
+            }
+
+            CellularSignal signal_strength = 1;
+            string operator = 2;
+        }
+
+        message Wifi {
+            enum WifiSignal {
+                NONE = 0;
+                LOW = 1;
+                MID = 2;
+                HIGH = 3;
+                EXCELLENT = 4;
+            }
+
+            string chosen_network = 1;
+            WifiSignal chosen_network_signal = 2;
+            BoolVal connected_to_hg = 3;
+        }
+
+        message Zigbee {
+            enum ZigbeeSignal {
+                NONE = 0;
+                LOW = 1;
+                MID = 2;
+                HIGH = 3;
+            }
+
+            enum SlaveStatus {
+                NOT_CONNECTED = 0;
+                CONNECTED = 1;
+                MASTER_NOT_FOUND = 2;
+            }
+
+            enum ModuleStatus {
+                INITIALIZING = 0;
+                OK = 1;
+            }
+
+            message OperationMode {
+                bool none = 1;
+                bool se_slave = 2;
+                bool ha_gateway = 3;
+                bool p2p_slave = 4;
+            }
+
+            uint32 enabled = 1;
+            uint32 connected = 2;
+            OperationMode operation_mode = 3;
+            ZigbeeSignal signal_level = 4;
+            SlaveStatus zigbee_slave_status = 5;
+            ModuleStatus module_status = 6;
+        }
+
+        Rs485Status rs485_1 = 1;
+        Rs485Status rs485_2 = 2;
+        LanStatus lan = 3;
+        Cellular cellular = 4;
+        Wifi wifi = 5;
+        Zigbee zigbee = 6;
+        Lan lan_info = 7;
+    }
+
+    message EnergyStatistics {
+        float today = 1;
+        float this_month = 2;
+        float this_year = 3;
+        float total = 4;
+        FloatS current_consumption = 5;
+    }
+
+    message Evse {
+        enum CarStatus {
+            disconnected = 0;
+            connected = 1;
+            charging_car = 2;
+        }
+
+        enum ChargerStatus {
+            ready = 0;
+            initializing = 1;
+            charging = 2;
+            charging_boost = 3;
+            charging_excess_pv = 4;
+        }
+
+        CarStatus car_status = 1;
+        ChargerStatus charger_status = 2;
+        float charge_power = 3;
+        float session_energy = 4;
+        uint32 error_code = 5;
+        uint32 subsystem = 6;
+        StringVal sn = 7;
+    }
+
+    message Meter {
+        enum ConnectionType {
+            RS485_1 = 0;
+            RS485_2 = 1;
+            S0 = 2;
+        }
+
+        enum Status {
+            OK = 0;
+            COMM_ERROR = 1;
+        }
+
+        message Function {
+            BoolVal inverter_production = 1;
+            BoolVal export_import = 2;
+            BoolVal consumption = 3;
+            BoolVal site_production = 4;
+            BoolVal external_production = 5;
+            BoolVal m_export = 6;
+            BoolVal m_import = 7;
+            BoolVal production_and_export_import = 8;
+        }
+
+        ConnectionType connection_type = 1;
+        Function func = 2;
+        Status status = 3;
+        uint32 id = 4;
+        float power = 5;
+        float energy = 6;
+        uint32 s0_pulse = 7;
+        StringVal sn = 8;
+    }
+
+    message Battery {
+        enum Status {
+            CONNECTED = 0;
+            DISCNNECTED = 1;
+        }
+
+        enum State {
+            BMS_STATE_INVALID = 0;
+            BMS_STATE_OFF = 1;
+            BMS_STATE_STDBY = 2;
+            BMS_STATE_INIT = 3;
+            BMS_STATE_CHARGE = 4;
+            BMS_STATE_DISCHARGE = 5;
+            BMS_STATE_FAULT = 6;
+            BMS_STATE_IDLE = 7;
+            BMS_STATE_COMM_ERROR = 8;
+            BMS_STATE_RESERVED1 = 9;
+            BMS_STATE_RESERVED2 = 10;
+            BMS_STATE_SLEEP = 11;
+        }
+
+        string sn = 1;
+        StringVal type = 2;
+        Status status = 3;
+        State state = 4;
+        float power = 5;
+        float soe = 6;
+        uint32 error_code = 7;
+        uint32 subsystem = 8;
+    }
+
+    message Notification {
+        message Header {
+            enum Type {
+                ERROR = 0;
+                WARNING = 1;
+                INFORMATION = 2;
+            }
+
+            UInt32 id = 1;
+            Type type = 2;
+        }
+
+        message Shutdown {
+            Header header = 1;
+        }
+
+        message GRM {
+            Header header = 1;
+            UInt32 remaining_time = 2;
+            UInt32 total_time = 3;
+        }
+
+        message Pairing {
+            message PairingData {
+                message Request {
+                    uint32 duration = 1;
+                }
+
+                message Status {
+                    enum Info {
+                        OK = 0;
+                        INV_OFF = 2;
+                        NIGHT_MODE = 3;
+                        IN_PROCESS = 4;
+                        ERROR = 5;
+                        ERROR_OPT_DETECT = 6;
+                        ERROR_STRING_DETECT = 7;
+                        NOT_IN_PROCESS = 8;
+                    }
+
+                    enum Stage {
+                        NOT_ACTIVE = 0;
+                        WAIT_VIN_DECREASE = 1;
+                        PAIRING = 2;
+                        SAVE_SESSION = 3;
+                        OPT_DETECT = 4;
+                        STRING_DETECT = 5;
+                        END = 6;
+                    }
+
+                    uint32 sessionID = 1;
+                    Info info = 2;
+                    Stage stage = 3;
+                    uint32 progress = 4;
+                    uint32 remaining_time = 5;
+                }
+
+                Request request = 1;
+                Status status = 2;
+            }
+
+            Header header = 1;
+            PairingData pairing_data = 2;
+        }
+
+        message SlaveDetect {
+            message SlaveDetectData {
+                UInt32 duration = 1;
+                UInt32 num_of_slaves = 2;
+                UInt32 num_of_loops = 3;
+                UInt32 max_num_of_loops = 4;
+                BoolVal Stop = 5;
+            }
+
+            Header header = 1;
+            SlaveDetectData slave_detect_data = 2;
+        }
+
+        message NotActivated {
+            Header header = 1;
+        }
+
+        message ErrorBanner {
+            Header header = 1;
+            UInt32 error_code = 2;
+            UInt32 subsystem = 3;
+        }
+
+        Shutdown shutdown = 1;
+        GRM grm = 2;
+        Pairing pairing = 3;
+        SlaveDetect slave_detect = 4;
+        NotActivated not_activated = 5;
+        ErrorBanner error_banner = 6;
+    }
+
+    message ServerCommunication {
+        enum CommTestStatus {
+            FAILED = 0;
+            PASSED = 1;
+            NOT_TESTED = 2;
+        }
+
+        message LanTest {
+            CommTestStatus physical_connection = 1;
+            CommTestStatus ip_address = 2;
+            CommTestStatus gateway_link = 3;
+            CommTestStatus internet_link = 4;
+            CommTestStatus monitoring_link = 5;
+            CommTestStatus s_ok = 6;
+        }
+
+        message HgCommTest {
+            CommTestStatus repeater_1_connection = 1;
+            CommTestStatus repeater_2_connection = 2;
+            CommTestStatus homegateway_connection = 3;
+            CommTestStatus physical_connection = 4;
+            CommTestStatus ip_address = 5;
+            CommTestStatus gateway_link = 6;
+            CommTestStatus internet_link = 7;
+            CommTestStatus monitoring_link = 8;
+            CommTestStatus s_ok = 9;
+        }
+
+        LanTest lan_test = 1;
+        HgCommTest hg2_test = 2;
+    }
+
+    message Afci {
+        message Test {
+            enum AfciTestResult {
+                AFCI_TEST_FAIL = 0;
+                AFCI_TEST_ERROR = -1;
+                AFCI_TEST_PASS = 1;
+            }
+
+            AfciTestResult result = 1;
+            UInt32 timeout = 2;
+        }
+
+        BoolVal enable = 1;
+        BoolVal manual_reconnect = 2;
+        Test test = 3;
+        BoolVal dsp_error = 4;
+    }
+
+    message ServerChannel {
+        BoolVal lan = 1;
+        BoolVal cellular = 2;
+        BoolVal wifi = 3;
+        BoolVal rs485_1_se_slave = 4;
+        BoolVal zigbee = 5;
+        BoolVal rs485_2_se_slave = 6;
+    }
+
+    message Bui {
+        enum OperationMode {
+            INV_OPER_MODE_ON_GRID = 0;
+            INV_OPER_MODE_STORAGE_OFF_GRID = 1;
+            INV_OPER_MODE_DG_OFF_GRID = 2;
+        }
+
+        message SubsystemError {
+            UInt32 error_code = 1;
+            UInt32 subsystem = 2;
+        }
+
+        StringVal sn = 1;
+        OperationMode operation_mode = 2;
+        BoolVal communicating = 3;
+        SubsystemError subsystem_error = 4;
+    }
+
+    message SOkStatus {
+        enum LanNetStatus {
+            LAN_UNKNOWN = 0;
+        }
+
+        enum WifiNetStatus {
+            WIFI_UNKNOWN = 0;
+        }
+
+        enum CellNetStatus {
+            CELL_UNKNOWN = 0;
+            CELL_NOT_DETECTED = 1;
+            CELL_DETECTION_IN_PROGRESS = 2;
+            CELL_INIT_MODULE = 3;
+            CELL_NO_SIM_CARD = 4;
+            CELL_MISSING_PIN = 5;
+            CELL_SIM_NOT_REGISTERED = 6;
+            CELL_MODEM_NOT_ACTIVATED = 7;
+            CELL_MISSING_APN = 8;
+            CELL_NO_SIGNAL = 9;
+            CELL_NO_COMM_WITH_MODULE = 10;
+            CELL_ESTABLISHING_INTERNET_CONNECTION = 11;
+            CELL_NO_INTERNET_CONNECTION = 12;
+            CELL_NO_TELEM_PLAN_SELECT = 13;
+            CELL_ACTIVATING_TELEM_PLAN = 14;
+            CELL_ACTIVATING_ERROR_NO_RESPONSE = 15;
+            CELL_ACTIVATING_ERROR_UNIDENTIFIED_NUMBER = 16;
+            CELL_ACTIVATING_ERROR_SMS_BLOCKED = 17;
+            CELL_ACTIVATING_ERROR_NO_SMS = 18;
+            CELL_ACTIVATING_ERROR = 19;
+            CELL_CONNECTING_TO_SERVER = 20;
+            CELL_CONNECTED = 21;
+        }
+
+        LanNetStatus lan_net_status = 1;
+        WifiNetStatus wifi_net_status = 2;
+        CellNetStatus cell_net_status = 3;
+    }
+
+    message AdvancedGridSettings {
+        BoolVal alternative_power_source = 1;
+    }
+
+    string sn = 1;
+    Site site = 2;
+    float power_watt = 3;
+    float voltage = 4;
+    float frequency_hz = 5;
+    OptimizersStatus optimizers_status = 6;
+    bool s_ok = 7;
+    MngrStatus status = 8;
+    SwitchStatus switch_status = 9;
+    float cos_Phi = 10;
+    float limit = 11;
+    Countries country = 12;
+    Inverters inverters = 13;
+    Communication communication = 14;
+    EnergyStatistics energy = 15;
+    uint32 portia_error_code = 16;
+    uint32 portia_subsystem = 17;
+    Evse evse = 18;
+    repeated Meter meters = 19;
+    repeated Battery batteries = 20;
+    Notification notification = 21;
+    ServerCommunication server_comm = 22;
+    Afci afci = 23;
+    ServerChannel server_channel = 24;
+    ServerChannelMethod server_channel_method = 25;
+    Bui bui = 26;
+    SOkStatus s_ok_status = 27;
+    AdvancedGridSettings advanced_grid_settings = 28;
+}

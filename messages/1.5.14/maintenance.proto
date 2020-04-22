@@ -1,0 +1,277 @@
+syntax = "proto3";
+
+
+message Maintenance {
+
+    message FloatS {
+        int32 value = 1;
+        int32 scaling = 2;
+        bool ro = 3;
+        FloatSAttr attributes = 4;
+    }
+    message FloatSAttr {
+        int32 min = 1;
+        int32 max = 2;
+        int32 step = 3;
+    }
+
+    message Int32 {
+        uint32 value = 1;
+        bool ro = 2;
+        Int32Attr attributes = 3;
+    }
+    message Int32Attr {
+        uint32 min = 1;
+        uint32 max = 2;
+        uint32 step = 3;
+    }
+
+    message UInt32 {
+        uint32 value = 1;
+        bool ro = 2;
+        UInt32Attr attributes = 3;
+    }
+    message UInt32Attr {
+        uint32 min = 1;
+        uint32 max = 2;
+        uint32 step = 3;
+    }
+
+    message BoolVal {
+        bool value = 1;
+        bool ro = 2;
+    }
+
+    message StringVal {
+        string value = 1;
+        bool ro = 2;
+    }
+
+    message DateAndTime {
+        message Date {
+            UInt32 year = 1;
+            UInt32 month = 2;
+            UInt32 day = 3;
+            UInt32 hour = 4;
+            UInt32 minute = 5;
+            UInt32 second = 6;
+        }
+
+        Date date = 1;
+        StringVal ntp = 2;
+        Int32 gmt_offset = 3;
+    }
+
+    message Temperature {
+        message Units {
+            BoolVal celsius = 1;
+            BoolVal fahrenheit = 2;
+        }
+
+        UInt32 value = 1;
+        Units units = 2;
+    }
+
+    message Afci {
+        message Test {
+            enum AfciTestResult {
+                AFCI_TEST_FAIL = 0;
+                AFCI_TEST_ERROR = -1;
+                AFCI_TEST_PASS = 1;
+            }
+
+            AfciTestResult result = 1;
+            UInt32 timeout = 2;
+        }
+
+        BoolVal enable = 1;
+        BoolVal manual_reconnect = 2;
+        Test test = 3;
+        BoolVal dsp_error = 4;
+    }
+
+    message FwUpgrade {}
+    message Backup {}
+
+    message Diagnostics {
+        message Inverters {
+            message Unit {
+                message Optimizer {
+                    StringVal sn = 1;
+                    BoolVal reports = 2;
+                    DateAndTime.Date date = 3;
+                    FloatS energy = 4;
+                    UInt32 output_v = 5;
+                    UInt32 input_v = 6;
+                    UInt32 input_c = 7;
+                    Temperature temperature = 8;
+                }
+
+                message Isolation {
+                    FloatS alpha = 1;
+                    FloatS r_iso = 2;
+                    UInt32 fault_location = 3;
+                }
+
+                message OptimizersStatus {
+                    UInt32 enabled = 1;
+                    UInt32 connected = 2; 
+                }
+
+                message SelfTest {
+                    enum TestCondition {
+                        TEST_COND_OK = 0;
+                        TEST_COND_NOT_READY_GRM = 1;
+                        TEST_COND_NOT_READY_PROD = 2;
+                        TEST_COND_NOT_READY_INV_OFF = 3;
+                    }
+
+                    message Test {
+                        message SettingsValues {
+                            FloatS vgmax = 1;
+                            FloatS vgmin = 2;
+                            FloatS fgmax = 3;
+                            FloatS fgmin = 4;
+                            UInt32 holdtime = 5;
+                        }
+
+                        message ResultsValues {
+                            FloatS trip_value = 1;
+                            UInt32 trip_time = 2;
+                        }
+
+                        enum TestStatus {
+                            TEST_STATUS_NOT_TESTED = 0;
+                            TEST_STATUS_PASSED = 1;
+                            TEST_STATUS_FAILED = 2;
+                        }
+
+                        UInt32 idx = 1;
+                        StringVal name = 2;
+                        SettingsValues settings = 3;
+                        ResultsValues result = 4;
+                        TestStatus status = 5;
+                    }
+
+                    TestCondition test_condition = 1;
+                    repeated Test tests = 2;
+                }
+
+                message QuadOptimizer {
+                    StringVal sn = 1;
+                    BoolVal reports = 2;
+                    Optimizer optimizer_1 = 3;
+                    Optimizer optimizer_2 = 4;
+                    Optimizer optimizer_3 = 5;
+                    Optimizer optimizer_4 = 6;
+                }
+
+                StringVal inv_sn = 1;
+                repeated Optimizer optimizer = 2;
+                Isolation isolation = 3;
+                OptimizersStatus optimizers_status = 4;
+                SelfTest self_test = 5;
+                repeated QuadOptimizer quad_optimizer = 6;
+            }
+
+            Unit left = 1;
+            Unit primary = 2;
+            Unit right = 3;
+        }
+
+        message BatterySelfTest {
+            enum PreCondition {
+                TEST_PRE_COND_OK = 0;
+                TEST_PRE_COND_NOT_READY_INV_OFF = 1;
+                TEST_PRE_COND_NOT_READY_INV_COMM_ERROR = 2;
+                TEST_PRE_COND_NOT_READY_INV_BATT_ERROR = 3;
+                TEST_PRE_COND_NOT_READY_MIN_SOE = 4;
+            }
+
+            enum BatteryTestStatus {
+                NOT_TESTED = 0;
+                IN_PROGRESS = 1;
+                PASSED = 2;
+                FAILED = 3;
+            }
+
+            message BatteryTest {
+                UInt32 idx = 1;
+                StringVal battery_sn = 2;
+                Int32 battery_power = 3;
+                BatteryTestStatus communication = 4;
+                BatteryTestStatus charge = 5;
+                BatteryTestStatus discharge = 6;
+            }
+
+            message BatteryPackTest {
+                BatteryTestStatus package_test_status = 1;
+                DateAndTime.Date date = 2;
+                BatteryTest battery_test = 3;
+            }
+
+            PreCondition pre_condition = 1;
+            BatteryTest current_test = 2;
+            BatteryTest test_results = 3;
+            BoolVal start_test = 4;
+            BoolVal stop_test = 5;
+        }
+
+        Inverters inverters = 1;
+        BatterySelfTest battery_self_test = 2;
+    }
+
+    message Standby {
+        BoolVal activated = 1;
+    }
+
+    message GridProtection {
+        message Trip {
+            FloatS value = 1;
+            UInt32 holdtime = 2;
+        }
+
+        Trip vg_max = 1;
+        Trip vg_min = 2;
+        Trip fg_max = 3;
+        Trip fg_min = 4;
+        UInt32 grm_time = 5;
+        Trip v_line_max = 6;
+        Trip v_line_min = 7;
+    }
+
+    message BoardReplacement {}
+
+    message GridProtectionLogin {
+        StringVal password = 1;
+    }
+
+    message Header {
+        string id = 1;
+        uint32 timestamp = 2;
+    }
+
+    message CircuitBreakers {
+        FloatS inv_rating = 1;
+    }
+
+    message Bui {
+        BoolVal hw_reboot = 1;
+    }
+
+    DateAndTime date_and_time = 1;
+    Temperature temperature = 2;
+    Afci afci = 3;
+    FwUpgrade fw_upgrade = 4;
+    Backup backup = 5;
+    Diagnostics diagnostics = 6;
+    Standby standby = 7;
+    GridProtection grid_protection = 8;
+    BoardReplacement board_replacement = 9;
+    BoolVal factory_reset = 10;
+    BoolVal reset_counters = 11;
+    GridProtectionLogin grid_protection_login = 12;
+    Header header = 13;
+    CircuitBreakers circuit_breakers = 14;
+    Bui bui = 15;
+}
