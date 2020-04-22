@@ -45,7 +45,35 @@ message Information {
     }
 
     message Controller {
-        uint32 controller_type = 1;
+        enum ControllerTypes {
+            ORTIA = 0;
+            VENUS_DSP1 = 1;
+            VENUS_DSP2 = 2;
+            JUPITER_DSP1 = 3;
+            JUPITER_DSP2 = 4;
+            VEGA_DSP = 5;
+            DISP_CTRL = 6;
+            FAN_CTRL = 7;
+            VENUS3_DSP1 = 8;
+            VENUS3_DSP2 = 9;
+            VENUS_LITE_DSP1 = 10;
+            VENUS_LITE_DSP2 = 11;
+            JUPITER_DSP1_BOOTLOADER = 12;
+            EVSE = 13;
+            SE_DCDC = 14;
+            METER = 15;
+            LG_DCDC = 16;
+            LG_BMS = 17;
+            HG2 = 18;
+            JUPITER_SE_DSP1 = 19;
+            JUPITER_SE_DSP2 = 20;
+            BUI = 21;
+            FOUR_BOX = 22;
+            VENUS3_SE_DSP1 = 23;
+            VENUS3_SE_DSP2 = 24;
+        }
+        
+        ControllerTypes controller_type = 1;
         uint32 software_type = 2;
         Version version = 3;
         string sn = 4;

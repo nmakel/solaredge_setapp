@@ -454,3 +454,57 @@ class CellNetStatus(enum.Enum):
     CELL_ACTIVATING_ERROR = 19
     CELL_CONNECTING_TO_SERVER = 20
     CELL_CONNECTED = 21
+
+
+class ControllerTypes(enum.Enum):
+    ORTIA = 0
+    VENUS_DSP1 = 1
+    VENUS_DSP2 = 2
+    JUPITER_DSP1 = 3
+    JUPITER_DSP2 = 4
+    VEGA_DSP = 5
+    DISP_CTRL = 6
+    FAN_CTRL = 7
+    VENUS3_DSP1 = 8
+    VENUS3_DSP2 = 9
+    VENUS_LITE_DSP1 = 10
+    VENUS_LITE_DSP2 = 11
+    JUPITER_DSP1_BOOTLOADER = 12
+    EVSE = 13
+    SE_DCDC = 14
+    METER = 15
+    LG_DCDC = 16
+    LG_BMS = 17
+    HG2 = 18
+    JUPITER_SE_DSP1 = 19
+    JUPITER_SE_DSP2 = 20
+    BUI = 21
+    FOUR_BOX = 22
+    VENUS3_SE_DSP1 = 23
+    VENUS3_SE_DSP2 = 24
+
+
+class ProductTypes(enum.Enum):
+    VENUS = 0
+    JUPITER = 1
+    VEGA = 2
+    CCG = 3
+    GEMINI = 4
+    SATURN = 5
+    MARS = 6
+    VOYAGER = 7
+    VENUS3 = 8
+    JUMBO_JUPITER = 9
+    VENUS_LITE = 10
+    CCG_UNUSED = 11
+    FFG = 12
+    ZIGBEE_GATEWAY = 13
+    EVSE_SA = 14
+    WIFI_REPEATER = 15
+    WIFI_GATEWAY = 16
+    PRODUCT_TYPE_WATER_HEATER = 17
+    PRODUCT_TYPE_CCG_GPU = 18
+    PRODUCT_TYPE_METER = 19
+    PRODUCT_TYPE_JJ_4BOX = 20
+    PRODUCT_TYPE_BUI = 21
+    PRODUCT_TYPE_NONE = 22
