@@ -44,6 +44,14 @@ message Information {
         repeated ErrorsLogger loggers = 1;
     }
 
+    message Controller {
+        uint32 controller_type = 1;
+        uint32 software_type = 2;
+        Version version = 3;
+        string sn = 4;
+        bool connected = 5;
+    }
+
     string sn = 1;
     Version cpu = 2;
     Version dsp1 = 3;
@@ -52,4 +60,5 @@ message Information {
     UInt32KeyVal error_log = 6;
     UInt32KeyVal warning_log = 7;
     ControllersErrors errors = 8;
+    repeated Controller controllers_list = 10;
 }
