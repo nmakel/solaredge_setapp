@@ -301,11 +301,13 @@ message Status {
             bool bad_position = 8;
             Isolation isolation = 9;
             FloatS power = 10;
+            uint32 position = 11;
         }
 
         Unit left = 1;
         Unit primary = 2;
         Unit right = 3;
+        repeated Unit units_list = 4;
     }
 
     message Communication {
@@ -685,10 +687,28 @@ message Status {
     message SOkStatus {
         enum LanNetStatus {
             LAN_UNKNOWN = 0;
+            LAN_CABLE_NOT_CONNECTED = 1;
+            LAN_ERROR_DHCP = 2;
+            LAN_NO_INTERNET_CONNECTION = 3;
+            LAN_ERROR_DNS = 4;
+            LAN_CONNECTING_TO_SERVER = 5;
+            LAN_WAITING_FOR_SERVER_RESPONSE = 6;
+            LAN_SERVER_RESPONDED = 7;
         }
 
         enum WifiNetStatus {
             WIFI_UNKNOWN = 0;
+            WIFI_NOT_CONNECTED = 1;
+            WIFI_CONNECTION_IN_PROGRESS = 2;
+            WIFI_ERROR_WRONG_PASSWORD = 3;
+            WIFI_ERROR_UNREACHABLE = 4;
+            WIFI_ERROR_DHCP = 5;
+            WIFI_ERROR_CONNECTION_OTHER = 6;
+            WIFI_NO_INTERNET_CONNECTION = 7;
+            WIFI_ERROR_DNS = 8;
+            WIFI_CONNECTING_TO_SERVER = 9;
+            WIFI_WAITING_FOR_SERVER_RESPONSE = 10;
+            WIFI_SERVER_RESPONDED = 11;
         }
 
         enum CellNetStatus {
@@ -716,9 +736,32 @@ message Status {
             CELL_CONNECTED = 21;
         }
 
+        enum RS485SlaveNetStatus {
+            RS485_SLAVE_UNKNOWN = 0;
+            RS485_SLAVE_NOT_CONFIGURED = 1;
+            RS485_SLAVE_NO_MASTER = 2;
+            RS485_SLAVE_NO_GRANT_RECEIVED = 3;
+            RS485_SLAVE_CONNECTED_TO_MASTER = 4;
+            RS485_SLAVE_SERVER_RESPONDED = 5;
+        }
+
+        enum ZigbeeSlaveNetStatus {
+            ZB_SLAVE_UNKNOWN = 0;
+            ZB_SLAVE_NOT_DETECTED = 1;
+            ZB_DETECTION_IN_PROGRESS = 2;
+            ZB_INIT_MODULE = 3;
+            ZB_SLAVE_NOT_CONFIGURED = 4;
+            ZB_SLAVE_DISASSOCIATED = 5;
+            ZB_SLAVE_NO_COMM_WITH_COORDINATOR = 6;
+            ZB_SLAVE_CONNECTED_TO_COORDINATOR = 7;
+            ZB_SLAVE_SERVER_RESPONDED = 8;
+        }
+
         LanNetStatus lan_net_status = 1;
         WifiNetStatus wifi_net_status = 2;
         CellNetStatus cell_net_status = 3;
+        RS485SlaveNetStatus rs485_slave_net_status = 4;
+        ZigbeeSlaveNetStatus zigbee_slave_net_status = 5;
     }
 
     message AdvancedGridSettings {
