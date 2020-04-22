@@ -64,7 +64,7 @@ class Maintenance:
                             "module_voltage": int(po.input_v.value),
                             "module_current": int(po.input_c.value),
                             "temperature": int(po.temperature.value.value),
-                            "timestamp": 0 if not bool(po.reports) else int(datetime.datetime.strptime(
+                            "timestamp": 0 if not bool(po.reports.value) else int(datetime.datetime.strptime(
                                 "{year} {month} {day} {hour} {minutes} {seconds}".format(
                                     year=po.date.year.value,
                                     month=po.date.month.value,
