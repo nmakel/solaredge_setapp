@@ -8,6 +8,15 @@ Current WSA target: **1.4.10**
 
 Release 0.0.7 and earlier are compatible with WSA <= 1.3.9.
 
+
+### Reduced access to the SetApp API (2020-04-23)
+
+The SetApp commissioning interface with which this software communicates is primarily used by the SetApp utility on smartphones. For many users the commissioning interface was *also* available through the ethernet and WiFi interfaces due to their inverter being in **debug mode**. As of 2020-04 SolarEdge has been systematically turning off debug mode on inverters on which it was active.
+
+Access to the commissioning API remains possible, however. By connecting to the inverter on the temporary WiFi access point created when the 0/1/P button is set to P for *one second*. The WiFi network, whose name is displayed in the SetApp utility, and the password to which is printed on the label on the side of the inverter, still provides access to the SetApp API on port 80 as before. Once connected to this network it can be kept active by regularly requesting any API endpoint. Lack of activity causes this network to disconnect.
+
+Those users with inverters still in *debug mode* might consider disconnecting their inverter &mdash; or otherwise firewall outbound connections &mdash; in order to prevent remote updates from disabling *debug mode*.
+
 ## Installation
 
 To install, either clone this project and install using `setuptools`:
