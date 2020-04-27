@@ -4,10 +4,6 @@ import solaredge_setapp.status_pb2
 
 class Status:
 
-    def __init__(self, bytes=False):
-        if bytes:
-            return self.parse_protobuf(bytes)
-
     def parse_protobuf(self, bytes):
         parsed = {}
 
