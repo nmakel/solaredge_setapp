@@ -9,9 +9,9 @@ import requests
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser()
     argparser.add_argument("address", type=str, help="hostname or ip address of solaredge inverter")
-    parserargs = argparser.parse_args()
+    args = argparser.parse_args()
 
-    address = parserargs.address
+    address = args.address
 
     data = {}
     web_services = [
@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     try:
         for name, endpoint_url, module_class, data_name in web_services:
-            endpoint_request = requests.get(f"http://{parserargs.address}/{endpoint_url}")
+            endpoint_request = requests.get(f"http://{args.address}/{endpoint_url}")
 
             if endpoint_request.status_code != 200:
                 raise Exception(f"Unable to load '{name}' at {endpoint_url}")
@@ -91,4 +91,4 @@ if __name__ == "__main__":
 
         print("")
     except requests.exceptions.ConnectionError:
-        print(f"Could not connect to SetApp on {parserargs.address}")
+        print(f"Could not connect to SetApp on {args.address}")
