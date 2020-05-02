@@ -189,7 +189,11 @@ _COUNTRIES = {
     175: ["Hong Kong", "COUNTRY_HONG_KONG"],
     176: ["Uruguay", "COUNTRY_URUGUAY"],
     177: ["Italy A68", "COUNTRY_ITALIY_A68"],
-    178: ["Estonia", "COUNTRY_ESTONIA"]
+    178: ["Estonia", "COUNTRY_ESTONIA"],
+    179: ["Mauritius", "COUNTRY_MAURITIUS_2"],
+    180: ["Surinam", "COUNTRY_SURINAM"],
+    181: ["Western Power", "COUNTRY_WESTERN_POWER"],
+    182: ["India (Kerala)", "COUNTRY_INDIA_KERALA"]
 }
 Countries = enum.Enum(
     value="Countries",
@@ -211,7 +215,8 @@ _STATUS = {
     7: ["Night Mode", "NIGHT_MODE"],
     8: ["Grid Monitoring", "GRID_MONITORING"],
     9: ["Idle", "IDLE"],
-    10: ["Grid Pairing", "GRM_PAIRING"]
+    10: ["Grid Pairing", "GRM_PAIRING"],
+    11: ["PID Rectification", "PID_RECTIFICATION"]
 }
 Status = enum.Enum(
     value="Status",
@@ -454,6 +459,7 @@ class CellNetStatus(enum.Enum):
     CELL_ACTIVATING_ERROR = 19
     CELL_CONNECTING_TO_SERVER = 20
     CELL_CONNECTED = 21
+    CELL_SERVER_RESPONDED = 22
 
 
 class ControllerTypes(enum.Enum):
@@ -508,3 +514,11 @@ class ProductTypes(enum.Enum):
     PRODUCT_TYPE_JJ_4BOX = 20
     PRODUCT_TYPE_BUI = 21
     PRODUCT_TYPE_NONE = 22
+
+
+class UnitPosition(enum.Enum):
+    UNKNOWN = 0
+    LEFT = 1
+    CENTER = 2
+    RIGHT = 3
+    PRIMARY = 4

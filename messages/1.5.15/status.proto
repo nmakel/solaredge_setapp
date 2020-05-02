@@ -58,7 +58,8 @@ message Status {
         NIGHT_MODE = 7;
         GRID_MONITORING = 8;
         IDLE = 9;
-        GRM_PAIRING = 10;   
+        GRM_PAIRING = 10;
+        PID_RECTIFICATION = 11;
         UNSET = -1;
     }
 
@@ -242,6 +243,10 @@ message Status {
         COUNTRY_URUGUAY = 176;
         COUNTRY_ITALIY_A68 = 177;
         COUNTRY_ESTONIA = 178;
+        COUNTRY_MAURITIUS_2 = 179;
+        COUNTRY_SURINAM = 180;
+        COUNTRY_WESTERN_POWER = 181;
+        COUNTRY_INDIA_KERALA = 182;
         COUNTRY_NONE = -1;
     }
 
@@ -285,6 +290,14 @@ message Status {
 
     message Inverters {
         message Unit {
+            enum Position {
+                UNKNOWN = 0;
+                LEFT = 1;
+                CENTER = 2;
+                RIGHT = 3;
+                PRIMARY = 4;
+            }
+
             message Isolation {
                 FloatS alpha = 1;
                 FloatS r_iso = 2;
@@ -301,13 +314,14 @@ message Status {
             bool bad_position = 8;
             Isolation isolation = 9;
             FloatS power = 10;
-            uint32 position = 11;
+            Position position = 11;
+            FloatS dc_current = 12;
         }
 
         Unit left = 1;
         Unit primary = 2;
         Unit right = 3;
-        repeated Unit units_list = 4;
+        repeated Unit units = 4;
     }
 
     message Communication {
@@ -597,6 +611,19 @@ message Status {
             Header header = 1;
             UInt32 error_code = 2;
             UInt32 subsystem = 3;
+            StringVal error_display_intro = 4;
+        }
+
+        message PID {
+            message Mitigation {
+                BoolVal disabled = 1;
+                BoolVal rectifier = 2;
+                BoolVal guard = 3;
+            }
+
+            Header header = 1;
+            Mitigation mitigation = 2;
+            FloatS dc_voltage = 3;
         }
 
         Shutdown shutdown = 1;
@@ -605,6 +632,7 @@ message Status {
         SlaveDetect slave_detect = 4;
         NotActivated not_activated = 5;
         ErrorBanner error_banner = 6;
+        PID pid = 6;
     }
 
     message ServerCommunication {
@@ -682,6 +710,7 @@ message Status {
         OperationMode operation_mode = 2;
         BoolVal communicating = 3;
         SubsystemError subsystem_error = 4;
+        FloatS line_imbalance = 5;
     }
 
     message SOkStatus {
@@ -734,6 +763,7 @@ message Status {
             CELL_ACTIVATING_ERROR = 19;
             CELL_CONNECTING_TO_SERVER = 20;
             CELL_CONNECTED = 21;
+            CELL_SERVER_RESPONDED = 22;
         }
 
         enum RS485SlaveNetStatus {
@@ -796,4 +826,5 @@ message Status {
     Bui bui = 26;
     SOkStatus s_ok_status = 27;
     AdvancedGridSettings advanced_grid_settings = 28;
+    FloatS q = 29;
 }

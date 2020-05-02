@@ -96,6 +96,14 @@ message Maintenance {
     message Diagnostics {
         message Inverters {
             message Unit {
+                enum Position {
+                    UNKNOWN = 0;
+                    LEFT = 1;
+                    CENTER = 2;
+                    RIGHT = 3;
+                    PRIMARY = 4;
+                }
+
                 message Optimizer {
                     StringVal sn = 1;
                     BoolVal reports = 2;
@@ -172,13 +180,13 @@ message Maintenance {
                 OptimizersStatus optimizers_status = 4;
                 SelfTest self_test = 5;
                 repeated QuadOptimizer quad_optimizer = 6;
-                uint32 position = 7;
+                Position position = 7;
             }
 
             Unit left = 1;
             Unit primary = 2;
             Unit right = 3;
-            repeated Unit units_list = 4;
+            repeated Unit units = 4;
         }
 
         message BatterySelfTest {
@@ -261,6 +269,22 @@ message Maintenance {
         BoolVal hw_reboot = 1;
     }
 
+    message TripLock {
+        BoolVal enabled = 1;
+    }
+
+    message PID {
+        message Mitigation {
+            BoolVal disabled = 1;
+            BoolVal rectifier = 2;
+            BoolVal guard = 3;
+        }
+
+        Header header = 1;
+        Mitigation mitigation = 2;
+        FloatS dc_voltage = 3;
+    }
+
     DateAndTime date_and_time = 1;
     Temperature temperature = 2;
     Afci afci = 3;
@@ -276,4 +300,6 @@ message Maintenance {
     Header header = 13;
     CircuitBreakers circuit_breakers = 14;
     Bui bui = 15;
+    trip_lock = 16;
+    PID pid = 17;
 }
