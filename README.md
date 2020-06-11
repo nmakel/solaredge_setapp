@@ -2,7 +2,7 @@
 
 solaredge_setapp is a python library that parses inverter and power optimizer data from a compatible SolarEdge PV inverter. Only those models which support SetApp commissioning are supported.
 
-This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge-local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters. Developed and tested on a European SE3500H-RW000BNN4 SolarEdge single-phase inverter. If you instead want to monitor the SolarEdge sanctioned Modbus API, you could try <a href="https://github.com/nmakel/solaredge_modbus">solaredge_modbus</a>.
+This project is built on the efforts of others: for Home Assistant users, see drobtravels' <a href="https://github.com/drobtravels/solaredge-local">solaredge_local</a>, and jbuehl's <a href="https://github.com/jbuehl/solaredge">solaredge</a> for all non-SetApp power inverters. Developed and tested on a European SE3500H-RW000BNN4 SolarEdge single-phase inverter. If you instead want to monitor the official SolarEdge Modbus API, you could try <a href="https://github.com/nmakel/solaredge_modbus">solaredge_modbus</a>.
 
 Current WSA target: **1.4.10**
 
@@ -33,7 +33,7 @@ See `example.py` how to fetch, parse, and display the SetApp protobuf files expo
 
 ```python3 example.py your-inverter-ip```
 
-For a complete json dump of all parsed values from all endpoints, try `dump_all.py`:
+For a complete JSON dump of all parsed values from all endpoints, try `dump_all.py`:
 
 ```python3 dump_all.py your-inverter-ip```
 
@@ -72,7 +72,7 @@ The remaining endpoints mostly concern functionality of the commissioning interf
 
 In order to use `compile_proto.sh` to (re)compile the protocol buffer `.proto` message definitions you will need `protoc`, which is provided, for example, by Ubuntu's `protobuf-compiler` package. *(Re-)compiling the protobuf messages is only necessary if you have made local changes to them.*
 
-You can test changes to .proto files directly by passing raw protobufs to `protoc`:
+You can test changes to .proto files directly by passing raw protobuf to `protoc`:
 
 ```curl -s http://your-inverter-ip/web/v1/status | protoc --decode Status messages/status.proto```
 
