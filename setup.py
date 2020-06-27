@@ -22,7 +22,7 @@ setuptools.setup(
         "protobuf>=3.6.1",
         "requests>=2.12.4"
     ],
-    classifiers = [
+    classifiers=[
         "Development Status :: 4 - Beta",
         "Programming Language :: Python :: 3.7",
         "Operating System :: OS Independent",
