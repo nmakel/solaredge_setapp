@@ -632,7 +632,7 @@ message Status {
         SlaveDetect slave_detect = 4;
         NotActivated not_activated = 5;
         ErrorBanner error_banner = 6;
-        PID pid = 6;
+        PID pid = 7;
     }
 
     message ServerCommunication {
