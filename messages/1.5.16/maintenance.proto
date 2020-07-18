@@ -300,6 +300,6 @@ message Maintenance {
     Header header = 13;
     CircuitBreakers circuit_breakers = 14;
     Bui bui = 15;
-    trip_lock = 16;
+    TripLock trip_lock = 16;
     PID pid = 17;
 }
