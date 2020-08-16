@@ -522,3 +522,29 @@ class UnitPosition(enum.Enum):
     CENTER = 2
     RIGHT = 3
     PRIMARY = 4
+
+
+class FactoryResetName(enum.Enum):
+    FR_STEP_DSPS_PARAMS = 0
+    FR_STEP_AS_PARAMS = 1
+    FR_STEP_TOU = 2
+    FR_STEP_LOAD_CONFIGS = 3
+    FR_STEP_STATISTICS = 4
+    FR_STEP_FIFO = 5
+    FR_STEP_SEP = 6
+    FR_STEP_DSP_FW_FILES = 7
+    FR_STEP_DSP_CONFIG = 8
+    FR_STEP_OPT_DATA = 9
+    FR_STEP_BSUF_FILES = 10
+    FR_STEP_LAN_CONFIG = 11
+    FR_STEP_WIFI_ST = 12
+    FR_STEP_CELLULAR = 13
+    FR_STEP_PRODUCT_ERRORS = 14
+    FR_STEP_MONITORING_COMM = 15
+
+
+class FactoryResetStatus(enum.Enum):
+    FR_STATUS_IDLE = 0;
+    FR_STATUS_SUCCESS = 1
+    FR_STATUS_FAILURE = 2
+    FR_STATUS_IN_PROGRESS = 3
