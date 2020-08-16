@@ -496,6 +496,12 @@ class ControllerTypes(enum.Enum):
     FOUR_BOX = 22
     VENUS3_SE_DSP1 = 23
     VENUS3_SE_DSP2 = 24
+    SE_BATTERY_SMCU = 25
+    DR_METER = 26
+    SE_BATTERY_DCDC = 27
+    SE_BATTERY_BMS = 28
+    BOOSTER = 29
+    COMMISSIONER = 30
 
 
 class ProductTypes(enum.Enum):
