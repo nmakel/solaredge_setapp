@@ -193,7 +193,15 @@ _COUNTRIES = {
     179: ["Mauritius 2", "COUNTRY_MAURITIUS_2"],
     180: ["Surinam", "COUNTRY_SURINAM"],
     181: ["Western Power", "COUNTRY_WESTERN_POWER"],
-    182: ["India (Kerala)", "COUNTRY_INDIA_KERALA"]
+    182: ["India (Kerala)", "COUNTRY_INDIA_KERALA"],
+    183 : ["Australia VIC", "COUNTRY_AUSTRALIA_VIC"],
+    184 : ["Australia Essential Energy", "COUNTRY_AUSTRALIA_ESSENTIAL_ENERGY"],
+    185 : ["Australia Ausgrid", "COUNTRY_AUSTRALIA_AUSGRID"],
+    186 : ["Australia Endeavour Energy", "COUNTRY_AUSTRALIA_ENDEAVOUR_ENERGY"],
+    187 : ["Australia SAPN", "COUNTRY_AUSTRALIA_SAPN"],
+    188 : ["Australia Horizon Power", "COUNTRY_AUSTRALIA_HORIZON_POWER"],
+    189 : ["Australia Evoenergy", "COUNTRY_AUSTRALIA_EVOENERGY"]
+
 }
 Countries = enum.Enum(
     value="Countries",
