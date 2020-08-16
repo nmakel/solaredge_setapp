@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+
+message Information {
+
+    message UInt32KeyVal {
+        uint32 key = 1;
+        uint32 value = 2;    
+    }
+
+    message StringKeyVal {
+        string key = 1;
+        string value = 2;
+    }
+
+    message StringVal {
+        string value = 1;
+        bool ro = 2;
+    }
+
+    message Date {
+        uint32 year = 1;
+        uint32 month = 2;
+        uint32 day = 3;
+        uint32 hour = 4;
+        uint32 minute = 5;
+        uint32 second = 6;
+    }
+
+    message Version {
+        uint32 major = 1;
+        uint32 minor = 2;
+        uint32 build = 3;
+        uint32 ci_build = 4;
+    }
+
+    message ControllersErrors {
+        message ErrorsLogger {
+            message Error {
+                uint32 error_code = 1;
+                Date start_time = 2;
+                StringVal error_display_intro = 3;
+            }
+            
+            uint32 controllerID = 1;
+            uint32 subsystem = 2;
+            repeated Error errors = 3;
+            StringVal controller_id_string = 4;
+        }
+        
+        repeated ErrorsLogger loggers = 1;
+    }
+
+    message Controller {
+        enum ControllerTypes {
+            ORTIA = 0;
+            VENUS_DSP1 = 1;
+            VENUS_DSP2 = 2;
+            JUPITER_DSP1 = 3;
+            JUPITER_DSP2 = 4;
+            VEGA_DSP = 5;
+            DISP_CTRL = 6;
+            FAN_CTRL = 7;
+            VENUS3_DSP1 = 8;
+            VENUS3_DSP2 = 9;
+            VENUS_LITE_DSP1 = 10;
+            VENUS_LITE_DSP2 = 11;
+            JUPITER_DSP1_BOOTLOADER = 12;
+            EVSE = 13;
+            SE_DCDC = 14;
+            METER = 15;
+            LG_DCDC = 16;
+            LG_BMS = 17;
+            HG2 = 18;
+            JUPITER_SE_DSP1 = 19;
+            JUPITER_SE_DSP2 = 20;
+            BUI = 21;
+            FOUR_BOX = 22;
+            VENUS3_SE_DSP1 = 23;
+            VENUS3_SE_DSP2 = 24;
+        }
+        
+        ControllerTypes controller_type = 1;
+        uint32 software_type = 2;
+        Version version = 3;
+        string sn = 4;
+        bool connected = 5;
+    }
+
+    string sn = 1;
+    Version cpu = 2;
+    Version dsp1 = 3;
+    Version dsp2 = 4;
+    StringKeyVal hw_ids = 5;
+    UInt32KeyVal error_log = 6;
+    UInt32KeyVal warning_log = 7;
+    ControllersErrors errors = 8;
+    Version bui_version = 9;
+    repeated Controller controllers = 10;
+}
