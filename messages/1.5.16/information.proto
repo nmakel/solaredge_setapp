@@ -39,7 +39,7 @@ message Information {
             message Error {
                 uint32 error_code = 1;
                 Date start_time = 2;
-                StringVal error_display_intro 3;
+                StringVal error_display_intro = 3;
             }
             
             uint32 controllerID = 1;
