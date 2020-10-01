@@ -8,7 +8,6 @@ Current WSA target: **1.4.10**
 
 Release 0.0.7 and earlier are compatible with WSA <= 1.3.9.
 
-
 ### Reduced access to the SetApp API (2020-04-23)
 
 The SetApp commissioning API with which this software communicates is used primarily by the SetApp utility on smartphones. For many users the commissioning API was *also* available through the ethernet and WiFi interfaces due to their inverter being in **debug mode**. As of 2020-03 SolarEdge has been systematically turning off debug mode on inverters.
