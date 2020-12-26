@@ -6,7 +6,7 @@ import solaredge_setapp.maintenance
 import solaredge_setapp.status
 
 
-TARGET_VERSION = "1.4.10"
+TARGET_VERSION = "1.6.9"
 
 
 _COUNTRIES = {
