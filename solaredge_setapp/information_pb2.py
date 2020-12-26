@@ -19,10 +19,175 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11information.proto\"\xd4\x06\n\x0bInformation\x12\n\n\x02sn\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12)\n\x06hw_ids\x18\x05 \x01(\x0b\x32\x19.Information.StringKeyVal\x12,\n\terror_log\x18\x06 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x0bwarning_log\x18\x07 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x1e.Information.ControllersErrors\x1a*\n\x0cUInt32KeyVal\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r\x1a*\n\x0cStringKeyVal\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x1a^\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\r\x12\r\n\x05month\x18\x02 \x01(\r\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\r\x12\x0c\n\x04hour\x18\x04 \x01(\r\x12\x0e\n\x06minute\x18\x05 \x01(\r\x12\x0e\n\x06second\x18\x06 \x01(\r\x1aH\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\r\x12\r\n\x05minor\x18\x02 \x01(\r\x12\r\n\x05\x62uild\x18\x03 \x01(\r\x12\x10\n\x08\x63i_build\x18\x04 \x01(\r\x1a\x92\x02\n\x11\x43ontrollersErrors\x12<\n\x07loggers\x18\x01 \x03(\x0b\x32+.Information.ControllersErrors.ErrorsLogger\x1a\xbe\x01\n\x0c\x45rrorsLogger\x12\x14\n\x0c\x63ontrollerID\x18\x01 \x01(\r\x12\x11\n\tsubsystem\x18\x02 \x01(\r\x12\x41\n\x06\x65rrors\x18\x03 \x03(\x0b\x32\x31.Information.ControllersErrors.ErrorsLogger.Error\x1a\x42\n\x05\x45rror\x12\x12\n\nerror_code\x18\x01 \x01(\r\x12%\n\nstart_time\x18\x02 \x01(\x0b\x32\x11.Information.Dateb\x06proto3'
+  serialized_pb=b'\n\x11information.proto\"\xe8\r\n\x0bInformation\x12\n\n\x02sn\x18\x01 \x01(\t\x12!\n\x03\x63pu\x18\x02 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp1\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\"\n\x04\x64sp2\x18\x04 \x01(\x0b\x32\x14.Information.Version\x12)\n\x06hw_ids\x18\x05 \x01(\x0b\x32\x19.Information.StringKeyVal\x12,\n\terror_log\x18\x06 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x0bwarning_log\x18\x07 \x01(\x0b\x32\x19.Information.UInt32KeyVal\x12.\n\x06\x65rrors\x18\x08 \x01(\x0b\x32\x1e.Information.ControllersErrors\x12)\n\x0b\x62ui_version\x18\t \x01(\x0b\x32\x14.Information.Version\x12,\n\x0b\x63ontrollers\x18\n \x03(\x0b\x32\x17.Information.Controller\x1a*\n\x0cUInt32KeyVal\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r\x1a*\n\x0cStringKeyVal\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x1a&\n\tStringVal\x12\r\n\x05value\x18\x01 \x01(\t\x12\n\n\x02ro\x18\x02 \x01(\x08\x1a^\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\r\x12\r\n\x05month\x18\x02 \x01(\r\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\r\x12\x0c\n\x04hour\x18\x04 \x01(\r\x12\x0e\n\x06minute\x18\x05 \x01(\r\x12\x0e\n\x06second\x18\x06 \x01(\r\x1aH\n\x07Version\x12\r\n\x05major\x18\x01 \x01(\r\x12\r\n\x05minor\x18\x02 \x01(\r\x12\r\n\x05\x62uild\x18\x03 \x01(\r\x12\x10\n\x08\x63i_build\x18\x04 \x01(\r\x1a\xfd\x02\n\x11\x43ontrollersErrors\x12<\n\x07loggers\x18\x01 \x03(\x0b\x32+.Information.ControllersErrors.ErrorsLogger\x1a\xa9\x02\n\x0c\x45rrorsLogger\x12\x14\n\x0c\x63ontrollerID\x18\x01 \x01(\r\x12\x11\n\tsubsystem\x18\x02 \x01(\r\x12\x41\n\x06\x65rrors\x18\x03 \x03(\x0b\x32\x31.Information.ControllersErrors.ErrorsLogger.Error\x12\x34\n\x14\x63ontroller_id_string\x18\x04 \x01(\x0b\x32\x16.Information.StringVal\x1aw\n\x05\x45rror\x12\x12\n\nerror_code\x18\x01 \x01(\r\x12%\n\nstart_time\x18\x02 \x01(\x0b\x32\x11.Information.Date\x12\x33\n\x13\x65rror_display_intro\x18\x03 \x01(\x0b\x32\x16.Information.StringVal\x1a\xa5\x05\n\nController\x12@\n\x0f\x63ontroller_type\x18\x01 \x01(\x0e\x32\'.Information.Controller.ControllerTypes\x12\x15\n\rsoftware_type\x18\x02 \x01(\r\x12%\n\x07version\x18\x03 \x01(\x0b\x32\x14.Information.Version\x12\n\n\x02sn\x18\x04 \x01(\t\x12\x11\n\tconnected\x18\x05 \x01(\x08\"\xf7\x03\n\x0f\x43ontrollerTypes\x12\t\n\x05ORTIA\x10\x00\x12\x0e\n\nVENUS_DSP1\x10\x01\x12\x0e\n\nVENUS_DSP2\x10\x02\x12\x10\n\x0cJUPITER_DSP1\x10\x03\x12\x10\n\x0cJUPITER_DSP2\x10\x04\x12\x0c\n\x08VEGA_DSP\x10\x05\x12\r\n\tDISP_CTRL\x10\x06\x12\x0c\n\x08\x46\x41N_CTRL\x10\x07\x12\x0f\n\x0bVENUS3_DSP1\x10\x08\x12\x0f\n\x0bVENUS3_DSP2\x10\t\x12\x13\n\x0fVENUS_LITE_DSP1\x10\n\x12\x13\n\x0fVENUS_LITE_DSP2\x10\x0b\x12\x1b\n\x17JUPITER_DSP1_BOOTLOADER\x10\x0c\x12\x08\n\x04\x45VSE\x10\r\x12\x0b\n\x07SE_DCDC\x10\x0e\x12\t\n\x05METER\x10\x0f\x12\x0b\n\x07LG_DCDC\x10\x10\x12\n\n\x06LG_BMS\x10\x11\x12\x07\n\x03HG2\x10\x12\x12\x13\n\x0fJUPITER_SE_DSP1\x10\x13\x12\x13\n\x0fJUPITER_SE_DSP2\x10\x14\x12\x07\n\x03\x42UI\x10\x15\x12\x0c\n\x08\x46OUR_BOX\x10\x16\x12\x12\n\x0eVENUS3_SE_DSP1\x10\x17\x12\x12\n\x0eVENUS3_SE_DSP2\x10\x18\x12\x0c\n\x08\x44R_METER\x10\x1a\x12\x13\n\x0fSE_BATTERY_DCDC\x10\x1b\x12\x12\n\x0eSE_BATTERY_BMS\x10\x1c\x12\x0b\n\x07\x42OOSTER\x10\x1d\x12\x10\n\x0c\x43OMMISSIONER\x10\x1e\x62\x06proto3'
 )
 
 
+
+_INFORMATION_CONTROLLER_CONTROLLERTYPES = _descriptor.EnumDescriptor(
+  name='ControllerTypes',
+  full_name='Information.Controller.ControllerTypes',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ORTIA', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS_DSP1', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS_DSP2', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='JUPITER_DSP1', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='JUPITER_DSP2', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VEGA_DSP', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DISP_CTRL', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='FAN_CTRL', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS3_DSP1', index=8, number=8,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS3_DSP2', index=9, number=9,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS_LITE_DSP1', index=10, number=10,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS_LITE_DSP2', index=11, number=11,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='JUPITER_DSP1_BOOTLOADER', index=12, number=12,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='EVSE', index=13, number=13,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SE_DCDC', index=14, number=14,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='METER', index=15, number=15,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LG_DCDC', index=16, number=16,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LG_BMS', index=17, number=17,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='HG2', index=18, number=18,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='JUPITER_SE_DSP1', index=19, number=19,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='JUPITER_SE_DSP2', index=20, number=20,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BUI', index=21, number=21,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='FOUR_BOX', index=22, number=22,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS3_SE_DSP1', index=23, number=23,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='VENUS3_SE_DSP2', index=24, number=24,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DR_METER', index=25, number=26,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SE_BATTERY_DCDC', index=26, number=27,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SE_BATTERY_BMS', index=27, number=28,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BOOSTER', index=28, number=29,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='COMMISSIONER', index=29, number=30,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1287,
+  serialized_end=1790,
+)
+_sym_db.RegisterEnumDescriptor(_INFORMATION_CONTROLLER_CONTROLLERTYPES)
 
 
 _INFORMATION_UINT32KEYVAL = _descriptor.Descriptor(
@@ -59,8 +224,8 @@ _INFORMATION_UINT32KEYVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=341,
-  serialized_end=383,
+  serialized_start=430,
+  serialized_end=472,
 )
 
 _INFORMATION_STRINGKEYVAL = _descriptor.Descriptor(
@@ -97,8 +262,46 @@ _INFORMATION_STRINGKEYVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=385,
-  serialized_end=427,
+  serialized_start=474,
+  serialized_end=516,
+)
+
+_INFORMATION_STRINGVAL = _descriptor.Descriptor(
+  name='StringVal',
+  full_name='Information.StringVal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Information.StringVal.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ro', full_name='Information.StringVal.ro', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=518,
+  serialized_end=556,
 )
 
 _INFORMATION_DATE = _descriptor.Descriptor(
@@ -163,8 +366,8 @@ _INFORMATION_DATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=429,
-  serialized_end=523,
+  serialized_start=558,
+  serialized_end=652,
 )
 
 _INFORMATION_VERSION = _descriptor.Descriptor(
@@ -215,8 +418,8 @@ _INFORMATION_VERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=597,
+  serialized_start=654,
+  serialized_end=726,
 )
 
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR = _descriptor.Descriptor(
@@ -241,6 +444,13 @@ _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='error_display_intro', full_name='Information.ControllersErrors.ErrorsLogger.Error.error_display_intro', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -253,8 +463,8 @@ _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=808,
-  serialized_end=874,
+  serialized_start=991,
+  serialized_end=1110,
 )
 
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER = _descriptor.Descriptor(
@@ -286,6 +496,13 @@ _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='controller_id_string', full_name='Information.ControllersErrors.ErrorsLogger.controller_id_string', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -298,8 +515,8 @@ _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=684,
-  serialized_end=874,
+  serialized_start=813,
+  serialized_end=1110,
 )
 
 _INFORMATION_CONTROLLERSERRORS = _descriptor.Descriptor(
@@ -329,8 +546,68 @@ _INFORMATION_CONTROLLERSERRORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=600,
-  serialized_end=874,
+  serialized_start=729,
+  serialized_end=1110,
+)
+
+_INFORMATION_CONTROLLER = _descriptor.Descriptor(
+  name='Controller',
+  full_name='Information.Controller',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='controller_type', full_name='Information.Controller.controller_type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='software_type', full_name='Information.Controller.software_type', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='Information.Controller.version', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sn', full_name='Information.Controller.sn', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='connected', full_name='Information.Controller.connected', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _INFORMATION_CONTROLLER_CONTROLLERTYPES,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1113,
+  serialized_end=1790,
 )
 
 _INFORMATION = _descriptor.Descriptor(
@@ -397,10 +674,24 @@ _INFORMATION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bui_version', full_name='Information.bui_version', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='controllers', full_name='Information.controllers', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_INFORMATION_UINT32KEYVAL, _INFORMATION_STRINGKEYVAL, _INFORMATION_DATE, _INFORMATION_VERSION, _INFORMATION_CONTROLLERSERRORS, ],
+  nested_types=[_INFORMATION_UINT32KEYVAL, _INFORMATION_STRINGKEYVAL, _INFORMATION_STRINGVAL, _INFORMATION_DATE, _INFORMATION_VERSION, _INFORMATION_CONTROLLERSERRORS, _INFORMATION_CONTROLLER, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -410,19 +701,26 @@ _INFORMATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=874,
+  serialized_end=1790,
 )
 
 _INFORMATION_UINT32KEYVAL.containing_type = _INFORMATION
 _INFORMATION_STRINGKEYVAL.containing_type = _INFORMATION
+_INFORMATION_STRINGVAL.containing_type = _INFORMATION
 _INFORMATION_DATE.containing_type = _INFORMATION
 _INFORMATION_VERSION.containing_type = _INFORMATION
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR.fields_by_name['start_time'].message_type = _INFORMATION_DATE
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR.fields_by_name['error_display_intro'].message_type = _INFORMATION_STRINGVAL
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR.containing_type = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER.fields_by_name['errors'].message_type = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER_ERROR
+_INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER.fields_by_name['controller_id_string'].message_type = _INFORMATION_STRINGVAL
 _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER.containing_type = _INFORMATION_CONTROLLERSERRORS
 _INFORMATION_CONTROLLERSERRORS.fields_by_name['loggers'].message_type = _INFORMATION_CONTROLLERSERRORS_ERRORSLOGGER
 _INFORMATION_CONTROLLERSERRORS.containing_type = _INFORMATION
+_INFORMATION_CONTROLLER.fields_by_name['controller_type'].enum_type = _INFORMATION_CONTROLLER_CONTROLLERTYPES
+_INFORMATION_CONTROLLER.fields_by_name['version'].message_type = _INFORMATION_VERSION
+_INFORMATION_CONTROLLER.containing_type = _INFORMATION
+_INFORMATION_CONTROLLER_CONTROLLERTYPES.containing_type = _INFORMATION_CONTROLLER
 _INFORMATION.fields_by_name['cpu'].message_type = _INFORMATION_VERSION
 _INFORMATION.fields_by_name['dsp1'].message_type = _INFORMATION_VERSION
 _INFORMATION.fields_by_name['dsp2'].message_type = _INFORMATION_VERSION
@@ -430,6 +728,8 @@ _INFORMATION.fields_by_name['hw_ids'].message_type = _INFORMATION_STRINGKEYVAL
 _INFORMATION.fields_by_name['error_log'].message_type = _INFORMATION_UINT32KEYVAL
 _INFORMATION.fields_by_name['warning_log'].message_type = _INFORMATION_UINT32KEYVAL
 _INFORMATION.fields_by_name['errors'].message_type = _INFORMATION_CONTROLLERSERRORS
+_INFORMATION.fields_by_name['bui_version'].message_type = _INFORMATION_VERSION
+_INFORMATION.fields_by_name['controllers'].message_type = _INFORMATION_CONTROLLER
 DESCRIPTOR.message_types_by_name['Information'] = _INFORMATION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -446,6 +746,13 @@ Information = _reflection.GeneratedProtocolMessageType('Information', (_message.
     'DESCRIPTOR' : _INFORMATION_STRINGKEYVAL,
     '__module__' : 'information_pb2'
     # @@protoc_insertion_point(class_scope:Information.StringKeyVal)
+    })
+  ,
+
+  'StringVal' : _reflection.GeneratedProtocolMessageType('StringVal', (_message.Message,), {
+    'DESCRIPTOR' : _INFORMATION_STRINGVAL,
+    '__module__' : 'information_pb2'
+    # @@protoc_insertion_point(class_scope:Information.StringVal)
     })
   ,
 
@@ -483,6 +790,13 @@ Information = _reflection.GeneratedProtocolMessageType('Information', (_message.
     # @@protoc_insertion_point(class_scope:Information.ControllersErrors)
     })
   ,
+
+  'Controller' : _reflection.GeneratedProtocolMessageType('Controller', (_message.Message,), {
+    'DESCRIPTOR' : _INFORMATION_CONTROLLER,
+    '__module__' : 'information_pb2'
+    # @@protoc_insertion_point(class_scope:Information.Controller)
+    })
+  ,
   'DESCRIPTOR' : _INFORMATION,
   '__module__' : 'information_pb2'
   # @@protoc_insertion_point(class_scope:Information)
@@ -490,11 +804,13 @@ Information = _reflection.GeneratedProtocolMessageType('Information', (_message.
 _sym_db.RegisterMessage(Information)
 _sym_db.RegisterMessage(Information.UInt32KeyVal)
 _sym_db.RegisterMessage(Information.StringKeyVal)
+_sym_db.RegisterMessage(Information.StringVal)
 _sym_db.RegisterMessage(Information.Date)
 _sym_db.RegisterMessage(Information.Version)
 _sym_db.RegisterMessage(Information.ControllersErrors)
 _sym_db.RegisterMessage(Information.ControllersErrors.ErrorsLogger)
 _sym_db.RegisterMessage(Information.ControllersErrors.ErrorsLogger.Error)
+_sym_db.RegisterMessage(Information.Controller)
 
 
 # @@protoc_insertion_point(module_scope)
